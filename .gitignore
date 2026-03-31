@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+app/token.json
+app/chats/
+chats/
+app/client_secret.json
