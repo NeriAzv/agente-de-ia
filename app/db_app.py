@@ -1,10 +1,13 @@
+import sys
+import os
+sys.path.insert(0, os.path.dirname(__file__))
+
 from flask import Flask, request
 from agent import Agent_AI
 from colors import GREEN, RED, YELLOW, BLUE, RESET
 
 import json
 import time
-import os
 
 
 app = Flask(__name__)

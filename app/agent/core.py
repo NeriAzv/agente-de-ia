@@ -5,20 +5,30 @@ import threading
 import tempfile
 import subprocess
 import base64
+import re
 import requests
 from dotenv import load_dotenv
 load_dotenv(override=True)
 from datetime import datetime, timedelta
 from typing import List, Any, Dict
 
-from langgraph.graph import StateGraph, END
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 
 from colors import GREEN, RED, YELLOW, BLUE, RESET
 from agent.calendar import criar_evento_google_meet, deletar_evento_google_calendar, verificar_conflito_google_calendar, buscar_horarios_livres
 from agent.normalizers import normalizar_data, normalizar_horario
-from agent.context import get_contexto
+from agent.context import (
+    get_contexto,
+    PALAVRAS_AGENDAMENTO,
+    get_instrucao_followup,
+    get_instrucao_abertura,
+    get_instrucao_recontato,
+    get_instrucao_lembrete,
+    get_prompt_extracao_lead,
+)
+from agent.ana_agent import run_ana_agent
+from agent.micro_agents import run_micro_agents, _to_langchain_messages
 
 
 class Agent_AI:
@@ -34,6 +44,7 @@ class Agent_AI:
         self.pending_texts: dict[str, str] = {}
         self.followup_timers: dict[str, list[threading.Timer]] = {}
         self.composing_set: set = set()
+        self.processing_chats: set[str] = set()
 
         self._restaurar_followups()
 
@@ -55,22 +66,7 @@ class Agent_AI:
                     lead_info = json.load(f)
                 nome = lead_info.get("nome") or ""
 
-            saudacao = f" {nome}" if nome else ""
-
-            if tipo == "1h":
-                instrucao = (
-                    f"O lead{saudacao} não respondeu há 1 hora. "
-                    "Escreva uma mensagem curta e natural tentando retomar a conversa, "
-                    "demonstrando interesse genuíno em ajudar. "
-                    "Sem emojis. Sem JSON. Só o texto da mensagem."
-                )
-            else:  # 24h
-                instrucao = (
-                    f"O lead{saudacao} não respondeu há 24 horas. "
-                    "Escreva uma mensagem muito curta avisando que você está disponível "
-                    "caso ele queira continuar a conversa, sem pressionar. "
-                    "Sem emojis. Sem JSON. Só o texto da mensagem."
-                )
+            instrucao = get_instrucao_followup(tipo, nome)
 
             file = os.path.join("chats", chatLid, "history.json")
             historico = []
@@ -119,13 +115,16 @@ class Agent_AI:
         agora = datetime.now()
         alvo_1h  = agora + timedelta(hours=1)
         alvo_24h = agora + timedelta(hours=24)
+        alvo_15d = agora + timedelta(days=15)
 
-        t1h = threading.Timer(3600.0, self._followup_callback, args=(phone, chatLid, "1h"))
+        t1h  = threading.Timer(3600.0, self._followup_callback, args=(phone, chatLid, "1h"))
         t24h = threading.Timer(86400.0, self._followup_callback, args=(phone, chatLid, "24h"))
+        t15d = threading.Timer(15 * 86400.0, self._followup_callback, args=(phone, chatLid, "15d"))
 
-        self.followup_timers[chatLid] = [t1h, t24h]
+        self.followup_timers[chatLid] = [t1h, t24h, t15d]
         t1h.start()
         t24h.start()
+        t15d.start()
 
         # Persiste horários no lead_info.json
         lead_info_path = os.path.join("chats", chatLid, "lead_info.json")
@@ -136,12 +135,13 @@ class Agent_AI:
         info["followups_agendados"] = [
             {"tipo": "1h",  "horario_iso": alvo_1h.isoformat(),  "phone": phone},
             {"tipo": "24h", "horario_iso": alvo_24h.isoformat(), "phone": phone},
+            {"tipo": "15d", "horario_iso": alvo_15d.isoformat(), "phone": phone},
         ]
         os.makedirs(os.path.join("chats", chatLid), exist_ok=True)
         with open(lead_info_path, "w", encoding="utf-8") as f:
             json.dump(info, f, indent=2, ensure_ascii=False)
 
-        print(f"{GREEN}Follow-ups agendados para {chatLid}: 1h às {alvo_1h.strftime('%d/%m %H:%M')} | 24h às {alvo_24h.strftime('%d/%m %H:%M')}{RESET}")
+        print(f"{GREEN}Follow-ups agendados para {chatLid}: 1h às {alvo_1h.strftime('%d/%m %H:%M')} | 24h às {alvo_24h.strftime('%d/%m %H:%M')} | 15d às {alvo_15d.strftime('%d/%m %H:%M')}{RESET}")
 
     def cancelar_followups(self, chatLid: str):
         """Cancela timers de follow-up (quando lead responde) e remove do arquivo."""
@@ -215,15 +215,7 @@ class Agent_AI:
                 if campos_uteis:
                     contexto_lead = "Dados conhecidos do lead: " + ", ".join(f"{k}: {v}" for k, v in campos_uteis.items()) + "."
 
-            instrucao = (
-                "Você está iniciando o contato com um lead frio pelo WhatsApp. "
-                + (contexto_lead + " " if contexto_lead else "")
-                + "Escreva a primeira mensagem seguindo as diretrizes de abertura de conversa: "
-                "se tiver contexto do lead, abra com um gancho relevante sobre uma dor do segmento dele; "
-                "se não tiver contexto, apresente-se brevemente e faça uma pergunta aberta sobre o negócio. "
-                "Nunca cumprimente com 'tudo bem?' ou similar. Nunca faça pitch genérico longo. "
-                "Nunca peça demo na primeira mensagem. Sem emojis. Sem JSON. Só o texto."
-            )
+            instrucao = get_instrucao_abertura(contexto_lead)
 
             resposta = llm.invoke([
                 SystemMessage(content=get_contexto()),
@@ -824,49 +816,6 @@ class Agent_AI:
 
         self.answer_list[chatLid] = data
 
-        # --- Nós do grafo ---
-
-        _PALAVRAS_AGENDAMENTO = [
-            "vou agendar", "vou marcar", "demo marcada", "reunião marcada",
-            "reuniao marcada", "demo para o dia", "reunião para o dia",
-            "reuniao para o dia", "agendei", "já vou confirmar",
-        ]
-
-        def processar(state):
-            llm = ChatOpenAI(model="gpt-4o-mini", api_key=os.environ.get("OPENAI_API_KEY"))
-            msgs_llm = [
-                SystemMessage(content=state["context"]),
-                *[
-                    HumanMessage(content=m["content"]) if m["role"] == "user"
-                    else AIMessage(content=m["content"])
-                    for m in state["messages"]
-                ],
-            ]
-            resposta = llm.invoke(msgs_llm)
-            content = resposta.content.strip()
-
-            # Se parece confirmação de agendamento mas não é JSON, força re-invocação
-            is_json = False
-            try:
-                parsed = json.loads(content.strip("```json").strip("```").strip())
-                is_json = isinstance(parsed, dict) and "acao" in parsed
-            except (json.JSONDecodeError, ValueError):
-                pass
-
-            if not is_json and any(p in content.lower() for p in _PALAVRAS_AGENDAMENTO):
-                print(f"{YELLOW}[processar] Resposta parece agendamento mas não é JSON. Re-invocando para extrair JSON.{RESET}")
-                resposta = llm.invoke(msgs_llm + [
-                    AIMessage(content=content),
-                    SystemMessage(content=(
-                        "Sua resposta anterior indicou que vai agendar uma reunião, mas não estava no formato JSON exigido. "
-                        "Responda APENAS com o JSON de agendamento, sem nenhum texto antes ou depois:\n"
-                        '{"acao": "agendar_reuniao", "data": "YYYY-MM-DD", "horario": "HH:MM", "nome": "Nome Sobrenome", "email": "email@lead.com", "mensagem": "..."}'
-                    )),
-                ])
-                print(f"{YELLOW}[processar] Resposta corrigida: {repr(resposta.content)}{RESET}")
-
-            return {"messages": state["messages"] + [{"role": "assistant", "content": resposta.content}]}
-
         # --- Helpers de envio / agendamento ---
 
         def dividir_em_mensagens(texto: str) -> list[str]:
@@ -906,7 +855,13 @@ class Agent_AI:
             """
             resposta = resultado["messages"][-1]["content"]
             try:
-                limpa  = resposta.strip().strip("```json").strip("```").strip()
+                limpa = resposta.strip()
+                if limpa.startswith("```"):
+                    limpa = limpa.split("```")[1]
+                    if limpa.startswith("json"):
+                        limpa = limpa[4:]
+                    limpa = limpa.strip()
+
                 parsed = json.loads(limpa)
 
                 if parsed.get("acao") == "consultar_disponibilidade":
@@ -966,7 +921,14 @@ class Agent_AI:
             resposta = resultado["messages"][-1]["content"]
             print(f"{BLUE}[verificar_reuniao] Resposta bruta do LLM: {repr(resposta)}{RESET}")
             try:
-                limpa = resposta.strip().strip("```json").strip("```").strip()
+                # Limpa markdown se houver
+                limpa = resposta.strip()
+                if limpa.startswith("```"):
+                    limpa = limpa.split("```")[1]
+                    if limpa.startswith("json"):
+                        limpa = limpa[4:]
+                    limpa = limpa.strip()
+
                 print(f"{BLUE}[verificar_reuniao] JSON limpo para parse: {repr(limpa)}{RESET}")
                 parsed = json.loads(limpa)
                 print(f"{BLUE}[verificar_reuniao] JSON parsed: {parsed}{RESET}")
@@ -1109,11 +1071,7 @@ class Agent_AI:
 
                     if segundos_lembrete > 0:
                         link_lembrete = meet_link or ""
-                        instrucao_lembrete = (
-                            f"Envie um lembrete ao lead de que a demo começa em 30 minutos, às {horario_reuniao}. "
-                            + (f"Inclua o link: {link_lembrete}. " if link_lembrete else "")
-                            + "Seja direto e profissional. Sem emojis. Sem JSON. Só o texto da mensagem."
-                        )
+                        instrucao_lembrete = get_instrucao_lembrete(horario_reuniao, link_lembrete)
                         def enviar_lembrete_gerado(phone, instrucao, headers):
                             llm_lembrete = ChatOpenAI(model="gpt-4o-mini", api_key=os.environ.get("OPENAI_API_KEY"))
                             resp = llm_lembrete.invoke([
@@ -1140,7 +1098,13 @@ class Agent_AI:
             """
             resposta = resultado["messages"][-1]["content"]
             try:
-                limpa = resposta.strip().strip("```json").strip("```").strip()
+                limpa = resposta.strip()
+                if limpa.startswith("```"):
+                    limpa = limpa.split("```")[1]
+                    if limpa.startswith("json"):
+                        limpa = limpa[4:]
+                    limpa = limpa.strip()
+
                 parsed = json.loads(limpa)
 
                 if parsed.get("acao") == "agendar_retorno":
@@ -1202,84 +1166,7 @@ class Agent_AI:
             try:
                 llm = ChatOpenAI(model="gpt-4o-mini", api_key=os.environ.get("OPENAI_API_KEY"))
 
-                prompt_extracao = """Com base na conversa abaixo entre um SDR da Btime e um lead, extraia as informações disponíveis e retorne APENAS um JSON com a estrutura:
-
-{
-  "nome": "nome do lead ou null",
-  "email": "e-mail do lead ou null",
-  "empresa": "nome da empresa ou null",
-  "segmento_mercado": "segmento/setor de atuação ou null",
-  "porte_empresa": "small/middle/enterprise ou null",
-  "faturamento_aproximado": "faixa de faturamento mencionada ou null",
-  "tamanho_time": "quantidade de funcionários/colaboradores da empresa (não alunos, clientes ou usuários) ou null",
-  "sistemas_atuais": ["lista de sistemas/ERPs/ferramentas que usam"],
-  "desafios_identificados": ["lista de dores/desafios mencionados pelo lead"],
-  "produto_indicado": "Squad AI / SaaS Btime / Ambos / null",
-  "motivo_segmentacao": "explicação clara dos sinais que levaram à segmentação",
-  "estagio_conversa": "inicial/qualificando/qualificado/proposta/agendado",
-  "reuniao_agendada": false,
-  "necessita_followup": true,
-  "motivo_followup": "explicação de por que o follow-up é ou não necessário",
-  "atualizado_em": null
-}
-
-### Critérios de segmentação para o campo produto_indicado
-
-Use os sinais abaixo para determinar o produto. Sempre que houver informação suficiente, preencha — não deixe null se der pra inferir.
-
-**Squad AI** — indique quando houver sinais como:
-- Projetos de TI parados, atrasados ou backlog acumulado
-- Múltiplas áreas com problemas de tecnologia simultâneos
-- Crescimento rápido com operação que não consegue escalar
-- Custo de headcount crescendo sem ganho de produtividade
-- Decisor é C-Level (CEO, COO, CTO) ou diretoria
-- Empresa de médio porte (faturamento R$5M+) ou grande porte
-- Falta de expertise interna em automações/integrações complexas
-
-**SaaS Btime** — indique quando houver sinais como:
-- Processos controlados em planilha ou papel
-- Operação de campo sem visibilidade para o escritório
-- Precisa padronizar como as tarefas são executadas
-- Empresa small ou middle sem estrutura digital básica
-- Decisor é gerência operacional ou o próprio dono
-- Falta de integração entre sistemas simples
-
-**Ambos** — indique quando o lead apresentar sinais dos dois lados: tem processos manuais (SaaS) e também backlog de TI ou múltiplas integrações complexas (Squad AI).
-
-**null** — use apenas se a conversa ainda não teve informação suficiente para nenhuma inferência.
-
-Para o campo motivo_segmentacao, explique os 2 ou 3 sinais concretos da conversa que levaram à conclusão. Ex: "Lead mencionou planilhas de controle e processo manual no campo → SaaS Btime. Não citou backlog de TI ou porte elevado."
-
-### Campo necessita_followup
-
-Preencha com true ou false com base no estado atual da conversa:
-
-**ATENÇÃO: a última mensagem da conversa é o sinal mais importante. Leia com atenção antes de decidir.**
-
-**false** (não precisa de follow-up) quando:
-- A conversa terminou com uma despedida clara de qualquer lado ("até mais", "obrigada", "tchau", "abraço", "boa sorte", etc.)
-- O SDR encerrou com uma frase de disponibilidade genérica ("estou à disposição", "qualquer coisa é só chamar") e o lead não deixou nenhuma pendência aberta
-- Reunião/demo foi agendada com sucesso
-- Lead pediu explicitamente para não ser contatado novamente
-- Lead deixou claro que não tem interesse no produto
-- Lead disse que vai pensar e entrará em contato quando quiser (iniciativa do lado dele)
-- Lead já foi desqualificado (fora do perfil, sem budget, sem decisão)
-
-**true** (precisa de follow-up) quando:
-- Conversa ficou no meio sem nenhuma conclusão ou despedida
-- Lead demonstrou interesse concreto mas não agendou e não houve encerramento
-- Lead pediu para retomar depois sem data definida e sem despedida
-- Lead parou de responder no meio de uma qualificação ativa (sem "obrigada", sem encerramento)
-- Há uma pendência explícita aberta (ex: "vou te mandar o contrato", "te envio a proposta") que ainda não foi resolvida
-
-**Regra de ouro:** se a última mensagem do lead foi "obrigada", "ok", "entendido", "até mais" ou qualquer variação de encerramento cortês → false. A conversa acabou.
-
-### Regras críticas de extração
-
-- **tamanho_time**: preencha SOMENTE com o número de funcionários/colaboradores/empregados da empresa. NÃO confunda com número de alunos, clientes, usuários, parceiros ou qualquer outro tipo de pessoa que não seja da equipe interna. Se o lead mencionar "300 alunos", o tamanho_time é null (não sabemos quantos funcionários tem). Se não foi mencionado explicitamente quantos funcionários/colaboradores a empresa tem, use null.
-- **porte_empresa**: inferir com base no segmento, faturamento ou outros sinais, não pelo número de alunos/clientes.
-
-Preencha apenas com o que foi explicitamente dito na conversa. Não invente informações. Para campos sem informação, use null ou lista vazia."""
+                prompt_extracao = get_prompt_extracao_lead()
 
                 conversa_texto = "\n".join(
                     f"{'Lead' if m['role'] == 'user' else 'SDR'}: {m['content']}"
@@ -1291,7 +1178,13 @@ Preencha apenas com o que foi explicitamente dito na conversa. Não invente info
                     HumanMessage(content=conversa_texto),
                 ])
 
-                limpa = resposta.content.strip().strip("```json").strip("```").strip()
+                limpa = resposta.content.strip()
+                if limpa.startswith("```"):
+                    limpa = limpa.split("```")[1]
+                    if limpa.startswith("json"):
+                        limpa = limpa[4:]
+                    limpa = limpa.strip()
+
                 info  = json.loads(limpa)
                 info["atualizado_em"] = datetime.now().isoformat()
 
@@ -1326,8 +1219,28 @@ Preencha apenas com o que foi explicitamente dito na conversa. Não invente info
             self.pending_timers.pop(chatLid, None)
             self.pending_texts.pop(chatLid, None)
 
+            # Guard: se já está processando resposta para este lead, não duplicar
+            if chatLid in self.processing_chats:
+                print(f" {YELLOW} > Já processando resposta para {chatLid}, ignorando chamada duplicada {RESET}")
+                return
+
             print(f" {GREEN} > get_ai_response chamado para {chatLid} {RESET}")
             print(f"{RED}Anser_list: {self.answer_list}{RESET}")
+
+            # Guard: verificar se usuário começou a digitar enquanto aguardava o delay
+            if chatLid in self.composing_set:
+                print(f" {YELLOW} > {chatLid} começou a digitar, resposta cancelada no início do processamento {RESET}")
+                return
+
+            self.processing_chats.add(chatLid)
+            try:
+                _create_answer_body(phone, chatLid, data, history_limit, is_recontato)
+            except Exception as e:
+                print(f"{RED}Erro inesperado em create_answer para {chatLid}: {e}{RESET}")
+            finally:
+                self.processing_chats.discard(chatLid)
+
+        def _create_answer_body(phone, chatLid, data, history_limit=50, is_recontato=False):
 
             if is_recontato:
                 headers = {"client-token": self.zapi_sec_token}
@@ -1347,11 +1260,7 @@ Preencha apenas com o que foi explicitamente dito na conversa. Não invente info
                         else AIMessage(content=m["content"])
                         for m in mensagens_recontato
                     ],
-                    SystemMessage(content=(
-                        "Você está retomando contato com o lead no horário combinado. "
-                        "Escreva uma mensagem curta e natural retomando a conversa. "
-                        "Sem emojis. Sem JSON. Só o texto da mensagem."
-                    )),
+                    SystemMessage(content=get_instrucao_recontato()),
                 ])
                 for parte in dividir_em_mensagens(resposta_recontato.content):
                     enviar_mensagem(phone, parte, headers)
@@ -1363,12 +1272,6 @@ Preencha apenas com o que foi explicitamente dito na conversa. Não invente info
 
                 if True:
                     print(f" {BLUE} > Processo de resposta iniciado.\nChatLid: {chatLid} {RESET}")
-
-                    workflow = StateGraph(dict)
-                    workflow.add_node("processar", processar)
-                    workflow.set_entry_point("processar")
-                    workflow.add_edge("processar", END)
-                    app = workflow.compile()
 
                     file = os.path.join("chats", chatLid, "history.json")
                     if os.path.exists(file):
@@ -1421,10 +1324,28 @@ Preencha apenas com o que foi explicitamente dito na conversa. Não invente info
                     except Exception as e:
                         print(f"{RED}Erro ao buscar horários livres para contexto: {e}{RESET}")
 
-                    resultado = app.invoke({
-                        "messages": mensagens_formatadas,
-                        "context": contexto,
-                    })
+                    # --- Micro agentes (paralelo) + AnaAgent ---
+                    lead_message_atual = ""
+                    if mensagens_formatadas:
+                        last = mensagens_formatadas[-1]
+                        if last.get("role") == "user":
+                            lead_message_atual = last["content"]
+
+                    print(f"{BLUE}[micro_agents] Iniciando análise paralela para {chatLid}{RESET}")
+                    micro_context = run_micro_agents(lead_message_atual, mensagens_formatadas[:-1])
+                    print(f"{BLUE}[micro_agents] Concluído: {micro_context}{RESET}")
+
+                    history_lc = _to_langchain_messages(mensagens_formatadas[:-1])
+                    ana_response = run_ana_agent(
+                        lead_message=lead_message_atual,
+                        history=history_lc,
+                        micro_agent_context=micro_context,
+                        system_context=contexto,
+                    )
+
+                    resultado = {
+                        "messages": mensagens_formatadas + [{"role": "assistant", "content": ana_response}]
+                    }
 
 
                     atualizar_info_lead(chatLid, mensagens_formatadas, resultado["messages"][-1]["content"])
@@ -1442,6 +1363,37 @@ Preencha apenas com o que foi explicitamente dito na conversa. Não invente info
                     if verificar_reuniao(resultado, headers, mensagens_formatadas):
                         return
 
+                    # Fallback: texto parece confirmação de reunião mas não veio como JSON
+                    resposta_fallback_text = resultado["messages"][-1]["content"]
+                    _lower = resposta_fallback_text.lower()
+                    _palavras_conf = [
+                        "agendado", "agendada", "marcado", "marcada",
+                        "confirmado", "confirmada", "agendei", "marquei", "confirmei",
+                    ]
+                    _tem_palavra = any(p in _lower for p in _palavras_conf)
+                    _tem_horario = bool(re.search(r'(\d{1,2}[h:]\d{0,2})', _lower))
+                    _tem_dia = bool(re.search(r'(segunda|terça|terca|quarta|quinta|sexta|sábado|sabado|domingo|\d{1,2}/\d{1,2})', _lower))
+                    if _tem_palavra and (_tem_horario or _tem_dia):
+                        print(f"{YELLOW}[create_answer] Fallback: texto parece confirmação de reunião. Forçando extração JSON.{RESET}")
+                        llm_fb = ChatOpenAI(model="gpt-4o-mini", api_key=os.environ.get("OPENAI_API_KEY"))
+                        resp_fb = llm_fb.invoke([
+                            SystemMessage(content=get_contexto()),
+                            *[
+                                HumanMessage(content=m["content"]) if m["role"] == "user"
+                                else AIMessage(content=m["content"])
+                                for m in mensagens_formatadas
+                            ],
+                            AIMessage(content=resposta_fallback_text),
+                            SystemMessage(content=(
+                                "Sua resposta anterior confirmou uma reunião mas NÃO estava no formato JSON exigido. "
+                                "Responda APENAS com o JSON de agendamento, sem nenhum texto antes ou depois:\n"
+                                '{"acao": "agendar_reuniao", "data": "YYYY-MM-DD", "horario": "HH:MM", "nome": "Nome Sobrenome", "email": "email@lead.com", "mensagem": "..."}'
+                            )),
+                        ])
+                        resultado_fb = {"messages": resultado["messages"][:-1] + [{"role": "assistant", "content": resp_fb.content}]}
+                        if verificar_reuniao(resultado_fb, headers, mensagens_formatadas):
+                            return
+
                     if verificar_agendamento(resultado, headers):
                         return
 
@@ -1449,7 +1401,13 @@ Preencha apenas com o que foi explicitamente dito na conversa. Não invente info
 
                     # Guard: nunca enviar JSON de ação como mensagem ao lead
                     try:
-                        limpa = resposta_completa.strip().strip("```json").strip("```").strip()
+                        limpa = resposta_completa.strip()
+                        if limpa.startswith("```"):
+                            limpa = limpa.split("```")[1]
+                            if limpa.startswith("json"):
+                                limpa = limpa[4:]
+                            limpa = limpa.strip()
+
                         parsed_guard = json.loads(limpa)
                         if isinstance(parsed_guard, dict) and "acao" in parsed_guard:
                             print(f"{RED}Resposta é um JSON de ação não tratado, descartando: {parsed_guard.get('acao')}{RESET}")
@@ -1461,6 +1419,11 @@ Preencha apenas com o que foi explicitamente dito na conversa. Não invente info
                     partes = dividir_em_mensagens(resposta_completa)
 
                     for i, parte in enumerate(partes):
+                        # Guard: verificar novamente antes de enviar cada parte
+                        if chatLid in self.composing_set:
+                            print(f" {YELLOW} > {chatLid} começou a digitar durante envio, interrompendo resposta {RESET}")
+                            break
+
                         if i > 0:
                             time.sleep(1.5)
                         enviar_mensagem(phone, parte, headers)
