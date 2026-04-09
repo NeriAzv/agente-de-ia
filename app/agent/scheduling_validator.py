@@ -20,10 +20,10 @@ contiver uma solicitação de agendamento ou confirmação de data/horário.
 critério está faltando em português.
 - Se ready_to_schedule for true, resolva expressões temporais relativas ("amanhã", "terça", \
 "semana que vem") para YYYY-MM-DD usando a data de hoje como referência.
-- Valide que a data é dia útil (segunda a sexta) e o horário está entre 10h e 17h — se não estiver, \
+- Valide que a data é dia útil (segunda a sexta) e o horário está entre 10h e 17h. Se não estiver, \
 ready_to_schedule é false e blocking_reason explica o problema.
 
-Regras para action_json — monte conforme o caso:
+Regras para action_json. Monte conforme o caso:
 - Lead pediu retorno em horário específico:
   {"acao": "agendar_retorno", "horario": "HH:MM", "mensagem": ""}
 - Lead mencionou dia mas não informou horário:

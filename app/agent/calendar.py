@@ -55,7 +55,7 @@ def criar_evento_google_meet(
         inicio = datetime.combine(data_reuniao, datetime.strptime(horario_reuniao, "%H:%M").time())
         fim    = inicio + timedelta(minutes=duracao_min)
 
-        titulo = f"Demo Btime — {nome_lead}" if nome_lead else "Demo Btime"
+        titulo = f"Demo Btime - {nome_lead}" if nome_lead else "Demo Btime"
 
         attendees = [{"email": ORGANIZER_EMAIL, "organizer": True, "responseStatus": "accepted"}]
         if email_lead:

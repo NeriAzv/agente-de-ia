@@ -8,6 +8,9 @@ from colors import GREEN, RED, YELLOW, BLUE, RESET
 
 import json
 import time
+import threading
+
+_file_lock = threading.Lock()
 
 
 app = Flask(__name__)
@@ -34,7 +37,7 @@ def webhook_send():
 
 @app.route("/webhook/message-status", methods=["POST"])
 def webhook_message_status():
-    """Recebe status de entrega/leitura — não salvamos no histórico."""
+    """Recebe status de entrega/leitura, não salvamos no histórico."""
     print(f" > /webhook/{BLUE}message-status{RESET} chamado")
     return {"status": "ok"}, 200
 
@@ -55,16 +58,20 @@ def webhook_receive():
     os.makedirs(lead_dir, exist_ok=True)
     file = os.path.join(lead_dir, "history.json")
 
-    if os.path.exists(file):
-        with open(file, "r", encoding="utf-8") as f:
-            existing_data = json.load(f)
-    else:
-        existing_data = []
+    with _file_lock:
+        if os.path.exists(file):
+            try:
+                with open(file, "r", encoding="utf-8") as f:
+                    existing_data = json.load(f)
+            except (json.JSONDecodeError, ValueError):
+                existing_data = []
+        else:
+            existing_data = []
 
-    existing_data.append({"timestamp": time.time(), "data": data})
+        existing_data.append({"timestamp": time.time(), "data": data})
 
-    with open(file, "w", encoding="utf-8") as f:
-        json.dump(existing_data, f, indent=2, ensure_ascii=False)
+        with open(file, "w", encoding="utf-8") as f:
+            json.dump(existing_data, f, indent=2, ensure_ascii=False)
 
     print(f" > /webhook/{BLUE}receive{RESET} chamado")
 
@@ -123,9 +130,26 @@ def webhook_presence():
 
     elif status == "AVAILABLE":
         print(f" {GREEN} > {name} está online {RESET}")
+        # Mesmo tratamento: se estava digitando e mudou pra AVAILABLE sem PAUSED
+        was_composing = chatLid in agent.composing_set
+        agent.composing_set.discard(chatLid)
+        if was_composing and chatLid not in agent.pending_timers and chatLid in agent.answer_list:
+            saved_data  = agent.answer_list[chatLid]
+            saved_phone = saved_data.get("phone")
+            print(f" {GREEN} > Usuário voltou online sem PAUSED, reiniciando resposta para {chatLid} (phone={saved_phone}) {RESET}")
+            agent.get_ai_response(saved_phone, chatLid, saved_data)
 
     elif status == "UNAVAILABLE":
         print(f" {RED} > {name} está offline {RESET}")
+        # Se o usuário estava digitando (composing_set) e foi direto pra offline
+        # sem PAUSED, precisamos reiniciar a resposta para não perder mensagens
+        was_composing = chatLid in agent.composing_set
+        agent.composing_set.discard(chatLid)
+        if was_composing and chatLid not in agent.pending_timers and chatLid in agent.answer_list:
+            saved_data  = agent.answer_list[chatLid]
+            saved_phone = saved_data.get("phone")
+            print(f" {GREEN} > Usuário saiu offline sem PAUSED, reiniciando resposta para {chatLid} (phone={saved_phone}) {RESET}")
+            agent.get_ai_response(saved_phone, chatLid, saved_data)
 
     return {"status": "ok"}, 200
 

@@ -12,13 +12,13 @@ _LLM = ChatAnthropic(
 )
 
 _MICRO_AGENT_RULES = """\
-CONTEXTO DOS MICRO AGENTES — use para tomar decisões mais precisas antes de responder:
+CONTEXTO DOS MICRO AGENTES, use para tomar decisões mais precisas antes de responder:
 
 {micro_agent_context}
 
 Regras de prioridade:
 - Se objection.has_objection for true, trate a objeção antes de qualquer outra ação.
-- Se intent.intent for scheduling_request, verifique scheduling.ready_to_schedule antes de avançar — \
+- Se intent.intent for scheduling_request, verifique scheduling.ready_to_schedule antes de avançar. \
 se for false, use scheduling.blocking_reason para continuar o aquecimento.
 - Se qualification.missing_criteria não estiver vazio, não avance para agendamento e foque em \
 preencher os critérios faltantes.\

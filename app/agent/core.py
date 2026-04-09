@@ -45,6 +45,9 @@ class Agent_AI:
         self.followup_timers: dict[str, list[threading.Timer]] = {}
         self.composing_set: set = set()
         self.processing_chats: set[str] = set()
+        self.interrupted_chats: set[str] = set()
+        self._interrupt_cite_ids: dict[str, str] = {}
+        self._timer_lock = threading.Lock()
 
         self._restaurar_followups()
 
@@ -153,7 +156,7 @@ class Agent_AI:
         self._limpar_followup_arquivo(chatLid, None)
 
     def _limpar_followup_arquivo(self, chatLid: str, tipo):
-        """Remove follow-up do arquivo — se tipo=None remove todos."""
+        """Remove follow-up do arquivo. Se tipo=None remove todos."""
         lead_info_path = os.path.join("chats", chatLid, "lead_info.json")
         if not os.path.exists(lead_info_path):
             return
@@ -184,7 +187,7 @@ class Agent_AI:
         lead_dir = os.path.join("chats", chatLid)
         file     = os.path.join(lead_dir, "history.json")
 
-        # Verifica se já existe mensagem do lead (fromMe=false) — mensagens só nossas não contam
+        # Verifica se já existe mensagem do lead (fromMe=false), mensagens só nossas não contam
         tem_mensagem_do_lead = False
         if os.path.exists(file):
             try:
@@ -264,7 +267,7 @@ class Agent_AI:
                     alvo  = datetime.fromisoformat(item["horario_iso"])
                     segundos = (alvo - agora).total_seconds()
                     if segundos <= 0:
-                        # Já passou — dispara em 5s para não bloquear o start
+                        # Já passou, dispara em 5s para não bloquear o start
                         segundos = 5.0
                         print(f"{YELLOW}Follow-up {tipo} para {chatLid} já passou, disparando em 5s{RESET}")
                     else:
@@ -442,7 +445,7 @@ class Agent_AI:
             # Extrai 1 frame por segundo apenas se o vídeo tiver até 2min30s
             extrair_frames = duracao <= LIMITE_FRAMES_SEGUNDOS
             if not extrair_frames:
-                print(f"{YELLOW}[analisar_video] Vídeo com {duracao:.1f}s excede limite de {LIMITE_FRAMES_SEGUNDOS}s — frames não serão extraídos{RESET}")
+                print(f"{YELLOW}[analisar_video] Vídeo com {duracao:.1f}s excede limite de {LIMITE_FRAMES_SEGUNDOS}s, frames não serão extraídos{RESET}")
 
             if extrair_frames:
                 if duracao <= 30:
@@ -811,10 +814,18 @@ class Agent_AI:
 
     def get_ai_response(self, phone, chatLid, data) -> str:
 
-        # Lead respondeu — cancela follow-ups pendentes
+        # Lead respondeu, cancela follow-ups pendentes
         self.cancelar_followups(chatLid)
 
         self.answer_list[chatLid] = data
+
+        # Interrompe imediatamente se já está processando resposta para este chat
+        if chatLid in self.processing_chats:
+            self.interrupted_chats.add(chatLid)
+            msg_id = data.get("messageId")
+            if msg_id:
+                self._interrupt_cite_ids[chatLid] = msg_id
+            print(f" {YELLOW} > Interrupção imediata sinalizada para {chatLid} {RESET}")
 
         # --- Helpers de envio / agendamento ---
 
@@ -826,12 +837,120 @@ class Agent_AI:
             partes = [p.strip() for p in texto.split("\n\n") if p.strip()]
             return partes if partes else [texto]
 
-        def enviar_mensagem(phone, texto, headers):
-            """Envia uma mensagem de texto pro lead."""
+        def calcular_delay_digitacao(texto: str, wpm: int = 80) -> float:
+            """
+            Calcula delay em segundos simulando digitação.
+            Convenção padrão: 1 palavra = 5 caracteres.
+            """
+            chars = len(texto)
+            delay = chars * 60 / (wpm * 5)  # segundos
+            return max(1.0, min(delay, 15.0))
+
+        def enviar_mensagem(phone, texto, headers, delay_typing: int = 0, reply_message_id: str = None):
+            """Envia uma mensagem de texto pro lead. delay_typing = segundos de 'digitando...' antes do envio (1-15). reply_message_id = ID da mensagem a ser citada."""
             url = f"{self.base_url}/send-text"
             payload = {"phone": phone, "message": texto}
-            response = requests.request("POST", url, data=payload, headers=headers)
-            print(f"\n\n{GREEN}>Resposta enviada: {response.text}{RESET}")
+            if delay_typing > 0:
+                payload["delayTyping"] = min(delay_typing, 15)
+            if reply_message_id:
+                payload["messageId"] = reply_message_id
+            response = requests.post(url, json=payload, headers=headers)
+            print(f"\n\n{GREEN}>Resposta enviada (delayTyping={delay_typing}s): {response.text}{RESET}")
+
+        def obter_msgs_pendentes(historico_raw: list) -> list:
+            """
+            Retorna as mensagens consecutivas do lead no final do histórico que ainda não foram respondidas.
+            Ex: se o lead mandou 3 msgs seguidas sem resposta da IA, retorna essas 3.
+            """
+            pendentes = []
+            for item in reversed(historico_raw):
+                msg_data = item.get("data", {})
+                if msg_data.get("fromMe"):
+                    break  # Encontrou resposta da IA, para
+                msg_id = msg_data.get("messageId", "")
+                if not msg_id:
+                    continue
+                texto = ""
+                text_field = msg_data.get("text", {})
+                if isinstance(text_field, dict):
+                    texto = text_field.get("message", "")
+                elif text_field:
+                    texto = str(text_field)
+                if not texto:
+                    audio = msg_data.get("audio", {})
+                    if isinstance(audio, dict):
+                        texto = audio.get("transcricao", "")
+                if not texto:
+                    continue
+                pendentes.append({"id": msg_id, "texto": texto[:150]})
+            pendentes.reverse()
+            return pendentes
+
+        def decidir_citacoes(partes_resposta: list, historico_raw: list) -> list:
+            """
+            Quando o lead mandou varias mensagens seguidas, decide qual mensagem
+            cada parte da resposta da IA deve citar.
+            Retorna lista de messageIds (ou None) alinhada com partes_resposta.
+            """
+            msgs_pendentes = obter_msgs_pendentes(historico_raw)
+
+            # Se o lead mandou apenas 1 mensagem, sem citacao (fluxo normal)
+            if len(msgs_pendentes) <= 1:
+                return [None] * len(partes_resposta)
+
+            lista_msgs = "\n".join(
+                f'[{m["id"]}]: "{m["texto"]}"'
+                for m in msgs_pendentes
+            )
+            lista_partes = "\n".join(
+                f'[PARTE {i+1}]: "{p[:150]}"'
+                for i, p in enumerate(partes_resposta)
+            )
+
+            prompt = (
+                "O lead mandou varias mensagens seguidas no WhatsApp antes da IA responder.\n"
+                "A IA vai responder em partes. Voce deve associar cada parte da resposta "
+                "a mensagem do lead que ela esta respondendo, para que a IA cite (marque) a mensagem certa.\n\n"
+                "Mensagens do lead (em ordem):\n" + lista_msgs + "\n\n"
+                "Partes da resposta da IA (em ordem):\n" + lista_partes + "\n\n"
+                "REGRAS:\n"
+                "- Associe cada PARTE a mensagem do lead que ela responde\n"
+                "- Se uma parte nao responde nenhuma mensagem especifica (ex: saudacao, pergunta nova), use NONE\n"
+                "- Se so tem 1 parte e 1 mensagem pendente, use NONE (fluxo normal)\n"
+                "- A citacao serve para o lead saber qual pergunta dele esta sendo respondida\n\n"
+                "Responda EXATAMENTE neste formato (uma linha por parte):\n"
+                "PARTE 1: messageId ou NONE\n"
+                "PARTE 2: messageId ou NONE\n"
+                "..."
+            )
+
+            try:
+                llm_citacao = ChatOpenAI(model="gpt-4o-mini", api_key=os.environ.get("OPENAI_API_KEY"), temperature=0)
+                resp = llm_citacao.invoke([SystemMessage(content=prompt)])
+                resultado = resp.content.strip()
+
+                ids_validos = {m["id"] for m in msgs_pendentes}
+                citacoes = []
+                for linha in resultado.split("\n"):
+                    linha = linha.strip()
+                    if not linha.startswith("PARTE"):
+                        continue
+                    # Extrai o valor após ":"
+                    valor = linha.split(":", 1)[-1].strip()
+                    if valor == "NONE" or valor not in ids_validos:
+                        citacoes.append(None)
+                    else:
+                        citacoes.append(valor)
+                        print(f" {BLUE} > Citacao parte {len(citacoes)}: {valor} {RESET}")
+
+                # Preenche com None se faltaram partes
+                while len(citacoes) < len(partes_resposta):
+                    citacoes.append(None)
+
+                return citacoes[:len(partes_resposta)]
+            except Exception as e:
+                print(f" {RED} > Erro ao decidir citacoes: {e} {RESET}")
+                return [None] * len(partes_resposta)
 
         def gerar_e_enviar(instrucao: str, mensagens_contexto: list, headers):
             """Chama o LLM com uma instrução adicional e envia o resultado ao lead."""
@@ -845,8 +964,18 @@ class Agent_AI:
                 ],
                 SystemMessage(content=instrucao),
             ])
-            for parte in dividir_em_mensagens(resposta.content):
-                enviar_mensagem(phone, parte, headers)
+            partes = dividir_em_mensagens(resposta.content)
+            for i, parte in enumerate(partes):
+                if chatLid in self.interrupted_chats:
+                    print(f" {YELLOW} > {chatLid} enviou nova mensagem, interrompendo resposta {RESET}")
+                    return
+                if i == 0:
+                    delay = int(calcular_delay_digitacao(parte, wpm=400))
+                else:
+                    time.sleep(0.5)
+                    delay = int(calcular_delay_digitacao(parte, wpm=250))
+                print(f" {YELLOW} > Delay digitação: {delay}s para parte {i+1}/{len(partes)} {RESET}")
+                enviar_mensagem(phone, parte, headers, delay_typing=delay)
 
         def verificar_consulta_disponibilidade(resultado, headers, mensagens_contexto) -> bool:
             """
@@ -954,7 +1083,7 @@ class Agent_AI:
                     if not produto_indicado:
                         print(f"{YELLOW}[verificar_reuniao] Lead ainda não qualificado (produto_indicado=null). Bloqueando agendamento.{RESET}")
                         gerar_e_enviar(
-                            "O lead tentou agendar uma reunião mas ainda não foi qualificado — você ainda não identificou se o produto indicado é Squad AI, SaaS Btime ou Ambos. "
+                            "O lead tentou agendar uma reunião mas ainda não foi qualificado. Você ainda não identificou se o produto indicado é Squad AI, SaaS Btime ou Ambos. "
                             "Não agende a reunião agora. Continue a conversa fazendo as perguntas de qualificação necessárias para entender o cenário do lead antes de propor a demo.",
                             mensagens_contexto, headers
                         )
@@ -1078,7 +1207,8 @@ class Agent_AI:
                                 SystemMessage(content=get_contexto()),
                                 SystemMessage(content=instrucao),
                             ])
-                            enviar_mensagem(phone, resp.content.strip(), headers)
+                            delay_lembrete = int(calcular_delay_digitacao(resp.content.strip(), wpm=400))
+                            enviar_mensagem(phone, resp.content.strip(), headers, delay_typing=delay_lembrete)
 
                         threading.Timer(segundos_lembrete, enviar_lembrete_gerado, args=(phone, instrucao_lembrete, headers)).start()
                         print(f"{GREEN}Lembrete agendado para {(alvo - timedelta(minutes=30)).strftime('%d/%m %H:%M')}{RESET}")
@@ -1145,7 +1275,7 @@ class Agent_AI:
                             with open(lead_info_path, "r", encoding="utf-8") as f:
                                 info_ret = json.load(f)
                         info_ret["necessita_followup"] = False
-                        info_ret["motivo_followup"] = f"Retorno combinado agendado para {alvo.strftime('%d/%m %H:%M')} — follow-up de inatividade não necessário"
+                        info_ret["motivo_followup"] = f"Retorno combinado agendado para {alvo.strftime('%d/%m %H:%M')}, follow-up de inatividade não necessário"
                         with open(lead_info_path, "w", encoding="utf-8") as f:
                             json.dump(info_ret, f, indent=2, ensure_ascii=False)
                     except Exception as e:
@@ -1219,28 +1349,34 @@ class Agent_AI:
             self.pending_timers.pop(chatLid, None)
             self.pending_texts.pop(chatLid, None)
 
-            # Guard: se já está processando resposta para este lead, não duplicar
+            # Pega messageId da mensagem que causou interrupção (setado em get_ai_response)
+            interrupt_reply_id = self._interrupt_cite_ids.pop(chatLid, None)
+
+            # Se já está processando resposta, interromper a anterior
             if chatLid in self.processing_chats:
-                print(f" {YELLOW} > Já processando resposta para {chatLid}, ignorando chamada duplicada {RESET}")
-                return
+                self.interrupted_chats.add(chatLid)
+                if not interrupt_reply_id:
+                    interrupt_reply_id = data.get("messageId")
+                print(f" {YELLOW} > Interrompendo resposta anterior para {chatLid} {RESET}")
+                # Espera a resposta anterior parar antes de continuar
+                while chatLid in self.processing_chats:
+                    time.sleep(0.2)
+
+            # Limpa estado de interrupção antes de iniciar novo processamento
+            self.interrupted_chats.discard(chatLid)
 
             print(f" {GREEN} > get_ai_response chamado para {chatLid} {RESET}")
             print(f"{RED}Anser_list: {self.answer_list}{RESET}")
 
-            # Guard: verificar se usuário começou a digitar enquanto aguardava o delay
-            if chatLid in self.composing_set:
-                print(f" {YELLOW} > {chatLid} começou a digitar, resposta cancelada no início do processamento {RESET}")
-                return
-
             self.processing_chats.add(chatLid)
             try:
-                _create_answer_body(phone, chatLid, data, history_limit, is_recontato)
+                _create_answer_body(phone, chatLid, data, history_limit, is_recontato, interrupt_reply_id=interrupt_reply_id)
             except Exception as e:
                 print(f"{RED}Erro inesperado em create_answer para {chatLid}: {e}{RESET}")
             finally:
                 self.processing_chats.discard(chatLid)
 
-        def _create_answer_body(phone, chatLid, data, history_limit=50, is_recontato=False):
+        def _create_answer_body(phone, chatLid, data, history_limit=50, is_recontato=False, interrupt_reply_id=None):
 
             if is_recontato:
                 headers = {"client-token": self.zapi_sec_token}
@@ -1262,8 +1398,18 @@ class Agent_AI:
                     ],
                     SystemMessage(content=get_instrucao_recontato()),
                 ])
-                for parte in dividir_em_mensagens(resposta_recontato.content):
-                    enviar_mensagem(phone, parte, headers)
+                partes_recontato = dividir_em_mensagens(resposta_recontato.content)
+                for i, parte in enumerate(partes_recontato):
+                    if chatLid in self.interrupted_chats:
+                        print(f" {YELLOW} > {chatLid} enviou nova mensagem, interrompendo recontato {RESET}")
+                        return
+                    if i == 0:
+                        delay = int(calcular_delay_digitacao(parte, wpm=400))
+                    else:
+                        time.sleep(0.5)
+                        delay = int(calcular_delay_digitacao(parte, wpm=250))
+                    print(f" {YELLOW} > Delay digitação (recontato): {delay}s para parte {i+1}/{len(partes_recontato)} {RESET}")
+                    enviar_mensagem(phone, parte, headers, delay_typing=delay)
                 self.answer_list[phone] = data
                 return
 
@@ -1325,17 +1471,29 @@ class Agent_AI:
                         print(f"{RED}Erro ao buscar horários livres para contexto: {e}{RESET}")
 
                     # --- Micro agentes (paralelo) + AnaAgent ---
+                    # Encontra a última mensagem do user (pode não ser a última do histórico
+                    # se a AI enviou msg pós-interrupção)
                     lead_message_atual = ""
-                    if mensagens_formatadas:
-                        last = mensagens_formatadas[-1]
-                        if last.get("role") == "user":
-                            lead_message_atual = last["content"]
+                    last_user_idx = -1
+                    for _i in range(len(mensagens_formatadas) - 1, -1, -1):
+                        if mensagens_formatadas[_i].get("role") == "user" and mensagens_formatadas[_i].get("content"):
+                            lead_message_atual = mensagens_formatadas[_i]["content"]
+                            last_user_idx = _i
+                            break
+
+                    if not lead_message_atual:
+                        print(f"{RED}[create_answer] Nenhuma mensagem do lead encontrada para {chatLid}, abortando{RESET}")
+                        return
+
+                    # History = tudo antes da última msg do user
+                    # (exclui msgs AI pós-interrupção que não devem influenciar a nova resposta)
+                    history_for_agent = mensagens_formatadas[:last_user_idx] if last_user_idx > 0 else []
 
                     print(f"{BLUE}[micro_agents] Iniciando análise paralela para {chatLid}{RESET}")
-                    micro_context = run_micro_agents(lead_message_atual, mensagens_formatadas[:-1])
+                    micro_context = run_micro_agents(lead_message_atual, history_for_agent)
                     print(f"{BLUE}[micro_agents] Concluído: {micro_context}{RESET}")
 
-                    history_lc = _to_langchain_messages(mensagens_formatadas[:-1])
+                    history_lc = _to_langchain_messages(history_for_agent)
                     ana_response = run_ana_agent(
                         lead_message=lead_message_atual,
                         history=history_lc,
@@ -1343,24 +1501,21 @@ class Agent_AI:
                         system_context=contexto,
                     )
 
+                    # Monta resultado com histórico limpo (sem msgs AI pós-interrupção)
+                    mensagens_para_contexto = history_for_agent + [{"role": "user", "content": lead_message_atual}]
                     resultado = {
-                        "messages": mensagens_formatadas + [{"role": "assistant", "content": ana_response}]
+                        "messages": mensagens_para_contexto + [{"role": "assistant", "content": ana_response}]
                     }
 
 
-                    atualizar_info_lead(chatLid, mensagens_formatadas, resultado["messages"][-1]["content"])
-
-                    # Verifica se usuário ainda está digitando/gravando
-                    if chatLid in self.composing_set:
-                        print(f" {YELLOW} > {chatLid} ainda está digitando/gravando, resposta descartada {RESET}")
-                        return
+                    atualizar_info_lead(chatLid, mensagens_para_contexto, resultado["messages"][-1]["content"])
 
                     headers = {"client-token": self.zapi_sec_token}
 
-                    if verificar_consulta_disponibilidade(resultado, headers, mensagens_formatadas):
+                    if verificar_consulta_disponibilidade(resultado, headers, mensagens_para_contexto):
                         return
 
-                    if verificar_reuniao(resultado, headers, mensagens_formatadas):
+                    if verificar_reuniao(resultado, headers, mensagens_para_contexto):
                         return
 
                     # Fallback: texto parece confirmação de reunião mas não veio como JSON
@@ -1381,7 +1536,7 @@ class Agent_AI:
                             *[
                                 HumanMessage(content=m["content"]) if m["role"] == "user"
                                 else AIMessage(content=m["content"])
-                                for m in mensagens_formatadas
+                                for m in mensagens_para_contexto
                             ],
                             AIMessage(content=resposta_fallback_text),
                             SystemMessage(content=(
@@ -1391,7 +1546,7 @@ class Agent_AI:
                             )),
                         ])
                         resultado_fb = {"messages": resultado["messages"][:-1] + [{"role": "assistant", "content": resp_fb.content}]}
-                        if verificar_reuniao(resultado_fb, headers, mensagens_formatadas):
+                        if verificar_reuniao(resultado_fb, headers, mensagens_para_contexto):
                             return
 
                     if verificar_agendamento(resultado, headers):
@@ -1418,18 +1573,32 @@ class Agent_AI:
 
                     partes = dividir_em_mensagens(resposta_completa)
 
+                    # Decide citacoes para cada parte (quando lead mandou varias msgs seguidas)
+                    citacoes = decidir_citacoes(partes, historico)
+
+                    # Se foi interrompido, cita a mensagem que causou a interrupção na primeira parte
+                    if interrupt_reply_id and len(citacoes) > 0:
+                        citacoes[0] = interrupt_reply_id
+                        print(f" {BLUE} > Citando mensagem interruptora na parte 1: {interrupt_reply_id} {RESET}")
+
                     for i, parte in enumerate(partes):
-                        # Guard: verificar novamente antes de enviar cada parte
-                        if chatLid in self.composing_set:
-                            print(f" {YELLOW} > {chatLid} começou a digitar durante envio, interrompendo resposta {RESET}")
+                        # Guard: só interrompe se o lead MANDOU nova mensagem (não presença/digitando)
+                        if chatLid in self.interrupted_chats:
+                            print(f" {YELLOW} > {chatLid} enviou nova mensagem, interrompendo resposta {RESET}")
                             break
 
-                        if i > 0:
-                            time.sleep(1.5)
-                        enviar_mensagem(phone, parte, headers)
+                        if i == 0:
+                            delay = int(calcular_delay_digitacao(parte, wpm=400))
+                        else:
+                            time.sleep(0.5)
+                            delay = int(calcular_delay_digitacao(parte, wpm=250))
+                        print(f" {YELLOW} > Delay digitação: {delay}s para parte {i+1}/{len(partes)} {RESET}")
+                        enviar_mensagem(phone, parte, headers, delay_typing=delay, reply_message_id=citacoes[i])
                         print(f"\n\n{GREEN}>Parte {i+1}/{len(partes)} enviada para {chatLid}{RESET}")
 
-                    self.answer_list.pop(chatLid, None)
+                    # Só limpa answer_list se NÃO foi interrompido (senão apaga dados da nova mensagem)
+                    if chatLid not in self.interrupted_chats:
+                        self.answer_list.pop(chatLid, None)
                     self.agendar_followups(phone, chatLid)
 
                 else:
@@ -1449,16 +1618,17 @@ class Agent_AI:
         texto_nova = _extrair_texto_data(data)
         self.pending_texts[chatLid] = self.pending_texts.get(chatLid, "") + " " + texto_nova
 
-        # Delay proporcional: 3s base + 0.04s por caractere acumulado, máx 12s
+        # Delay proporcional: 7s base + 0.04s por caractere acumulado, máx 12s
         total_chars = len(self.pending_texts[chatLid].strip())
-        delay = min(3.0 + total_chars * 0.04, 12.0)
+        delay = max(7.0, min(7.0 + total_chars * 0.04, 12.0))
 
-        # Debounce: cancela timer anterior do mesmo lead
-        if chatLid in self.pending_timers:
-            self.pending_timers[chatLid].cancel()
-            print(f" {YELLOW} > Timer anterior cancelado para {chatLid} {RESET}")
+        # Debounce: cancela timer anterior do mesmo lead (com lock para evitar race condition)
+        with self._timer_lock:
+            if chatLid in self.pending_timers:
+                self.pending_timers[chatLid].cancel()
+                print(f" {YELLOW} > Timer anterior cancelado para {chatLid} {RESET}")
 
-        print(f" {YELLOW} > Delay proporcional: {delay:.1f}s ({total_chars} chars) para {chatLid} {RESET}")
-        timer = threading.Timer(delay, create_answer, args=(phone, chatLid, data))
-        self.pending_timers[chatLid] = timer
-        timer.start()
+            print(f" {YELLOW} > Delay proporcional: {delay:.1f}s ({total_chars} chars) para {chatLid} {RESET}")
+            timer = threading.Timer(delay, create_answer, args=(phone, chatLid, data))
+            self.pending_timers[chatLid] = timer
+            timer.start()
