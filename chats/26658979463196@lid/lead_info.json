@@ -1,0 +1,29 @@
+{
+  "nome": "Lucas Segatto",
+  "email": "lucassegattov@gmail.com",
+  "empresa": "null",
+  "segmento_mercado": "contábil e consultoria tributária",
+  "porte_empresa": "middle",
+  "faturamento_aproximado": "5M",
+  "tamanho_time": "3",
+  "sistemas_atuais": [
+    "ERP",
+    "sistemas de coleta de documentos",
+    "e-mail",
+    "WhatsApp"
+  ],
+  "desafios_identificados": [
+    "automação de processos manuais",
+    "comunicação com ERP",
+    "coleta de documentos"
+  ],
+  "produto_indicado": "Squad AI",
+  "motivo_segmentacao": "Lead mencionou a necessidade de automatizar processos manuais e o faturamento de 5M, indicada para o produto Squad AI.",
+  "estagio_conversa": "agendado",
+  "reuniao_agendada": true,
+  "necessita_followup": false,
+  "motivo_followup": "Reunião já agendada com o lead.",
+  "atualizado_em": "2026-04-15T16:36:42.019121",
+  "tentativas_retomada": 0,
+  "followups_agendados": []
+}

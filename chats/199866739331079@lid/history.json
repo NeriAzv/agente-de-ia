@@ -1,0 +1,1022 @@
+[
+  {
+    "timestamp": 1776088910.7443328,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511916563035",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EB290F59F67421C0AEF2E0261F7EA9D",
+      "messageId": "3EB0148AF85CBAA9703B8B",
+      "phone": "5519999987994",
+      "fromMe": false,
+      "momment": 1776088909000,
+      "status": "RECEIVED",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Paola Martins Acquasoft",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Olá! Gostaria de saber mais sobre a btime."
+      }
+    }
+  },
+  {
+    "timestamp": 1776088937.11494,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB01667F214F23AF50216",
+      "phone": "5519999987994",
+      "fromMe": true,
+      "momment": 1776088934000,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Olá! Com prazer."
+      }
+    }
+  },
+  {
+    "timestamp": 1776088944.2531762,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB06E5BF04885CDB46BB8",
+      "phone": "5519999987994",
+      "fromMe": true,
+      "momment": 1776088943001,
+      "status": "SENT",
+      "chatName": "5519999987994",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Trabalhamos com automação de processos, integração de sistemas e inteligência artificial para empresas que querem operar com mais eficiência e menos custo."
+      }
+    }
+  },
+  {
+    "timestamp": 1776088957.134901,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0B6E855A2D73A1D32A2",
+      "phone": "5519999987994",
+      "fromMe": true,
+      "momment": 1776088955002,
+      "status": "SENT",
+      "chatName": "5519999987994",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Pode me contar um pouco sobre a sua empresa e o segmento em que atua? Assim consigo te dar uma visão mais direcionada ao que faz sentido para o seu contexto."
+      }
+    }
+  },
+  {
+    "timestamp": 1776089027.7524421,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB03AB9E6A1451715B6C1",
+      "phone": "5519999987994",
+      "fromMe": false,
+      "momment": 1776089027000,
+      "status": "RECEIVED",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Paola Martins Acquasoft",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Meu nome é Paola e falo em nome da empresa Acquasoft, estamos no segmento de tratamento de água para hospitais e indústrias farmacêuticas, fornecemos desde produtos e equipamentos, até a parte de serviços preventivos, corretivos e consultorias na área"
+      }
+    }
+  },
+  {
+    "timestamp": 1776089062.6182263,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB02F4CD5ED8624179C75",
+      "phone": "5519999987994",
+      "fromMe": false,
+      "momment": 1776089061000,
+      "status": "RECEIVED",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Paola Martins Acquasoft",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "estamos em busca de uma ferramenta principalmente que atenda a parte de assistência técnica."
+      }
+    }
+  },
+  {
+    "timestamp": 1776089094.2954552,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB02B0EF8873A30804677",
+      "phone": "5519999987994",
+      "fromMe": true,
+      "momment": 1776089092000,
+      "status": "SENT",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Olá, Paola. Que bom ter você aqui."
+      }
+    }
+  },
+  {
+    "timestamp": 1776089107.8507202,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0F448FF55840DA0B7C9",
+      "phone": "5519999987994",
+      "fromMe": true,
+      "momment": 1776089105001,
+      "status": "SENT",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Tratamento de água para hospitais e farmacêuticas é um segmento que exige bastante rigor operacional, e a parte de assistência técnica costuma ser um ponto crítico: técnicos em campo, ordens de serviço, histórico de equipamentos, controle de visitas preventivas e corretivas..."
+      }
+    }
+  },
+  {
+    "timestamp": 1776089116.0770042,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB05D5FCFE62446CC5316",
+      "phone": "5519999987994",
+      "fromMe": true,
+      "momment": 1776089114000,
+      "status": "SENT",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "É nessa linha que vocês sentem mais dificuldade hoje? Processos manuais, falta de visibilidade do que acontece no campo, ou algo mais específico?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776089190.3755617,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB015DBCA4C2A6E24AB00",
+      "phone": "5519999987994",
+      "fromMe": false,
+      "momment": 1776089188000,
+      "status": "RECEIVED",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Paola Martins Acquasoft",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "sim, estamos com a maior dificuldade nesse processo, estamos sem visibilidade de tempo de serviço e de custos dos mesmos, além de um processo ainda muito manual"
+      }
+    }
+  },
+  {
+    "timestamp": 1776089223.7715714,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0D5EFF0831F86C9FE9F",
+      "phone": "5519999987994",
+      "fromMe": true,
+      "momment": 1776089223000,
+      "status": "SENT",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Entendido, Paola. Falta de visibilidade de tempo e custo por serviço, junto com um processo manual, é uma combinação que gera bastante retrabalho e dificulta qualquer tomada de decisão mais precisa."
+      }
+    }
+  },
+  {
+    "timestamp": 1776089232.954603,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0F04C13DE9AB86B7C23",
+      "phone": "5519999987994",
+      "fromMe": true,
+      "momment": 1776089232000,
+      "status": "SENT",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Só para eu entender melhor o tamanho da operação: quantos técnicos em campo vocês têm hoje, e qual o volume aproximado de ordens de serviço por mês?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776089858.0301828,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0EA7E5D31778335A701",
+      "phone": "5519999987994",
+      "fromMe": false,
+      "momment": 1776089853000,
+      "status": "RECEIVED",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Paola Martins Acquasoft",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "atualmente temos 14 técnicos e em torno de 100 a 150 ordens ao mês"
+      }
+    }
+  },
+  {
+    "timestamp": 1776089888.7319613,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB053AF23CE22E3CB742A",
+      "phone": "5519999987994",
+      "fromMe": true,
+      "momment": 1776089888001,
+      "status": "SENT",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Perfeito. Com 14 técnicos e até 150 ordens por mês, a falta de visibilidade em tempo real realmente começa a pesar, tanto na gestão do time quanto na hora de precificar os serviços corretamente."
+      }
+    }
+  },
+  {
+    "timestamp": 1776089893.438626,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0BE0119EC0CF1FEC90C",
+      "phone": "5519999987994",
+      "fromMe": true,
+      "momment": 1776089892001,
+      "status": "SENT",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Para eu te direcionar da forma certa, me conta: qual é o faturamento aproximado da Acquasoft hoje?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776089928.5994618,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0AC3A26BC9853287656",
+      "phone": "5519999987994",
+      "fromMe": false,
+      "momment": 1776089927000,
+      "status": "RECEIVED",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Paola Martins Acquasoft",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "R$14M ao ano"
+      }
+    }
+  },
+  {
+    "timestamp": 1776089962.3254895,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0CBE5B5EBF1A9B45D88",
+      "phone": "5519999987994",
+      "fromMe": true,
+      "momment": 1776089960002,
+      "status": "SENT",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Ótimo, Paola. Com esse porte e essa operação, consigo te indicar com clareza o que faz mais sentido para vocês."
+      }
+    }
+  },
+  {
+    "timestamp": 1776089976.7820625,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0BE7593F2D683D875CC",
+      "phone": "5519999987994",
+      "fromMe": true,
+      "momment": 1776089976000,
+      "status": "SENT",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Para o cenário que você descreveu, eu recomendaria dois produtos trabalhando juntos. O primeiro é o nosso Squad AI, que é um time dedicado de tecnologia que atua como extensão do time de vocês, mapeando todos os processos de assistência técnica e construindo as automações e integrações necessárias para dar visibilidade real de custo e tempo por serviço."
+      }
+    }
+  },
+  {
+    "timestamp": 1776089991.940788,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB088D47C8A0B3EC14C29",
+      "phone": "5519999987994",
+      "fromMe": true,
+      "momment": 1776089991000,
+      "status": "SENT",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "E junto a isso, o SaaS Btime, que é uma plataforma com app mobile para os técnicos em campo. Eles registram tudo pelo celular, funciona até offline, e você acompanha em tempo real pelo painel web: status de cada OS, tempo de execução, localização, checklists e muito mais."
+      }
+    }
+  },
+  {
+    "timestamp": 1776089999.6583986,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0B6587BDCC8068B6419",
+      "phone": "5519999987994",
+      "fromMe": true,
+      "momment": 1776089999000,
+      "status": "SENT",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Os dois se complementam muito bem no cenário de vocês. O Squad resolve a inteligência por trás do processo e o SaaS entrega a visibilidade imediata no campo."
+      }
+    }
+  },
+  {
+    "timestamp": 1776090001.6195505,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB022545AE26C16BB087C",
+      "phone": "5519999987994",
+      "fromMe": true,
+      "momment": 1776090000002,
+      "status": "SENT",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Faz sentido para o que vocês precisam?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776090183.851087,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB08CE3CC750B27CD4F0A",
+      "phone": "5519999987994",
+      "fromMe": false,
+      "momment": 1776090183000,
+      "status": "RECEIVED",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Paola Martins Acquasoft",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "faz sentindo sim, vocês conseguem nos fazer uma demonstração?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776090214.8980043,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "BFA8800E975CD0872C4A",
+      "phone": "5519999987994",
+      "fromMe": true,
+      "momment": 1776090212002,
+      "status": "SENT",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Com certeza, Paola. A demonstração acontece dentro da própria reunião de finalização com o time da Btime, onde vocês conseguem ver o produto na prática e já alinhar os próximos passos."
+      }
+    }
+  },
+  {
+    "timestamp": 1776090217.2393117,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0C99A036F3F8E4CB5DD",
+      "phone": "5519999987994",
+      "fromMe": true,
+      "momment": 1776090217000,
+      "status": "SENT",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Tenho disponibilidade ainda essa semana. Quinta-feira às 10h ou 11h funcionaria para você?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776090263.7897065,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB09BC3F64D526B702AB8",
+      "phone": "5519999987994",
+      "fromMe": false,
+      "momment": 1776090261000,
+      "status": "RECEIVED",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Paola Martins Acquasoft",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "como o coordenador da área técnica está de férias, você teria disponibilidade após o dia 07/05?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776090299.1656458,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0CD10284F14415622B8",
+      "phone": "5519999987994",
+      "fromMe": true,
+      "momment": 1776090299004,
+      "status": "SENT",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Após o dia 07/05, tenho disponibilidade às 10h, 10h30 e 11h. Qual desses horários funcionaria melhor para vocês?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776090316.3183541,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB070C6B60CBF79F3C5B5",
+      "phone": "5519999987994",
+      "fromMe": false,
+      "momment": 1776090315000,
+      "status": "RECEIVED",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Paola Martins Acquasoft",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "marca no dia 07/05 as 11hrs por favor"
+      }
+    }
+  },
+  {
+    "timestamp": 1776090363.3871171,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB080492F991558B6E986",
+      "phone": "5519999987994",
+      "fromMe": true,
+      "momment": 1776090342000,
+      "status": "SENT",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Perfeito! Só preciso do seu nome completo e e-mail para confirmar o agendamento."
+      }
+    }
+  },
+  {
+    "timestamp": 1776090370.6102242,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB078049D9D0CAA2FEE9E",
+      "phone": "5519999987994",
+      "fromMe": false,
+      "momment": 1776090368000,
+      "status": "RECEIVED",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Paola Martins Acquasoft",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Paola Martins, e-mail paola.martins@acquas.com.br"
+      }
+    }
+  },
+  {
+    "timestamp": 1776090406.6211078,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0EC773A451B883193BB",
+      "phone": "5519999987994",
+      "fromMe": true,
+      "momment": 1776090406000,
+      "status": "SENT",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Está agendado, Paola. A reunião será no dia 07/05/2026 às 11h. O convite foi enviado para o seu e-mail e você pode acessar a reunião pelo link: https://meet.google.com/ifi-znfw-hvk."
+      }
+    }
+  },
+  {
+    "timestamp": 1776090410.3177068,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB079911361CE3D286732",
+      "phone": "5519999987994",
+      "fromMe": true,
+      "momment": 1776090408002,
+      "status": "SENT",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Fico à disposição para qualquer dúvida até lá."
+      }
+    }
+  },
+  {
+    "timestamp": 1776090854.4743347,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB08D945C65D87535C738",
+      "phone": "5519999987994",
+      "fromMe": false,
+      "momment": 1776090850000,
+      "status": "RECEIVED",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Paola Martins Acquasoft",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Obrigada"
+      }
+    }
+  },
+  {
+    "timestamp": 1776090903.8757963,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB075FC31B4DF36C1B190",
+      "phone": "5519999987994",
+      "fromMe": true,
+      "momment": 1776090901000,
+      "status": "SENT",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Está agendado, Paola. A reunião será no dia 07/05/2026 às 11h. O convite foi enviado para o seu e-mail e você pode acessar a reunião pelo link: https://meet.google.com/oic-zuvp-rhp. Fico à disposição para qualquer dúvida até lá."
+      }
+    }
+  },
+  {
+    "timestamp": 1776091256.1472735,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "199866739331079@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0CE28B9CC8808DF1C81",
+      "phone": "5519999987994",
+      "fromMe": false,
+      "momment": 1776091254000,
+      "status": "RECEIVED",
+      "chatName": "Paola Martins Acquasoft",
+      "senderPhoto": null,
+      "senderName": "Paola Martins Acquasoft",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870547_1924168631683382_2386123815556659828_n.jpg?ccb=11-4&oh=01_Q5Aa4QGUouUlJ_tbUdsZ6hKLSWgjZ5e4ejSKIQUodg_TykAWjw&oe=69E9FB30&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "obrigada"
+      }
+    }
+  }
+]

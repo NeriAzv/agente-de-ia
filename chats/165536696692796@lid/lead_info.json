@@ -1,0 +1,23 @@
+{
+  "nome": "Bruno",
+  "email": null,
+  "empresa": null,
+  "segmento_mercado": null,
+  "porte_empresa": null,
+  "faturamento_aproximado": null,
+  "tamanho_time": null,
+  "sistemas_atuais": [],
+  "desafios_identificados": [
+    "Demora na resposta de atendimentos",
+    "Desafios operacionais"
+  ],
+  "produto_indicado": null,
+  "motivo_segmentacao": "Não foram apresentadas informações concretas sobre o ambiente ou desafios específicos que permitam segmentação clara.",
+  "estagio_conversa": "qualificando",
+  "reuniao_agendada": false,
+  "necessita_followup": false,
+  "motivo_followup": "Follow-ups removidos manualmente.",
+  "atualizado_em": "2026-04-13T11:16:23.439409",
+  "phone": "5511940228260",
+  "followups_agendados": []
+}

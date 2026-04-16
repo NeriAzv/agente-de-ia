@@ -1,0 +1,40 @@
+{
+  "nome": "guilherme neri",
+  "email": "gui.neriaz@gmail.com",
+  "empresa": "null",
+  "segmento_mercado": "jurisprudência",
+  "porte_empresa": "middle",
+  "faturamento_aproximado": "R$20M",
+  "tamanho_time": "500",
+  "sistemas_atuais": [
+    "API",
+    "Supabase",
+    "planilhas"
+  ],
+  "desafios_identificados": [
+    "automação de processos manuais",
+    "integração entre sistemas",
+    "controle operacional"
+  ],
+  "produto_indicado": "Squad AI",
+  "motivo_segmentacao": "Lead mencionou que tem uma equipe que realiza muitas tarefas manuais e quer automatizar tudo, além de ter 500 pessoas e faturar R$20M, o que indica uma operação que precisa de integração e automação.",
+  "estagio_conversa": "qualificando",
+  "reuniao_agendada": false,
+  "necessita_followup": true,
+  "motivo_followup": "Lead cancelou as reuniões e parece disposto a retomar a conversa sobre a marcação, mas não houve fechamento claro.",
+  "atualizado_em": "2026-04-15T16:28:17.433447",
+  "phone": "5511979611556",
+  "tentativas_retomada": 0,
+  "followups_agendados": [
+    {
+      "tipo": "24h",
+      "horario_iso": "2026-04-16T16:28:17.892352",
+      "phone": "5511979611556"
+    },
+    {
+      "tipo": "15d",
+      "horario_iso": "2026-04-30T16:28:17.892352",
+      "phone": "5511979611556"
+    }
+  ]
+}

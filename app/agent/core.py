@@ -16,7 +16,7 @@ from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 
 from colors import GREEN, RED, YELLOW, BLUE, RESET
-from agent.calendar import criar_evento_google_meet, deletar_evento_google_calendar, verificar_conflito_google_calendar, buscar_horarios_livres
+from agent.calendar import criar_evento_google_meet, deletar_evento_google_calendar, verificar_conflito_google_calendar, buscar_horarios_livres, get_organizer_for_product, MASTER_EMAIL
 from agent.normalizers import normalizar_data, normalizar_horario
 from agent.context import (
     get_contexto,
@@ -29,6 +29,32 @@ from agent.context import (
 )
 from agent.ana_agent import run_ana_agent
 from agent.micro_agents import run_micro_agents, _to_langchain_messages
+
+
+def _proximo_horario_util(dt: datetime) -> datetime:
+    """Retorna o próximo datetime dentro do horário útil (9-12, 13-19, seg-sex).
+    Se dt já estiver dentro do horário útil, retorna dt inalterado."""
+    candidate = dt.replace(second=0, microsecond=0)
+    for _ in range(10):  # máximo de iterações para evitar loop infinito
+        # Fim de semana → avança para segunda-feira
+        if candidate.weekday() >= 5:
+            dias = 7 - candidate.weekday()
+            candidate = datetime(candidate.year, candidate.month, candidate.day, 9, 0) + timedelta(days=dias)
+            continue
+        hora = candidate.hour + candidate.minute / 60
+        if 9 <= hora < 12:
+            break
+        if 12 <= hora < 13:
+            candidate = candidate.replace(hour=13, minute=0)
+            break
+        if 13 <= hora < 19:
+            break
+        if hora < 9:
+            candidate = candidate.replace(hour=9, minute=0)
+            break
+        # Após 19h → próximo dia útil às 9h
+        candidate = datetime(candidate.year, candidate.month, candidate.day, 9, 0) + timedelta(days=1)
+    return candidate
 
 
 class Agent_AI:
@@ -48,6 +74,7 @@ class Agent_AI:
         self.interrupted_chats: set[str] = set()
         self._interrupt_cite_ids: dict[str, str] = {}
         self._timer_lock = threading.Lock()
+        self.phone_to_lid: dict[str, str] = {}
 
         self._restaurar_followups()
 
@@ -57,6 +84,20 @@ class Agent_AI:
 
     def _followup_callback(self, phone: str, chatLid: str, tipo: str):
         """Envia mensagem de follow-up (1h ou 24h) e limpa do arquivo."""
+        # Garante envio apenas dentro do horário útil (9-12, 13-19, seg-sex)
+        agora = datetime.now()
+        proximo = _proximo_horario_util(agora)
+        if proximo > agora:
+            delay = (proximo - agora).total_seconds()
+            print(f"{YELLOW}Follow-up {tipo} para {chatLid} fora do horário útil — reagendando para {proximo.strftime('%d/%m %H:%M')} ({int(delay)}s){RESET}")
+            t = threading.Timer(delay, self._followup_callback, args=(phone, chatLid, tipo))
+            if chatLid in self.followup_timers:
+                self.followup_timers[chatLid].append(t)
+            else:
+                self.followup_timers[chatLid] = [t]
+            t.start()
+            return
+
         try:
             headers = {"client-token": self.zapi_sec_token}
             llm = ChatOpenAI(model="gpt-4o-mini", api_key=os.environ.get("OPENAI_API_KEY"))
@@ -177,10 +218,11 @@ class Agent_AI:
     # Início de conversa outbound (lead sem histórico)
     # ------------------------------------------------------------------
 
-    def iniciar_conversa(self, phone: str, chatLid: str) -> bool:
+    def iniciar_conversa(self, phone: str, chatLid: str, mensagem_personalizada: str = "") -> bool:
         """
         Verifica se o lead não tem histórico ainda e, se for o caso,
         gera e envia a mensagem de abertura (lead frio).
+        Se mensagem_personalizada for fornecida, envia ela diretamente sem gerar via IA.
         Retorna True se a mensagem foi enviada, False caso contrário.
         """
 
@@ -206,31 +248,60 @@ class Agent_AI:
 
         try:
             headers = {"client-token": self.zapi_sec_token}
-            llm     = ChatOpenAI(model="gpt-4o-mini", api_key=os.environ.get("OPENAI_API_KEY"))
 
-            # Tenta carregar dados do lead já conhecidos (se houver lead_info sem histórico)
-            contexto_lead = ""
-            lead_info_path = os.path.join(lead_dir, "lead_info.json")
-            if os.path.exists(lead_info_path):
-                with open(lead_info_path, "r", encoding="utf-8") as f:
-                    info = json.load(f)
-                campos_uteis = {k: v for k, v in info.items() if v and k in ("nome", "empresa", "segmento_mercado")}
-                if campos_uteis:
-                    contexto_lead = "Dados conhecidos do lead: " + ", ".join(f"{k}: {v}" for k, v in campos_uteis.items()) + "."
+            if mensagem_personalizada:
+                mensagem = mensagem_personalizada.strip()
+            else:
+                llm = ChatOpenAI(model="gpt-4o-mini", api_key=os.environ.get("OPENAI_API_KEY"))
 
-            instrucao = get_instrucao_abertura(contexto_lead)
+                # Tenta carregar dados do lead já conhecidos (se houver lead_info sem histórico)
+                contexto_lead = ""
+                lead_info_path = os.path.join(lead_dir, "lead_info.json")
+                if os.path.exists(lead_info_path):
+                    with open(lead_info_path, "r", encoding="utf-8") as f:
+                        info = json.load(f)
+                    campos_uteis = {k: v for k, v in info.items() if v and k in ("nome", "empresa", "segmento_mercado")}
+                    if campos_uteis:
+                        contexto_lead = "Dados conhecidos do lead: " + ", ".join(f"{k}: {v}" for k, v in campos_uteis.items()) + "."
+                    descricao_manual = info.get("descricao_manual", "")
+                    if descricao_manual:
+                        contexto_lead += f" Contexto adicional: {descricao_manual}"
 
-            resposta = llm.invoke([
-                SystemMessage(content=get_contexto()),
-                SystemMessage(content=instrucao),
-            ])
+                instrucao = get_instrucao_abertura(contexto_lead)
 
-            mensagem = resposta.content.strip()
+                resposta = llm.invoke([
+                    SystemMessage(content=get_contexto()),
+                    SystemMessage(content=instrucao),
+                ])
+
+                mensagem = resposta.content.strip()
 
             # Envia a mensagem
             url = f"{self.base_url}/send-text"
             requests.post(url, json={"phone": phone, "message": mensagem}, headers=headers)
             print(f"{GREEN}[iniciar_conversa] Mensagem de abertura enviada para {chatLid}{RESET}")
+
+            # Salva no histórico
+            history_path = os.path.join(lead_dir, "history.json")
+            historico = []
+            if os.path.exists(history_path):
+                try:
+                    with open(history_path, "r", encoding="utf-8") as f:
+                        historico = json.load(f)
+                except Exception:
+                    historico = []
+            historico.append({
+                "timestamp": time.time(),
+                "data": {
+                    "fromMe": True,
+                    "phone": phone,
+                    "chatLid": chatLid,
+                    "text": {"message": mensagem},
+                    "type": "abertura",
+                }
+            })
+            with open(history_path, "w", encoding="utf-8") as f:
+                json.dump(historico, f, indent=2, ensure_ascii=False)
 
             # Agenda follow-ups de inatividade
             self.agendar_followups(phone, chatLid)
@@ -240,6 +311,106 @@ class Agent_AI:
         except Exception as e:
             print(f"{RED}[iniciar_conversa] Erro ao enviar mensagem de abertura para {chatLid}: {e}{RESET}")
             return False
+
+    def migrar_lead_se_necessario(self, phone: str, chatLid: str):
+        """
+        Quando a Z-API retorna o LID real na primeira resposta do lead,
+        verifica se existe uma pasta temporária criada com o telefone
+        (ex: 11979611556@lid) e migra tudo para a pasta do LID real.
+        """
+        import shutil
+
+        # Candidatos: com e sem DDI 55
+        candidatos = [f"{phone}@lid"]
+        if phone.startswith("55") and len(phone) > 2:
+            candidatos.append(f"{phone[2:]}@lid")
+
+        for lid_temp in candidatos:
+            if lid_temp == chatLid:
+                continue
+            lead_dir_temp = os.path.join("chats", lid_temp)
+            if not os.path.exists(lead_dir_temp):
+                continue
+
+            print(f"{YELLOW}[migrar_lead] Pasta temporária encontrada: {lid_temp} → {chatLid}{RESET}")
+
+            lead_dir_real = os.path.join("chats", chatLid)
+            os.makedirs(lead_dir_real, exist_ok=True)
+
+            # --- Merge lead_info.json ---
+            lead_info_temp_path = os.path.join(lead_dir_temp, "lead_info.json")
+            lead_info_real_path = os.path.join(lead_dir_real, "lead_info.json")
+
+            info_temp = {}
+            info_real = {}
+
+            if os.path.exists(lead_info_temp_path):
+                with open(lead_info_temp_path, "r", encoding="utf-8") as f:
+                    info_temp = json.load(f)
+
+            if os.path.exists(lead_info_real_path):
+                with open(lead_info_real_path, "r", encoding="utf-8") as f:
+                    info_real = json.load(f)
+
+            followups_temp = info_temp.pop("followups_agendados", [])
+            info_merged = {**info_real, **info_temp}
+            info_merged["phone"] = phone
+
+            # --- Cancelar timers antigos e reagendar com chatLid real ---
+            self.cancelar_followups(lid_temp)
+
+            if followups_temp and info_merged.get("necessita_followup") is not False:
+                agora = datetime.now()
+                timers = []
+                novos_agendados = []
+                for item in followups_temp:
+                    tipo = item.get("tipo")
+                    ph   = item.get("phone", phone)
+                    alvo = datetime.fromisoformat(item["horario_iso"])
+                    segundos = (alvo - agora).total_seconds()
+                    if segundos <= 0:
+                        segundos = 5.0
+                    t = threading.Timer(segundos, self._followup_callback, args=(ph, chatLid, tipo))
+                    timers.append(t)
+                    novos_agendados.append({"tipo": tipo, "horario_iso": item["horario_iso"], "phone": ph})
+                    t.start()
+                if timers:
+                    self.followup_timers[chatLid] = timers
+                    info_merged["followups_agendados"] = novos_agendados
+                    print(f"{GREEN}[migrar_lead] Follow-ups remapeados para {chatLid}{RESET}")
+
+            with open(lead_info_real_path, "w", encoding="utf-8") as f:
+                json.dump(info_merged, f, indent=2, ensure_ascii=False)
+
+            # --- Merge history.json (histórico antigo na frente) ---
+            history_temp_path = os.path.join(lead_dir_temp, "history.json")
+            history_real_path = os.path.join(lead_dir_real, "history.json")
+
+            hist_temp = []
+            hist_real = []
+
+            if os.path.exists(history_temp_path):
+                try:
+                    with open(history_temp_path, "r", encoding="utf-8") as f:
+                        hist_temp = json.load(f)
+                except Exception:
+                    pass
+
+            if os.path.exists(history_real_path):
+                try:
+                    with open(history_real_path, "r", encoding="utf-8") as f:
+                        hist_real = json.load(f)
+                except Exception:
+                    pass
+
+            with open(history_real_path, "w", encoding="utf-8") as f:
+                json.dump(hist_temp + hist_real, f, indent=2, ensure_ascii=False)
+
+            # --- Mapear em memória e deletar pasta temporária ---
+            self.phone_to_lid[phone] = chatLid
+            shutil.rmtree(lead_dir_temp)
+            print(f"{GREEN}[migrar_lead] Migração concluída: {lid_temp} → {chatLid}{RESET}")
+            break
 
     def _restaurar_followups(self):
         """Na inicialização, restaura timers de follow-up pendentes salvos em arquivo."""
@@ -277,6 +448,11 @@ class Agent_AI:
                     t.start()
                 if timers:
                     self.followup_timers[chatLid] = timers
+
+                # Popula mapeamento phone → lid real
+                ph = info.get("phone")
+                if ph:
+                    self.phone_to_lid[ph] = chatLid
             except Exception as e:
                 print(f"{RED}Erro ao restaurar follow-up para {chatLid}: {e}{RESET}")
 
@@ -1019,7 +1195,14 @@ class Agent_AI:
                         )
                         return True
 
-                    livres = buscar_horarios_livres(data_reuniao)
+                    _lead_info_path = os.path.join("chats", chatLid, "lead_info.json")
+                    _produto = None
+                    if os.path.exists(_lead_info_path):
+                        with open(_lead_info_path, "r", encoding="utf-8") as _f:
+                            _produto = json.load(_f).get("produto_indicado")
+                    _calendar_id = get_organizer_for_product(_produto)
+
+                    livres = buscar_horarios_livres(data_reuniao, calendar_id=_calendar_id)
                     data_fmt = data_reuniao.strftime("%d/%m")
 
                     if livres:
@@ -1080,6 +1263,7 @@ class Agent_AI:
 
                     # Guard: só agenda se o lead já foi qualificado (produto_indicado definido)
                     produto_indicado = lead_info.get("produto_indicado") or None
+                    organizer_email  = get_organizer_for_product(produto_indicado)
                     if not produto_indicado:
                         print(f"{YELLOW}[verificar_reuniao] Lead ainda não qualificado (produto_indicado=null). Bloqueando agendamento.{RESET}")
                         gerar_e_enviar(
@@ -1111,7 +1295,7 @@ class Agent_AI:
                         )
                         return True
 
-                    # Valida dia útil (seg–sex) e horário comercial (10h–17h)
+                    # Valida dia útil (seg–sex) e horário comercial (9h–12h ou 13h–19h)
                     if alvo.weekday() >= 5:  # 5=sábado, 6=domingo
                         print(f"{RED}Reunião em fim de semana: {alvo}{RESET}")
                         gerar_e_enviar(
@@ -1123,11 +1307,13 @@ class Agent_AI:
                         return True
 
                     hora = alvo.hour + alvo.minute / 60
-                    if hora < 10 or hora >= 17:
+                    em_manha = 9 <= hora < 12
+                    em_tarde = 13 <= hora < 19
+                    if not (em_manha or em_tarde):
                         print(f"{RED}Horário fora do comercial: {alvo.strftime('%H:%M')}{RESET}")
                         gerar_e_enviar(
-                            f"O lead sugeriu {alvo.strftime('%H:%M')} que está fora do horário disponível (10h às 17h). "
-                            "Explique de forma natural e sugira um horário dentro da janela, entre 10h e 17h.",
+                            f"O lead sugeriu {alvo.strftime('%H:%M')} que está fora do horário disponível (9h às 12h ou 13h às 19h). "
+                            "Explique de forma natural e sugira um horário dentro das janelas disponíveis, entre 9h e 12h ou 13h e 19h.",
                             mensagens_contexto, headers
                         )
                         return True
@@ -1146,14 +1332,16 @@ class Agent_AI:
                             event_id_antigo = r.get("event_id")
                             if event_id_antigo:
                                 print(f"{YELLOW}Removendo evento anterior: {event_id_antigo}{RESET}")
-                                deletar_evento_google_calendar(event_id_antigo)
+                                deletar_evento_google_calendar(event_id_antigo, calendar_id=MASTER_EMAIL)
                             else:
                                 print(f"{YELLOW}Reunião anterior sem event_id, não foi possível remover do Calendar.{RESET}")
                         else:
                             reunioes_filtradas.append(r)
 
-                    if verificar_conflito_google_calendar(data_reuniao, horario_reuniao):
-                        livres_no_dia = buscar_horarios_livres(data_reuniao)
+                    if verificar_conflito_google_calendar(data_reuniao, horario_reuniao, calendar_id=organizer_email):
+                        livres_no_dia = buscar_horarios_livres(data_reuniao, calendar_id=organizer_email)
+                        # Remove o horário conflitante da lista de sugestões
+                        livres_no_dia = [h for h in livres_no_dia if h != horario_reuniao]
                         if livres_no_dia:
                             opcoes = ", ".join(livres_no_dia[:3])
                             instrucao_conflito = (
@@ -1168,7 +1356,7 @@ class Agent_AI:
                         gerar_e_enviar(instrucao_conflito, mensagens_contexto, headers)
                         return True
 
-                    meet_link, event_id = criar_evento_google_meet(data_reuniao, horario_reuniao, email_lead=email_lead, nome_lead=nome_lead)
+                    meet_link, event_id = criar_evento_google_meet(data_reuniao, horario_reuniao, email_lead=email_lead, nome_lead=nome_lead, rd_email=organizer_email)
 
                     reunioes_filtradas.append({
                         "phone": phone,
@@ -1327,8 +1515,12 @@ class Agent_AI:
                         info_anterior = json.load(f)
                     # Campos que sempre devem refletir o estado mais recente da conversa
                     _sempre_atualizar = {"necessita_followup", "motivo_followup", "estagio_conversa", "atualizado_em"}
+                    _nunca_sobrescrever = {"tentativas_retomada"}
                     for key, val in info_anterior.items():
                         if key in _sempre_atualizar:
+                            continue
+                        if key in _nunca_sobrescrever:
+                            info[key] = val  # sempre preserva o valor gerenciado pelo sistema
                             continue
                         if info.get(key) in (None, [], "") and val not in (None, [], ""):
                             # novo valor é vazio → mantém o anterior para não perder info
@@ -1420,10 +1612,17 @@ class Agent_AI:
                     print(f" {BLUE} > Processo de resposta iniciado.\nChatLid: {chatLid} {RESET}")
 
                     file = os.path.join("chats", chatLid, "history.json")
+                    historico = None
                     if os.path.exists(file):
-                        with open(file, "r", encoding="utf-8") as f:
-                            historico = json.load(f)
-                    else:
+                        for _tentativa in range(3):
+                            try:
+                                with open(file, "r", encoding="utf-8") as f:
+                                    historico = json.load(f)
+                                break
+                            except (json.JSONDecodeError, ValueError, OSError):
+                                # Arquivo pode estar sendo escrito concorrentemente; aguarda e tenta de novo
+                                time.sleep(0.3)
+                    if historico is None:
                         historico = [{"data": data, "timestamp": data.get("momment", 0)}]
 
                     # Separa documentos (sempre incluídos) do restante (limitado por history_limit)
@@ -1450,14 +1649,48 @@ class Agent_AI:
                             linhas = ", ".join(f"{k}: {v}" for k, v in conhecidos.items())
                             contexto += f"\n\nDados já conhecidos deste lead (não peça novamente): {linhas}."
 
+                    # Injeta aviso se já existe reunião agendada para este lead
+                    try:
+                        arquivo_reunioes = "reunioes.json"
+                        if os.path.exists(arquivo_reunioes):
+                            with open(arquivo_reunioes, "r", encoding="utf-8") as f:
+                                reunioes_existentes = json.load(f)
+                            reuniao_lead = next(
+                                (r for r in reunioes_existentes if r.get("chatLid") == chatLid),
+                                None
+                            )
+                            if reuniao_lead:
+                                dt_reuniao = reuniao_lead.get("datetime", "")
+                                alvo_reuniao = datetime.fromisoformat(dt_reuniao) if dt_reuniao else None
+                                if alvo_reuniao and alvo_reuniao > datetime.now():
+                                    dt_fmt = alvo_reuniao.strftime("%d/%m/%Y às %H:%M")
+                                    meet_link_exist = reuniao_lead.get("meet_link", "")
+                                    contexto += (
+                                        f"\n\nATENÇÃO — REUNIÃO JÁ AGENDADA: A demo com este lead está marcada para {dt_fmt}."
+                                        f"{' Link: ' + meet_link_exist if meet_link_exist else ''} "
+                                        f"NÃO gere um novo JSON de agendamento. "
+                                        f"REGRAS OBRIGATÓRIAS para este estado pós-agendamento:\n"
+                                        f"- Se o lead enviar mensagem de encerramento (ex: 'Obrigada', 'Ok', 'Até lá'), responda com despedida curta e profissional.\n"
+                                        f"- Se o lead enviar emojis, figurinhas ou mensagens sem texto claro, responda de forma breve e natural, como em uma conversa casual. NUNCA pergunte se quer remarcar nesses casos.\n"
+                                        f"- Se o lead enviar mensagem confusa ou fora de contexto, peça esclarecimento de forma natural e direta. NÃO assuma que ele quer remarcar.\n"
+                                        f"- Só mencione reagendamento ou cancelamento se o lead EXPLICITAMENTE pedir isso.\n"
+                                        f"- NUNCA inicie resposta com 'Claro.' seguido de pergunta sobre remarcar. Isso soa robótico e confunde o lead.\n"
+                                        f"- Não repita as informações da reunião a menos que o lead pergunte."
+                                    )
+                                    print(f"{GREEN}[create_answer] Reunião já agendada para {chatLid} em {dt_fmt}, injetando aviso no contexto.{RESET}")
+                    except Exception as e:
+                        print(f"{RED}[create_answer] Erro ao verificar reunião existente: {e}{RESET}")
+
                     # Injeta horários livres dos próximos 3 dias úteis no contexto
                     try:
                         from datetime import date
+                        _produto_ctx = lead_info_atual.get("produto_indicado") if os.path.exists(lead_info_path) else None
+                        _calendar_ctx = get_organizer_for_product(_produto_ctx)
                         horarios_por_dia = {}
                         dia = datetime.now().date() + timedelta(days=1)
                         while len(horarios_por_dia) < 3:
                             if dia.weekday() < 5:  # seg–sex
-                                livres = buscar_horarios_livres(dia)
+                                livres = buscar_horarios_livres(dia, calendar_id=_calendar_ctx)
                                 if livres:
                                     horarios_por_dia[dia.strftime("%d/%m/%Y (%A)")] = livres
                             dia += timedelta(days=1)
@@ -1492,6 +1725,43 @@ class Agent_AI:
                     print(f"{BLUE}[micro_agents] Iniciando análise paralela para {chatLid}{RESET}")
                     micro_context = run_micro_agents(lead_message_atual, history_for_agent)
                     print(f"{BLUE}[micro_agents] Concluído: {micro_context}{RESET}")
+
+                    # --- Tentativas de retomada de lead desinteressado ---
+                    _intent_atual = micro_context.get("intent", {}).get("intent", "")
+                    _sinais_positivos = {"buy_signal", "interest", "scheduling_request"}
+                    _li_path = os.path.join("chats", chatLid, "lead_info.json")
+                    _li_data = {}
+                    if os.path.exists(_li_path):
+                        with open(_li_path, "r", encoding="utf-8") as _f:
+                            _li_data = json.load(_f)
+
+                    if _intent_atual in _sinais_positivos:
+                        if _li_data.get("tentativas_retomada", 0) > 0:
+                            print(f"{GREEN}[retomada] Lead re-engajou. Resetando tentativas_retomada para 0.{RESET}")
+                        _li_data["tentativas_retomada"] = 0
+                    elif _intent_atual == "objection":
+                        _li_data["tentativas_retomada"] = _li_data.get("tentativas_retomada", 0) + 1
+                        print(f"{YELLOW}[retomada] Lead desinteressado. Tentativa {_li_data['tentativas_retomada']}/4.{RESET}")
+
+                    os.makedirs(os.path.join("chats", chatLid), exist_ok=True)
+                    with open(_li_path, "w", encoding="utf-8") as _f:
+                        json.dump(_li_data, _f, indent=2, ensure_ascii=False)
+
+                    _tentativas_retomada = _li_data.get("tentativas_retomada", 0)
+                    if _tentativas_retomada > 0:
+                        if _tentativas_retomada >= 4:
+                            contexto += (
+                                f"\n\nEste lead demonstrou desinteresse e você já tentou retomá-lo "
+                                f"{_tentativas_retomada} vezes. Esta é a última tentativa permitida. "
+                                f"Se não houver abertura genuína, encerre a conversa com elegância e respeito."
+                            )
+                        else:
+                            contexto += (
+                                f"\n\nEste lead demonstrou desinteresse. "
+                                f"Tentativas de retomada realizadas: {_tentativas_retomada} de 4. "
+                                f"Continue tentando reverter o desinteresse antes de desistir."
+                            )
+                    # ----------------------------------------------------
 
                     history_lc = _to_langchain_messages(history_for_agent)
                     ana_response = run_ana_agent(

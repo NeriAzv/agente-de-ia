@@ -1,0 +1,24 @@
+{
+  "nome": "Paola Martins",
+  "email": "paola.martins@acquas.com.br",
+  "empresa": "Acquasoft",
+  "segmento_mercado": "tratamento de água para hospitais e indústrias farmacêuticas",
+  "porte_empresa": "middle",
+  "faturamento_aproximado": "R$14M ao ano",
+  "tamanho_time": 14,
+  "sistemas_atuais": [],
+  "desafios_identificados": [
+    "falta de visibilidade de tempo de serviço",
+    "falta de visibilidade de custos",
+    "processo manual"
+  ],
+  "produto_indicado": "Ambos",
+  "motivo_segmentacao": "Lead mencionou processos manuais e falta de visibilidade, o que indica necessidade de SaaS, mas também relatou dificuldade com a operação, o que sugere Squad AI.",
+  "estagio_conversa": "agendado",
+  "reuniao_agendada": true,
+  "necessita_followup": false,
+  "motivo_followup": "Reunião já foi agendada com sucesso.",
+  "atualizado_em": "2026-04-13T11:34:41.966957",
+  "followups_agendados": [],
+  "ai_blocked": true
+}

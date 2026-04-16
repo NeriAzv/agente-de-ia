@@ -1,0 +1,572 @@
+[
+  {
+    "timestamp": 1776189580.8038692,
+    "data": {
+      "fromMe": true,
+      "phone": "5511971452121",
+      "chatLid": "5511971452121@lid",
+      "text": {
+        "message": "Oi Beatriz, sou a Ana da Btime. Estamos ajudando empresas a reduzir custos operacionais com automação e tecnologia. Quais desafios você tem enfrentado no seu negócio atualmente?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1776189589.479853,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "74393749315823@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0B9DF5D6559AB674BA5",
+      "phone": "5511971452121",
+      "fromMe": true,
+      "momment": 1776178786000,
+      "status": "SENT",
+      "chatName": "Beatriz - Btime",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/594541681_2334139530390933_1447294183732885258_n.jpg?ccb=11-4&oh=01_Q5Aa4QEBPN0ia3a5VW9sVFrp12uliDMIVs9Gt7gGJeXQgSeohg&oe=69EB5F48&_nc_sid=5e03e0&_nc_cat=105",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Oi Beatriz, sou a Ana da Btime. Estamos ajudando empresas a reduzir custos operacionais com automação e tecnologia. Quais desafios você tem enfrentado no seu negócio atualmente?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776193185.9763596,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "74393749315823@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0E97A4E2407BADD3BD6",
+      "phone": "5511971452121",
+      "fromMe": true,
+      "momment": 1776182384000,
+      "status": "SENT",
+      "chatName": "Beatriz - Btime",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/594541681_2334139530390933_1447294183732885258_n.jpg?ccb=11-4&oh=01_Q5Aa4QEBPN0ia3a5VW9sVFrp12uliDMIVs9Gt7gGJeXQgSeohg&oe=69EB5F48&_nc_sid=5e03e0&_nc_cat=105",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Oi Beatriz, só passando para saber se você teve a chance de pensar sobre os desafios no seu negócio. Estou aqui para ajudar."
+      }
+    }
+  },
+  {
+    "timestamp": 1776202514.757253,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "74393749315823@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "AC46E0390C39D4B6B540FF2EFCCDB321",
+      "phone": "74393749315823@lid",
+      "fromMe": true,
+      "momment": 1776191712000,
+      "status": "RECEIVED",
+      "chatName": "Beatriz - Btime",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/594541681_2334139530390933_1447294183732885258_n.jpg?ccb=11-4&oh=01_Q5Aa4QFXf0BOtlWxlpHaVFyrc8PURh1HMsuSZpkPyRGcBD3ccg&oe=69EB9788&_nc_sid=5e03e0&_nc_cat=105",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "sticker": {
+        "stickerUrl": "https://f004.backblazeb2.com/file/temp-file-download/instances/3EFABF270A13919DE95AD6F4B026E35E/AC46E0390C39D4B6B540FF2EFCCDB321/7KYEQQpaOSDgVSlxSzmr2A==.webp",
+        "mimeType": "image/webp",
+        "width": 512,
+        "height": 512
+      }
+    }
+  },
+  {
+    "timestamp": 1776202597.485447,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "74393749315823@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB08FC90BCE2D6D5632F8",
+      "phone": "5511971452121",
+      "fromMe": false,
+      "momment": 1776191795000,
+      "status": "RECEIVED",
+      "chatName": "Beatriz - Btime",
+      "senderPhoto": null,
+      "senderName": "Beatriz",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/594541681_2334139530390933_1447294183732885258_n.jpg?ccb=11-4&oh=01_Q5Aa4QFXf0BOtlWxlpHaVFyrc8PURh1HMsuSZpkPyRGcBD3ccg&oe=69EB9788&_nc_sid=5e03e0&_nc_cat=105",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Oi"
+      }
+    }
+  },
+  {
+    "timestamp": 1776202620.8519688,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "74393749315823@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "AC847263606D42678D9F",
+      "phone": "5511971452121",
+      "fromMe": true,
+      "momment": 1776191820000,
+      "status": "SENT",
+      "chatName": "Beatriz - Btime",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/594541681_2334139530390933_1447294183732885258_n.jpg?ccb=11-4&oh=01_Q5Aa4QFXf0BOtlWxlpHaVFyrc8PURh1HMsuSZpkPyRGcBD3ccg&oe=69EB9788&_nc_sid=5e03e0&_nc_cat=105",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Oi Beatriz! Qual o maior gargalo operacional que você enfrenta hoje?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776202784.725665,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "74393749315823@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0AFCBCF141CA677AFB7",
+      "phone": "5511971452121",
+      "fromMe": false,
+      "momment": 1776191983000,
+      "status": "RECEIVED",
+      "chatName": "Beatriz - Btime",
+      "senderPhoto": null,
+      "senderName": "Beatriz",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/594541681_2334139530390933_1447294183732885258_n.jpg?ccb=11-4&oh=01_Q5Aa4QFXf0BOtlWxlpHaVFyrc8PURh1HMsuSZpkPyRGcBD3ccg&oe=69EB9788&_nc_sid=5e03e0&_nc_cat=105",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "nao sei identificsr"
+      }
+    }
+  },
+  {
+    "timestamp": 1776202812.2707112,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "74393749315823@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB006FDEDC384A26ECA9C",
+      "phone": "5511971452121",
+      "fromMe": true,
+      "momment": 1776192010000,
+      "status": "SENT",
+      "chatName": "Beatriz - Btime",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/594541681_2334139530390933_1447294183732885258_n.jpg?ccb=11-4&oh=01_Q5Aa4QFXf0BOtlWxlpHaVFyrc8PURh1HMsuSZpkPyRGcBD3ccg&oe=69EB9788&_nc_sid=5e03e0&_nc_cat=105",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Faz sentido. Me conta um pouco sobre o que sua empresa faz e o tamanho dela — a partir daí consigo identificar onde a Btime pode ajudar."
+      }
+    }
+  },
+  {
+    "timestamp": 1776202837.3391087,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "74393749315823@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0D35976319566160B94",
+      "phone": "5511971452121",
+      "fromMe": false,
+      "momment": 1776192037000,
+      "status": "RECEIVED",
+      "chatName": "Beatriz - Btime",
+      "senderPhoto": null,
+      "senderName": "Beatriz",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/594541681_2334139530390933_1447294183732885258_n.jpg?ccb=11-4&oh=01_Q5Aa4QFXf0BOtlWxlpHaVFyrc8PURh1HMsuSZpkPyRGcBD3ccg&oe=69EB9788&_nc_sid=5e03e0&_nc_cat=105",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "sao 500 funcionarios e atuo com aluguel de carro"
+      }
+    }
+  },
+  {
+    "timestamp": 1776202865.4431973,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "74393749315823@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0B9C802B9D322B2F8DC",
+      "phone": "5511971452121",
+      "fromMe": true,
+      "momment": 1776192063002,
+      "status": "SENT",
+      "chatName": "Beatriz - Btime",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/594541681_2334139530390933_1447294183732885258_n.jpg?ccb=11-4&oh=01_Q5Aa4QFXf0BOtlWxlpHaVFyrc8PURh1HMsuSZpkPyRGcBD3ccg&oe=69EB9788&_nc_sid=5e03e0&_nc_cat=105",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Locadora com 500 funcionários tem bastante processo pra gerenciar — frota, contratos, manutenção, logística de entrega/devolução."
+      }
+    }
+  },
+  {
+    "timestamp": 1776202870.143059,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "74393749315823@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB00017BDFDDDCF5C9474",
+      "phone": "5511971452121",
+      "fromMe": true,
+      "momment": 1776192069000,
+      "status": "SENT",
+      "chatName": "Beatriz - Btime",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/594541681_2334139530390933_1447294183732885258_n.jpg?ccb=11-4&oh=01_Q5Aa4QFXf0BOtlWxlpHaVFyrc8PURh1HMsuSZpkPyRGcBD3ccg&oe=69EB9788&_nc_sid=5e03e0&_nc_cat=105",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Qual dessas áreas dá mais trabalho hoje? Ou tem alguma coisa que sua equipe faz manualmente que consome muito tempo?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776203457.9695258,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "74393749315823@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB070891D5011F4FF035C",
+      "phone": "5511971452121",
+      "fromMe": false,
+      "momment": 1776192658000,
+      "status": "RECEIVED",
+      "chatName": "Beatriz - Btime",
+      "senderPhoto": null,
+      "senderName": "Beatriz",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/594541681_2334139530390933_1447294183732885258_n.jpg?ccb=11-4&oh=01_Q5Aa4QFXf0BOtlWxlpHaVFyrc8PURh1HMsuSZpkPyRGcBD3ccg&oe=69EB9788&_nc_sid=5e03e0&_nc_cat=105",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Contratos e frotas"
+      }
+    }
+  },
+  {
+    "timestamp": 1776203480.832089,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "74393749315823@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB01F74047EBC4B2BC0A8",
+      "phone": "5511971452121",
+      "fromMe": true,
+      "momment": 1776192679001,
+      "status": "SENT",
+      "chatName": "Beatriz - Btime",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/594541681_2334139530390933_1447294183732885258_n.jpg?ccb=11-4&oh=01_Q5Aa4QFXf0BOtlWxlpHaVFyrc8PURh1HMsuSZpkPyRGcBD3ccg&oe=69EB9788&_nc_sid=5e03e0&_nc_cat=105",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Contratos e frotas manuais nesse volume são um ponto crítico. Retrabalho, erros, tempo perdido."
+      }
+    }
+  },
+  {
+    "timestamp": 1776203485.546746,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "74393749315823@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0AD6E5F49B54F1D9BDE",
+      "phone": "5511971452121",
+      "fromMe": true,
+      "momment": 1776192684001,
+      "status": "SENT",
+      "chatName": "Beatriz - Btime",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/594541681_2334139530390933_1447294183732885258_n.jpg?ccb=11-4&oh=01_Q5Aa4QFXf0BOtlWxlpHaVFyrc8PURh1HMsuSZpkPyRGcBD3ccg&oe=69EB9788&_nc_sid=5e03e0&_nc_cat=105",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Qual dos dois dói mais: a gestão dos contratos ou o controle da frota?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776203504.7007787,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "74393749315823@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB07FCB529D07475EA16F",
+      "phone": "5511971452121",
+      "fromMe": false,
+      "momment": 1776192703000,
+      "status": "RECEIVED",
+      "chatName": "Beatriz - Btime",
+      "senderPhoto": null,
+      "senderName": "Beatriz",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/594541681_2334139530390933_1447294183732885258_n.jpg?ccb=11-4&oh=01_Q5Aa4QFXf0BOtlWxlpHaVFyrc8PURh1HMsuSZpkPyRGcBD3ccg&oe=69EB9788&_nc_sid=5e03e0&_nc_cat=105",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "gestão dos contratis"
+      }
+    }
+  },
+  {
+    "timestamp": 1776203530.6903424,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "74393749315823@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB00924DD2AC85BEF08C2",
+      "phone": "5511971452121",
+      "fromMe": true,
+      "momment": 1776192729000,
+      "status": "SENT",
+      "chatName": "Beatriz - Btime",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/594541681_2334139530390933_1447294183732885258_n.jpg?ccb=11-4&oh=01_Q5Aa4QFXf0BOtlWxlpHaVFyrc8PURh1HMsuSZpkPyRGcBD3ccg&oe=69EB9788&_nc_sid=5e03e0&_nc_cat=105",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Entendido. Quantos contratos vocês processam por mês, aproximadamente?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776203544.4597497,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "74393749315823@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0F89A177071A5D17D8B",
+      "phone": "5511971452121",
+      "fromMe": false,
+      "momment": 1776192744000,
+      "status": "RECEIVED",
+      "chatName": "Beatriz - Btime",
+      "senderPhoto": null,
+      "senderName": "Beatriz",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/594541681_2334139530390933_1447294183732885258_n.jpg?ccb=11-4&oh=01_Q5Aa4QFXf0BOtlWxlpHaVFyrc8PURh1HMsuSZpkPyRGcBD3ccg&oe=69EB9788&_nc_sid=5e03e0&_nc_cat=105",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "em torno de 50"
+      }
+    }
+  },
+  {
+    "timestamp": 1776207214.5248997,
+    "data": {
+      "chatLid": "74393749315823@lid",
+      "phone": "5511971452121",
+      "fromMe": false,
+      "momment": 1776207214516,
+      "status": "RECEIVED",
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "em torno de 50"
+      }
+    }
+  },
+  {
+    "timestamp": 1776207243.7216375,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "74393749315823@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0B9139731DAED219A1F",
+      "phone": "5511971452121",
+      "fromMe": true,
+      "momment": 1776196441000,
+      "status": "SENT",
+      "chatName": "Beatriz - Btime",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/594541681_2334139530390933_1447294183732885258_n.jpg?ccb=11-4&oh=01_Q5Aa4QFXf0BOtlWxlpHaVFyrc8PURh1HMsuSZpkPyRGcBD3ccg&oe=69EB9788&_nc_sid=5e03e0&_nc_cat=105",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "50 contratos/mês com gestão manual em uma operação de 500 pessoas tem bastante espaço pra ganho. Isso é exatamente o tipo de processo que a Btime automatiza."
+      }
+    }
+  },
+  {
+    "timestamp": 1776207245.663983,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "74393749315823@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB066A5044FB7C22B530F",
+      "phone": "5511971452121",
+      "fromMe": true,
+      "momment": 1776196446001,
+      "status": "SENT",
+      "chatName": "Beatriz - Btime",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/594541681_2334139530390933_1447294183732885258_n.jpg?ccb=11-4&oh=01_Q5Aa4QFXf0BOtlWxlpHaVFyrc8PURh1HMsuSZpkPyRGcBD3ccg&oe=69EB9788&_nc_sid=5e03e0&_nc_cat=105",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Pra eu entender melhor o porte da operação: qual o faturamento anual aproximado da empresa?"
+      }
+    }
+  }
+]

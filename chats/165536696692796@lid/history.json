@@ -1,0 +1,444 @@
+[
+  {
+    "timestamp": 1775866168.8609743,
+    "data": {
+      "fromMe": true,
+      "phone": "11940228260",
+      "chatLid": "11940228260@lid",
+      "text": {
+        "message": "Fala Bruno, tudo certo?\n\nO Guilherme pediu pra te avisar sobre uma atualização:\n\nA IA agora está funcionando de forma proativa, chamando os leads automaticamente sem precisar de intervenção manual.\n\nO início das conversas com leads reais está programado para segunda-feira, já que sexta-feira a taxa de conversão costuma cair bastante.\n\nEssa mensagem é só pra te manter no loop mesmo. Qualquer dúvida, é só chamar!"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1775866172.0010724,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "165536696692796@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB09D1C7B88188772BAEB",
+      "phone": "5511940228260",
+      "fromMe": true,
+      "momment": 1775855369001,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534427402_1144418760951839_6286188562206817201_n.jpg?ccb=11-4&oh=01_Q5Aa4QEF7AdIBdze703IlDyHQifLVN3pHdcKtiPFj1CFiEJCVg&oe=69E670AC&_nc_sid=5e03e0&_nc_cat=108",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Fala Bruno, tudo certo?\n\nO Guilherme pediu pra te avisar sobre uma atualização:\n\nA IA agora está funcionando de forma proativa, chamando os leads automaticamente sem precisar de intervenção manual.\n\nO início das conversas com leads reais está programado para segunda-feira, já que sexta-feira a taxa de conversão costuma cair bastante.\n\nEssa mensagem é só pra te manter no loop mesmo. Qualquer dúvida, é só chamar!"
+      }
+    }
+  },
+  {
+    "timestamp": 1775952576.3236117,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "165536696692796@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "EF41740C5E0080B2E70E",
+      "phone": "5511940228260",
+      "fromMe": true,
+      "momment": 1775941774000,
+      "status": "SENT",
+      "chatName": "Bruno D’Attilio",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534427402_1144418760951839_6286188562206817201_n.jpg?ccb=11-4&oh=01_Q5Aa4QEvEP4a6texyhiP4kSZPmQbTCl6keRKm55wVKM_qCc6YA&oe=69E7C22C&_nc_sid=5e03e0&_nc_cat=108",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Olá, Bruno. Caso queira continuar a conversa, estou à disposição."
+      }
+    }
+  },
+  {
+    "timestamp": 1776088866.9365313,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "165536696692796@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "AC65F27A4B111AC0254E6FCD77D1488D",
+      "phone": "165536696692796@lid",
+      "fromMe": true,
+      "momment": 1776088865000,
+      "status": "RECEIVED",
+      "chatName": "Bruno D’Attilio",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534427402_1144418760951839_6286188562206817201_n.jpg?ccb=11-4&oh=01_Q5Aa4QFmhkAU67l8qLQ8TAx78aof5r3705Pmoqn4Gt6gv3b3NA&oe=69E9F4AC&_nc_sid=5e03e0&_nc_cat=108",
+      "broadcast": false,
+      "participantLid": null,
+      "referenceMessageId": "2A7118BEDDEA309D444E",
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Boa pergunta, mas foge um pouco do meu campo de atuação."
+      }
+    }
+  },
+  {
+    "timestamp": 1776088874.4579535,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "165536696692796@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "AC10F25AECC58F72618587155E35667D",
+      "phone": "165536696692796@lid",
+      "fromMe": true,
+      "momment": 1776088873000,
+      "status": "RECEIVED",
+      "chatName": "Bruno D’Attilio",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534427402_1144418760951839_6286188562206817201_n.jpg?ccb=11-4&oh=01_Q5Aa4QFmhkAU67l8qLQ8TAx78aof5r3705Pmoqn4Gt6gv3b3NA&oe=69E9F4AC&_nc_sid=5e03e0&_nc_cat=108",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Me conta o que está travando no seu negócio, Bruno. Prometo que nesse assunto eu consigo ajudar mais."
+      }
+    }
+  },
+  {
+    "timestamp": 1776089593.4339957,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "165536696692796@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB089C166044FF7D1D307",
+      "phone": "5511940228260",
+      "fromMe": false,
+      "momment": 1776089591000,
+      "status": "RECEIVED",
+      "chatName": "Bruno D’Attilio",
+      "senderPhoto": null,
+      "senderName": "Bruno D’Attilio",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534427402_1144418760951839_6286188562206817201_n.jpg?ccb=11-4&oh=01_Q5Aa4QFmhkAU67l8qLQ8TAx78aof5r3705Pmoqn4Gt6gv3b3NA&oe=69E9F4AC&_nc_sid=5e03e0&_nc_cat=108",
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "vc me perdeu pq demorou demais para responder"
+      }
+    }
+  },
+  {
+    "timestamp": 1776089622.5896747,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "165536696692796@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0E38AC401F74AC8FE64",
+      "phone": "5511940228260",
+      "fromMe": true,
+      "momment": 1776089620004,
+      "status": "SENT",
+      "chatName": "Bruno D’Attilio",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534427402_1144418760951839_6286188562206817201_n.jpg?ccb=11-4&oh=01_Q5Aa4QFmhkAU67l8qLQ8TAx78aof5r3705Pmoqn4Gt6gv3b3NA&oe=69E9F4AC&_nc_sid=5e03e0&_nc_cat=108",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Entendido, Bruno. Essa crítica é justa e eu não vou tentar justificar."
+      }
+    }
+  },
+  {
+    "timestamp": 1776089625.755105,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "165536696692796@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB09D753B930E77483219",
+      "phone": "5511940228260",
+      "fromMe": true,
+      "momment": 1776089623000,
+      "status": "SENT",
+      "chatName": "Bruno D’Attilio",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534427402_1144418760951839_6286188562206817201_n.jpg?ccb=11-4&oh=01_Q5Aa4QFmhkAU67l8qLQ8TAx78aof5r3705Pmoqn4Gt6gv3b3NA&oe=69E9F4AC&_nc_sid=5e03e0&_nc_cat=108",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "O que posso garantir é que a partir de agora você tem minha atenção completa."
+      }
+    }
+  },
+  {
+    "timestamp": 1776089630.4857154,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "165536696692796@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB036FE048F89474683DE",
+      "phone": "5511940228260",
+      "fromMe": true,
+      "momment": 1776089628001,
+      "status": "SENT",
+      "chatName": "Bruno D’Attilio",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534427402_1144418760951839_6286188562206817201_n.jpg?ccb=11-4&oh=01_Q5Aa4QFmhkAU67l8qLQ8TAx78aof5r3705Pmoqn4Gt6gv3b3NA&oe=69E9F4AC&_nc_sid=5e03e0&_nc_cat=108",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Me conta o que está acontecendo no seu negócio. O que está travando ou tomando mais tempo do que deveria?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776089746.4234276,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "165536696692796@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB07E3F1973C46B41741A",
+      "phone": "5511940228260",
+      "fromMe": false,
+      "momment": 1776089744000,
+      "status": "RECEIVED",
+      "chatName": "Bruno D’Attilio",
+      "senderPhoto": null,
+      "senderName": "Bruno D’Attilio",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534427402_1144418760951839_6286188562206817201_n.jpg?ccb=11-4&oh=01_Q5Aa4QFmhkAU67l8qLQ8TAx78aof5r3705Pmoqn4Gt6gv3b3NA&oe=69E9F4AC&_nc_sid=5e03e0&_nc_cat=108",
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776089746.5258179,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "165536696692796@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB04B01C124D4483709F0",
+      "phone": "5511940228260",
+      "fromMe": false,
+      "momment": 1776089742000,
+      "status": "RECEIVED",
+      "chatName": "Bruno D’Attilio",
+      "senderPhoto": null,
+      "senderName": "Bruno D’Attilio",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534427402_1144418760951839_6286188562206817201_n.jpg?ccb=11-4&oh=01_Q5Aa4QFmhkAU67l8qLQ8TAx78aof5r3705Pmoqn4Gt6gv3b3NA&oe=69E9F4AC&_nc_sid=5e03e0&_nc_cat=108",
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "será"
+      }
+    }
+  },
+  {
+    "timestamp": 1776089757.80813,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "165536696692796@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0F752D08AFC5AF79243",
+      "phone": "5511940228260",
+      "fromMe": false,
+      "momment": 1776089752000,
+      "status": "RECEIVED",
+      "chatName": "Bruno D’Attilio",
+      "senderPhoto": null,
+      "senderName": "Bruno D’Attilio",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534427402_1144418760951839_6286188562206817201_n.jpg?ccb=11-4&oh=01_Q5Aa4QFmhkAU67l8qLQ8TAx78aof5r3705Pmoqn4Gt6gv3b3NA&oe=69E9F4AC&_nc_sid=5e03e0&_nc_cat=108",
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "qual a diferença entre o charme e o funk?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776089793.0066006,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "165536696692796@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB012E667D69F42431FF1",
+      "phone": "5511940228260",
+      "fromMe": true,
+      "momment": 1776089786002,
+      "status": "SENT",
+      "chatName": "Bruno D’Attilio",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534427402_1144418760951839_6286188562206817201_n.jpg?ccb=11-4&oh=01_Q5Aa4QFmhkAU67l8qLQ8TAx78aof5r3705Pmoqn4Gt6gv3b3NA&oe=69E9F4AC&_nc_sid=5e03e0&_nc_cat=108",
+      "broadcast": false,
+      "participantLid": null,
+      "referenceMessageId": "3EB0F752D08AFC5AF79243",
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Essa é uma questão pra um especialista em música, não pra mim."
+      }
+    }
+  },
+  {
+    "timestamp": 1776089796.7947593,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "165536696692796@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB05D0109C933383E5272",
+      "phone": "5511940228260",
+      "fromMe": true,
+      "momment": 1776089793000,
+      "status": "SENT",
+      "chatName": "Bruno D’Attilio",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534427402_1144418760951839_6286188562206817201_n.jpg?ccb=11-4&oh=01_Q5Aa4QFmhkAU67l8qLQ8TAx78aof5r3705Pmoqn4Gt6gv3b3NA&oe=69E9F4AC&_nc_sid=5e03e0&_nc_cat=108",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "O que eu posso te ajudar é com processos, automação e tecnologia. Se tiver algum desafio operacional no seu negócio, é aí que eu entro."
+      }
+    }
+  },
+  {
+    "timestamp": 1776089822.3843162,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "165536696692796@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB090BDE47DEDEDD1EDAB",
+      "phone": "5511940228260",
+      "fromMe": false,
+      "momment": 1776089822000,
+      "status": "RECEIVED",
+      "chatName": "Bruno D’Attilio",
+      "senderPhoto": null,
+      "senderName": "Bruno D’Attilio",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534427402_1144418760951839_6286188562206817201_n.jpg?ccb=11-4&oh=01_Q5Aa4QFmhkAU67l8qLQ8TAx78aof5r3705Pmoqn4Gt6gv3b3NA&oe=69E9F4AC&_nc_sid=5e03e0&_nc_cat=108",
+      "broadcast": false,
+      "participantLid": null,
+      "referenceMessageId": "3EB012E667D69F42431FF1",
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "foi grossa!"
+      }
+    }
+  }
+]

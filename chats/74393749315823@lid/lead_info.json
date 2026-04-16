@@ -1,0 +1,23 @@
+{
+  "nome": "Beatriz",
+  "email": null,
+  "empresa": "Locadora",
+  "segmento_mercado": "locação de veículos",
+  "porte_empresa": "enterprise",
+  "faturamento_aproximado": null,
+  "tamanho_time": 500,
+  "sistemas_atuais": [],
+  "desafios_identificados": [
+    "gestão de contratos manual",
+    "controle da frota manual"
+  ],
+  "produto_indicado": "SaaS Btime",
+  "motivo_segmentacao": "Lead mencionou gestão manual de contratos e frota em operação de 500 funcionários → SaaS Btime. Sinais de processos manuais claros.",
+  "estagio_conversa": "qualificando",
+  "reuniao_agendada": false,
+  "necessita_followup": false,
+  "motivo_followup": "Follow-ups removidos manualmente.",
+  "atualizado_em": "2026-04-14T19:53:54.964609",
+  "phone": "5511971452121",
+  "followups_agendados": []
+}

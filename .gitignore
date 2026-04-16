@@ -1,9 +1,7 @@
-venv/
-__pycache__/
-*.pyc
-*.pyo
-.env
+app/.env
 app/token.json
-app/chats/
-chats/
 app/client_secret.json
+__pycache__/
+app/__pycache__/
+app/agent/__pycache__/
+*.pyc

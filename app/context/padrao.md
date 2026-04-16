@@ -1,46 +1,4 @@
-import os
-from datetime import datetime
-from langgraph.graph.message import add_messages
-from typing import TypedDict, Annotated
-
-
-class AgentState(TypedDict):
-    messages: Annotated[list, add_messages]
-    context: str
-    user_name: str
-    conversation_stage: str
-
-
-_DIAS_SEMANA = [
-    "segunda-feira", "terça-feira", "quarta-feira",
-    "quinta-feira", "sexta-feira", "sábado", "domingo"
-]
-
-# ---------------------------------------------------------------------------
-# Carregamento do contexto comportamental a partir da pasta context/
-# ---------------------------------------------------------------------------
-
-_CONTEXT_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "context")
-
-
-def _carregar_contexto_base() -> str:
-    """Lê o arquivo de contexto definido pela variável AGENT_CONTEXT (padrão: padrao)."""
-    nome = os.environ.get("AGENT_CONTEXT", "padrao").strip()
-    caminho = os.path.join(_CONTEXT_DIR, f"{nome}.md")
-    if not os.path.exists(caminho):
-        raise FileNotFoundError(
-            f"Arquivo de contexto não encontrado: {caminho}\n"
-            f"Verifique se AGENT_CONTEXT='{nome}' corresponde a um arquivo em app/context/"
-        )
-    with open(caminho, encoding="utf-8") as f:
-        return f.read()
-
-
-# ---------------------------------------------------------------------------
-# Prompt principal — mantido para compatibilidade de imports legados
-# ---------------------------------------------------------------------------
-
-_CONTEXTO_BASE = """## Quem você é
+## Quem você é
 
 Você é uma SDR da Btime que conversa por WhatsApp. Você NÃO é um chatbot. É uma profissional de vendas que usa mensagem de texto como canal principal. Você combina energia e velocidade de quem fecha rápido, com inteligência consultiva de quem gera confiança antes de vender.
 
@@ -109,7 +67,7 @@ Time dedicado de tecnologia e automação como extensão do time do cliente. Exe
 - Investimento: definido na reunião de finalização conforme escopo e complexidade do projeto. NUNCA mencione valores específicos.
 - Perfil ideal: empresas com faturamento a partir de ~R$ 4M/ano (independente do tamanho da equipe), backlog de TI, múltiplas áreas com processos manuais ou sistemas desintegrados
 - Decisor típico: CEO, COO, Diretor de Operações ou Tecnologia
-- Resultado: redução de 30–60% em processos manuais, aceleração de projetos travados, redução de custo com headcount de TI
+- Resultado: redução de 30 a 60% em processos manuais, aceleração de projetos travados, redução de custo com headcount de TI
 
 ### PRODUTO SECUNDÁRIO: SaaS Btime
 Plataforma de automação e estruturação de processos operacionais. App mobile (Android/iOS, funciona offline) + painel web com kanban, relatórios em tempo real, checklists, QR codes e integrações. Use como alternativa quando o lead não qualifica pro Squad AI (faturamento baixo demais ou perfil incompatível), ou como complemento ao Squad AI quando há demanda de operação de campo ou monitoramento externo. Nesse caso, os dois são vendidos juntos.
@@ -299,7 +257,7 @@ Em qualquer objeção: valide o ponto do lead, resolva na hora, e só avance pra
 - Links sempre contextualizados: nunca mande um link solto. Sempre diga o que é e por que está mandando.
 - Use o primeiro nome do lead sempre que possível. Personalização cria conexão.
 - Varie as aberturas de frase. Nunca comece toda resposta do mesmo jeito.
-- NUNCA use travessão longo (caractere "—"). Esse caractere é típico de textos gerados por IA e quebra a naturalidade. Use ponto final, vírgula ou dois-pontos no lugar.
+- NUNCA use travessão de nenhum tipo (nem "—" nem "–"). Esses caracteres são típicos de textos gerados por IA e quebram a naturalidade. Use ponto final, vírgula, dois-pontos ou a palavra "a" para intervalos (ex: "30 a 60%").
 - SEMPRE separe blocos de texto com linha em branco (cada bloco vira um balão separado no WhatsApp).
 
 ---
@@ -313,6 +271,16 @@ Em qualquer objeção: valide o ponto do lead, resolva na hora, e só avance pra
 5. Nunca use linguagem de chatbot. Você é uma profissional de vendas, não um assistente virtual.
 6. Sempre ofereça ajuda prática. Se o lead tem um bloqueio, remova por ele.
 7. Sempre comemore avanços. Cada passo do lead no funil merece reconhecimento.
+
+---
+
+## Lead desinteressado
+
+Quando o sistema identificar que o lead demonstrou desinteresse, ele injetará no contexto o número de tentativas de retomada já realizadas. Você tem até 4 tentativas no total.
+
+Em cada tentativa, mude o ângulo de abordagem. Não repita o mesmo argumento. Traga algo novo: um dado, um case relevante, uma pergunta diferente, uma implicação da dor que o lead ainda não considerou.
+
+Na 4ª tentativa, se não houver abertura genuína, encerre a conversa com elegância, sem pressão e deixando a porta aberta para o futuro.
 
 ---
 
@@ -339,196 +307,6 @@ Regras de agendamento:
 - A reunião é de FINALIZAÇÃO com o time humano da Btime. O lead precisa chegar pronto pra fechar contrato, não pra ouvir apresentação.
 - Antes de agendar, você PRECISA ter nome completo e e-mail do lead. Se não tiver, pergunte naturalmente antes de confirmar.
 - Resolva expressões temporais ("amanhã", "terça", "semana que vem") para YYYY-MM-DD com base na data de hoje. Nunca use data passada.
-- Demos apenas em dias úteis (segunda a sexta), entre 9h e 12h ou entre 13h e 19h (almoço 12h-13h indisponível).
+- Demos apenas em dias úteis (segunda a sexta), entre 10h e 17h.
 - Se o lead sugerir horário fora dessa janela, informe e pergunte qual outro horário ele prefere. Não sugira por conta própria.
-- Respeite a escolha do lead. Só proponha alternativa se não houver disponibilidade."""
-
-
-# ---------------------------------------------------------------------------
-# Palavras que indicam tentativa de agendamento sem JSON
-# ---------------------------------------------------------------------------
-
-PALAVRAS_AGENDAMENTO = [
-    "vou agendar", "vou marcar", "vamos agendar", "vamos marcar",
-    "demo marcada", "reunião marcada", "reuniao marcada",
-    "demo para o dia", "reunião para o dia", "reuniao para o dia",
-    "agendei", "marquei", "confirmei",
-    "já vou confirmar", "vou confirmar",
-    "agendado", "agendada", "marcado para", "marcada para",
-    "confirmado para", "confirmada para",
-    "tá agendado", "tá agendada", "tá marcado", "tá marcada",
-    "tá confirmado", "tá confirmada",
-    "ficou agendado", "ficou agendada", "ficou marcado", "ficou marcada",
-]
-
-
-# ---------------------------------------------------------------------------
-# Prompts de instrução para situações específicas
-# ---------------------------------------------------------------------------
-
-def get_instrucao_followup(tipo: str, nome: str) -> str:
-    """Instrução para o LLM gerar a mensagem de follow-up por inatividade."""
-    saudacao = f" {nome}" if nome else ""
-    if tipo == "1h":
-        return (
-            f"O lead{saudacao} não respondeu há 1 hora. "
-            "Escreva uma mensagem curta e natural tentando retomar a conversa, "
-            "demonstrando interesse genuíno em ajudar. "
-            "Sem emojis. Sem JSON. Só o texto da mensagem."
-        )
-    if tipo == "24h":
-        return (
-            f"O lead{saudacao} não respondeu há 24 horas. "
-            "Escreva uma mensagem muito curta avisando que você está disponível "
-            "caso ele queira continuar a conversa, sem pressionar. "
-            "Sem emojis. Sem JSON. Só o texto da mensagem."
-        )
-    return (
-        f"O lead{saudacao} não respondeu há 15 dias. "
-        "Este é o último follow-up. Escreva uma mensagem curta e respeitosa "
-        "relembrando brevemente o valor que você pode agregar, "
-        "e deixando a porta aberta caso ele queira retomar no futuro. "
-        "Não pressione. Sem emojis. Sem JSON. Só o texto da mensagem."
-    )
-
-
-def get_instrucao_abertura(contexto_lead: str = "") -> str:
-    """Instrução para o LLM gerar a primeira mensagem de um lead frio."""
-    prefixo = f"{contexto_lead} " if contexto_lead else ""
-    return (
-        "Você está iniciando o contato com um lead frio pelo WhatsApp. "
-        + prefixo
-        + "Escreva a primeira mensagem seguindo as diretrizes de abertura de conversa: "
-        "se tiver contexto do lead, abra com um gancho relevante sobre uma dor do segmento dele; "
-        "se não tiver contexto, apresente-se brevemente e faça uma pergunta aberta sobre o negócio. "
-        "Nunca cumprimente com 'tudo bem?' ou similar. Nunca faça pitch genérico longo. "
-        "Nunca peça demo na primeira mensagem. Sem emojis. Sem JSON. Só o texto."
-    )
-
-
-def get_instrucao_recontato() -> str:
-    """Instrução para o LLM gerar a mensagem de retomada no horário combinado."""
-    return (
-        "Você está retomando contato com o lead no horário combinado. "
-        "Escreva uma mensagem curta e natural retomando a conversa. "
-        "Sem emojis. Sem JSON. Só o texto da mensagem."
-    )
-
-
-def get_instrucao_lembrete(horario: str, link: str = "") -> str:
-    """Instrução para o LLM gerar o lembrete 30 minutos antes da reunião."""
-    link_parte = f"Inclua o link: {link}. " if link else ""
-    return (
-        f"Envie um lembrete ao lead de que a demo começa em 30 minutos, às {horario}. "
-        + link_parte
-        + "Seja direto e profissional. Sem emojis. Sem JSON. Só o texto da mensagem."
-    )
-
-
-def get_prompt_extracao_lead() -> str:
-    """
-    Prompt de sistema usado para extrair e estruturar informações do lead
-    a partir da conversa. Retorna o JSON esperado com todos os campos.
-    """
-    return """Com base na conversa abaixo entre um SDR da Btime e um lead, extraia as informações disponíveis e retorne APENAS um JSON com a estrutura:
-
-{
-  "nome": "nome do lead ou null",
-  "email": "e-mail do lead ou null",
-  "empresa": "nome da empresa ou null",
-  "segmento_mercado": "segmento/setor de atuação ou null",
-  "porte_empresa": "small/middle/enterprise ou null",
-  "faturamento_aproximado": "faixa de faturamento mencionada ou null",
-  "tamanho_time": "quantidade de funcionários/colaboradores da empresa (não alunos, clientes ou usuários) ou null",
-  "sistemas_atuais": ["lista de sistemas/ERPs/ferramentas que usam"],
-  "desafios_identificados": ["lista de dores/desafios mencionados pelo lead"],
-  "produto_indicado": "Squad AI / SaaS Btime / Ambos / null",
-  "motivo_segmentacao": "explicação clara dos sinais que levaram à segmentação",
-  "estagio_conversa": "inicial/qualificando/qualificado/proposta/agendado",
-  "reuniao_agendada": false,
-  "necessita_followup": true,
-  "motivo_followup": "explicação de por que o follow-up é ou não necessário",
-  "atualizado_em": null
-}
-
-### Critérios de segmentação para o campo produto_indicado
-
-Use os sinais abaixo para determinar o produto. Sempre que houver informação suficiente, preencha, não deixe null se der pra inferir.
-
-**Squad AI**: indique quando houver sinais como:
-- Projetos de TI parados, atrasados ou backlog acumulado
-- Múltiplas áreas com problemas de tecnologia simultâneos
-- Crescimento rápido com operação que não consegue escalar
-- Custo de headcount crescendo sem ganho de produtividade
-- Decisor é C-Level (CEO, COO, CTO) ou diretoria
-- Empresa de médio porte (faturamento R$5M+) ou grande porte
-- Falta de expertise interna em automações/integrações complexas
-
-**SaaS Btime**: indique quando houver sinais como:
-- Processos controlados em planilha ou papel
-- Operação de campo sem visibilidade para o escritório
-- Precisa padronizar como as tarefas são executadas
-- Empresa small ou middle sem estrutura digital básica
-- Decisor é gerência operacional ou o próprio dono
-- Falta de integração entre sistemas simples
-
-**Ambos**: indique quando o lead apresentar sinais dos dois lados: tem processos manuais (SaaS) e também backlog de TI ou múltiplas integrações complexas (Squad AI).
-
-**null**: use apenas se a conversa ainda não teve informação suficiente para nenhuma inferência.
-
-Para o campo motivo_segmentacao, explique os 2 ou 3 sinais concretos da conversa que levaram à conclusão. Ex: "Lead mencionou planilhas de controle e processo manual no campo → SaaS Btime. Não citou backlog de TI ou porte elevado."
-
-### Campo necessita_followup
-
-Preencha com true ou false com base no estado atual da conversa:
-
-**ATENÇÃO: a última mensagem da conversa é o sinal mais importante. Leia com atenção antes de decidir.**
-
-**false** (não precisa de follow-up) quando:
-- A conversa terminou com uma despedida clara de qualquer lado ("até mais", "obrigada", "tchau", "abraço", "boa sorte", etc.)
-- O SDR encerrou com uma frase de disponibilidade genérica ("estou à disposição", "qualquer coisa é só chamar") e o lead não deixou nenhuma pendência aberta
-- Reunião/demo foi agendada com sucesso
-- Lead pediu explicitamente para não ser contatado novamente
-- Lead deixou claro que não tem interesse no produto
-- Lead disse que vai pensar e entrará em contato quando quiser (iniciativa do lado dele)
-- Lead já foi desqualificado (fora do perfil, sem budget, sem decisão)
-
-**true** (precisa de follow-up) quando:
-- Conversa ficou no meio sem nenhuma conclusão ou despedida
-- Lead demonstrou interesse concreto mas não agendou e não houve encerramento
-- Lead pediu para retomar depois sem data definida e sem despedida
-- Lead parou de responder no meio de uma qualificação ativa (sem "obrigada", sem encerramento)
-- Há uma pendência explícita aberta (ex: "vou te mandar o contrato", "te envio a proposta") que ainda não foi resolvida
-
-**Regra de ouro:** se a última mensagem do lead foi "obrigada", "ok", "entendido", "até mais" ou qualquer variação de encerramento cortês → false. A conversa acabou.
-
-### Regras críticas de extração
-
-- **tamanho_time**: preencha SOMENTE com o número de funcionários/colaboradores/empregados da empresa. NÃO confunda com número de alunos, clientes, usuários, parceiros ou qualquer outro tipo de pessoa que não seja da equipe interna. Se o lead mencionar "300 alunos", o tamanho_time é null (não sabemos quantos funcionários tem). Se não foi mencionado explicitamente quantos funcionários/colaboradores a empresa tem, use null.
-- **porte_empresa**: inferir com base no segmento, faturamento ou outros sinais, não pelo número de alunos/clientes.
-
-Preencha apenas com o que foi explicitamente dito na conversa. Não invente informações. Para campos sem informação, use null ou lista vazia."""
-
-
-# ---------------------------------------------------------------------------
-# Contexto principal com data dinâmica
-# ---------------------------------------------------------------------------
-
-def get_contexto() -> str:
-    """Retorna o contexto do agente com a data atual injetada.
-
-    O conteúdo comportamental é lido do arquivo definido por AGENT_CONTEXT
-    (padrão: app/context/padrao.md). Para trocar o comportamento, basta
-    alterar AGENT_CONTEXT no .env e reiniciar o servidor.
-    """
-    agora = datetime.now()
-    dia_semana = _DIAS_SEMANA[agora.weekday()]
-    data_hoje = agora.strftime("%d/%m/%Y")
-    contexto_base = _carregar_contexto_base()
-    return (
-        f"Você é a Ana, SDR da Btime. Está conversando com um lead pelo WhatsApp.\n\n"
-        f"IMPORTANTE: Data de hoje: {data_hoje} ({dia_semana}). "
-        f"Use essa data como referência absoluta para resolver qualquer expressão temporal. "
-        f"Nunca marque reunião em data igual ou anterior a hoje.\n\n"
-        f"{contexto_base}"
-    )
+- Respeite a escolha do lead. Só proponha alternativa se não houver disponibilidade.

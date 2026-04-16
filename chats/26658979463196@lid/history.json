@@ -1,0 +1,722 @@
+[
+  {
+    "timestamp": 1776199578.1557627,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26658979463196@lid",
+      "connectedPhone": "5511916563035",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EB290F59F67421C0AEF2E0261F7EA9D",
+      "messageId": "2AAB5D3B01925E27BC80",
+      "phone": "5527999046347",
+      "fromMe": false,
+      "momment": 1776188775000,
+      "status": "RECEIVED",
+      "chatName": "Lucas Segatto",
+      "senderPhoto": null,
+      "senderName": "Lucas Segatto",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/583801163_1798311024125200_3279720548682070657_n.jpg?ccb=11-4&oh=01_Q5Aa4QEAZj-KpaOWPhxEhFpv37NoDlS3kROBiaxwpmxT0jyv1w&oe=69EB7679&_nc_sid=5e03e0&_nc_cat=104",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Olá! Gostaria de saber mais sobre a btime."
+      }
+    }
+  },
+  {
+    "timestamp": 1776199608.7925155,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26658979463196@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "11257897A263917367DE",
+      "phone": "5527999046347",
+      "fromMe": true,
+      "momment": 1776188806000,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/583801163_1798311024125200_3279720548682070657_n.jpg?ccb=11-4&oh=01_Q5Aa4QEAZj-KpaOWPhxEhFpv37NoDlS3kROBiaxwpmxT0jyv1w&oe=69EB7679&_nc_sid=5e03e0&_nc_cat=104",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Claro. A Btime resolve ineficiência operacional — automação de processos, integração de sistemas e IA aplicada."
+      }
+    }
+  },
+  {
+    "timestamp": 1776199611.524703,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26658979463196@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB05F90639291857B8974",
+      "phone": "5527999046347",
+      "fromMe": true,
+      "momment": 1776188810000,
+      "status": "SENT",
+      "chatName": "5527999046347",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/583801163_1798311024125200_3279720548682070657_n.jpg?ccb=11-4&oh=01_Q5Aa4QEAZj-KpaOWPhxEhFpv37NoDlS3kROBiaxwpmxT0jyv1w&oe=69EB7679&_nc_sid=5e03e0&_nc_cat=104",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Pra te direcionar melhor: qual é o seu setor e qual processo hoje te dá mais dor de cabeça?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776203207.5236511,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26658979463196@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0C6E568AC7A7CD4D916",
+      "phone": "5527999046347",
+      "fromMe": true,
+      "momment": 1776192405002,
+      "status": "SENT",
+      "chatName": "5527999046347",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/583801163_1798311024125200_3279720548682070657_n.jpg?ccb=11-4&oh=01_Q5Aa4QEAZj-KpaOWPhxEhFpv37NoDlS3kROBiaxwpmxT0jyv1w&oe=69EB7679&_nc_sid=5e03e0&_nc_cat=104",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Só para saber se você teve a chance de considerar como posso ajudar. Me fale um pouco sobre os desafios que você enfrenta."
+      }
+    }
+  },
+  {
+    "timestamp": 1776203327.8550692,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26658979463196@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "2A8EE6DE38D1150BAB28",
+      "phone": "5527999046347",
+      "fromMe": false,
+      "momment": 1776192525000,
+      "status": "RECEIVED",
+      "chatName": "Lucas Segatto",
+      "senderPhoto": null,
+      "senderName": "Lucas Segatto",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/583801163_1798311024125200_3279720548682070657_n.jpg?ccb=11-4&oh=01_Q5Aa4QFEZSZ4mjoViB5wKi2EjiGJ23DwcpwFWPR2I7ZAM0xY1w&oe=69EBAEB9&_nc_sid=5e03e0&_nc_cat=104",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Somos uma organização contábil e boutique de consultoria contábil e tributária e precisamos automatizar processos manuais de analistas"
+      }
+    }
+  },
+  {
+    "timestamp": 1776203359.0259054,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26658979463196@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB02E219A39B706AF01E2",
+      "phone": "5527999046347",
+      "fromMe": true,
+      "momment": 1776192557000,
+      "status": "SENT",
+      "chatName": "Lucas Segatto",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/583801163_1798311024125200_3279720548682070657_n.jpg?ccb=11-4&oh=01_Q5Aa4QFEZSZ4mjoViB5wKi2EjiGJ23DwcpwFWPR2I7ZAM0xY1w&oe=69EBAEB9&_nc_sid=5e03e0&_nc_cat=104",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Entendido. Que tipo de processos são esses? Coleta de documentos, lançamentos, conciliação, geração de relatórios?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776203632.3404217,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26658979463196@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "2A702E2944177D2DCB56",
+      "phone": "5527999046347",
+      "fromMe": false,
+      "momment": 1776192830000,
+      "status": "RECEIVED",
+      "chatName": "Lucas Segatto",
+      "senderPhoto": null,
+      "senderName": "Lucas Segatto",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/583801163_1798311024125200_3279720548682070657_n.jpg?ccb=11-4&oh=01_Q5Aa4QFEZSZ4mjoViB5wKi2EjiGJ23DwcpwFWPR2I7ZAM0xY1w&oe=69EBAEB9&_nc_sid=5e03e0&_nc_cat=104",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Coleta, comunicação com ERP ou login, coleta de documentos em outros sistemas, envio de documentos e-mail e WhatsApp"
+      }
+    }
+  },
+  {
+    "timestamp": 1776203665.6887217,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26658979463196@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0167BA87CDE662CBA95",
+      "phone": "5527999046347",
+      "fromMe": true,
+      "momment": 1776192866000,
+      "status": "SENT",
+      "chatName": "Lucas Segatto",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/583801163_1798311024125200_3279720548682070657_n.jpg?ccb=11-4&oh=01_Q5Aa4QFEZSZ4mjoViB5wKi2EjiGJ23DwcpwFWPR2I7ZAM0xY1w&oe=69EBAEB9&_nc_sid=5e03e0&_nc_cat=104",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Quantos analistas hoje executam essas tarefas manualmente?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776203690.3374312,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26658979463196@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB055ABBBBE6E7B886EC1",
+      "phone": "5527999046347",
+      "fromMe": true,
+      "momment": 1776192861000,
+      "status": "SENT",
+      "chatName": "Lucas Segatto",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/583801163_1798311024125200_3279720548682070657_n.jpg?ccb=11-4&oh=01_Q5Aa4QFEZSZ4mjoViB5wKi2EjiGJ23DwcpwFWPR2I7ZAM0xY1w&oe=69EBAEB9&_nc_sid=5e03e0&_nc_cat=104",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Tudo isso é automatizável. Robôs de RPA fazem exatamente esse fluxo: login em sistemas, coleta, processamento e envio sem intervenção humana."
+      }
+    }
+  },
+  {
+    "timestamp": 1776203962.4380407,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26658979463196@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "2AF7CE2F3523EEE29ED6",
+      "phone": "5527999046347",
+      "fromMe": false,
+      "momment": 1776193099000,
+      "status": "RECEIVED",
+      "chatName": "Lucas Segatto",
+      "senderPhoto": null,
+      "senderName": "Lucas Segatto",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/583801163_1798311024125200_3279720548682070657_n.jpg?ccb=11-4&oh=01_Q5Aa4QFEZSZ4mjoViB5wKi2EjiGJ23DwcpwFWPR2I7ZAM0xY1w&oe=69EBAEB9&_nc_sid=5e03e0&_nc_cat=104",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "3"
+      }
+    }
+  },
+  {
+    "timestamp": 1776204005.4140608,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26658979463196@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "992729FBBBE45A4A8390",
+      "phone": "5527999046347",
+      "fromMe": true,
+      "momment": 1776193183000,
+      "status": "SENT",
+      "chatName": "Lucas Segatto",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/583801163_1798311024125200_3279720548682070657_n.jpg?ccb=11-4&oh=01_Q5Aa4QFEZSZ4mjoViB5wKi2EjiGJ23DwcpwFWPR2I7ZAM0xY1w&oe=69EBAEB9&_nc_sid=5e03e0&_nc_cat=104",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "E qual o faturamento anual da empresa, aproximadamente?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776204339.3670504,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26658979463196@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "2A3F94893B43C4691834",
+      "phone": "5527999046347",
+      "fromMe": false,
+      "momment": 1776193538000,
+      "status": "RECEIVED",
+      "chatName": "Lucas Segatto",
+      "senderPhoto": null,
+      "senderName": "Lucas Segatto",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/583801163_1798311024125200_3279720548682070657_n.jpg?ccb=11-4&oh=01_Q5Aa4QFEZSZ4mjoViB5wKi2EjiGJ23DwcpwFWPR2I7ZAM0xY1w&oe=69EBAEB9&_nc_sid=5e03e0&_nc_cat=104",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "5M"
+      }
+    }
+  },
+  {
+    "timestamp": 1776204370.6275973,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26658979463196@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0E930CB2863F80B8DCB",
+      "phone": "5527999046347",
+      "fromMe": true,
+      "momment": 1776193569000,
+      "status": "SENT",
+      "chatName": "Lucas Segatto",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/583801163_1798311024125200_3279720548682070657_n.jpg?ccb=11-4&oh=01_Q5Aa4QFEZSZ4mjoViB5wKi2EjiGJ23DwcpwFWPR2I7ZAM0xY1w&oe=69EBAEB9&_nc_sid=5e03e0&_nc_cat=104",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Faz sentido. Com esse porte e esse volume de tarefas manuais, o produto que se encaixa é o Squad AI: um time dedicado que entra como extensão da sua equipe e automatiza esses fluxos um a um."
+      }
+    }
+  },
+  {
+    "timestamp": 1776204378.7871046,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26658979463196@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB071465A9B8C44AF70EA",
+      "phone": "5527999046347",
+      "fromMe": true,
+      "momment": 1776193577000,
+      "status": "SENT",
+      "chatName": "Lucas Segatto",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/583801163_1798311024125200_3279720548682070657_n.jpg?ccb=11-4&oh=01_Q5Aa4QFEZSZ4mjoViB5wKi2EjiGJ23DwcpwFWPR2I7ZAM0xY1w&oe=69EBAEB9&_nc_sid=5e03e0&_nc_cat=104",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "RPA pra login em ERP, coleta em múltiplos sistemas e disparo via e-mail e WhatsApp é exatamente o tipo de projeto que a gente executa."
+      }
+    }
+  },
+  {
+    "timestamp": 1776204381.477393,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26658979463196@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB030E5C0CDCDA044A524",
+      "phone": "5527999046347",
+      "fromMe": true,
+      "momment": 1776193580002,
+      "status": "SENT",
+      "chatName": "Lucas Segatto",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/583801163_1798311024125200_3279720548682070657_n.jpg?ccb=11-4&oh=01_Q5Aa4QFEZSZ4mjoViB5wKi2EjiGJ23DwcpwFWPR2I7ZAM0xY1w&oe=69EBAEB9&_nc_sid=5e03e0&_nc_cat=104",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Faz sentido conversar com o time técnico pra detalhar o escopo?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776207189.2667823,
+    "data": {
+      "chatLid": "26658979463196@lid",
+      "phone": "5527999046347",
+      "fromMe": false,
+      "momment": 1776207189266,
+      "status": "RECEIVED",
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Sim"
+      }
+    }
+  },
+  {
+    "timestamp": 1776207226.3791022,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26658979463196@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "C5A849E281B0D5D7C39C",
+      "phone": "5527999046347",
+      "fromMe": true,
+      "momment": 1776196415000,
+      "status": "SENT",
+      "chatName": "Lucas Segatto",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/583801163_1798311024125200_3279720548682070657_n.jpg?ccb=11-4&oh=01_Q5Aa4QFEZSZ4mjoViB5wKi2EjiGJ23DwcpwFWPR2I7ZAM0xY1w&oe=69EBAEB9&_nc_sid=5e03e0&_nc_cat=104",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Preciso do seu nome completo e e-mail pra confirmar o horário."
+      }
+    }
+  },
+  {
+    "timestamp": 1776288222.8957038,
+    "data": {
+      "chatLid": "26658979463196@lid",
+      "phone": "5527999046347",
+      "fromMe": false,
+      "momment": 1776288222895,
+      "status": "RECEIVED",
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Lucas Segatto lucassegattov@gmail.com"
+      }
+    }
+  },
+  {
+    "timestamp": 1776288244.9662027,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26658979463196@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB09F529187782BD4FB92",
+      "phone": "5527999046347",
+      "fromMe": true,
+      "momment": 1776277444000,
+      "status": "SENT",
+      "chatName": "Lucas Segatto",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/583801163_1798311024125200_3279720548682070657_n.jpg?ccb=11-4&oh=01_Q5Aa4QH2_sRuBp7zz3SS8HaNvRxJZwtsBxpGAbtcXx-NKIPVig&oe=69ED0039&_nc_sid=5e03e0&_nc_cat=104",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Ótimo, Lucas. Tenho algumas opções essa semana:"
+      }
+    }
+  },
+  {
+    "timestamp": 1776288248.973537,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26658979463196@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB092FE95E73C43B5A900",
+      "phone": "5527999046347",
+      "fromMe": true,
+      "momment": 1776277448000,
+      "status": "SENT",
+      "chatName": "Lucas Segatto",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/583801163_1798311024125200_3279720548682070657_n.jpg?ccb=11-4&oh=01_Q5Aa4QH2_sRuBp7zz3SS8HaNvRxJZwtsBxpGAbtcXx-NKIPVig&oe=69ED0039&_nc_sid=5e03e0&_nc_cat=104",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "- Quinta (16/04) às 11h\n- Sexta (17/04) às 13h"
+      }
+    }
+  },
+  {
+    "timestamp": 1776288250.077085,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26658979463196@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB01B4C1E5C324970169E",
+      "phone": "5527999046347",
+      "fromMe": true,
+      "momment": 1776277449001,
+      "status": "SENT",
+      "chatName": "Lucas Segatto",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/583801163_1798311024125200_3279720548682070657_n.jpg?ccb=11-4&oh=01_Q5Aa4QH2_sRuBp7zz3SS8HaNvRxJZwtsBxpGAbtcXx-NKIPVig&oe=69ED0039&_nc_sid=5e03e0&_nc_cat=104",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Qual funciona melhor pra você?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776281050.3097656,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26658979463196@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB08039A9B592CFABBB8B",
+      "phone": "5527999046347",
+      "fromMe": true,
+      "momment": 1776281048001,
+      "status": "SENT",
+      "chatName": "Lucas Segatto",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/583801163_1798311024125200_3279720548682070657_n.jpg?ccb=11-4&oh=01_Q5Aa4QH2_sRuBp7zz3SS8HaNvRxJZwtsBxpGAbtcXx-NKIPVig&oe=69ED0039&_nc_sid=5e03e0&_nc_cat=104",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Oi Lucas, só para confirmar se você recebeu as opções de horário. Algum deles funciona para você? Estou aqui para ajudar."
+      }
+    }
+  },
+  {
+    "timestamp": 1776281778.191474,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26658979463196@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "2A5932099B26A3691C86",
+      "phone": "5527999046347",
+      "fromMe": false,
+      "momment": 1776281773000,
+      "status": "RECEIVED",
+      "chatName": "Lucas Segatto",
+      "senderPhoto": null,
+      "senderName": "Lucas Segatto",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/583801163_1798311024125200_3279720548682070657_n.jpg?ccb=11-4&oh=01_Q5Aa4QH2_sRuBp7zz3SS8HaNvRxJZwtsBxpGAbtcXx-NKIPVig&oe=69ED0039&_nc_sid=5e03e0&_nc_cat=104",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Já agendado com a Marcela Bezerra"
+      }
+    }
+  },
+  {
+    "timestamp": 1776281811.683264,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26658979463196@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB03BA7DC5198C54F9B9B",
+      "phone": "5527999046347",
+      "fromMe": true,
+      "momment": 1776281809000,
+      "status": "SENT",
+      "chatName": "Lucas Segatto",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/583801163_1798311024125200_3279720548682070657_n.jpg?ccb=11-4&oh=01_Q5Aa4QH2_sRuBp7zz3SS8HaNvRxJZwtsBxpGAbtcXx-NKIPVig&oe=69ED0039&_nc_sid=5e03e0&_nc_cat=104",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Tenho disponibilidade em:\n- Quinta (16/04): 11h\n- Sexta (17/04): 13h\n- Segunda (20/04): 10h"
+      }
+    }
+  },
+  {
+    "timestamp": 1776281954.6003053,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26658979463196@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB00CEA766DC44BBBF3DE",
+      "phone": "5527999046347",
+      "fromMe": true,
+      "momment": 1776281805000,
+      "status": "SENT",
+      "chatName": "Lucas Segatto",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/583801163_1798311024125200_3279720548682070657_n.jpg?ccb=11-4&oh=01_Q5Aa4QH2_sRuBp7zz3SS8HaNvRxJZwtsBxpGAbtcXx-NKIPVig&oe=69ED0039&_nc_sid=5e03e0&_nc_cat=104",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Ótimos dados. Quais horários funcionam pra você?"
+      }
+    }
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "nome": "Marcela",
+  "email": "marcela.bezerra@btime.com.br",
+  "empresa": "Btime",
+  "segmento_mercado": "null",
+  "porte_empresa": "enterprise",
+  "faturamento_aproximado": "500 milhões",
+  "tamanho_time": "null",
+  "sistemas_atuais": [],
+  "desafios_identificados": [
+    "quase nada automatizado",
+    "financeiro manual",
+    "vendas manual",
+    "conciliação manual"
+  ],
+  "produto_indicado": "Squad AI",
+  "motivo_segmentacao": "Lead mencionou que quase nada está automatizado e que enfrentam problemas significativos em setores críticos como financeiro e vendas, com faturamento elevado.",
+  "estagio_conversa": "agendado",
+  "reuniao_agendada": true,
+  "necessita_followup": false,
+  "motivo_followup": "Reunião foi agendada com sucesso.",
+  "atualizado_em": "2026-04-14T16:53:40.985582",
+  "phone": "5511926596688"
+}

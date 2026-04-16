@@ -1,0 +1,902 @@
+[
+  {
+    "timestamp": 1776188731.5744238,
+    "data": {
+      "fromMe": true,
+      "phone": "5511926596688",
+      "chatLid": "5511926596688@lid",
+      "text": {
+        "message": "Oi, Marcela, sou a Ana, SDR da Btime. Queria saber como você tem lidado com a automação dos processos na sua empresa. Tem enfrentado dificuldades nessa área?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1776188736.0141528,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "734EB01A235CC6BE52DC",
+      "phone": "5511926596688",
+      "fromMe": true,
+      "momment": 1776177934000,
+      "status": "SENT",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Oi, Marcela, sou a Ana, SDR da Btime. Queria saber como você tem lidado com a automação dos processos na sua empresa. Tem enfrentado dificuldades nessa área?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776188777.1712894,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "2A0AD14CCDAC8C480DB4",
+      "phone": "5511926596688",
+      "fromMe": false,
+      "momment": 1776177975000,
+      "status": "RECEIVED",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Marcela Bezerra",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Quase nada automatizado"
+      }
+    }
+  },
+  {
+    "timestamp": 1776188777.2187102,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "2A81C11658D3FB249276",
+      "phone": "5511926596688",
+      "fromMe": false,
+      "momment": 1776177965000,
+      "status": "RECEIVED",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Marcela Bezerra",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Oi ana tudo bem?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776188821.212863,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB01982E3E602A21F61F7",
+      "phone": "5511926596688",
+      "fromMe": true,
+      "momment": 1776178019000,
+      "status": "SENT",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Tudo bem, obrigada!"
+      }
+    }
+  },
+  {
+    "timestamp": 1776188825.9539216,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0C4BF8A980E8952F6D3",
+      "phone": "5511926596688",
+      "fromMe": true,
+      "momment": 1776178024000,
+      "status": "SENT",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Quase nada automatizado é exatamente onde a Btime atua. Me conta: qual processo te dá mais dor de cabeça hoje?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776188926.2452893,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB07C7FFE0B8DCC40310F",
+      "phone": "5511926596688",
+      "fromMe": false,
+      "momment": 1776178125000,
+      "status": "RECEIVED",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Marcela Bezerra",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "financeiro e vendas principalemnte"
+      }
+    }
+  },
+  {
+    "timestamp": 1776188961.070441,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0658EBF314CE86CFD6F",
+      "phone": "5511926596688",
+      "fromMe": true,
+      "momment": 1776178161000,
+      "status": "SENT",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Faz sentido. Esses dois juntos costumam travar bastante o crescimento."
+      }
+    }
+  },
+  {
+    "timestamp": 1776188975.97542,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB004DC0B792AC45A2197",
+      "phone": "5511926596688",
+      "fromMe": false,
+      "momment": 1776178174000,
+      "status": "RECEIVED",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Marcela Bezerra",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "500M"
+      }
+    }
+  },
+  {
+    "timestamp": 1776189194.4254353,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB05F7D2B60EE9A4A01C5",
+      "phone": "5511926596688",
+      "fromMe": true,
+      "momment": 1776178167000,
+      "status": "SENT",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Pra eu entender melhor o tamanho do desafio: qual é o faturamento aproximado da empresa hoje?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776192538.9727612,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "2A04562B4FB914DD035C",
+      "phone": "5511926596688",
+      "fromMe": false,
+      "momment": 1776181737000,
+      "status": "RECEIVED",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Marcela Bezerra",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "500 milhões"
+      }
+    }
+  },
+  {
+    "timestamp": 1776192571.2249618,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "A369517ABF87F4909B1F",
+      "phone": "5511926596688",
+      "fromMe": true,
+      "momment": 1776181770001,
+      "status": "SENT",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Com esse porte e financeiro + vendas praticamente manuais, o Squad AI faz muito sentido pra vocês. É um time dedicado de tecnologia que atua como extensão da sua equipe, automatizando processos e integrando sistemas de forma contínua."
+      }
+    }
+  },
+  {
+    "timestamp": 1776192573.4317539,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB028AEBDDCFE0F5EB5D1",
+      "phone": "5511926596688",
+      "fromMe": true,
+      "momment": 1776181773001,
+      "status": "SENT",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "O que trava mais no financeiro hoje? Conciliação, relatórios, aprovações?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776192683.9714992,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "2A6A637083C64411B6C9",
+      "phone": "5511926596688",
+      "fromMe": false,
+      "momment": 1776181884000,
+      "status": "RECEIVED",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Marcela Bezerra",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Conciliação principalmente"
+      }
+    }
+  },
+  {
+    "timestamp": 1776192692.9952877,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "2A28CF8A957DB53A4832",
+      "phone": "5511926596688",
+      "fromMe": false,
+      "momment": 1776181890000,
+      "status": "RECEIVED",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Marcela Bezerra",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "reaction": {
+        "value": "❤️",
+        "time": 1776181890502,
+        "reactionBy": "112868116693115",
+        "referencedMessage": {
+          "messageId": "A369517ABF87F4909B1F",
+          "fromMe": true,
+          "phone": "81940057206947@lid",
+          "participant": null
+        }
+      }
+    }
+  },
+  {
+    "timestamp": 1776192729.8604383,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB04131CF957773719A68",
+      "phone": "5511926596688",
+      "fromMe": true,
+      "momment": 1776181927001,
+      "status": "SENT",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "referenceMessageId": "2A28CF8A957DB53A4832",
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Conciliação manual nesse volume é tempo e dinheiro jogados fora. Dá pra automatizar isso de forma significativa."
+      }
+    }
+  },
+  {
+    "timestamp": 1776192734.231454,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0AAD1042051F07A1F58",
+      "phone": "5511926596688",
+      "fromMe": true,
+      "momment": 1776181931000,
+      "status": "SENT",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Já teve alguma tentativa de resolver isso internamente ou com algum fornecedor?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776193789.8906639,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "2A61DBA1C195D49A1AB0",
+      "phone": "5511926596688",
+      "fromMe": false,
+      "momment": 1776182987000,
+      "status": "RECEIVED",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Marcela Bezerra",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Ainda não"
+      }
+    }
+  },
+  {
+    "timestamp": 1776193816.5413423,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "07AD3035D88B7B6BC965",
+      "phone": "5511926596688",
+      "fromMe": true,
+      "momment": 1776183014001,
+      "status": "SENT",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Então vocês estão no momento certo pra resolver isso antes que escale mais."
+      }
+    }
+  },
+  {
+    "timestamp": 1776193821.4644449,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0492523D97A57DB898B",
+      "phone": "5511926596688",
+      "fromMe": true,
+      "momment": 1776183019000,
+      "status": "SENT",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Me passa seu e-mail pra eu confirmar uma demo com o time técnico?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776193848.0451117,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "2AC76B9EE60A1C3A72F4",
+      "phone": "5511926596688",
+      "fromMe": false,
+      "momment": 1776183041000,
+      "status": "RECEIVED",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Marcela Bezerra",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "marcela.bezerra@btime.com.br"
+      }
+    }
+  },
+  {
+    "timestamp": 1776193878.2125835,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0DF154DC03536C7F5FE",
+      "phone": "5511926596688",
+      "fromMe": true,
+      "momment": 1776183077000,
+      "status": "SENT",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Perfeito. Qual dia funciona melhor pra você essa semana?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776195159.205646,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "2A9E8C0D2B9C976E587A",
+      "phone": "5511926596688",
+      "fromMe": false,
+      "momment": 1776184357000,
+      "status": "RECEIVED",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Marcela Bezerra",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Quarta feira"
+      }
+    }
+  },
+  {
+    "timestamp": 1776195220.713066,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "D7B4FDEBE11F07020C9F",
+      "phone": "5511926596688",
+      "fromMe": true,
+      "momment": 1776184384000,
+      "status": "SENT",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Temos horários disponíveis na quarta pela manhã. Prefere às 10:00, 10:30 ou 11:00?"
+      }
+    }
+  },
+  {
+    "timestamp": 1776195251.2696028,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "2A6BD5439853064075F0",
+      "phone": "5511926596688",
+      "fromMe": false,
+      "momment": 1776184451000,
+      "status": "RECEIVED",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Marcela Bezerra",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "11"
+      }
+    }
+  },
+  {
+    "timestamp": 1776195301.422514,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0D5420A5DFC4FF2D4F4",
+      "phone": "5511926596688",
+      "fromMe": true,
+      "momment": 1776184499000,
+      "status": "SENT",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Confirmado para quarta-feira, 15/04/2026, às 11:00. O convite foi enviado para o seu e-mail. Aqui está o link da reunião: https://meet.google.com/jbu-hxaz-hca. Até lá."
+      }
+    }
+  },
+  {
+    "timestamp": 1776196196.9775102,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "2A7CF226FC98C5A4FD85",
+      "phone": "5511926596688",
+      "fromMe": false,
+      "momment": 1776185395000,
+      "status": "RECEIVED",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Marcela Bezerra",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Obrigada!"
+      }
+    }
+  },
+  {
+    "timestamp": 1776196234.304298,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0E48480F570A46481C4",
+      "phone": "5511926596688",
+      "fromMe": true,
+      "momment": 1776185433000,
+      "status": "SENT",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Confirmação da reunião para quarta-feira, 15/04/2026, às 11:00. O convite foi enviado para o seu e-mail. Aqui está o link da reunião: https://meet.google.com/pjh-oece-fxx. Até lá."
+      }
+    }
+  },
+  {
+    "timestamp": 1776196400.7255442,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "2AC7F6F46452AAFE5F5C",
+      "phone": "5511926596688",
+      "fromMe": false,
+      "momment": 1776185571000,
+      "status": "RECEIVED",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Marcela Bezerra",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "reaction": {
+        "value": "❤️",
+        "time": 1776185571022,
+        "reactionBy": "112868116693115",
+        "referencedMessage": {
+          "messageId": "3EB0E48480F570A46481C4",
+          "fromMe": true,
+          "phone": "81940057206947@lid",
+          "participant": null
+        }
+      }
+    }
+  },
+  {
+    "timestamp": 1776196434.3126888,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "112868116693115@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "C262BB3E4B1678BFAA88",
+      "phone": "5511926596688",
+      "fromMe": true,
+      "momment": 1776185632003,
+      "status": "SENT",
+      "chatName": "Marcela Bezerra",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588801037_1619416409487952_5616696288115104305_n.jpg?ccb=11-4&oh=01_Q5Aa4QFj1TvhJqs7ESh90fkOf4nw6C3VjQxJHz5dIEAoBVEuSQ&oe=69EB7211&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Confirmado para quarta-feira, 15/04/2026, às 11:00. O convite foi enviado para o seu e-mail. Aqui está o link da reunião: https://meet.google.com/vom-ujgo-jjh. Até lá."
+      }
+    }
+  }
+]
