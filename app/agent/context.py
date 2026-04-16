@@ -398,11 +398,18 @@ def get_instrucao_abertura(contexto_lead: str = "") -> str:
     return (
         "Você está iniciando o contato com um lead frio pelo WhatsApp. "
         + prefixo
-        + "Escreva a primeira mensagem seguindo as diretrizes de abertura de conversa: "
-        "se tiver contexto do lead, abra com um gancho relevante sobre uma dor do segmento dele; "
-        "se não tiver contexto, apresente-se brevemente e faça uma pergunta aberta sobre o negócio. "
-        "Nunca cumprimente com 'tudo bem?' ou similar. Nunca faça pitch genérico longo. "
-        "Nunca peça demo na primeira mensagem. Sem emojis. Sem JSON. Só o texto."
+        + "Escreva a abertura em 2 a 3 mensagens curtas separadas por linha em branco. "
+        "Siga estas regras obrigatórias:\n"
+        "- Abra com uma saudação natural (Olá, Bom dia, Boa tarde) seguida do nome do lead, se souber.\n"
+        "- Apresente-se: seu nome (Ana) e que é da Btime. Uma frase, sem exagero.\n"
+        "- Se tiver contexto do segmento ou dor do lead: conecte diretamente a esse contexto com um gancho específico. "
+        "Nunca use frases genéricas como 'sabemos que empresas enfrentam desafios'.\n"
+        "- Se não tiver contexto: posicione a Btime em uma frase objetiva (automação de processos para operações que crescem) "
+        "e termine com uma pergunta direta sobre o segmento ou operação do lead. "
+        "Nunca use perguntas abertas demais como 'quais são seus desafios?'.\n"
+        "- Nunca use 'tudo bem?' ou qualquer variação.\n"
+        "- Nunca faça pitch longo nem peça demo.\n"
+        "- Sem emojis. Sem JSON. Só o texto das mensagens."
     )
 
 
