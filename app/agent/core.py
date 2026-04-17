@@ -276,10 +276,15 @@ class Agent_AI:
 
                 mensagem = resposta.content.strip()
 
-            # Envia a mensagem
+            # Envia em múltiplos balões se o LLM quebrou com \n\n
+            partes = [p.strip() for p in mensagem.split("\n\n") if p.strip()] or [mensagem]
             url = f"{self.base_url}/send-text"
-            requests.post(url, json={"phone": phone, "message": mensagem}, headers=headers)
-            print(f"{GREEN}[iniciar_conversa] Mensagem de abertura enviada para {chatLid}{RESET}")
+            for i, parte in enumerate(partes):
+                delay = max(1, min(int(len(parte) * 60 / (80 * 5)), 15))
+                if i > 0:
+                    time.sleep(0.5)
+                requests.post(url, json={"phone": phone, "message": parte, "delayTyping": delay}, headers=headers)
+                print(f"{GREEN}[iniciar_conversa] Parte {i+1}/{len(partes)} enviada para {chatLid}{RESET}")
 
             # Salva no histórico
             history_path = os.path.join(lead_dir, "history.json")
