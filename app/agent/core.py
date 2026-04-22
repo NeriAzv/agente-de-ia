@@ -229,22 +229,23 @@ class Agent_AI:
         lead_dir = os.path.join("chats", chatLid)
         file     = os.path.join(lead_dir, "history.json")
 
-        # Verifica se já existe mensagem do lead (fromMe=false), mensagens só nossas não contam
-        tem_mensagem_do_lead = False
         if os.path.exists(file):
             try:
                 with open(file, "r", encoding="utf-8") as f:
                     historico = json.load(f)
+                ja_abordado = any(
+                    item.get("data", {}).get("type") == "abertura"
+                    for item in historico
+                )
                 tem_mensagem_do_lead = any(
                     not item.get("data", {}).get("fromMe", True)
                     for item in historico
                 )
+                if ja_abordado or tem_mensagem_do_lead:
+                    print(f"{YELLOW}[iniciar_conversa] {chatLid} já foi abordado ou já tem mensagem do lead, abortando{RESET}")
+                    return False
             except Exception:
                 pass
-
-        if tem_mensagem_do_lead:
-            print(f"{YELLOW}[iniciar_conversa] {chatLid} já tem mensagem do lead, nenhuma abertura enviada{RESET}")
-            return False
 
         try:
             headers = {"client-token": self.zapi_sec_token}
@@ -276,17 +277,7 @@ class Agent_AI:
 
                 mensagem = resposta.content.strip()
 
-            # Envia em múltiplos balões se o LLM quebrou com \n\n
-            partes = [p.strip() for p in mensagem.split("\n\n") if p.strip()] or [mensagem]
-            url = f"{self.base_url}/send-text"
-            for i, parte in enumerate(partes):
-                delay = max(1, min(int(len(parte) * 60 / (80 * 5)), 15))
-                if i > 0:
-                    time.sleep(0.5)
-                requests.post(url, json={"phone": phone, "message": parte, "delayTyping": delay}, headers=headers)
-                print(f"{GREEN}[iniciar_conversa] Parte {i+1}/{len(partes)} enviada para {chatLid}{RESET}")
-
-            # Salva no histórico
+            # Salva no histórico ANTES de enviar para evitar race condition com webhook
             history_path = os.path.join(lead_dir, "history.json")
             historico = []
             if os.path.exists(history_path):
@@ -307,6 +298,16 @@ class Agent_AI:
             })
             with open(history_path, "w", encoding="utf-8") as f:
                 json.dump(historico, f, indent=2, ensure_ascii=False)
+
+            # Envia em múltiplos balões se o LLM quebrou com \n\n
+            partes = [p.strip() for p in mensagem.split("\n\n") if p.strip()] or [mensagem]
+            url = f"{self.base_url}/send-text"
+            for i, parte in enumerate(partes):
+                delay = max(1, min(int(len(parte) * 60 / (80 * 5)), 15))
+                if i > 0:
+                    time.sleep(0.5)
+                requests.post(url, json={"phone": phone, "message": parte, "delayTyping": delay}, headers=headers)
+                print(f"{GREEN}[iniciar_conversa] Parte {i+1}/{len(partes)} enviada para {chatLid}{RESET}")
 
             # Agenda follow-ups de inatividade
             self.agendar_followups(phone, chatLid)
@@ -1778,6 +1779,18 @@ class Agent_AI:
                                 f"Continue tentando reverter o desinteresse antes de desistir."
                             )
                     # ----------------------------------------------------
+
+                    # Primeira mensagem do lead: instrução obrigatória de apresentação
+                    if not history_for_agent:
+                        contexto += (
+                            "\n\nINSTRUÇÃO OBRIGATÓRIA — PRIMEIRA MENSAGEM INBOUND: O lead entrou em contato por conta própria. "
+                            "Você DEVE obrigatoriamente se apresentar nesta resposta. "
+                            "Diga seu nome (Ana) e que é da Btime. "
+                            "Como o objetivo do lead é desconhecido, NUNCA assuma o motivo do contato. "
+                            "Após a apresentação, pergunte de forma natural como pode ajudá-lo (ex: 'como posso te ajudar?', 'com o que posso te ajudar?'). "
+                            "Nunca pule a apresentação. Nunca faça perguntas sobre dores ou segmento antes de entender o que o lead quer."
+                        )
+                        print(f"{BLUE}[create_answer] Primeira mensagem de {chatLid}: instrução de apresentação injetada.{RESET}")
 
                     history_lc = _to_langchain_messages(history_for_agent)
                     ana_response = run_ana_agent(
