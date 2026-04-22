@@ -1654,6 +1654,17 @@ class Agent_AI:
                             linhas = ", ".join(f"{k}: {v}" for k, v in conhecidos.items())
                             contexto += f"\n\nDados já conhecidos deste lead (não peça novamente): {linhas}."
 
+                    # Injeta aviso se este lead foi abordado de forma outbound (lead frio)
+                    tem_abertura = any(
+                        item.get("data", {}).get("type") == "abertura"
+                        for item in historico
+                    )
+                    if tem_abertura:
+                        contexto += (
+                            "\n\nATENÇÃO: você já se apresentou para este lead (abordagem outbound). "
+                            "NÃO se apresente novamente. Retome a conversa de onde parou."
+                        )
+
                     # Injeta aviso se já existe reunião agendada para este lead
                     try:
                         arquivo_reunioes = "reunioes.json"
