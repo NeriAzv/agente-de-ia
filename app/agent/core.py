@@ -1768,6 +1768,18 @@ class Agent_AI:
                             )
                     # ----------------------------------------------------
 
+                    # Primeira mensagem do lead: instrução obrigatória de apresentação
+                    if not history_for_agent:
+                        contexto += (
+                            "\n\nINSTRUÇÃO OBRIGATÓRIA — PRIMEIRA MENSAGEM INBOUND: O lead entrou em contato por conta própria. "
+                            "Você DEVE obrigatoriamente se apresentar nesta resposta. "
+                            "Diga seu nome (Ana) e que é da Btime. "
+                            "Como o objetivo do lead é desconhecido, NUNCA assuma o motivo do contato. "
+                            "Após a apresentação, pergunte de forma natural como pode ajudá-lo (ex: 'como posso te ajudar?', 'com o que posso te ajudar?'). "
+                            "Nunca pule a apresentação. Nunca faça perguntas sobre dores ou segmento antes de entender o que o lead quer."
+                        )
+                        print(f"{BLUE}[create_answer] Primeira mensagem de {chatLid}: instrução de apresentação injetada.{RESET}")
+
                     history_lc = _to_langchain_messages(history_for_agent)
                     ana_response = run_ana_agent(
                         lead_message=lead_message_atual,
