@@ -17,7 +17,7 @@ from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 
 from colors import GREEN, RED, YELLOW, BLUE, RESET
 from agent.calendar import criar_evento_google_meet, deletar_evento_google_calendar, verificar_conflito_google_calendar, buscar_horarios_livres, get_organizer_for_product, MASTER_EMAIL
-from agent.normalizers import normalizar_data, normalizar_horario
+from agent.normalizers import normalizar_data, normalizar_horario, normalizar_telefone
 from agent.context import (
     get_contexto,
     PALAVRAS_AGENDAMENTO,
@@ -1506,6 +1506,14 @@ class Agent_AI:
                 document = msg_data.get("document", {})
                 if isinstance(document, dict):
                     content = document.get("conteudo", "") or document.get("caption", "") or ""
+            if not content:
+                c = msg_data.get("contact")
+                if isinstance(c, list):
+                    c = c[0] if c else None
+                if isinstance(c, dict):
+                    content = (c.get("displayName") or "").strip() or (
+                        f"contato {c['phones'][0]}" if c.get("phones") else ""
+                    )
             return (content or "").strip()
 
         indice_mensagens: Dict[str, str] = {}
@@ -1561,8 +1569,9 @@ class Agent_AI:
                     if descricao:
                         img_url = image_data.get("imageUrl", "")
                         caption = image_data.get("caption", "")
-                        text_part = f"[O usuário enviou uma imagem.{' Legenda: ' + caption + '.' if caption else ''} Análise automática: {descricao}]"
-                        if img_url:
+                        quem = "O lead" if not mensagem_data.get("fromMe", False) else "O assistente"
+                        text_part = f"[{quem} enviou uma imagem.{' Legenda: ' + caption + '.' if caption else ''} Análise automática: {descricao}]"
+                        if img_url and not mensagem_data.get("fromMe", False):
                             message_content = [
                                 {"type": "text", "text": text_part},
                                 {"type": "image_url", "image_url": {"url": img_url, "detail": "low"}},
@@ -1585,7 +1594,8 @@ class Agent_AI:
                                 video_data["descricao"] = descricao
                                 historico_modificado = True
                     if descricao:
-                        message_content = f"[O usuário enviou um vídeo. Análise automática: {descricao}]"
+                        quem = "O lead" if not mensagem_data.get("fromMe", False) else "O assistente"
+                        message_content = f"[{quem} enviou um vídeo. Análise automática: {descricao}]"
 
             # Se não há texto, áudio, imagem nem vídeo, verifica se é documento
             if not message_content:
@@ -1602,6 +1612,27 @@ class Agent_AI:
                             if message_content:
                                 doc_data["conteudo"] = message_content
                                 historico_modificado = True
+
+            # Se não há texto/mídia, verifica se é um card de contato (vCard)
+            if not message_content:
+                contact = mensagem_data.get("contact")
+                contatos = contact if isinstance(contact, list) else ([contact] if isinstance(contact, dict) else [])
+                partes = []
+                for c in contatos:
+                    if not isinstance(c, dict):
+                        continue
+                    nome = (c.get("displayName") or "").strip()
+                    brutos = list(c.get("phones") or []) or re.findall(r"waid=(\d+)", c.get("vCard", "") or "")
+                    numeros = [f"+{n}" for n in (normalizar_telefone(str(x)) for x in brutos) if n]
+                    if nome and numeros:
+                        partes.append(f'Nome exibido no WhatsApp: "{nome}". Telefone(s): {", ".join(numeros)}.')
+                    elif numeros:
+                        partes.append(f'Telefone(s): {", ".join(numeros)}.')
+                    elif nome:
+                        partes.append(f'Nome exibido no WhatsApp: "{nome}" (sem número legível).')
+                if partes:
+                    qtd = "um card de contato" if len(partes) == 1 else f"{len(partes)} cards de contato"
+                    message_content = f"[O lead encaminhou {qtd}. {' '.join(partes)}]"
 
             if not message_content:
                 continue
