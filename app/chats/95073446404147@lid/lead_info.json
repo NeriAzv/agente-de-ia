@@ -1,0 +1,17 @@
+{
+  "nome": "Andre Orfao",
+  "phone": "5511989985370",
+  "descricao_manual": "Empresa: Serasa Experian. Cargo: Gerente de Facilities. Segmento: Facilities. Setor da empresa: Tecnologia / Serviços Financeiros. Andre Orfao é Gerente de Facilities na Serasa Experian, maior empresa de análise de crédito e dados do Brasil, com escritórios em diversas cidades. Possíveis dores: gestão de múltiplos escritórios, controle de contratos de serviço e SLA de fornecedores de limpeza/segurança. Squads btime aderentes: Compras, TI e RH. Gancho: dar visibilidade centralizada em Facilities e abrir caminho para Compras e TI.",
+  "followups_agendados": [
+    {
+      "tipo": "24h",
+      "horario_iso": "2026-05-15T15:50:09.936248",
+      "phone": "5511989985370"
+    },
+    {
+      "tipo": "15d",
+      "horario_iso": "2026-05-29T15:50:09.936248",
+      "phone": "5511989985370"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "nome": "Gabriela Claro",
+  "phone": "5511973931146",
+  "descricao_manual": "Gabriela Claro é Facilities Manager LatAm na CBRE, maior empresa global de serviços imobiliários corporativos, gerenciando facilities de grandes clientes no Brasil. Possíveis dores: gestão de múltiplos clientes e contratos, padronização de processos entre contas e relatórios de desempenho para clientes finais. Squads btime aderentes: Account Management, Compras e Operações. Gancho: parceria estratégica para entregar uma camada de gestão digital que diferencia o serviço da CBRE para seus clientes.",
+  "followups_agendados": [
+    {
+      "tipo": "1h",
+      "horario_iso": "2026-05-14T17:55:20.488629",
+      "phone": "5511973931146"
+    },
+    {
+      "tipo": "24h",
+      "horario_iso": "2026-05-15T16:55:20.488629",
+      "phone": "5511973931146"
+    },
+    {
+      "tipo": "15d",
+      "horario_iso": "2026-05-29T16:55:20.488629",
+      "phone": "5511973931146"
+    }
+  ]
+}

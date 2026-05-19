@@ -1,0 +1,134 @@
+[
+  {
+    "timestamp": 1778788063.3612764,
+    "data": {
+      "fromMe": true,
+      "phone": "5519995957296",
+      "chatLid": "5519995957296@lid",
+      "text": {
+        "message": "Boa tarde, Juliana.\n\nSou Ana da Btime. Vi seu contexto como Manager de CS & Facility na Sensitech e acredito que poderíamos explorar como aplicar rigor de rastreabilidade nos seus facilities.\n\nA Btime foca em automação de processos e eficiência operacional, e podemos ajudar a otimizar a gestão de laboratórios e salas especiais. \n\nTem espaço pra conversar sobre isso?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1778788070.0182543,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "98715595464860@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB090A838FCC1EB621E32",
+      "phone": "5519995957296",
+      "fromMe": true,
+      "momment": 1778788102000,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Boa tarde, Juliana."
+      }
+    }
+  },
+  {
+    "timestamp": 1778788084.6201303,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "98715595464860@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB075535526CF50397CFF",
+      "phone": "5519995957296",
+      "fromMe": true,
+      "momment": 1778788118000,
+      "status": "SENT",
+      "chatName": "5519995957296",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou Ana da Btime. Vi seu contexto como Manager de CS & Facility na Sensitech e acredito que poderíamos explorar como aplicar rigor de rastreabilidade nos seus facilities."
+      }
+    }
+  },
+  {
+    "timestamp": 1778788099.5402138,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "98715595464860@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0749AEAAD7413385375",
+      "phone": "5519995957296",
+      "fromMe": true,
+      "momment": 1778788133000,
+      "status": "SENT",
+      "chatName": "5519995957296",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "A Btime foca em automação de processos e eficiência operacional, e podemos ajudar a otimizar a gestão de laboratórios e salas especiais."
+      }
+    }
+  },
+  {
+    "timestamp": 1778788106.4442694,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "98715595464860@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB024017DB4E6CDDCB2AD",
+      "phone": "5519995957296",
+      "fromMe": true,
+      "momment": 1778788140000,
+      "status": "SENT",
+      "chatName": "5519995957296",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Tem espaço pra conversar sobre isso?"
+      }
+    }
+  }
+]

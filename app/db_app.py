@@ -4,6 +4,8 @@ sys.path.insert(0, os.path.dirname(__file__))
 
 from flask import Flask, request
 from agent import Agent_AI
+from agent.normalizers import normalizar_telefone
+from agent.storage import supabase_repo
 from colors import GREEN, RED, YELLOW, BLUE, RESET
 
 import json
@@ -13,8 +15,43 @@ import threading
 _file_lock = threading.Lock()
 
 
+def _supabase_safe(fn, *args, **kwargs):
+    """Run a supabase_repo call, swallowing exceptions.
+
+    Inputs:
+        fn: Callable from `supabase_repo`.
+
+    Returns:
+        Function result on success, None on any failure.
+
+    Side effects:
+        Logs a short yellow warning when the call fails. Credentials are
+        never logged.
+    """
+    try:
+        return fn(*args, **kwargs)
+    except Exception as e:
+        print(f"{YELLOW}[supabase] {fn.__name__} falhou: {e}{RESET}")
+        return None
+
+
 def _is_ai_blocked(chatLid: str) -> bool:
-    """Retorna True se o lead tiver ai_blocked=true no lead_info.json."""
+    """Return True when the bot must stay silent for `chatLid`.
+
+    Inputs:
+        chatLid: WhatsApp chat identifier.
+
+    Returns:
+        True if `conversations.ai_blocked` is True in Supabase, or — when
+        Supabase is unreachable — if the legacy `lead_info.json` has the same
+        flag set. False on any other case (including JSON parse errors).
+
+    Side effects:
+        One Supabase GET when reachable; one local file read as fallback.
+    """
+    conv = _supabase_safe(supabase_repo.get_conversation, chatLid)
+    if conv is not None:
+        return bool(conv.get("ai_blocked", False))
     lead_info_path = os.path.join("chats", chatLid, "lead_info.json")
     if not os.path.exists(lead_info_path):
         return False
@@ -58,18 +95,28 @@ def webhook_message_status():
 @app.route("/webhook/receive", methods=["POST"])
 def webhook_receive():
     """Mensagens recebidas chegam neste webhook."""
-    data    = request.json
+    data    = request.json or {}
+    if not isinstance(data, dict):
+        return {"status": "ignored", "reason": "payload inválido"}, 200
     chatLid = data.get("chatLid")
     from_me = data.get("fromMe")
-    phone   = data.get("phone")
+    phone_raw = data.get("phone")
+    phone = phone_raw
+    if phone_raw:
+        phone_norm = normalizar_telefone(phone_raw)
+        if phone_norm:
+            phone = phone_norm
+        else:
+            print(f" {YELLOW} > /webhook/receive: phone não normalizável, usando bruto: {phone_raw!r} {RESET}")
 
     if not chatLid:
         return {"status": "ignored", "reason": "chatLid ausente"}, 200
 
-# Salva mensagem no histórico
+# Salva mensagem no histórico (mirror local) e em Supabase (fonte de verdade)
     lead_dir = os.path.join("chats", chatLid)
     os.makedirs(lead_dir, exist_ok=True)
     file = os.path.join(lead_dir, "history.json")
+    novo_evento = {"timestamp": time.time(), "data": data}
 
     with _file_lock:
         if os.path.exists(file):
@@ -81,10 +128,14 @@ def webhook_receive():
         else:
             existing_data = []
 
-        existing_data.append({"timestamp": time.time(), "data": data})
+        existing_data.append(novo_evento)
 
         with open(file, "w", encoding="utf-8") as f:
             json.dump(existing_data, f, indent=2, ensure_ascii=False)
+
+    _supabase_safe(supabase_repo.append_message, chatLid, novo_evento)
+    if phone:
+        _supabase_safe(supabase_repo.upsert_conversation, chatLid, phone=phone)
 
     print(f" > /webhook/{BLUE}receive{RESET} chamado")
 
@@ -110,7 +161,9 @@ def webhook_receive():
 @app.route("/webhook/presence", methods=["POST"])
 def webhook_presence():
     """Processa eventos de presença (digitando, gravando, pausado, etc.)."""
-    data    = request.json
+    data    = request.json or {}
+    if not isinstance(data, dict):
+        return {"status": "ignored", "reason": "payload inválido"}, 200
     phone   = data.get("phone")
     chatLid = data.get("chatLid") or (f"{phone}@lid" if phone else None)
     name    = data.get("name", chatLid)
@@ -224,12 +277,22 @@ def iniciar_conversa():
 def chamar_lead():
     """
     Chama um lead manualmente.
+
     Corpo esperado:
         {
             "nome": "Nome Completo",
             "numero": "5511999999999",
-            "descricao": "Contexto opcional sobre o lead"
+            "descricao": "Contexto opcional sobre o lead",
+            "mensagem": "Opcional: mensagem literal (pula geração via IA)"
         }
+
+    Respostas:
+        200 {"status": "ok", ...}       -> Z-API aceitou todas as partes da abertura.
+        502 {"status": "failed",         -> Z-API rejeitou o envio; histórico NÃO foi
+             "reason": "zapi_rejected",     gravado, lead permanece elegível para retry.
+             "zapi_response": "..."}
+        200 {"status": "skipped", ...}  -> Lead já tinha histórico/abertura prévia.
+        400                              -> Faltam campos obrigatórios.
     """
     data      = request.json or {}
     nome      = data.get("nome")
@@ -240,8 +303,15 @@ def chamar_lead():
     if not nome or not numero:
         return {"status": "error", "reason": "nome e numero são obrigatórios"}, 400
 
-    # Normaliza o número (remove espaços, traços, parênteses)
-    numero = numero.strip().replace(" ", "").replace("-", "").replace("(", "").replace(")", "")
+    numero_normalizado = normalizar_telefone(numero)
+    if not numero_normalizado:
+        return {
+            "status": "error",
+            "reason": "numero_invalido",
+            "input": numero,
+            "message": "Número não pôde ser normalizado para E.164. Verifique DDI/DDD.",
+        }, 400
+    numero = numero_normalizado
 
     chatLid  = f"{numero}@lid"
     lead_dir = os.path.join("chats", chatLid)
@@ -265,14 +335,23 @@ def chamar_lead():
     with open(lead_info_path, "w", encoding="utf-8") as f:
         json.dump(lead_info, f, indent=2, ensure_ascii=False)
 
+    # Mirror para Supabase (fonte de verdade)
+    _supabase_safe(supabase_repo.upsert_conversation, chatLid, phone=numero)
+    profile_data = {k: v for k, v in lead_info.items() if k not in ("phone", "ai_blocked", "followups_agendados")}
+    if profile_data:
+        _supabase_safe(supabase_repo.upsert_lead_profile, chatLid, profile_data)
+
     print(f" > /chamar-lead chamado para {nome} ({numero})")
 
     enviado = agent.iniciar_conversa(numero, chatLid, mensagem)
 
     if enviado:
         return {"status": "ok", "message": f"Lead {nome} chamado com sucesso"}, 200
-    else:
-        return {"status": "skipped", "reason": "Lead já possui histórico de conversa"}, 200
+
+    err = getattr(agent, "_last_send_error", None)
+    if err:
+        return {"status": "failed", "reason": "zapi_rejected", "zapi_response": err}, 502
+    return {"status": "skipped", "reason": "Lead já possui histórico de conversa"}, 200
 
 
 @app.route("/forcar-resposta", methods=["POST"])
@@ -312,6 +391,7 @@ def forcar_resposta():
             "fromApi": False,
             "text": {"message": mensagem},
         }
+        novo_evento = {"timestamp": time.time(), "data": fake_data}
         with _file_lock:
             existing = []
             if os.path.exists(file):
@@ -320,25 +400,21 @@ def forcar_resposta():
                         existing = json.load(f)
                 except (json.JSONDecodeError, ValueError):
                     existing = []
-            existing.append({"timestamp": time.time(), "data": fake_data})
+            existing.append(novo_evento)
             with open(file, "w", encoding="utf-8") as f:
                 json.dump(existing, f, indent=2, ensure_ascii=False)
+        _supabase_safe(supabase_repo.append_message, chatLid, novo_evento)
         print(f" > /forcar-resposta: mensagem '{mensagem}' injetada no histórico de {chatLid}")
         trigger_data = fake_data
     else:
-        # Sem mensagem nova: usa a última mensagem do lead no histórico como gatilho
+        # Sem mensagem nova: usa a última mensagem do lead (Supabase = verdade)
         trigger_data = None
-        if os.path.exists(file):
-            try:
-                with open(file, "r", encoding="utf-8") as f:
-                    historico = json.load(f)
-                for entry in reversed(historico):
-                    d = entry.get("data", {})
-                    if not d.get("fromMe"):
-                        trigger_data = d
-                        break
-            except (json.JSONDecodeError, ValueError):
-                pass
+        historico = agent._read_history(chatLid) if agent else []
+        for entry in reversed(historico):
+            d = entry.get("data", {})
+            if not d.get("fromMe"):
+                trigger_data = d
+                break
         if not trigger_data:
             return {"status": "error", "reason": "Nenhuma mensagem do lead encontrada no histórico"}, 400
         print(f" > /forcar-resposta: reprocessando última mensagem do lead {chatLid}")

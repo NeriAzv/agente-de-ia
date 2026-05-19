@@ -12,7 +12,7 @@ Z-API  →  POST /webhook/receive
      │
      ▼
 Flask (db_app.py — porta 5001)
-     │  salva history.json por chatLid
+     │  grava no Supabase (`messages`) e mantém JSON local como mirror/fallback
      │  aguarda delay dinâmico (3–12s)
      ▼
 Agent_AI.get_ai_response()
@@ -35,7 +35,7 @@ Agent_AI.get_ai_response()
 
 ## Contexto injetado em cada resposta
 
-- Dados conhecidos do lead (`lead_info.json`): nome, email, segmento, etc.
+- Dados conhecidos do lead (Supabase `lead_profiles` + `conversations`; `lead_info.json` é fallback/mirror): nome, email, segmento, etc.
 - Horários livres dos próximos 3 dias úteis (consultados ao vivo no Google Calendar)
 - Output consolidado dos 4 micro agentes
 
@@ -69,7 +69,7 @@ Após cada resposta enviada, o agente agenda 3 timers por lead:
 | 24h | 24 horas sem resposta |
 | 15d | 15 dias sem resposta |
 
-Os timers são persistidos em `lead_info.json` e restaurados se o servidor reiniciar. Quando o lead responde, todos os timers são cancelados automaticamente. O campo `necessita_followup: false` no `lead_info.json` desativa os follow-ups para aquele lead.
+Os timers são persistidos em Supabase `followup_jobs` e restaurados no startup a partir de jobs `scheduled`. Quando o lead responde, todos os timers pendentes são cancelados automaticamente e os jobs voltam para Supabase como `cancelled`. O JSON local pode manter `followups_agendados` como mirror legado, mas não é fonte da verdade.
 
 ## Fluxo de qualificação
 
@@ -93,6 +93,7 @@ Os timers são persistidos em `lead_info.json` e restaurados se o servidor reini
 | Follow-up / mídia | OpenAI GPT-4o-mini / GPT-4o / Whisper |
 | Calendário | Google Calendar API (OAuth2) |
 | Extração de vídeo | ffmpeg / ffprobe |
+| Persistência runtime | Supabase (`conversations`, `lead_profiles`, `messages`, `followup_jobs`, `meetings`) |
 
 ## Estrutura de arquivos
 
@@ -103,7 +104,7 @@ agente-de-ia/
 │   ├── .env                           # Chaves de API (não commitado)
 │   ├── client_secret.json             # OAuth2 Google (não commitado)
 │   ├── token.json                     # Token OAuth Google (gerado no 1º login)
-│   ├── reunioes.json                  # Reuniões agendadas (runtime)
+│   ├── reunioes.json                  # Mirror/fallback legado de reuniões
 │   └── agent/
 │       ├── core.py                    # Agent_AI — orquestração principal
 │       ├── micro_agents.py            # Executa os 4 micro agentes em paralelo
@@ -117,8 +118,8 @@ agente-de-ia/
 │       └── normalizers.py             # Normalização de datas e horários
 └── chats/
     └── {chatLid}/
-        ├── history.json               # Histórico completo da conversa
-        └── lead_info.json             # Dados do lead + followups agendados
+        ├── history.json               # Mirror/log legado do histórico
+        └── lead_info.json             # Mirror/fallback legado dos dados do lead
 ```
 
 ## Variáveis de ambiente
@@ -127,6 +128,8 @@ agente-de-ia/
 OPENAI_API_KEY=sk-...
 ANTHROPIC_API_KEY=sk-ant-...
 ZAPI_SEC_TOKEN=...
+SUPABASE_URL=<project-url>
+SUPABASE_SERVICE_ROLE_KEY=<service-role-key>
 ```
 
 ## Como rodar
@@ -176,3 +179,33 @@ Configure a URL gerada como webhook no painel do Z-API.
 ```json
 { "phone": "5511999999999", "chatLid": "5511999999999@lid" }
 ```
+
+## Confiabilidade do fluxo de chats (atual)
+
+Melhorias recentes aplicadas no fluxo end-to-end:
+
+- Webhooks (`/webhook/receive` e `/webhook/presence`) validam payload inválido sem quebrar o processo.
+- Supabase é a fonte da verdade para conversas, perfis, mensagens, follow-ups e reuniões.
+- Persistência de histórico ficou mais segura contra sobrescrita parcial durante processamento de mídia.
+- Escrita/leitura de JSON crítico (`history.json`, `lead_info.json`, `reunioes.json`) usa lock interno no agente para reduzir race condition entre threads/timers.
+- Startup restaura follow-ups a partir de `followup_jobs`, não de `lead_info.json`.
+- Busca de horários livres agora tem limite de varredura (evita loop potencialmente infinito quando agenda está vazia).
+- Remarcação remove evento antigo no mesmo calendário de origem do produto.
+
+### Checklist rápido de validação
+
+1. Envie mensagem de texto para um lead e confirme append em Supabase `messages`.
+2. Envie áudio/imagem/documento e confirme enriquecimento no histórico sem perda de mensagens antigas.
+3. Simule reinício do servidor e confirme restauração de follow-ups pendentes em `followup_jobs`.
+4. Faça agendamento e confirme registro em Supabase `meetings` + evento no Google Calendar.
+5. Execute `python -m py_compile app/db_app.py app/agent/core.py` antes de deploy.
+
+## Regra obrigatória de docstring
+Sempre que uma função for criada ou editada, a docstring da própria função deve ser criada/atualizada no mesmo commit.
+
+A docstring deve explicar no mínimo:
+- o que a função faz,
+- parâmetros esperados,
+- efeitos colaterais relevantes (I/O, API externa, timers/threads),
+- retorno,
+- comportamento de erro/fallback quando aplicável.

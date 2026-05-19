@@ -1,0 +1,122 @@
+[
+  {
+    "timestamp": 1779113188.7995238,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "279452382671040@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0CCB024932C1C0FE625",
+      "phone": "5511977739500",
+      "fromMe": true,
+      "momment": 1779113229002,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/693573502_959383737013951_5328170347010172994_n.jpg?ccb=11-4&oh=01_Q5Aa4gFoU2hSHYNo311Wk0zemTvee9KfAFiiRN08EltbZH6mfg&oe=6A181A9F&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Bom dia, Jorge."
+      }
+    }
+  },
+  {
+    "timestamp": 1779113206.0856903,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "279452382671040@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB065DCBE4F8E09381F4F",
+      "phone": "5511977739500",
+      "fromMe": true,
+      "momment": 1779113247001,
+      "status": "SENT",
+      "chatName": "5511977739500",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/693573502_959383737013951_5328170347010172994_n.jpg?ccb=11-4&oh=01_Q5Aa4gFoU2hSHYNo311Wk0zemTvee9KfAFiiRN08EltbZH6mfg&oe=6A181A9F&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Trabalho com operações que precisam padronizar e otimizar a gestão de Facilities nas lojas, especialmente em redes de franquias como a sua. Tem espaço pra conversar sobre isso?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779120011.402,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "279452382671040@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB032B3D07C3B21184A9A",
+      "phone": "5511977739500",
+      "fromMe": true,
+      "momment": 1779120052000,
+      "status": "SENT",
+      "chatName": "5511977739500",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/693573502_959383737013951_5328170347010172994_n.jpg?ccb=11-4&oh=01_Q5Aa4gEsAg5CDQQsYzbkAu-xwoZDS4bO4XcVQVL-AifGxkvNRQ&oe=6A1852DF&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Oi Jorge, só passando pra ver se recebeu minha mensagem. Estou aqui pra ajudar a melhorar a eficiência nas suas lojas. Vamos conversar?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779199596.264918,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "279452382671040@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0C8E62ADA5D215EB7AA",
+      "phone": "5511977739500",
+      "fromMe": true,
+      "momment": 1779199636001,
+      "status": "SENT",
+      "chatName": "5511977739500",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Oi, Jorge. Estou por aqui se quiser continuar a conversa."
+      }
+    }
+  }
+]

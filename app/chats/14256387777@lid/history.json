@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": 1778788464.7665522,
+    "data": {
+      "fromMe": true,
+      "phone": "14256387777",
+      "chatLid": "14256387777@lid",
+      "text": {
+        "message": "Boa tarde, Jullia.\n\nSou a Ana, da Btime. Tenho falado com times de Facilities sobre centralizar rotinas de campus, chamados e integrações com sistemas corporativos sem aumentar trabalho manual. Faz sentido a gente trocar uma ideia?"
+      },
+      "type": "abertura"
+    }
+  }
+]

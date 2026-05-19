@@ -1,0 +1,74 @@
+[
+  {
+    "timestamp": 1779113163.7875724,
+    "data": {
+      "fromMe": true,
+      "phone": "5511941149266",
+      "chatLid": "5511941149266@lid",
+      "text": {
+        "message": "Boa tarde, Caio.\n\nSou a Ana, da Btime. Para operações em expansão como a da AUTOMOB, ter uma plataforma que padronize a gestão de facilities desde a abertura das unidades pode impactar diretamente na qualidade do crescimento. Você tem espaço para uma conversa rápida sobre automação e eficiência nesse aspecto?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779113170.0348012,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "235089531302072@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0843FFAFD6E1720CF38",
+      "phone": "5511941149266",
+      "fromMe": true,
+      "momment": 1779113210000,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/455836368_600646985980491_574647601044589291_n.jpg?ccb=11-4&oh=01_Q5Aa4gEglJVN5J7z_FjbiV0h9LPO2-ylGJv1Jiacf4nKgFUmVQ&oe=6A184206&_nc_sid=5e03e0&_nc_cat=106",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Boa tarde, Caio."
+      }
+    }
+  },
+  {
+    "timestamp": 1779113184.0367305,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "235089531302072@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0E598B7715CA1D7559E",
+      "phone": "5511941149266",
+      "fromMe": true,
+      "momment": 1779113225000,
+      "status": "SENT",
+      "chatName": "5511941149266",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/455836368_600646985980491_574647601044589291_n.jpg?ccb=11-4&oh=01_Q5Aa4gEglJVN5J7z_FjbiV0h9LPO2-ylGJv1Jiacf4nKgFUmVQ&oe=6A184206&_nc_sid=5e03e0&_nc_cat=106",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Para operações em expansão como a da AUTOMOB, ter uma plataforma que padronize a gestão de facilities desde a abertura das unidades pode impactar diretamente na qualidade do crescimento. Você tem espaço para uma conversa rápida sobre automação e eficiência nesse aspecto?"
+      }
+    }
+  }
+]

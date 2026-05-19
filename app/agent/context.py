@@ -393,19 +393,45 @@ def get_instrucao_followup(tipo: str, nome: str) -> str:
 
 
 def get_instrucao_abertura(contexto_lead: str = "") -> str:
-    """Instrução para o LLM gerar a primeira mensagem de um lead frio."""
+    """Monta a instrução para o LLM gerar a primeira mensagem de um lead frio.
+
+    Inputs:
+        contexto_lead: Texto opcional com dados conhecidos do lead, como nome,
+            empresa, cargo, segmento, dores ou descrição manual.
+
+    Behavior/side effects:
+        Apenas compõe texto de prompt em memória. Não escreve arquivos, não faz
+        chamadas externas e não agenda timers.
+
+    Return:
+        String com regras de abertura outbound para ser enviada ao LLM.
+
+    Exceptions/fallbacks:
+        Não levanta exceções esperadas. Quando `contexto_lead` vem vazio, gera
+        uma instrução genérica sem inventar dados de origem, cargo ou empresa.
+    """
     prefixo = f"{contexto_lead} " if contexto_lead else ""
     return (
         "Você está iniciando o contato com um lead frio pelo WhatsApp. "
         + prefixo
-        + "Escreva a abertura em 2 a 3 mensagens curtas separadas por linha em branco. "
+        + "Escreva a abertura em 2 mensagens curtas separadas por linha em branco. "
         "Siga estas regras obrigatórias:\n"
         "- Abra com uma saudação natural (Olá, Bom dia, Boa tarde) seguida do nome do lead, se souber.\n"
-        "- Apresente-se: seu nome (Ana) e que é da Btime. Uma frase, sem exagero.\n"
-        "- Se houver indicação de alguém no contexto: mencione o nome de quem indicou logo na apresentação. "
-        "Ex: 'O [nome] me passou seu contato.' Isso deve vir ANTES de qualquer pitch.\n"
+        "- Apresente-se de forma curta: 'Sou a Ana, da Btime.' ou variação equivalente. Não use 'Meu nome é'.\n"
+        "- Nunca invente nomes de terceiros, indicações ou fontes do contato. "
+        "Só mencione uma pessoa se o contexto trouxer explicitamente que ela indicou o lead.\n"
+        "- Não explique a origem do contato quando não houver indicação explícita. "
+        "Nunca use 'vi seu contexto', 'seu contexto profissional', 'o sistema trouxe seu contato', 'peguei seu contato', 'consegui seu número' ou variações. "
+        "Use os dados disponíveis como relevância comercial, não como justificativa de origem. "
+        "Exemplo de direção: 'Trabalho com operações que têm muita rotina manual em manutenção/facilities/compras' ou 'Tenho falado com operações industriais sobre centralização de chamados e redução de trabalho manual'. "
+        "Os únicos dados garantidos são nome e telefone; todo o resto pode vir vazio. "
+        "Se não houver cargo, área, empresa, dor ou segmento, desenrole sem inventar: faça uma abertura genérica forte sobre automação de processos, eficiência operacional e redução de trabalho manual. "
+        "Não diga que faltam dados e não crie uma empresa, cargo, dor ou indicação que não esteja no contexto. "
+        "Não use 'mapeamento de empresas' nem qualquer frase informal demais.\n"
         "- Se tiver contexto de dor ou segmento: mencione de forma direta e natural, sem repetir literalmente o que foi dito no briefing. "
         "Nunca use frases como 'entendo que você busca' ou 'sabemos que empresas enfrentam desafios'.\n"
+        "- A abertura deve soar como prospecção consultiva e humana: conecte Btime a uma hipótese operacional específica, sem soar como scraping de LinkedIn. "
+        "Se só houver nome e telefone, posicione a Btime de forma objetiva e faça uma pergunta simples sobre automação, operação manual ou eficiência.\n"
         "- Termine sempre com UMA pergunta curta e direta que convide o lead a confirmar o interesse. "
         "Ex: 'Faz sentido a gente trocar uma ideia?' ou 'Tem espaço pra conversar sobre isso?'\n"
         "- Se não tiver contexto: posicione a Btime em uma frase objetiva (automação de processos para operações que crescem) "

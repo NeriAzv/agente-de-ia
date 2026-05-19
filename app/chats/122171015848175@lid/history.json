@@ -1,0 +1,74 @@
+[
+  {
+    "timestamp": 1778788582.5157166,
+    "data": {
+      "fromMe": true,
+      "phone": "5511975833237",
+      "chatLid": "5511975833237@lid",
+      "text": {
+        "message": "Boa tarde, Danielle.\n\nSou a Ana, da Btime. Tenho falado com operações industriais sobre centralizar rotinas de Facilities, manutenção preventiva e controles críticos como câmaras frias com menos trabalho manual. Faz sentido a gente trocar uma ideia?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1778788589.7819738,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "122171015848175@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0AA734857381205CEB8",
+      "phone": "5511975833237",
+      "fromMe": true,
+      "momment": 1778788623000,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/484757540_717595150621393_7742588356196590374_n.jpg?ccb=11-4&oh=01_Q5Aa4gHWljU5R5KuP8OHjMJQUShNox-_SGUSlJp6UCSFQSUUXg&oe=6A134B5E&_nc_sid=5e03e0&_nc_cat=105",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Boa tarde, Danielle."
+      }
+    }
+  },
+  {
+    "timestamp": 1778788603.798622,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "122171015848175@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0FCCA7D80FF39D03EF9",
+      "phone": "5511975833237",
+      "fromMe": true,
+      "momment": 1778788638000,
+      "status": "SENT",
+      "chatName": "5511975833237",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/484757540_717595150621393_7742588356196590374_n.jpg?ccb=11-4&oh=01_Q5Aa4gHWljU5R5KuP8OHjMJQUShNox-_SGUSlJp6UCSFQSUUXg&oe=6A134B5E&_nc_sid=5e03e0&_nc_cat=105",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Tenho falado com operações industriais sobre centralizar rotinas de Facilities, manutenção preventiva e controles críticos como câmaras frias com menos trabalho manual. Faz sentido a gente trocar uma ideia?"
+      }
+    }
+  }
+]

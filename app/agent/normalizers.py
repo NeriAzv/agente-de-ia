@@ -1,6 +1,34 @@
 import re
 from datetime import datetime
 
+import phonenumbers
+from phonenumbers import NumberParseException, PhoneNumberFormat
+
+
+def normalizar_telefone(numero: str, default_region: str = "BR") -> str | None:
+    """Normaliza qualquer formato comum para dígitos puros em E.164 sem '+'.
+
+    Aceita: '+55 11 97953-7732', '(11) 97953-7732', '0055 11 97953-7732',
+    '+33 1 40 73 73 73', '+1 609-452-1000', etc.
+
+    Returns:
+        String só com dígitos pronta para Z-API (ex.: '5573999846024'),
+        ou None se o número não puder ser parseado ou não for válido.
+    """
+    if not numero:
+        return None
+    bruto = numero.strip()
+    if bruto.startswith("00"):
+        bruto = "+" + bruto[2:]
+    try:
+        parsed = phonenumbers.parse(bruto, default_region)
+    except NumberParseException:
+        return None
+    if not phonenumbers.is_valid_number(parsed):
+        return None
+    e164 = phonenumbers.format_number(parsed, PhoneNumberFormat.E164)
+    return e164.lstrip("+")
+
 
 HORAS_EXTENSO = {
     "meia noite": "00:00", "uma": "01:00", "duas": "02:00", "três": "03:00",

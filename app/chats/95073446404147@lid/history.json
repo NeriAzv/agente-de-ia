@@ -1,0 +1,134 @@
+[
+  {
+    "timestamp": 1778784607.2323508,
+    "data": {
+      "fromMe": true,
+      "phone": "5511989985370",
+      "chatLid": "5511989985370@lid",
+      "text": {
+        "message": "Bom dia, Andre. \n\nSou a Ana, da Btime. Vi seu contexto como Gerente de Facilities na Serasa Experian e imagino que a gestão de múltiplos escritórios e o controle de contratos são desafios constantes. \n\nA Btime atua na automação de processos para trazer eficiência operacional e centralização de informações. Faz sentido a gente trocar uma ideia?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1778784640.2553577,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "95073446404147@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0B500B247E0CF79867D",
+      "phone": "5511989985370",
+      "fromMe": true,
+      "momment": 1778784674002,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/427426845_719770310366478_3874911715031324129_n.jpg?ccb=11-4&oh=01_Q5Aa4gFt_VA5NHH2Y3v7KpO8t10QPiugsDKferK3RWnu1fTjhA&oe=6A1332A3&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Bom dia, Andre."
+      }
+    }
+  },
+  {
+    "timestamp": 1778784656.026083,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "95073446404147@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB014E0799F1F382491D9",
+      "phone": "5511989985370",
+      "fromMe": true,
+      "momment": 1778784689001,
+      "status": "SENT",
+      "chatName": "5511989985370",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/427426845_719770310366478_3874911715031324129_n.jpg?ccb=11-4&oh=01_Q5Aa4gFt_VA5NHH2Y3v7KpO8t10QPiugsDKferK3RWnu1fTjhA&oe=6A1332A3&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Vi seu contexto como Gerente de Facilities na Serasa Experian e imagino que a gestão de múltiplos escritórios e o controle de contratos são desafios constantes."
+      }
+    }
+  },
+  {
+    "timestamp": 1778784685.0093203,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "95073446404147@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0E2E7248D0F321539FC",
+      "phone": "5511989985370",
+      "fromMe": true,
+      "momment": 1778784704002,
+      "status": "SENT",
+      "chatName": "5511989985370",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/427426845_719770310366478_3874911715031324129_n.jpg?ccb=11-4&oh=01_Q5Aa4gFt_VA5NHH2Y3v7KpO8t10QPiugsDKferK3RWnu1fTjhA&oe=6A1332A3&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "A Btime atua na automação de processos para trazer eficiência operacional e centralização de informações. Faz sentido a gente trocar uma ideia?"
+      }
+    }
+  },
+  {
+    "timestamp": 1778788214.2659156,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "95073446404147@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB04406173E09C29A933E",
+      "phone": "5511989985370",
+      "fromMe": true,
+      "momment": 1778788247000,
+      "status": "SENT",
+      "chatName": "5511989985370",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/427426845_719770310366478_3874911715031324129_n.jpg?ccb=11-4&oh=01_Q5Aa4gFt_VA5NHH2Y3v7KpO8t10QPiugsDKferK3RWnu1fTjhA&oe=6A1332A3&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Oi Andre. Espero que esteja bem. Queria saber se você teve a chance de pensar sobre a automação de processos. Posso ajudar a trazer mais eficiência para a sua operação."
+      }
+    }
+  }
+]
