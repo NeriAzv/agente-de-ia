@@ -1,0 +1,92 @@
+[
+  {
+    "timestamp": 1778788633.5163271,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "212832893325421@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB04CD8F3DD33AB96B0C2",
+      "phone": "554188619279",
+      "fromMe": true,
+      "momment": 1778788666000,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Boa tarde, Tatiane."
+      }
+    }
+  },
+  {
+    "timestamp": 1778788651.3466465,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "212832893325421@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0AB053A49078FC2CD92",
+      "phone": "554188619279",
+      "fromMe": true,
+      "momment": 1778788684000,
+      "status": "SENT",
+      "chatName": "554188619279",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Tenho falado com operações corporativas sobre padronizar Facilities em múltiplas unidades, acompanhar contratos e fornecedores e reduzir trabalho manual em relatórios de performance. Faz sentido a gente trocar uma ideia?"
+      }
+    }
+  },
+  {
+    "timestamp": 1778875040.9224002,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "212832893325421@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB03F3CCFAC1AB5C22931",
+      "phone": "554188619279",
+      "fromMe": true,
+      "momment": 1778875073000,
+      "status": "SENT",
+      "chatName": "554188619279",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Tatiane, estou à disposição caso queira continuar nossa conversa."
+      }
+    }
+  }
+]

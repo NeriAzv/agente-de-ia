@@ -1,0 +1,182 @@
+[
+  {
+    "timestamp": 1779110761.9178011,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "109414761631811@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB04B53C158F00D0B7766",
+      "phone": "553584354538",
+      "fromMe": true,
+      "momment": 1779110801001,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534418241_715443278311613_2444236664436436792_n.jpg?ccb=11-4&oh=01_Q5Aa4gEdkcWM7iAsuwb4AaSGMeO02OGTK-nANTu0u76DbjrhrQ&oe=6A182CA0&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Boa tarde, Flavio."
+      }
+    }
+  },
+  {
+    "timestamp": 1779110777.9310708,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "109414761631811@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0256FB21E2B81580138",
+      "phone": "553584354538",
+      "fromMe": true,
+      "momment": 1779110819000,
+      "status": "SENT",
+      "chatName": "553584354538",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534418241_715443278311613_2444236664436436792_n.jpg?ccb=11-4&oh=01_Q5Aa4gEdkcWM7iAsuwb4AaSGMeO02OGTK-nANTu0u76DbjrhrQ&oe=6A182CA0&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Trabalho com empresas do setor de segurança e facilities que buscam melhorar a gestão de equipes e a qualidade dos serviços por meio da automação. Tem espaço pra conversar sobre isso?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779113116.0018327,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "109414761631811@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "2F6354579F238EFF3419",
+      "phone": "553584354538",
+      "fromMe": true,
+      "momment": 1779113154000,
+      "status": "SENT",
+      "chatName": "553584354538",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534418241_715443278311613_2444236664436436792_n.jpg?ccb=11-4&oh=01_Q5Aa4gEdkcWM7iAsuwb4AaSGMeO02OGTK-nANTu0u76DbjrhrQ&oe=6A182CA0&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Boa tarde, Flavio."
+      }
+    }
+  },
+  {
+    "timestamp": 1779113133.800036,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "109414761631811@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB07726434F6BC6536C31",
+      "phone": "553584354538",
+      "fromMe": true,
+      "momment": 1779113171000,
+      "status": "SENT",
+      "chatName": "553584354538",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534418241_715443278311613_2444236664436436792_n.jpg?ccb=11-4&oh=01_Q5Aa4gEdkcWM7iAsuwb4AaSGMeO02OGTK-nANTu0u76DbjrhrQ&oe=6A182CA0&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Trabalho com empresas que atuam em facilities e segurança, focando na automação de processos e na eficiência operacional. Você já considerou formas de melhorar a gestão de suas equipes de campo e o controle de qualidade dos serviços prestados? Tem espaço pra conversar sobre isso?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779120008.752777,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "109414761631811@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB017D7D78F252E492B18",
+      "phone": "553584354538",
+      "fromMe": true,
+      "momment": 1779120049000,
+      "status": "SENT",
+      "chatName": "553584354538",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534418241_715443278311613_2444236664436436792_n.jpg?ccb=11-4&oh=01_Q5Aa4gE8pvJ5UHctkrrjHpZbhB02FqMyQ0mYXPYROWOW0rRyhg&oe=6A1864E0&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Flavio, ainda estou aqui para ajudar se você tiver interesse em discutir como a Btime pode otimizar processos na sua empresa. Alguma dúvida ou algo que eu possa esclarecer?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779199521.0156379,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "109414761631811@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "B3F6265A0711D7D3CED6",
+      "phone": "553584354538",
+      "fromMe": true,
+      "momment": 1779199561001,
+      "status": "SENT",
+      "chatName": "553584354538",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534418241_715443278311613_2444236664436436792_n.jpg?ccb=11-4&oh=01_Q5Aa4gFuQ12ci0V3_yucBuFm436d6ewxe1gIpLC178hYTlLDZg&oe=6A197E20&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Oi Flavio, estou à disposição caso queira continuar a conversa."
+      }
+    }
+  }
+]

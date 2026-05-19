@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": 1779113581.610813,
+    "data": {
+      "fromMe": true,
+      "phone": "12127332323",
+      "chatLid": "12127332323@lid",
+      "text": {
+        "message": "Bom dia, Machado.\n\nSou a Ana, da Btime. Ajudamos empresas a automatizar processos e gerenciar operações complexas, especialmente onde o compliance com regulatórios como a ANVISA é crucial. \n\nTem espaço pra conversar sobre como isso poderia se aplicar na Pfizer?"
+      },
+      "type": "abertura"
+    }
+  }
+]

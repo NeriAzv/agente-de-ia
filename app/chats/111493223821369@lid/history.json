@@ -1,0 +1,134 @@
+[
+  {
+    "timestamp": 1778784600.457493,
+    "data": {
+      "fromMe": true,
+      "phone": "5515998046074",
+      "chatLid": "5515998046074@lid",
+      "text": {
+        "message": "Boa tarde, Marcio.\n\nSou Ana, da Btime. Vi seu contexto na Clarios como Gerente de Engenharia de Manufatura e Facilities.\n\nTrabalhamos com automação de processos e já ajudamos empresas de manufatura a centralizar ordens de serviço e reduzir esforços manuais. Tem espaço para a gente conversar sobre como melhorar a eficiência na sua operação?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1778784607.3822267,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "111493223821369@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0CFEC526766929DD002",
+      "phone": "5515998046074",
+      "fromMe": true,
+      "momment": 1778784639000,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Boa tarde, Marcio."
+      }
+    }
+  },
+  {
+    "timestamp": 1778784621.8169456,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "111493223821369@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0EDC950B9E784E2E3A6",
+      "phone": "5515998046074",
+      "fromMe": true,
+      "momment": 1778784654000,
+      "status": "SENT",
+      "chatName": "5515998046074",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou Ana, da Btime. Vi seu contexto na Clarios como Gerente de Engenharia de Manufatura e Facilities."
+      }
+    }
+  },
+  {
+    "timestamp": 1778784637.5295708,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "111493223821369@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB020968891565CAFFC76",
+      "phone": "5515998046074",
+      "fromMe": true,
+      "momment": 1778784671001,
+      "status": "SENT",
+      "chatName": "5515998046074",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Trabalhamos com automação de processos e já ajudamos empresas de manufatura a centralizar ordens de serviço e reduzir esforços manuais. Tem espaço para a gente conversar sobre como melhorar a eficiência na sua operação?"
+      }
+    }
+  },
+  {
+    "timestamp": 1778788206.8831394,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "111493223821369@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB07C205BFFFD7313AE88",
+      "phone": "5515998046074",
+      "fromMe": true,
+      "momment": 1778788241000,
+      "status": "SENT",
+      "chatName": "5515998046074",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Marcio, você teve a chance de pensar sobre como podemos ajudar na automação dos processos na Clarios? Estou à disposição para esclarecer qualquer dúvida."
+      }
+    }
+  }
+]

@@ -1,0 +1,152 @@
+[
+  {
+    "timestamp": 1779113604.684618,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "143933011185843@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0E46C943D9A50FE5B06",
+      "phone": "5511943362500",
+      "fromMe": true,
+      "momment": 1779113645000,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/595510733_958129686876053_2384692403965656349_n.jpg?ccb=11-4&oh=01_Q5Aa4gG-HMQ14_cXCTIgQIMBAoG6QHJD9R8hwHxu5XmgiViaOw&oe=6A181789&_nc_sid=5e03e0&_nc_cat=105",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Bom dia, Heloisa."
+      }
+    }
+  },
+  {
+    "timestamp": 1779113619.6813576,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "143933011185843@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0679D703C4ED15A69F1",
+      "phone": "5511943362500",
+      "fromMe": true,
+      "momment": 1779113660002,
+      "status": "SENT",
+      "chatName": "5511943362500",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/595510733_958129686876053_2384692403965656349_n.jpg?ccb=11-4&oh=01_Q5Aa4gG-HMQ14_cXCTIgQIMBAoG6QHJD9R8hwHxu5XmgiViaOw&oe=6A181789&_nc_sid=5e03e0&_nc_cat=105",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Ajudamos operações como a da Tegma a gerenciar facilities de forma centralizada, especialmente com um número grande de terminais. Você tem observado como a automação poderia melhorar a gestão e o controle das operações?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779113635.439788,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "143933011185843@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "A56386E96EE7E5A98DC4826FCBFAE322",
+      "phone": "5511943362500",
+      "fromMe": false,
+      "momment": 1779113673000,
+      "status": "RECEIVED",
+      "chatName": "S.O.S GÁS",
+      "senderPhoto": null,
+      "senderName": "S.O.S GÁS",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/595510733_958129686876053_2384692403965656349_n.jpg?ccb=11-4&oh=01_Q5Aa4gG-HMQ14_cXCTIgQIMBAoG6QHJD9R8hwHxu5XmgiViaOw&oe=6A181789&_nc_sid=5e03e0&_nc_cat=105",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Bom dia"
+      }
+    }
+  },
+  {
+    "timestamp": 1779120022.3077004,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "143933011185843@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB045971A9F3F038A5112",
+      "phone": "5511943362500",
+      "fromMe": true,
+      "momment": 1779120050000,
+      "status": "SENT",
+      "chatName": "S.O.S GÁS",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/595510733_958129686876053_2384692403965656349_n.jpg?ccb=11-4&oh=01_Q5Aa4gHYAdYPxdVcgLD3_wUWSHUmwmdtF9LLltoOYDv5FLE3Dw&oe=6A184FC9&_nc_sid=5e03e0&_nc_cat=105",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Oi Heloisa. Queria saber se você teve a oportunidade de pensar sobre como a automação pode otimizar a gestão das operações na Tegma. Estou aqui para ajudar."
+      }
+    }
+  },
+  {
+    "timestamp": 1779200020.434041,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "143933011185843@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0283AB08D9029C4DD69",
+      "phone": "5511943362500",
+      "fromMe": true,
+      "momment": 1779200060004,
+      "status": "SENT",
+      "chatName": "S.O.S GÁS",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/595510733_958129686876053_2384692403965656349_n.jpg?ccb=11-4&oh=01_Q5Aa4gFMkLu2tkNsKdGyJxggM__hJyxf4f5Na2PE_5t_YzzCaQ&oe=6A196909&_nc_sid=5e03e0&_nc_cat=105",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Heloisa, estou à disposição caso queira retomar a conversa."
+      }
+    }
+  }
+]

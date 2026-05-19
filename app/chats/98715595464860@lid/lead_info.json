@@ -1,0 +1,22 @@
+{
+  "nome": "Juliana Sanchez",
+  "phone": "5519995957296",
+  "descricao_manual": "Empresa: Sensitech. Cargo: Manager, Cs & Facility. Juliana Sanchez é Manager, CS & Facility na Sensitech, empresa de monitoramento de temperatura e qualidade para cadeias de suprimentos refrigeradas. Possíveis dores: controle de ambiente em facilities técnicas, gestão de laboratórios e salas especiais e rastreabilidade de chamados de manutenção. Squads btime aderentes: Qualidade, TI e Customer Success. Gancho: aplicar dentro dos próprios facilities o mesmo rigor de rastreabilidade que a Sensitech entrega ao mercado.",
+  "followups_agendados": [
+    {
+      "tipo": "1h",
+      "horario_iso": "2026-05-14T17:47:46.898086",
+      "phone": "5519995957296"
+    },
+    {
+      "tipo": "24h",
+      "horario_iso": "2026-05-15T16:47:46.898086",
+      "phone": "5519995957296"
+    },
+    {
+      "tipo": "15d",
+      "horario_iso": "2026-05-29T16:47:46.898086",
+      "phone": "5519995957296"
+    }
+  ]
+}

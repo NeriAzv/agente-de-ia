@@ -1,0 +1,74 @@
+[
+  {
+    "timestamp": 1779113437.30167,
+    "data": {
+      "fromMe": true,
+      "phone": "5511968439891",
+      "chatLid": "5511968439891@lid",
+      "text": {
+        "message": "Olá Flavia.\n\nSou a Ana, da Btime. Acredito que na Zurich Insurance, a gestão eficiente de facilities pode impactar diretamente a experiência dos colaboradores. Você vê valor em explorar soluções de automação para otimizar o controle de fornecedores e melhorar ambientes de trabalho?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779113442.6574845,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "237829602943183@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0E1FA67C6126F1C9EF8",
+      "phone": "5511968439891",
+      "fromMe": true,
+      "momment": 1779113482001,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/541220103_757288660668458_6196105119877063006_n.jpg?ccb=11-4&oh=01_Q5Aa4gFjDpAahoA32-q0D-_JKWiLprPpiOksKJ3XtBZslw6Iyw&oe=6A1820B3&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Olá Flavia."
+      }
+    }
+  },
+  {
+    "timestamp": 1779113456.673593,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "237829602943183@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB056FC51EAD46A80DDBD",
+      "phone": "5511968439891",
+      "fromMe": true,
+      "momment": 1779113497000,
+      "status": "SENT",
+      "chatName": "5511968439891",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/541220103_757288660668458_6196105119877063006_n.jpg?ccb=11-4&oh=01_Q5Aa4gFjDpAahoA32-q0D-_JKWiLprPpiOksKJ3XtBZslw6Iyw&oe=6A1820B3&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Acredito que na Zurich Insurance, a gestão eficiente de facilities pode impactar diretamente a experiência dos colaboradores. Você vê valor em explorar soluções de automação para otimizar o controle de fornecedores e melhorar ambientes de trabalho?"
+      }
+    }
+  }
+]

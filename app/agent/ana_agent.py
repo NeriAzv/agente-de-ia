@@ -1,4 +1,5 @@
 import json
+import time
 from langchain_anthropic import ChatAnthropic
 from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 
@@ -10,6 +11,44 @@ _LLM = ChatAnthropic(
     temperature=0.7,
     streaming=True,
 )
+
+_RETRY_DELAYS = [2, 5, 10, 20, 30]
+
+
+def _is_overloaded(exc: Exception) -> bool:
+    if getattr(exc, "status_code", None) == 529:
+        return True
+    if getattr(exc, "code", None) == "overloaded_error":
+        return True
+    msg = str(exc)
+    if "overloaded_error" in msg:
+        return True
+    if "Error code: 529" in msg:
+        return True
+    return False
+
+
+def _stream_with_retry(messages, is_interrupted=None) -> str:
+    last_exc = None
+    for attempt in range(len(_RETRY_DELAYS) + 1):
+        if is_interrupted and is_interrupted():
+            raise RuntimeError("Fluxo interrompido pelo lead antes da resposta concluir")
+        try:
+            response_text = ""
+            for chunk in _LLM.stream(messages):
+                if chunk.content:
+                    response_text += chunk.content
+            return response_text
+        except Exception as e:
+            if not _is_overloaded(e):
+                raise
+            last_exc = e
+            if attempt >= len(_RETRY_DELAYS):
+                break
+            delay = _RETRY_DELAYS[attempt]
+            print(f"[ana_agent] 529 overloaded, retry em {delay}s (tentativa {attempt + 1}/{len(_RETRY_DELAYS)})")
+            time.sleep(delay)
+    raise last_exc
 
 _MICRO_AGENT_RULES = """\
 CONTEXTO DOS MICRO AGENTES, use para tomar decisões mais precisas antes de responder:
@@ -30,6 +69,7 @@ def run_ana_agent(
     history: list,
     micro_agent_context: dict,
     system_context: str | None = None,
+    is_interrupted=None,
 ) -> str:
     """
     Executa o AnaAgent e retorna a resposta completa via streaming.
@@ -56,9 +96,4 @@ def run_ana_agent(
         HumanMessage(content=lead_message),
     ]
 
-    response_text = ""
-    for chunk in _LLM.stream(messages):
-        if chunk.content:
-            response_text += chunk.content
-
-    return response_text
+    return _stream_with_retry(messages, is_interrupted=is_interrupted)

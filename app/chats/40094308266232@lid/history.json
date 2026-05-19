@@ -1,0 +1,348 @@
+[
+  {
+    "timestamp": 1779113468.235817,
+    "data": {
+      "text": {
+        "message": "Boa tarde, Mariana."
+      },
+      "type": "ReceivedCallback",
+      "phone": "554499321606",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/550358465_976901358006745_3297184305817944023_n.jpg?ccb=11-4&oh=01_Q5Aa4gHsYPDXZY5aKOYWCleMnHsbLuNmzo6cBb7ygrIfIAg4Dw&oe=6A18311C&_nc_sid=5e03e0&_nc_cat=103",
+      "fromMe": true,
+      "isEdit": false,
+      "status": "SENT",
+      "chatLid": "40094308266232@lid",
+      "fromApi": true,
+      "isGroup": false,
+      "momment": 1779113509000,
+      "chatName": "",
+      "broadcast": false,
+      "forwarded": false,
+      "messageId": "3EB0D3091D2ED6FB4BD561",
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "senderName": "Briana - Btime",
+      "senderPhoto": null,
+      "isNewsletter": false,
+      "isStatusReply": false,
+      "connectedPhone": "5511973723845",
+      "participantLid": null,
+      "waitingMessage": false
+    }
+  },
+  {
+    "timestamp": 1779113488.455338,
+    "data": {
+      "text": {
+        "message": "Sou a Ana, da Btime. Acredito que a centralização da gestão de facilities e o controle eficiente de fornecedores são essenciais para operações como a da CHS no Brasil. Tem espaço pra conversar sobre isso?"
+      },
+      "type": "ReceivedCallback",
+      "phone": "554499321606",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/550358465_976901358006745_3297184305817944023_n.jpg?ccb=11-4&oh=01_Q5Aa4gHsYPDXZY5aKOYWCleMnHsbLuNmzo6cBb7ygrIfIAg4Dw&oe=6A18311C&_nc_sid=5e03e0&_nc_cat=103",
+      "fromMe": true,
+      "isEdit": false,
+      "status": "SENT",
+      "chatLid": "40094308266232@lid",
+      "fromApi": true,
+      "isGroup": false,
+      "momment": 1779113524000,
+      "chatName": "554499321606",
+      "broadcast": false,
+      "forwarded": false,
+      "messageId": "3EB08458B4F3F40E2ADEB7",
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "senderName": "Briana - Btime",
+      "senderPhoto": null,
+      "isNewsletter": false,
+      "isStatusReply": false,
+      "connectedPhone": "5511973723845",
+      "participantLid": null,
+      "waitingMessage": false
+    }
+  },
+  {
+    "timestamp": 1779120006.898752,
+    "data": {
+      "text": {
+        "message": "Oi Mariana, só dando um toque. Se precisar de ajuda ou quiser explorar como podemos otimizar a gestão na CHS, estou aqui. Vamos em frente?"
+      },
+      "type": "ReceivedCallback",
+      "phone": "554499321606",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/550358465_976901358006745_3297184305817944023_n.jpg?ccb=11-4&oh=01_Q5Aa4gHsYPDXZY5aKOYWCleMnHsbLuNmzo6cBb7ygrIfIAg4Dw&oe=6A18311C&_nc_sid=5e03e0&_nc_cat=103",
+      "fromMe": true,
+      "isEdit": false,
+      "status": "SENT",
+      "chatLid": "40094308266232@lid",
+      "fromApi": true,
+      "isGroup": false,
+      "momment": 1779120046000,
+      "chatName": "554499321606",
+      "broadcast": false,
+      "forwarded": false,
+      "messageId": "3EB044FB8748FBE3D8059F",
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "senderName": "Briana - Btime",
+      "senderPhoto": null,
+      "isNewsletter": false,
+      "isStatusReply": false,
+      "connectedPhone": "5511973723845",
+      "participantLid": null,
+      "waitingMessage": false
+    }
+  },
+  {
+    "timestamp": 1779199880.620963,
+    "data": {
+      "text": {
+        "message": "Oi, Mariana. Estou por aqui caso queira retomar a conversa."
+      },
+      "type": "ReceivedCallback",
+      "phone": "554499321606",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/550358465_976901358006745_3297184305817944023_n.jpg?ccb=11-4&oh=01_Q5Aa4gGZtV6Rhqz4xu3vvZ11Lttdyy_uF9HXPqfBIlqjzkCO0A&oe=6A19829C&_nc_sid=5e03e0&_nc_cat=103",
+      "fromMe": true,
+      "isEdit": false,
+      "status": "SENT",
+      "chatLid": "40094308266232@lid",
+      "fromApi": true,
+      "isGroup": false,
+      "momment": 1779199920004,
+      "chatName": "554499321606",
+      "broadcast": false,
+      "forwarded": false,
+      "messageId": "3EB0C7130C551DF3698647",
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "senderName": "Briana - Btime",
+      "senderPhoto": null,
+      "isNewsletter": false,
+      "isStatusReply": false,
+      "connectedPhone": "5511973723845",
+      "participantLid": null,
+      "waitingMessage": false
+    }
+  },
+  {
+    "timestamp": 1779205696.979968,
+    "data": {
+      "type": "ReceivedCallback",
+      "audio": {
+        "ptt": true,
+        "seconds": 25,
+        "audioUrl": "https://f004.backblazeb2.com/file/temp-file-download/instances/3EFABF270A13919DE95AD6F4B026E35E/ACB176C06289FB1DAFBF6742A800D32F/2Yy5CNTawIShqVBurOzYIw==.ogg",
+        "mimeType": "audio/ogg; codecs=opus",
+        "viewOnce": false,
+        "transcricao": "Oi Ana, boa tarde, tudo bem? Deixa eu só entender, essa questão de centralização de gestão de pacientes, quais serviços você iria estar fornecendo? Seria realmente uma gestão ou você teria equipe também a atuar? E aí nesse caso eu digo limpeza, portaria, recepção e aí você teria um orçamento para estar me passando?"
+      },
+      "phone": "554499321606",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/550358465_976901358006745_3297184305817944023_n.jpg?ccb=11-4&oh=01_Q5Aa4gGZtV6Rhqz4xu3vvZ11Lttdyy_uF9HXPqfBIlqjzkCO0A&oe=6A19829C&_nc_sid=5e03e0&_nc_cat=103",
+      "fromMe": false,
+      "isEdit": false,
+      "status": "RECEIVED",
+      "chatLid": "40094308266232@lid",
+      "fromApi": false,
+      "isGroup": false,
+      "momment": 1779205736000,
+      "chatName": "Má Vignoto",
+      "broadcast": false,
+      "forwarded": false,
+      "messageId": "ACB176C06289FB1DAFBF6742A800D32F",
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "senderName": "Má Vignoto",
+      "senderPhoto": null,
+      "isNewsletter": false,
+      "isStatusReply": false,
+      "connectedPhone": "5511973723845",
+      "participantLid": null,
+      "waitingMessage": false
+    }
+  },
+  {
+    "timestamp": 1779205710.144272,
+    "data": {
+      "type": "ReceivedCallback",
+      "audio": {
+        "ptt": true,
+        "seconds": 12,
+        "audioUrl": "https://f004.backblazeb2.com/file/temp-file-download/instances/3EFABF270A13919DE95AD6F4B026E35E/ACB70726D145BF89DCA8018BB0955277/OH1OF3YbzOGw_hlc9S2Hmg==.ogg",
+        "mimeType": "audio/ogg; codecs=opus",
+        "viewOnce": false,
+        "transcricao": "Por que essa pergunta? Nós temos atualmente um vídeo para o Facilids, mas não envolveria só a gestão. Ele envolveria toda essa questão do headcount, do pessoal."
+      },
+      "phone": "554499321606",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/550358465_976901358006745_3297184305817944023_n.jpg?ccb=11-4&oh=01_Q5Aa4gGZtV6Rhqz4xu3vvZ11Lttdyy_uF9HXPqfBIlqjzkCO0A&oe=6A19829C&_nc_sid=5e03e0&_nc_cat=103",
+      "fromMe": false,
+      "isEdit": false,
+      "status": "RECEIVED",
+      "chatLid": "40094308266232@lid",
+      "fromApi": false,
+      "isGroup": false,
+      "momment": 1779205750000,
+      "chatName": "Má Vignoto",
+      "broadcast": false,
+      "forwarded": false,
+      "messageId": "ACB70726D145BF89DCA8018BB0955277",
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "senderName": "Má Vignoto",
+      "senderPhoto": null,
+      "isNewsletter": false,
+      "isStatusReply": false,
+      "connectedPhone": "5511973723845",
+      "participantLid": null,
+      "waitingMessage": false
+    }
+  },
+  {
+    "timestamp": 1779205749.56988,
+    "data": {
+      "text": {
+        "message": "Oi Mariana, boa tarde!"
+      },
+      "type": "ReceivedCallback",
+      "phone": "554499321606",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/550358465_976901358006745_3297184305817944023_n.jpg?ccb=11-4&oh=01_Q5Aa4gGZtV6Rhqz4xu3vvZ11Lttdyy_uF9HXPqfBIlqjzkCO0A&oe=6A19829C&_nc_sid=5e03e0&_nc_cat=103",
+      "fromMe": true,
+      "isEdit": false,
+      "status": "SENT",
+      "chatLid": "40094308266232@lid",
+      "fromApi": true,
+      "isGroup": false,
+      "momment": 1779205789001,
+      "chatName": "Má Vignoto",
+      "broadcast": false,
+      "forwarded": false,
+      "messageId": "7D524FF574C4087F4DB1",
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "senderName": "Briana - Btime",
+      "senderPhoto": null,
+      "isNewsletter": false,
+      "isStatusReply": false,
+      "connectedPhone": "5511973723845",
+      "participantLid": null,
+      "waitingMessage": false,
+      "referenceMessageId": "ACB70726D145BF89DCA8018BB0955277",
+      "messageExpirationSeconds": 0
+    }
+  },
+  {
+    "timestamp": 1779205763.758875,
+    "data": {
+      "text": {
+        "message": "Só um ponto importante: a Btime é empresa de tecnologia, não fornecemos equipe operacional (limpeza, portaria, recepção). Nosso foco é automatizar e centralizar a gestão desses serviços, controle de fornecedores, indicadores, chamados, tudo num só lugar."
+      },
+      "type": "ReceivedCallback",
+      "phone": "554499321606",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/550358465_976901358006745_3297184305817944023_n.jpg?ccb=11-4&oh=01_Q5Aa4gGZtV6Rhqz4xu3vvZ11Lttdyy_uF9HXPqfBIlqjzkCO0A&oe=6A19829C&_nc_sid=5e03e0&_nc_cat=103",
+      "fromMe": true,
+      "isEdit": false,
+      "status": "SENT",
+      "chatLid": "40094308266232@lid",
+      "fromApi": true,
+      "isGroup": false,
+      "momment": 1779205804000,
+      "chatName": "Má Vignoto",
+      "broadcast": false,
+      "forwarded": false,
+      "messageId": "3EB0686A12FB1EE1B7F0AC",
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "senderName": "Briana - Btime",
+      "senderPhoto": null,
+      "isNewsletter": false,
+      "isStatusReply": false,
+      "connectedPhone": "5511973723845",
+      "participantLid": null,
+      "waitingMessage": false,
+      "referenceMessageId": "ACB176C06289FB1DAFBF6742A800D32F",
+      "messageExpirationSeconds": 0
+    }
+  },
+  {
+    "timestamp": 1779205770.815451,
+    "data": {
+      "text": {
+        "message": "Se o seu desafio hoje é encontrar um fornecedor que entregue tanto a tecnologia quanto o headcount, provavelmente não somos o fit certo pra esse momento."
+      },
+      "type": "ReceivedCallback",
+      "phone": "554499321606",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/550358465_976901358006745_3297184305817944023_n.jpg?ccb=11-4&oh=01_Q5Aa4gGZtV6Rhqz4xu3vvZ11Lttdyy_uF9HXPqfBIlqjzkCO0A&oe=6A19829C&_nc_sid=5e03e0&_nc_cat=103",
+      "fromMe": true,
+      "isEdit": false,
+      "status": "SENT",
+      "chatLid": "40094308266232@lid",
+      "fromApi": true,
+      "isGroup": false,
+      "momment": 1779205811000,
+      "chatName": "Má Vignoto",
+      "broadcast": false,
+      "forwarded": false,
+      "messageId": "3EB06D7D8539700B051E8B",
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "senderName": "Briana - Btime",
+      "senderPhoto": null,
+      "isNewsletter": false,
+      "isStatusReply": false,
+      "connectedPhone": "5511973723845",
+      "participantLid": null,
+      "waitingMessage": false,
+      "referenceMessageId": "ACB70726D145BF89DCA8018BB0955277",
+      "messageExpirationSeconds": 0
+    }
+  },
+  {
+    "timestamp": 1779205776.518608,
+    "data": {
+      "text": {
+        "message": "Mas me conta: existe alguma dor específica na gestão e controle desses fornecedores que você gostaria de resolver separadamente?"
+      },
+      "type": "ReceivedCallback",
+      "phone": "554499321606",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/550358465_976901358006745_3297184305817944023_n.jpg?ccb=11-4&oh=01_Q5Aa4gGZtV6Rhqz4xu3vvZ11Lttdyy_uF9HXPqfBIlqjzkCO0A&oe=6A19829C&_nc_sid=5e03e0&_nc_cat=103",
+      "fromMe": true,
+      "isEdit": false,
+      "status": "SENT",
+      "chatLid": "40094308266232@lid",
+      "fromApi": true,
+      "isGroup": false,
+      "momment": 1779205817000,
+      "chatName": "Má Vignoto",
+      "broadcast": false,
+      "forwarded": false,
+      "messageId": "3EB0AD2E37FB3AF8E9E519",
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "senderName": "Briana - Btime",
+      "senderPhoto": null,
+      "isNewsletter": false,
+      "isStatusReply": false,
+      "connectedPhone": "5511973723845",
+      "participantLid": null,
+      "waitingMessage": false
+    }
+  },
+  {
+    "timestamp": 1779209406.9963002,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "40094308266232@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "05A4A4D2403DDB94374C",
+      "phone": "554499321606",
+      "fromMe": true,
+      "momment": 1779209411002,
+      "status": "SENT",
+      "chatName": "Má Vignoto",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/550358465_976901358006745_3297184305817944023_n.jpg?ccb=11-4&oh=01_Q5Aa4gHMWbZK4n26yyXErnSxQyUrEZ0ElzfqdYnpJappgXhpzg&oe=6A19BADC&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Oi Mariana, você teve a chance de pensar sobre a gestão e controle dos fornecedores? Posso ajudar a entender como a Btime pode fazer isso de forma eficiente."
+      }
+    }
+  }
+]

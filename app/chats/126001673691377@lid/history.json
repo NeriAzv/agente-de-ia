@@ -1,0 +1,74 @@
+[
+  {
+    "timestamp": 1779113507.0529485,
+    "data": {
+      "fromMe": true,
+      "phone": "551130750429",
+      "chatLid": "551130750429@lid",
+      "text": {
+        "message": "Bom dia, Bruna.\n\nSou a Ana, da Btime. Acredito que podemos trazer uma melhoria significativa para a gestão de Facilities na XP, potencializando a experiência do colaborador e otimizando o controle de contratos. Tem espaço pra conversar sobre isso?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779113514.7187293,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "126001673691377@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB08DEAE89941355F53B1",
+      "phone": "551130750429",
+      "fromMe": true,
+      "momment": 1779113554000,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/583034227_1202743951713565_7641474230218504760_n.jpg?ccb=11-4&oh=01_Q5Aa4gG24YgbNOCN5e0CMxVYWgrX3JLGXEaDGA5uns44EcQ24Q&oe=6A1832A5&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Bom dia, Bruna."
+      }
+    }
+  },
+  {
+    "timestamp": 1779113529.7140238,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "126001673691377@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB082B40194E7BD39F865",
+      "phone": "551130750429",
+      "fromMe": true,
+      "momment": 1779113569002,
+      "status": "SENT",
+      "chatName": "551130750429",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/583034227_1202743951713565_7641474230218504760_n.jpg?ccb=11-4&oh=01_Q5Aa4gG24YgbNOCN5e0CMxVYWgrX3JLGXEaDGA5uns44EcQ24Q&oe=6A1832A5&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Acredito que podemos trazer uma melhoria significativa para a gestão de Facilities na XP, potencializando a experiência do colaborador e otimizando o controle de contratos. Tem espaço pra conversar sobre isso?"
+      }
+    }
+  }
+]

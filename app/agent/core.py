@@ -9,7 +9,7 @@ import re
 import requests
 from dotenv import load_dotenv
 load_dotenv(override=True)
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import List, Any, Dict
 
 from langchain_openai import ChatOpenAI
@@ -29,6 +29,86 @@ from agent.context import (
 )
 from agent.ana_agent import run_ana_agent
 from agent.micro_agents import run_micro_agents, _to_langchain_messages
+from agent.storage import supabase_repo
+
+
+FOLLOWUP_OVERDUE_GRACE_SECONDS = 24 * 60 * 60
+
+
+def _contexto_tem_indicacao_explicita(contexto_lead: str) -> bool:
+    """Detect whether lead context explicitly states a referral source.
+
+    Inputs:
+        contexto_lead: Free-text lead context used to generate outbound openings.
+
+    Behavior/side effects:
+        Normalizes the text in memory and searches for referral terms. Does not
+        write files, call APIs or mutate state.
+
+    Return:
+        True when the context contains an explicit referral/indication phrase;
+        otherwise False.
+
+    Exceptions/fallbacks:
+        Empty or None context is treated as no referral. No expected exceptions.
+    """
+    contexto = (contexto_lead or "").lower()
+    termos_indicacao = (
+        "indicado por",
+        "indicada por",
+        "indicacao de",
+        "indicação de",
+        "quem indicou",
+        "me passou seu contato",
+        "passou seu contato",
+        "foi indicado",
+        "foi indicada",
+    )
+    return any(termo in contexto for termo in termos_indicacao)
+
+
+def _sanitizar_origem_abertura(mensagem: str, contexto_lead: str) -> str:
+    """Remove awkward or invented origin wording from cold outbound openings.
+
+    Inputs:
+        mensagem: LLM-generated outbound opening text.
+        contexto_lead: Lead context used to generate the opening.
+
+    Behavior/side effects:
+        Rewrites only the in-memory message text. Referral-name rewrites are
+        skipped when the context explicitly contains an indication source.
+        Blocks phrasing that explains how the contact was found.
+
+    Return:
+        Sanitized opening text ready to send.
+
+    Exceptions/fallbacks:
+        If no banned wording is found, returns the original message unchanged.
+        No expected exceptions.
+    """
+    if _contexto_tem_indicacao_explicita(contexto_lead):
+        return mensagem
+
+    origem_neutra = "Tenho falado com operações que buscam reduzir trabalho manual e centralizar rotinas críticas."
+    patterns = (
+        (r"\b[Mm]eu nome [ée?] Ana e sou da Btime\.?", "Sou a Ana, da Btime."),
+        (r"\b[Mm]eu nome [ée?] Ana\.?", "Sou a Ana, da Btime."),
+        r"\b(?:O|A)\s+[A-ZÁÉÍÓÚÂÊÔÃÕÇ][\wÀ-ÿ.-]*\s+me passou seu contato\.?",
+        r"\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][\wÀ-ÿ.-]*\s+me passou seu contato\.?",
+        r"\b(?:O|A)\s+[A-ZÁÉÍÓÚÂÊÔÃÕÇ][\wÀ-ÿ.-]*\s+indicou seu contato\.?",
+        r"\b[A-ZÁÉÍÓÚÂÊÔÃÕÇ][\wÀ-ÿ.-]*\s+indicou seu contato\.?",
+        r"\b[Vv]i seu contexto(?: profissional)?(?:\s+(?:em|como|na|no)\s+[^.\n]+)?\.?",
+        r"\b[Oo] sistema trouxe seu contato pelo seu contexto profissional\.?",
+        r"\b[Pp]eguei seu contato\b[^.\n]*\.?",
+        r"\b[Cc]onsegui seu n[úu]mero\b[^.\n]*\.?",
+    )
+    sanitized = mensagem
+    for pattern in patterns:
+        if isinstance(pattern, tuple):
+            sanitized = re.sub(pattern[0], pattern[1], sanitized)
+            continue
+        sanitized = re.sub(pattern, origem_neutra, sanitized)
+    return sanitized
 
 
 def _proximo_horario_util(dt: datetime) -> datetime:
@@ -69,54 +149,480 @@ class Agent_AI:
         self.pending_timers: dict[str, threading.Timer] = {}
         self.pending_texts: dict[str, str] = {}
         self.followup_timers: dict[str, list[threading.Timer]] = {}
+        self.followup_job_timers: dict[str, threading.Timer] = {}
         self.composing_set: set = set()
         self.processing_chats: set[str] = set()
         self.interrupted_chats: set[str] = set()
         self._interrupt_cite_ids: dict[str, str] = {}
         self._timer_lock = threading.Lock()
+        self._file_lock = threading.Lock()
         self.phone_to_lid: dict[str, str] = {}
 
         self._restaurar_followups()
+
+    def _read_json_file(self, path: str, default):
+        with self._file_lock:
+            if not os.path.exists(path):
+                return default
+            try:
+                with open(path, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except Exception:
+                return default
+
+    def _write_json_file(self, path: str, data):
+        with self._file_lock:
+            parent = os.path.dirname(path)
+            if parent:
+                os.makedirs(parent, exist_ok=True)
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=2, ensure_ascii=False)
+
+    # ------------------------------------------------------------------
+    # Supabase adapters
+    #
+    # Supabase is the source of truth. Local JSON is kept as a write-mirror
+    # (best-effort) and as a read-fallback when Supabase is unavailable.
+    # All Supabase calls below MUST go through `_supabase_safe` so that a
+    # transient network/HTTP error never crashes the webhook or agent flow.
+    # ------------------------------------------------------------------
+
+    def _supabase_safe(self, fn, *args, **kwargs):
+        """Call a supabase_repo function and swallow failures.
+
+        Inputs:
+            fn: Callable from `supabase_repo`.
+            *args, **kwargs: Forwarded to `fn`.
+
+        Returns:
+            The function's return value on success, or None on any exception.
+
+        Side effects:
+            Logs a short yellow warning on failure. Does NOT log credentials.
+        """
+        try:
+            return fn(*args, **kwargs)
+        except Exception as e:
+            print(f"{YELLOW}[supabase] {fn.__name__} falhou: {e}{RESET}")
+            return None
+
+    def _epoch_from_iso(self, iso_str: str) -> float:
+        """Convert an ISO-8601 string to a unix epoch float.
+
+        Inputs:
+            iso_str: ISO timestamp (with or without timezone).
+
+        Returns:
+            Epoch in seconds. 0.0 when parsing fails.
+        """
+        if not iso_str:
+            return 0.0
+        try:
+            return datetime.fromisoformat(iso_str).timestamp()
+        except Exception:
+            return 0.0
+
+    def _supa_load_history(self, chatLid: str) -> list:
+        """Read message history for `chatLid` from Supabase, mapped to the legacy shape.
+
+        Inputs:
+            chatLid: WhatsApp chat identifier.
+
+        Returns:
+            List of `{"timestamp": <epoch>, "data": <z-api payload>}` dicts,
+            ordered chronologically. Empty list when nothing is found or
+            Supabase is unreachable.
+        """
+        rows = self._supabase_safe(supabase_repo.load_history, chatLid) or []
+        out = []
+        for r in rows:
+            payload = r.get("payload") or {}
+            out.append({
+                "timestamp": self._epoch_from_iso(r.get("event_ts") or ""),
+                "data": payload,
+            })
+        return out
+
+    def _supa_load_lead_info(self, chatLid: str):
+        """Read lead_info-like dict for `chatLid` from Supabase.
+
+        Inputs:
+            chatLid: WhatsApp chat identifier.
+
+        Returns:
+            Dict in the legacy lead_info.json shape (merging `lead_profiles`
+            columns with `lead_profiles.raw` extras and a couple of fields
+            from `conversations`). Returns None if no profile exists yet.
+        """
+        prof = self._supabase_safe(supabase_repo.get_lead_profile, chatLid)
+        if not prof:
+            return None
+        out: Dict[str, Any] = {}
+        for k in (
+            "nome", "email", "empresa", "segmento_mercado", "porte_empresa",
+            "faturamento_aproximado", "tamanho_time", "sistemas_atuais",
+            "desafios_identificados", "produto_indicado", "motivo_segmentacao",
+            "estagio_conversa", "reuniao_agendada", "necessita_followup",
+            "motivo_followup", "tentativas_retomada", "descricao_manual",
+            "atualizado_em",
+        ):
+            v = prof.get(k)
+            if v is not None:
+                out[k] = v
+        raw = prof.get("raw") or {}
+        for k, v in raw.items():
+            if k not in out and v is not None:
+                out[k] = v
+        conv = self._supabase_safe(supabase_repo.get_conversation, chatLid) or {}
+        if conv.get("ai_blocked") is not None:
+            out["ai_blocked"] = bool(conv["ai_blocked"])
+        if conv.get("phone") and "phone" not in out:
+            out["phone"] = conv["phone"]
+        return out
+
+    def _read_history(self, chatLid: str) -> list:
+        """Return history for `chatLid`, preferring Supabase over the JSON file.
+
+        Inputs:
+            chatLid: WhatsApp chat identifier.
+
+        Returns:
+            List in the legacy `{timestamp, data}` shape. Falls back to
+            `chats/{chatLid}/history.json` if Supabase returns nothing.
+        """
+        rows = self._supa_load_history(chatLid)
+        if rows:
+            return rows
+        return self._read_json_file(os.path.join("chats", chatLid, "history.json"), [])
+
+    def _read_lead_info(self, chatLid: str) -> dict:
+        """Return the merged lead_info dict, preferring Supabase.
+
+        Inputs:
+            chatLid: WhatsApp chat identifier.
+
+        Returns:
+            Dict (possibly empty). Falls back to local `lead_info.json` when
+            Supabase has no profile yet.
+        """
+        info = self._supa_load_lead_info(chatLid)
+        if info is not None:
+            return info
+        return self._read_json_file(os.path.join("chats", chatLid, "lead_info.json"), {})
+
+    def _read_active_meeting_for(self, chatLid: str):
+        """Return the next active meeting dict for `chatLid`, or None.
+
+        Inputs:
+            chatLid: WhatsApp chat identifier.
+
+        Returns:
+            Dict in the legacy `reunioes.json` shape (`chatLid`, `phone`,
+            `datetime`, `meet_link`, `event_id`, `agendado_em`) of the nearest
+            scheduled meeting for that lead. Falls back to scanning the local
+            `reunioes.json` when Supabase has none.
+        """
+        rows = self._supabase_safe(supabase_repo.list_active_meetings, chatLid) or []
+        if rows:
+            r = rows[0]
+            return {
+                "chatLid": chatLid,
+                "phone": r.get("phone"),
+                "datetime": r.get("scheduled_for"),
+                "agendado_em": r.get("agendado_em"),
+                "meet_link": r.get("meet_link"),
+                "event_id": r.get("event_id"),
+            }
+        local = self._read_json_file("reunioes.json", [])
+        for r in local:
+            if r.get("chatLid") == chatLid:
+                return r
+        return None
+
+    def _mirror_message_supabase(self, chatLid: str, event: dict) -> None:
+        """Best-effort send of one history event to Supabase `messages`.
+
+        Inputs:
+            chatLid: WhatsApp chat identifier.
+            event: Dict in the `{timestamp, data}` shape.
+
+        Returns:
+            None.
+
+        Side effects:
+            Idempotent upsert in Supabase. Never raises; failures are logged
+            via `_supabase_safe`.
+        """
+        if not chatLid or not isinstance(event, dict):
+            return
+        self._supabase_safe(supabase_repo.append_message, chatLid, event)
+
+    def _mirror_lead_info_supabase(self, chatLid: str, info: dict) -> None:
+        """Best-effort sync of a lead_info dict into `conversations` + `lead_profiles`.
+
+        Inputs:
+            chatLid: WhatsApp chat identifier.
+            info: lead_info-shaped dict.
+
+        Returns:
+            None.
+
+        Side effects:
+            Upserts the conversation row (carrying phone + ai_blocked) and
+            the lead_profile row. `followups_agendados` is stripped: that
+            list is managed via `followup_jobs` directly.
+        """
+        if not chatLid or not isinstance(info, dict):
+            return
+        self._supabase_safe(
+            supabase_repo.upsert_conversation,
+            chatLid,
+            phone=info.get("phone"),
+            ai_blocked=info.get("ai_blocked"),
+        )
+        profile_data = {
+            k: v for k, v in info.items()
+            if k not in ("ai_blocked", "phone", "followups_agendados")
+        }
+        if profile_data:
+            self._supabase_safe(supabase_repo.upsert_lead_profile, chatLid, profile_data)
+
+    def _mirror_meeting_supabase(self, chatLid: str, meeting: dict) -> None:
+        """Best-effort upsert of a meeting into Supabase `meetings`."""
+        if not chatLid or not isinstance(meeting, dict):
+            return
+        self._supabase_safe(supabase_repo.upsert_meeting, chatLid, meeting)
+
+    def _mirror_meeting_cancelled(self, chatLid: str, iso_dt: str) -> None:
+        """Best-effort: mark a meeting as cancelled by (chat_lid, datetime)."""
+        if not chatLid or not iso_dt:
+            return
+        self._supabase_safe(
+            supabase_repo.update_meeting_status,
+            chat_lid=chatLid,
+            datetime=iso_dt,
+            status="cancelled",
+        )
+
+    def _mirror_followup_scheduled(
+        self, chatLid: str, tipo: str, alvo_iso: str, phone: str
+    ) -> dict | None:
+        """Best-effort: persist a follow-up timer into `followup_jobs`.
+
+        Inputs:
+            chatLid: WhatsApp chat identifier.
+            tipo: Follow-up type (`1h`, `24h` or `15d`).
+            alvo_iso: Target ISO timestamp for the follow-up.
+            phone: Destination WhatsApp phone number.
+
+        Side effects:
+            Upserts one Supabase `followup_jobs` row with status `scheduled`.
+
+        Returns:
+            The Supabase row dict when available, otherwise None.
+
+        Exceptions/fallbacks:
+            Never raises; `_supabase_safe` logs Supabase failures.
+        """
+        if not chatLid or not tipo or not alvo_iso:
+            return None
+        return self._supabase_safe(
+            supabase_repo.schedule_followup,
+            chatLid,
+            {"tipo": tipo, "horario_iso": alvo_iso, "phone": phone},
+        )
+
+    def _mirror_followup_sent(
+        self,
+        chatLid: str,
+        tipo: str,
+        job_id: str | None = None,
+    ) -> None:
+        """Best-effort: mark a scheduled follow-up as sent in Supabase.
+
+        Inputs:
+            chatLid: WhatsApp chat identifier.
+            tipo: Follow-up type (`1h`, `24h` or `15d`).
+            job_id: Optional exact `followup_jobs.id`. When omitted, the
+                legacy path marks scheduled rows for the chat and type.
+
+        Side effects:
+            PATCHes `followup_jobs` to `status='sent'` and sets `sent_at`.
+
+        Returns:
+            None.
+
+        Exceptions/fallbacks:
+            Never raises; `_supabase_safe` logs Supabase failures. Falls back
+            to chat+tipo matching when `job_id` is unavailable.
+        """
+        if not chatLid or not tipo:
+            return
+        if job_id:
+            self._supabase_safe(supabase_repo.mark_followup_sent, job_id)
+            return
+        self._supabase_safe(supabase_repo.mark_followup_sent_by_tipo, chatLid, tipo)
+
+    def _mirror_followup_failed(self, job_id: str, reason: str) -> None:
+        """Best-effort: mark one scheduled follow-up job as failed.
+
+        Inputs:
+            job_id: Exact `followup_jobs.id`.
+            reason: Short operational reason stored in the job payload.
+
+        Side effects:
+            PATCHes `followup_jobs.status` from `scheduled` to `failed`.
+
+        Returns:
+            None.
+
+        Exceptions/fallbacks:
+            Never raises; `_supabase_safe` logs Supabase failures.
+        """
+        if not job_id:
+            return
+        self._supabase_safe(supabase_repo.mark_followup_failed, job_id, reason)
+
+    def _mirror_followups_cancelled(self, chatLid: str) -> None:
+        """Best-effort: cancel every scheduled follow-up of a chat."""
+        if not chatLid:
+            return
+        self._supabase_safe(supabase_repo.cancel_followup, chat_lid=chatLid)
 
     # ------------------------------------------------------------------
     # Follow-up automático por inatividade
     # ------------------------------------------------------------------
 
-    def _followup_callback(self, phone: str, chatLid: str, tipo: str):
-        """Envia mensagem de follow-up (1h ou 24h) e limpa do arquivo."""
+    def _schedule_followup_timer(
+        self,
+        phone: str,
+        chatLid: str,
+        tipo: str,
+        delay_seconds: float,
+        job_id: str | None = None,
+    ) -> bool:
+        """Schedule a follow-up timer and optionally bind it to a Supabase job.
+
+        Inputs:
+            phone: Destination WhatsApp phone number.
+            chatLid: WhatsApp chat identifier.
+            tipo: Follow-up type (`1h`, `24h` or `15d`).
+            delay_seconds: Seconds until the callback should run.
+            job_id: Optional `followup_jobs.id` from Supabase.
+
+        Side effects:
+            Creates and starts a `threading.Timer`. Records it in
+            `followup_timers` by chat and, when `job_id` is present, in
+            `followup_job_timers` so startup cannot arm the same job twice.
+
+        Returns:
+            True when a timer was scheduled, False when a live timer for the
+            same `job_id` already exists.
+
+        Exceptions/fallbacks:
+            Does not raise for duplicate jobs. Timer callback errors are
+            handled by `_followup_callback`.
+        """
+        delay_seconds = max(float(delay_seconds), 0.0)
+        timer = None
+        with self._timer_lock:
+            if job_id:
+                existing = self.followup_job_timers.get(job_id)
+                if existing and existing.is_alive():
+                    print(f"{YELLOW}Follow-up job {job_id} ja tem timer ativo; ignorando duplicata{RESET}")
+                    return False
+            timer = threading.Timer(
+                delay_seconds,
+                self._run_followup_timer,
+                args=(phone, chatLid, tipo, job_id),
+            )
+            self.followup_timers.setdefault(chatLid, []).append(timer)
+            if job_id:
+                self.followup_job_timers[job_id] = timer
+        timer.start()
+        return True
+
+    def _run_followup_timer(
+        self,
+        phone: str,
+        chatLid: str,
+        tipo: str,
+        job_id: str | None = None,
+    ) -> None:
+        """Run a follow-up timer callback after releasing its job-id guard.
+
+        Inputs:
+            phone: Destination WhatsApp phone number.
+            chatLid: WhatsApp chat identifier.
+            tipo: Follow-up type (`1h`, `24h` or `15d`).
+            job_id: Optional `followup_jobs.id` associated with this timer.
+
+        Side effects:
+            Removes the fired timer from `followup_job_timers`, then delegates
+            to `_followup_callback`, which may send a Z-API message and update
+            Supabase/local mirror state.
+
+        Returns:
+            None.
+
+        Exceptions/fallbacks:
+            Does not catch callback failures directly; `_followup_callback`
+            handles its own external API errors.
+        """
+        if job_id:
+            with self._timer_lock:
+                self.followup_job_timers.pop(job_id, None)
+        self._followup_callback(phone, chatLid, tipo, job_id=job_id)
+
+    def _followup_callback(
+        self,
+        phone: str,
+        chatLid: str,
+        tipo: str,
+        job_id: str | None = None,
+    ):
+        """Send a follow-up message and persist the resulting job state.
+
+        Inputs:
+            phone: Destination WhatsApp phone number.
+            chatLid: WhatsApp chat identifier.
+            tipo: Follow-up type (`1h`, `24h` or `15d`).
+            job_id: Optional `followup_jobs.id`; restored Supabase timers pass
+                it so only the exact job is marked sent.
+
+        Side effects:
+            May re-arm the timer to the next business window, calls OpenAI to
+            generate the message, sends it via Z-API, marks the Supabase job
+            as sent, and removes the local JSON mirror entry.
+
+        Returns:
+            None.
+
+        Exceptions/fallbacks:
+            Swallows OpenAI/Z-API/Supabase errors after logging. If `job_id` is
+            absent, falls back to marking scheduled jobs by chat and tipo to
+            preserve the legacy runtime path.
+        """
         # Garante envio apenas dentro do horário útil (9-12, 13-19, seg-sex)
         agora = datetime.now()
         proximo = _proximo_horario_util(agora)
         if proximo > agora:
             delay = (proximo - agora).total_seconds()
             print(f"{YELLOW}Follow-up {tipo} para {chatLid} fora do horário útil — reagendando para {proximo.strftime('%d/%m %H:%M')} ({int(delay)}s){RESET}")
-            t = threading.Timer(delay, self._followup_callback, args=(phone, chatLid, tipo))
-            if chatLid in self.followup_timers:
-                self.followup_timers[chatLid].append(t)
-            else:
-                self.followup_timers[chatLid] = [t]
-            t.start()
+            self._schedule_followup_timer(phone, chatLid, tipo, delay, job_id=job_id)
             return
 
         try:
             headers = {"client-token": self.zapi_sec_token}
             llm = ChatOpenAI(model="gpt-4o-mini", api_key=os.environ.get("OPENAI_API_KEY"))
 
-            # Carrega nome do lead se disponível
-            nome = ""
-            lead_info_path = os.path.join("chats", chatLid, "lead_info.json")
-            if os.path.exists(lead_info_path):
-                with open(lead_info_path, "r", encoding="utf-8") as f:
-                    lead_info = json.load(f)
-                nome = lead_info.get("nome") or ""
+            # Carrega nome e histórico (Supabase = verdade, fallback local)
+            lead_info = self._read_lead_info(chatLid)
+            nome = (lead_info.get("nome") if lead_info else "") or ""
 
             instrucao = get_instrucao_followup(tipo, nome)
 
-            file = os.path.join("chats", chatLid, "history.json")
-            historico = []
-            if os.path.exists(file):
-                with open(file, "r", encoding="utf-8") as f:
-                    historico = json.load(f)
+            historico = self._read_history(chatLid)
             mensagens_recentes = self.extrair_mensagens(historico, chatLid)[-6:]
 
             resp = llm.invoke([
@@ -132,27 +638,43 @@ class Agent_AI:
             url = f"{self.base_url}/send-text"
             requests.post(url, json={"phone": phone, "message": resp.content.strip()}, headers=headers)
             print(f"{GREEN}Follow-up {tipo} enviado para {chatLid}{RESET}")
+            self._mirror_followup_sent(chatLid, tipo, job_id=job_id)
         except Exception as e:
             print(f"{RED}Erro no follow-up {tipo} para {chatLid}: {e}{RESET}")
         finally:
             self._limpar_followup_arquivo(chatLid, tipo)
 
     def agendar_followups(self, phone: str, chatLid: str):
-        """Agenda timers de 1h e 24h e salva os horários no lead_info.json."""
+        """Schedule the standard inactivity follow-ups for a chat.
+
+        Inputs:
+            phone: Destination WhatsApp phone number.
+            chatLid: WhatsApp chat identifier.
+
+        Side effects:
+            Reads `necessita_followup` from Supabase with local fallback,
+            cancels existing pending timers/jobs, upserts three Supabase
+            `followup_jobs` rows (`1h`, `24h`, `15d`), schedules in-memory
+            timers using the returned job ids when available, and keeps
+            `lead_info.json["followups_agendados"]` as a local mirror.
+
+        Returns:
+            None.
+
+        Exceptions/fallbacks:
+            Supabase write failures are swallowed by `_supabase_safe`; timers
+            still run without `job_id` and use the legacy chat+tipo sent
+            marker so current follow-up sending keeps working.
+        """
         # Checa se o agente indicou que follow-up é necessário
-        lead_info_path = os.path.join("chats", chatLid, "lead_info.json")
-        if os.path.exists(lead_info_path):
-            try:
-                with open(lead_info_path, "r", encoding="utf-8") as f:
-                    info = json.load(f)
-                necessita = info.get("necessita_followup", True)
-                motivo    = info.get("motivo_followup", "")
-                if necessita is False:
-                    print(f"{YELLOW}Follow-up desativado para {chatLid}: {motivo}{RESET}")
-                    self.cancelar_followups(chatLid)
-                    return
-            except Exception:
-                pass
+        try:
+            info = self._read_lead_info(chatLid)
+            if info.get("necessita_followup") is False:
+                print(f"{YELLOW}Follow-up desativado para {chatLid}: {info.get('motivo_followup', '')}{RESET}")
+                self.cancelar_followups(chatLid)
+                return
+        except Exception:
+            pass
 
         self.cancelar_followups(chatLid)
 
@@ -161,40 +683,59 @@ class Agent_AI:
         alvo_24h = agora + timedelta(hours=24)
         alvo_15d = agora + timedelta(days=15)
 
-        t1h  = threading.Timer(3600.0, self._followup_callback, args=(phone, chatLid, "1h"))
-        t24h = threading.Timer(86400.0, self._followup_callback, args=(phone, chatLid, "24h"))
-        t15d = threading.Timer(15 * 86400.0, self._followup_callback, args=(phone, chatLid, "15d"))
-
-        self.followup_timers[chatLid] = [t1h, t24h, t15d]
-        t1h.start()
-        t24h.start()
-        t15d.start()
-
-        # Persiste horários no lead_info.json
+        # Persiste horários no lead_info.json (mirror local) e em followup_jobs (Supabase = verdade)
         lead_info_path = os.path.join("chats", chatLid, "lead_info.json")
-        info = {}
-        if os.path.exists(lead_info_path):
-            with open(lead_info_path, "r", encoding="utf-8") as f:
-                info = json.load(f)
+        info = self._read_json_file(lead_info_path, {})
         info["followups_agendados"] = [
             {"tipo": "1h",  "horario_iso": alvo_1h.isoformat(),  "phone": phone},
             {"tipo": "24h", "horario_iso": alvo_24h.isoformat(), "phone": phone},
             {"tipo": "15d", "horario_iso": alvo_15d.isoformat(), "phone": phone},
         ]
-        os.makedirs(os.path.join("chats", chatLid), exist_ok=True)
-        with open(lead_info_path, "w", encoding="utf-8") as f:
-            json.dump(info, f, indent=2, ensure_ascii=False)
+        self._write_json_file(lead_info_path, info)
+
+        job_1h = self._mirror_followup_scheduled(chatLid, "1h",  alvo_1h.isoformat(),  phone)
+        job_24h = self._mirror_followup_scheduled(chatLid, "24h", alvo_24h.isoformat(), phone)
+        job_15d = self._mirror_followup_scheduled(chatLid, "15d", alvo_15d.isoformat(), phone)
+
+        self._schedule_followup_timer(phone, chatLid, "1h", 3600.0, job_id=(job_1h or {}).get("id"))
+        self._schedule_followup_timer(phone, chatLid, "24h", 86400.0, job_id=(job_24h or {}).get("id"))
+        self._schedule_followup_timer(phone, chatLid, "15d", 15 * 86400.0, job_id=(job_15d or {}).get("id"))
 
         print(f"{GREEN}Follow-ups agendados para {chatLid}: 1h às {alvo_1h.strftime('%d/%m %H:%M')} | 24h às {alvo_24h.strftime('%d/%m %H:%M')} | 15d às {alvo_15d.strftime('%d/%m %H:%M')}{RESET}")
 
     def cancelar_followups(self, chatLid: str):
-        """Cancela timers de follow-up (quando lead responde) e remove do arquivo."""
+        """Cancel pending follow-ups for a chat after lead activity.
+
+        Inputs:
+            chatLid: WhatsApp chat identifier whose pending follow-ups should
+            be cancelled.
+
+        Side effects:
+            Cancels in-memory `threading.Timer` objects, removes their
+            `followup_job_timers` guards, clears the local
+            `lead_info.json["followups_agendados"]` mirror, and marks all
+            scheduled Supabase `followup_jobs` for the chat as `cancelled`.
+
+        Returns:
+            None.
+
+        Exceptions/fallbacks:
+            Supabase failures are swallowed by `_supabase_safe`; local JSON
+            cleanup failures are logged by `_limpar_followup_arquivo`.
+        """
         timers = self.followup_timers.pop(chatLid, [])
         for t in timers:
             t.cancel()
         if timers:
+            timer_ids = {id(t) for t in timers}
+            with self._timer_lock:
+                for job_id, timer in list(self.followup_job_timers.items()):
+                    if id(timer) in timer_ids:
+                        self.followup_job_timers.pop(job_id, None)
+        if timers:
             print(f"{YELLOW}Follow-ups cancelados para {chatLid} (lead respondeu){RESET}")
         self._limpar_followup_arquivo(chatLid, None)
+        self._mirror_followups_cancelled(chatLid)
 
     def _limpar_followup_arquivo(self, chatLid: str, tipo):
         """Remove follow-up do arquivo. Se tipo=None remove todos."""
@@ -202,15 +743,13 @@ class Agent_AI:
         if not os.path.exists(lead_info_path):
             return
         try:
-            with open(lead_info_path, "r", encoding="utf-8") as f:
-                info = json.load(f)
+            info = self._read_json_file(lead_info_path, {})
             agendados = info.get("followups_agendados", [])
             if tipo is None:
                 info["followups_agendados"] = []
             else:
                 info["followups_agendados"] = [x for x in agendados if x.get("tipo") != tipo]
-            with open(lead_info_path, "w", encoding="utf-8") as f:
-                json.dump(info, f, indent=2, ensure_ascii=False)
+            self._write_json_file(lead_info_path, info)
         except Exception as e:
             print(f"{RED}Erro ao limpar followup_arquivo para {chatLid}: {e}{RESET}")
 
@@ -220,32 +759,46 @@ class Agent_AI:
 
     def iniciar_conversa(self, phone: str, chatLid: str, mensagem_personalizada: str = "") -> bool:
         """
-        Verifica se o lead não tem histórico ainda e, se for o caso,
-        gera e envia a mensagem de abertura (lead frio).
-        Se mensagem_personalizada for fornecida, envia ela diretamente sem gerar via IA.
-        Retorna True se a mensagem foi enviada, False caso contrário.
+        Gera e envia a mensagem de abertura (lead frio) para um lead ainda não abordado.
+
+        Inputs:
+            phone: número no formato E.164 sem '+' (ex.: '5511999999999').
+            chatLid: identificador do chat ('<phone>@lid').
+            mensagem_personalizada: se fornecida, é enviada literalmente (sem chamar o LLM).
+
+        Returns:
+            True  -> todas as partes da mensagem foram aceitas pela Z-API e o evento
+                     'abertura' foi gravado em history.json + Supabase + follow-ups
+                     agendados.
+            False -> lead já abordado (guard ja_abordado), OU a Z-API rejeitou pelo
+                     menos uma parte da mensagem, OU exceção durante o processo.
+                     Em caso de rejeição da Z-API NADA é gravado em histórico
+                     (lead permanece elegível para retry).
+
+        Side effects:
+            - Em sucesso: append em chats/<chatLid>/history.json, mirror em Supabase
+              `messages`, e agendamento de follow-ups de inatividade.
+            - Em falha de envio ou exceção: popula `self._last_send_error` com o
+              corpo da resposta da Z-API (ou texto da exceção, truncado) para que
+              o endpoint /chamar-lead possa surfar a causa ao caller.
         """
 
         lead_dir = os.path.join("chats", chatLid)
-        file     = os.path.join(lead_dir, "history.json")
 
-        if os.path.exists(file):
-            try:
-                with open(file, "r", encoding="utf-8") as f:
-                    historico = json.load(f)
-                ja_abordado = any(
-                    item.get("data", {}).get("type") == "abertura"
-                    for item in historico
-                )
-                tem_mensagem_do_lead = any(
-                    not item.get("data", {}).get("fromMe", True)
-                    for item in historico
-                )
-                if ja_abordado or tem_mensagem_do_lead:
-                    print(f"{YELLOW}[iniciar_conversa] {chatLid} já foi abordado ou já tem mensagem do lead, abortando{RESET}")
-                    return False
-            except Exception:
-                pass
+        # Histórico: Supabase = verdade, fallback local.
+        historico = self._read_history(chatLid)
+        if historico:
+            ja_abordado = any(
+                item.get("data", {}).get("type") == "abertura"
+                for item in historico
+            )
+            tem_mensagem_do_lead = any(
+                not item.get("data", {}).get("fromMe", True)
+                for item in historico
+            )
+            if ja_abordado or tem_mensagem_do_lead:
+                print(f"{YELLOW}[iniciar_conversa] {chatLid} já foi abordado ou já tem mensagem do lead, abortando{RESET}")
+                return False
 
         try:
             headers = {"client-token": self.zapi_sec_token}
@@ -255,12 +808,10 @@ class Agent_AI:
             else:
                 llm = ChatOpenAI(model="gpt-4o-mini", api_key=os.environ.get("OPENAI_API_KEY"))
 
-                # Tenta carregar dados do lead já conhecidos (se houver lead_info sem histórico)
+                # Tenta carregar dados do lead já conhecidos (Supabase = verdade)
                 contexto_lead = ""
-                lead_info_path = os.path.join(lead_dir, "lead_info.json")
-                if os.path.exists(lead_info_path):
-                    with open(lead_info_path, "r", encoding="utf-8") as f:
-                        info = json.load(f)
+                info = self._read_lead_info(chatLid)
+                if info:
                     campos_uteis = {k: v for k, v in info.items() if v and k in ("nome", "empresa", "segmento_mercado")}
                     if campos_uteis:
                         contexto_lead = "Dados conhecidos do lead: " + ", ".join(f"{k}: {v}" for k, v in campos_uteis.items()) + "."
@@ -275,18 +826,51 @@ class Agent_AI:
                     SystemMessage(content=instrucao),
                 ])
 
-                mensagem = resposta.content.strip()
+                mensagem = _sanitizar_origem_abertura(
+                    resposta.content.strip(),
+                    contexto_lead,
+                )
 
-            # Salva no histórico ANTES de enviar para evitar race condition com webhook
+            # Envia em múltiplos balões se o LLM quebrou com \n\n.
+            # Histórico só é gravado se TODAS as partes forem aceitas pela Z-API
+            # (evita poluir history.json com aberturas que nunca foram entregues
+            # e bloquear retries via a guard `ja_abordado`).
+            partes = [p.strip() for p in mensagem.split("\n\n") if p.strip()] or [mensagem]
+            url = f"{self.base_url}/send-text"
+            self._last_send_error = None
+
+            for i, parte in enumerate(partes):
+                delay = max(1, min(int(len(parte) * 60 / (80 * 5)), 15))
+                if i > 0:
+                    time.sleep(0.5)
+                resp = requests.post(
+                    url,
+                    json={"phone": phone, "message": parte, "delayTyping": delay},
+                    headers=headers,
+                    timeout=15,
+                )
+                ok = False
+                body_text = (resp.text or "")[:300]
+                if 200 <= resp.status_code < 300:
+                    try:
+                        body = resp.json()
+                        ok = (
+                            isinstance(body, dict)
+                            and "error" not in body
+                            and any(k in body for k in ("messageId", "zaapId", "id"))
+                        )
+                    except ValueError:
+                        ok = False
+                if not ok:
+                    self._last_send_error = f"HTTP {resp.status_code}: {body_text}"
+                    print(f"{RED}[iniciar_conversa] Z-API rejeitou parte {i+1}/{len(partes)} para {chatLid}: {self._last_send_error}{RESET}")
+                    return False
+                print(f"{GREEN}[iniciar_conversa] Parte {i+1}/{len(partes)} enviada para {chatLid}{RESET}")
+
+            # Grava histórico SOMENTE após todas as partes serem aceitas pela Z-API.
             history_path = os.path.join(lead_dir, "history.json")
-            historico = []
-            if os.path.exists(history_path):
-                try:
-                    with open(history_path, "r", encoding="utf-8") as f:
-                        historico = json.load(f)
-                except Exception:
-                    historico = []
-            historico.append({
+            historico = self._read_json_file(history_path, []) if os.path.exists(history_path) else []
+            novo_evento = {
                 "timestamp": time.time(),
                 "data": {
                     "fromMe": True,
@@ -295,19 +879,10 @@ class Agent_AI:
                     "text": {"message": mensagem},
                     "type": "abertura",
                 }
-            })
-            with open(history_path, "w", encoding="utf-8") as f:
-                json.dump(historico, f, indent=2, ensure_ascii=False)
-
-            # Envia em múltiplos balões se o LLM quebrou com \n\n
-            partes = [p.strip() for p in mensagem.split("\n\n") if p.strip()] or [mensagem]
-            url = f"{self.base_url}/send-text"
-            for i, parte in enumerate(partes):
-                delay = max(1, min(int(len(parte) * 60 / (80 * 5)), 15))
-                if i > 0:
-                    time.sleep(0.5)
-                requests.post(url, json={"phone": phone, "message": parte, "delayTyping": delay}, headers=headers)
-                print(f"{GREEN}[iniciar_conversa] Parte {i+1}/{len(partes)} enviada para {chatLid}{RESET}")
+            }
+            historico.append(novo_evento)
+            self._write_json_file(history_path, historico)
+            self._mirror_message_supabase(chatLid, novo_evento)
 
             # Agenda follow-ups de inatividade
             self.agendar_followups(phone, chatLid)
@@ -315,6 +890,7 @@ class Agent_AI:
             return True
 
         except Exception as e:
+            self._last_send_error = f"exception: {e}"
             print(f"{RED}[iniciar_conversa] Erro ao enviar mensagem de abertura para {chatLid}: {e}{RESET}")
             return False
 
@@ -325,11 +901,20 @@ class Agent_AI:
         (ex: 11979611556@lid) e migra tudo para a pasta do LID real.
         """
         import shutil
+        import phonenumbers
+        from phonenumbers import NumberParseException
 
-        # Candidatos: com e sem DDI 55
+        # Candidatos: número completo (com DDI) e número nacional (sem DDI),
+        # derivado via libphonenumber para funcionar com qualquer país.
         candidatos = [f"{phone}@lid"]
-        if phone.startswith("55") and len(phone) > 2:
-            candidatos.append(f"{phone[2:]}@lid")
+        try:
+            parsed = phonenumbers.parse(f"+{phone}", None)
+            if phonenumbers.is_valid_number(parsed):
+                nacional = str(parsed.national_number)
+                if nacional and nacional != phone:
+                    candidatos.append(f"{nacional}@lid")
+        except NumberParseException:
+            pass
 
         for lid_temp in candidatos:
             if lid_temp == chatLid:
@@ -351,12 +936,10 @@ class Agent_AI:
             info_real = {}
 
             if os.path.exists(lead_info_temp_path):
-                with open(lead_info_temp_path, "r", encoding="utf-8") as f:
-                    info_temp = json.load(f)
+                info_temp = self._read_json_file(lead_info_temp_path, {})
 
             if os.path.exists(lead_info_real_path):
-                with open(lead_info_real_path, "r", encoding="utf-8") as f:
-                    info_real = json.load(f)
+                info_real = self._read_json_file(lead_info_real_path, {})
 
             followups_temp = info_temp.pop("followups_agendados", [])
             info_merged = {**info_real, **info_temp}
@@ -385,8 +968,7 @@ class Agent_AI:
                     info_merged["followups_agendados"] = novos_agendados
                     print(f"{GREEN}[migrar_lead] Follow-ups remapeados para {chatLid}{RESET}")
 
-            with open(lead_info_real_path, "w", encoding="utf-8") as f:
-                json.dump(info_merged, f, indent=2, ensure_ascii=False)
+            self._write_json_file(lead_info_real_path, info_merged)
 
             # --- Merge history.json (histórico antigo na frente) ---
             history_temp_path = os.path.join(lead_dir_temp, "history.json")
@@ -397,20 +979,26 @@ class Agent_AI:
 
             if os.path.exists(history_temp_path):
                 try:
-                    with open(history_temp_path, "r", encoding="utf-8") as f:
-                        hist_temp = json.load(f)
+                    hist_temp = self._read_json_file(history_temp_path, [])
                 except Exception:
                     pass
 
             if os.path.exists(history_real_path):
                 try:
-                    with open(history_real_path, "r", encoding="utf-8") as f:
-                        hist_real = json.load(f)
+                    hist_real = self._read_json_file(history_real_path, [])
                 except Exception:
                     pass
 
-            with open(history_real_path, "w", encoding="utf-8") as f:
-                json.dump(hist_temp + hist_real, f, indent=2, ensure_ascii=False)
+            self._write_json_file(history_real_path, hist_temp + hist_real)
+
+            # --- Mirror para Supabase: cancela followups antigos do LID temporário,
+            # garante a conversa do LID real, sobe perfil merged e re-upserta as
+            # mensagens migradas para o conversation_id correto. Tudo best-effort. ---
+            self._mirror_followups_cancelled(lid_temp)
+            self._supabase_safe(supabase_repo.upsert_conversation, chatLid, phone=phone)
+            self._mirror_lead_info_supabase(chatLid, info_merged)
+            for ev in hist_temp:
+                self._mirror_message_supabase(chatLid, ev)
 
             # --- Mapear em memória e deletar pasta temporária ---
             self.phone_to_lid[phone] = chatLid
@@ -419,48 +1007,95 @@ class Agent_AI:
             break
 
     def _restaurar_followups(self):
-        """Na inicialização, restaura timers de follow-up pendentes salvos em arquivo."""
-        chats_dir = "chats"
-        if not os.path.exists(chats_dir):
+        """Restore follow-up timers from Supabase during agent startup.
+
+        Inputs:
+            None.
+
+        Side effects:
+            Reads `followup_jobs` from Supabase via `supabase_repo`, schedules
+            timers only for rows still in `status='scheduled'`, records each
+            timer by job id to avoid duplicate in-memory timers, updates
+            `phone_to_lid`, cancels jobs whose profile has
+            `necessita_followup=false`, and marks stale/invalid jobs as
+            `failed` in Supabase.
+
+        Returns:
+            None.
+
+        Exceptions/fallbacks:
+            Supabase failures are swallowed by `_supabase_safe`; startup does
+            not fall back to local JSON because Supabase is the source of
+            truth for follow-up jobs. Overdue jobs up to 24 hours late are
+            still sent after 5 seconds; older jobs are marked `failed`.
+        """
+        agora_utc = datetime.now(timezone.utc)
+        rows = self._supabase_safe(supabase_repo.list_pending_followups)
+        if rows is None:
+            print(f"{YELLOW}Supabase indisponivel; startup nao restaura follow-ups a partir de JSON local{RESET}")
             return
-        agora = datetime.now()
-        for chatLid in os.listdir(chats_dir):
-            lead_info_path = os.path.join(chats_dir, chatLid, "lead_info.json")
-            if not os.path.exists(lead_info_path):
-                continue
-            try:
-                with open(lead_info_path, "r", encoding="utf-8") as f:
-                    info = json.load(f)
-                if info.get("necessita_followup") is False:
+        if not rows:
+            print(f"{GREEN}Nenhum follow-up scheduled pendente no Supabase para restaurar{RESET}")
+            return
+
+        if rows:
+            grouped: Dict[str, list] = {}
+            for r in rows:
+                conv = r.get("conversations") or {}
+                chat_lid = conv.get("chat_lid")
+                if not chat_lid:
+                    continue
+                grouped.setdefault(chat_lid, []).append(r)
+
+            for chatLid, items in grouped.items():
+                profile = self._supabase_safe(supabase_repo.get_lead_profile, chatLid) or {}
+                if profile.get("necessita_followup") is False:
                     print(f"{YELLOW}Follow-up ignorado na restauração para {chatLid} (necessita_followup=false){RESET}")
+                    self._mirror_followups_cancelled(chatLid)
                     continue
-                agendados = info.get("followups_agendados", [])
-                if not agendados:
-                    continue
-                timers = []
-                for item in agendados:
+                for item in items:
+                    job_id = item.get("id")
                     tipo  = item.get("tipo")
-                    phone = item.get("phone")
-                    alvo  = datetime.fromisoformat(item["horario_iso"])
-                    segundos = (alvo - agora).total_seconds()
+                    phone = item.get("phone") or (item.get("payload") or {}).get("phone")
+                    if not phone:
+                        if job_id:
+                            self._mirror_followup_failed(job_id, "phone ausente no startup")
+                        continue
+                    target_iso = item.get("target_at")
+                    try:
+                        alvo = datetime.fromisoformat(target_iso) if target_iso else None
+                    except Exception:
+                        alvo = None
+                    if not alvo:
+                        if job_id:
+                            self._mirror_followup_failed(job_id, "target_at invalido no startup")
+                        continue
+                    if alvo.tzinfo is None:
+                        alvo = alvo.replace(tzinfo=timezone.utc)
+                    else:
+                        alvo = alvo.astimezone(timezone.utc)
+                    segundos = (alvo - agora_utc).total_seconds()
                     if segundos <= 0:
-                        # Já passou, dispara em 5s para não bloquear o start
+                        atraso = abs(segundos)
+                        if atraso > FOLLOWUP_OVERDUE_GRACE_SECONDS:
+                            if job_id:
+                                self._mirror_followup_failed(
+                                    job_id,
+                                    "vencido ha mais de 24h no startup",
+                                )
+                            print(f"{YELLOW}Follow-up {tipo} para {chatLid} vencido ha {int(atraso)}s; marcado failed{RESET}")
+                            continue
                         segundos = 5.0
                         print(f"{YELLOW}Follow-up {tipo} para {chatLid} já passou, disparando em 5s{RESET}")
                     else:
-                        print(f"{GREEN}Follow-up {tipo} restaurado para {chatLid}: dispara em {int(segundos)}s ({alvo.strftime('%d/%m %H:%M')}){RESET}")
-                    t = threading.Timer(segundos, self._followup_callback, args=(phone, chatLid, tipo))
-                    timers.append(t)
-                    t.start()
-                if timers:
-                    self.followup_timers[chatLid] = timers
+                        print(f"{GREEN}Follow-up {tipo} restaurado para {chatLid}: dispara em {int(segundos)}s{RESET}")
+                    self._schedule_followup_timer(phone, chatLid, tipo, segundos, job_id=job_id)
 
-                # Popula mapeamento phone → lid real
-                ph = info.get("phone")
+                conv_row = self._supabase_safe(supabase_repo.get_conversation, chatLid) or {}
+                ph = conv_row.get("phone")
                 if ph:
                     self.phone_to_lid[ph] = chatLid
-            except Exception as e:
-                print(f"{RED}Erro ao restaurar follow-up para {chatLid}: {e}{RESET}")
+            return
 
     # ------------------------------------------------------------------
     # Envio de mensagens
@@ -479,9 +1114,7 @@ class Agent_AI:
                     print(f"{GREEN}Url para envio: {url}{RESET}")
                     payload = {
                         "phone": phone,
-                        "message": self.get_ai_response(
-                            self.extrair_mensagens([{"data": data, "timestamp": data.get("momment", 0)}])
-                        ),
+                        "message": self.get_ai_response(phone, chatLid, data),
                     }
                     headers = {"client-token": self.zapi_sec_token}
                     response = requests.request("POST", url, data=payload, headers=headers)
@@ -820,7 +1453,7 @@ class Agent_AI:
     # Extração de mensagens
     # ------------------------------------------------------------------
 
-    def extrair_mensagens(self, data: List[Dict[str, Any]], chatLid: str = "") -> List[Dict[str, str]]:
+    def extrair_mensagens(self, data: List[Dict[str, Any]], chatLid: str = "", persist_updates: bool = True) -> List[Dict[str, str]]:
         """
         Extrai as mensagens do histórico no formato esperado pela OpenAI.
         Áudios são transcritos via Whisper e a transcrição é persistida no
@@ -979,14 +1612,18 @@ class Agent_AI:
                 mensagens.append({"role": role, "content": message_content})
 
         # Salva histórico atualizado se houve nova transcrição
-        if historico_modificado and chatLid:
+        if historico_modificado and chatLid and persist_updates:
             try:
                 file = os.path.join("chats", chatLid, "history.json")
-                with open(file, "w", encoding="utf-8") as f:
-                    json.dump(data_ordenada, f, indent=2, ensure_ascii=False)
+                self._write_json_file(file, data_ordenada)
                 print(f"{GREEN}[extrair_mensagens] Transcrições salvas em {file}{RESET}")
             except Exception as e:
                 print(f"{RED}[extrair_mensagens] Erro ao salvar transcrições: {e}{RESET}")
+            # Mirror para Supabase: re-upsert das mensagens com payload enriquecido.
+            # `append_message` é idempotente por (conversation_id, message_id),
+            # então sempre atualiza o `payload` quando a mensagem já existe.
+            for item in data_ordenada:
+                self._mirror_message_supabase(chatLid, item)
 
         return mensagens
 
@@ -1201,11 +1838,7 @@ class Agent_AI:
                         )
                         return True
 
-                    _lead_info_path = os.path.join("chats", chatLid, "lead_info.json")
-                    _produto = None
-                    if os.path.exists(_lead_info_path):
-                        with open(_lead_info_path, "r", encoding="utf-8") as _f:
-                            _produto = json.load(_f).get("produto_indicado")
+                    _produto = (self._read_lead_info(chatLid) or {}).get("produto_indicado")
                     _calendar_id = get_organizer_for_product(_produto)
 
                     livres = buscar_horarios_livres(data_reuniao, calendar_id=_calendar_id)
@@ -1258,12 +1891,8 @@ class Agent_AI:
                     email_lead  = parsed.get("email") or None
                     nome_lead   = parsed.get("nome") or None
 
-                    # Fallback: busca email/nome do lead_info.json se o LLM não informou
-                    lead_info_path = os.path.join("chats", chatLid, "lead_info.json")
-                    lead_info = {}
-                    if os.path.exists(lead_info_path):
-                        with open(lead_info_path, "r", encoding="utf-8") as f:
-                            lead_info = json.load(f)
+                    # Fallback: busca email/nome do lead_info (Supabase com fallback local)
+                    lead_info = self._read_lead_info(chatLid)
                     email_lead = email_lead or lead_info.get("email") or None
                     nome_lead  = nome_lead  or lead_info.get("nome")  or None
 
@@ -1324,25 +1953,40 @@ class Agent_AI:
                         )
                         return True
 
-                    # Cancela reunião anterior do mesmo lead, se existir
+                    # Cancela reunião anterior do mesmo lead, se existir.
+                    # Fonte de verdade = Supabase (`list_active_meetings`); o JSON
+                    # local é apenas mirror que pode estar incompleto.
                     arquivo_reunioes = "reunioes.json"
-                    if os.path.exists(arquivo_reunioes):
-                        with open(arquivo_reunioes, "r", encoding="utf-8") as f:
-                            reunioes = json.load(f)
-                    else:
-                        reunioes = []
+                    reunioes = self._read_json_file(arquivo_reunioes, [])
 
-                    reunioes_filtradas = []
+                    reunioes_filtradas = [r for r in reunioes if r.get("chatLid") != chatLid]
+
+                    ativas_no_supabase = self._supabase_safe(
+                        supabase_repo.list_active_meetings, chatLid
+                    ) or []
+                    canceladas_iso = set()
+                    for m in ativas_no_supabase:
+                        event_id_antigo = m.get("event_id")
+                        iso_dt = m.get("scheduled_for")
+                        if event_id_antigo:
+                            print(f"{YELLOW}Removendo evento anterior (Supabase): {event_id_antigo}{RESET}")
+                            deletar_evento_google_calendar(event_id_antigo, calendar_id=organizer_email)
+                        if iso_dt:
+                            self._mirror_meeting_cancelled(chatLid, iso_dt)
+                            canceladas_iso.add(iso_dt)
+
+                    # Fallback: cobre eventuais entradas só locais (Supabase indisponível ou drift)
                     for r in reunioes:
-                        if r.get("chatLid") == chatLid:
-                            event_id_antigo = r.get("event_id")
-                            if event_id_antigo:
-                                print(f"{YELLOW}Removendo evento anterior: {event_id_antigo}{RESET}")
-                                deletar_evento_google_calendar(event_id_antigo, calendar_id=MASTER_EMAIL)
-                            else:
-                                print(f"{YELLOW}Reunião anterior sem event_id, não foi possível remover do Calendar.{RESET}")
-                        else:
-                            reunioes_filtradas.append(r)
+                        if r.get("chatLid") != chatLid:
+                            continue
+                        iso_dt = r.get("datetime")
+                        if iso_dt and iso_dt in canceladas_iso:
+                            continue
+                        event_id_antigo = r.get("event_id")
+                        if event_id_antigo:
+                            print(f"{YELLOW}Removendo evento anterior (fallback local): {event_id_antigo}{RESET}")
+                            deletar_evento_google_calendar(event_id_antigo, calendar_id=organizer_email)
+                        self._mirror_meeting_cancelled(chatLid, iso_dt)
 
                     if verificar_conflito_google_calendar(data_reuniao, horario_reuniao, calendar_id=organizer_email):
                         livres_no_dia = buscar_horarios_livres(data_reuniao, calendar_id=organizer_email)
@@ -1364,17 +2008,18 @@ class Agent_AI:
 
                     meet_link, event_id = criar_evento_google_meet(data_reuniao, horario_reuniao, email_lead=email_lead, nome_lead=nome_lead, rd_email=organizer_email)
 
-                    reunioes_filtradas.append({
+                    nova_reuniao = {
                         "phone": phone,
                         "chatLid": chatLid,
                         "datetime": alvo.isoformat(),
                         "agendado_em": agora.isoformat(),
                         "meet_link": meet_link,
                         "event_id": event_id,
-                    })
+                    }
+                    reunioes_filtradas.append(nova_reuniao)
 
-                    with open(arquivo_reunioes, "w", encoding="utf-8") as f:
-                        json.dump(reunioes_filtradas, f, indent=2, ensure_ascii=False)
+                    self._write_json_file(arquivo_reunioes, reunioes_filtradas)
+                    self._mirror_meeting_supabase(chatLid, nova_reuniao)
 
                     data_fmt = alvo.strftime("%d/%m/%Y às %H:%M")
                     link_info = f"Link do Google Meet: {meet_link}" if meet_link else "O convite com o link chegará por e-mail."
@@ -1464,14 +2109,11 @@ class Agent_AI:
                     self.cancelar_followups(chatLid)
                     lead_info_path = os.path.join("chats", chatLid, "lead_info.json")
                     try:
-                        info_ret = {}
-                        if os.path.exists(lead_info_path):
-                            with open(lead_info_path, "r", encoding="utf-8") as f:
-                                info_ret = json.load(f)
+                        info_ret = self._read_lead_info(chatLid)
                         info_ret["necessita_followup"] = False
                         info_ret["motivo_followup"] = f"Retorno combinado agendado para {alvo.strftime('%d/%m %H:%M')}, follow-up de inatividade não necessário"
-                        with open(lead_info_path, "w", encoding="utf-8") as f:
-                            json.dump(info_ret, f, indent=2, ensure_ascii=False)
+                        self._write_json_file(lead_info_path, info_ret)
+                        self._mirror_lead_info_supabase(chatLid, info_ret)
                     except Exception as e:
                         print(f"{RED}Erro ao desativar follow-up para retorno combinado: {e}{RESET}")
 
@@ -1517,8 +2159,7 @@ class Agent_AI:
                 arquivo_info = os.path.join(lead_dir, "lead_info.json")
 
                 if os.path.exists(arquivo_info):
-                    with open(arquivo_info, "r", encoding="utf-8") as f:
-                        info_anterior = json.load(f)
+                    info_anterior = self._read_json_file(arquivo_info, {})
                     # Campos que sempre devem refletir o estado mais recente da conversa
                     _sempre_atualizar = {"necessita_followup", "motivo_followup", "estagio_conversa", "atualizado_em"}
                     _nunca_sobrescrever = {"tentativas_retomada"}
@@ -1533,8 +2174,8 @@ class Agent_AI:
                             info[key] = val
                         # se o novo valor não é vazio, usa o novo (permite corrigir dados errados)
 
-                with open(arquivo_info, "w", encoding="utf-8") as f:
-                    json.dump(info, f, indent=2, ensure_ascii=False)
+                self._write_json_file(arquivo_info, info)
+                self._mirror_lead_info_supabase(chatLid, info)
 
                 print(f"{GREEN}Lead info atualizado: {arquivo_info}{RESET}")
 
@@ -1580,11 +2221,7 @@ class Agent_AI:
                 headers = {"client-token": self.zapi_sec_token}
                 llm = ChatOpenAI(model="gpt-4o-mini", api_key=os.environ.get("OPENAI_API_KEY"))
 
-                file = os.path.join("chats", chatLid, "history.json")
-                historico_recontato = []
-                if os.path.exists(file):
-                    with open(file, "r", encoding="utf-8") as f:
-                        historico_recontato = json.load(f)
+                historico_recontato = self._read_history(chatLid)
                 mensagens_recontato = self.extrair_mensagens(historico_recontato, chatLid)[-10:]
 
                 resposta_recontato = llm.invoke([
@@ -1617,17 +2254,19 @@ class Agent_AI:
                 if True:
                     print(f" {BLUE} > Processo de resposta iniciado.\nChatLid: {chatLid} {RESET}")
 
-                    file = os.path.join("chats", chatLid, "history.json")
-                    historico = None
-                    if os.path.exists(file):
-                        for _tentativa in range(3):
-                            try:
-                                with open(file, "r", encoding="utf-8") as f:
-                                    historico = json.load(f)
-                                break
-                            except (json.JSONDecodeError, ValueError, OSError):
-                                # Arquivo pode estar sendo escrito concorrentemente; aguarda e tenta de novo
-                                time.sleep(0.3)
+                    # Histórico: Supabase = verdade; fallback para arquivo local em caso de falha.
+                    historico = self._read_history(chatLid) or None
+                    if historico is None:
+                        file = os.path.join("chats", chatLid, "history.json")
+                        if os.path.exists(file):
+                            for _tentativa in range(3):
+                                try:
+                                    with open(file, "r", encoding="utf-8") as f:
+                                        historico = json.load(f)
+                                    break
+                                except (json.JSONDecodeError, ValueError, OSError):
+                                    # Arquivo pode estar sendo escrito concorrentemente; aguarda e tenta de novo
+                                    time.sleep(0.3)
                     if historico is None:
                         historico = [{"data": data, "timestamp": data.get("momment", 0)}]
 
@@ -1638,14 +2277,13 @@ class Agent_AI:
                         docs + nao_docs[-history_limit:],
                         key=lambda x: x.get("timestamp", 0)
                     )
-                    mensagens_formatadas = self.extrair_mensagens(historico_filtrado, chatLid)
+                    mensagens_formatadas = self.extrair_mensagens(historico_filtrado, chatLid, persist_updates=False)
 
-                    # Injeta dados já conhecidos do lead no contexto
+                    # Injeta dados já conhecidos do lead no contexto (Supabase = verdade)
                     contexto = get_contexto()
                     lead_info_path = os.path.join("chats", chatLid, "lead_info.json")
-                    if os.path.exists(lead_info_path):
-                        with open(lead_info_path, "r", encoding="utf-8") as f:
-                            lead_info_atual = json.load(f)
+                    lead_info_atual = self._read_lead_info(chatLid)
+                    if lead_info_atual:
                         campos = {
                             "nome":  lead_info_atual.get("nome"),
                             "email": lead_info_atual.get("email"),
@@ -1666,51 +2304,53 @@ class Agent_AI:
                             "NÃO se apresente novamente. Retome a conversa de onde parou."
                         )
 
-                    # Injeta aviso se já existe reunião agendada para este lead
+                    # Injeta aviso se já existe reunião agendada para este lead (Supabase = verdade)
                     try:
-                        arquivo_reunioes = "reunioes.json"
-                        if os.path.exists(arquivo_reunioes):
-                            with open(arquivo_reunioes, "r", encoding="utf-8") as f:
-                                reunioes_existentes = json.load(f)
-                            reuniao_lead = next(
-                                (r for r in reunioes_existentes if r.get("chatLid") == chatLid),
-                                None
-                            )
-                            if reuniao_lead:
-                                dt_reuniao = reuniao_lead.get("datetime", "")
+                        reuniao_lead = self._read_active_meeting_for(chatLid)
+                        if reuniao_lead:
+                            dt_reuniao = reuniao_lead.get("datetime", "")
+                            try:
                                 alvo_reuniao = datetime.fromisoformat(dt_reuniao) if dt_reuniao else None
-                                if alvo_reuniao and alvo_reuniao > datetime.now():
-                                    dt_fmt = alvo_reuniao.strftime("%d/%m/%Y às %H:%M")
-                                    meet_link_exist = reuniao_lead.get("meet_link", "")
-                                    contexto += (
-                                        f"\n\nATENÇÃO — REUNIÃO JÁ AGENDADA: A demo com este lead está marcada para {dt_fmt}."
-                                        f"{' Link: ' + meet_link_exist if meet_link_exist else ''} "
-                                        f"NÃO gere um novo JSON de agendamento. "
-                                        f"REGRAS OBRIGATÓRIAS para este estado pós-agendamento:\n"
-                                        f"- Se o lead enviar mensagem de encerramento (ex: 'Obrigada', 'Ok', 'Até lá'), responda com despedida curta e profissional.\n"
-                                        f"- Se o lead enviar emojis, figurinhas ou mensagens sem texto claro, responda de forma breve e natural, como em uma conversa casual. NUNCA pergunte se quer remarcar nesses casos.\n"
-                                        f"- Se o lead enviar mensagem confusa ou fora de contexto, peça esclarecimento de forma natural e direta. NÃO assuma que ele quer remarcar.\n"
-                                        f"- Só mencione reagendamento ou cancelamento se o lead EXPLICITAMENTE pedir isso.\n"
-                                        f"- NUNCA inicie resposta com 'Claro.' seguido de pergunta sobre remarcar. Isso soa robótico e confunde o lead.\n"
-                                        f"- Não repita as informações da reunião a menos que o lead pergunte."
-                                    )
-                                    print(f"{GREEN}[create_answer] Reunião já agendada para {chatLid} em {dt_fmt}, injetando aviso no contexto.{RESET}")
+                                # Normaliza para comparação naive (datetime.now()) caso venha com tz do Supabase
+                                if alvo_reuniao and alvo_reuniao.tzinfo is not None:
+                                    alvo_reuniao = alvo_reuniao.astimezone().replace(tzinfo=None)
+                            except Exception:
+                                alvo_reuniao = None
+                            if alvo_reuniao and alvo_reuniao > datetime.now():
+                                dt_fmt = alvo_reuniao.strftime("%d/%m/%Y às %H:%M")
+                                meet_link_exist = reuniao_lead.get("meet_link", "")
+                                contexto += (
+                                    f"\n\nATENÇÃO — REUNIÃO JÁ AGENDADA: A demo com este lead está marcada para {dt_fmt}."
+                                    f"{' Link: ' + meet_link_exist if meet_link_exist else ''} "
+                                    f"NÃO gere um novo JSON de agendamento. "
+                                    f"REGRAS OBRIGATÓRIAS para este estado pós-agendamento:\n"
+                                    f"- Se o lead enviar mensagem de encerramento (ex: 'Obrigada', 'Ok', 'Até lá'), responda com despedida curta e profissional.\n"
+                                    f"- Se o lead enviar emojis, figurinhas ou mensagens sem texto claro, responda de forma breve e natural, como em uma conversa casual. NUNCA pergunte se quer remarcar nesses casos.\n"
+                                    f"- Se o lead enviar mensagem confusa ou fora de contexto, peça esclarecimento de forma natural e direta. NÃO assuma que ele quer remarcar.\n"
+                                    f"- Só mencione reagendamento ou cancelamento se o lead EXPLICITAMENTE pedir isso.\n"
+                                    f"- NUNCA inicie resposta com 'Claro.' seguido de pergunta sobre remarcar. Isso soa robótico e confunde o lead.\n"
+                                    f"- Não repita as informações da reunião a menos que o lead pergunte."
+                                )
+                                print(f"{GREEN}[create_answer] Reunião já agendada para {chatLid} em {dt_fmt}, injetando aviso no contexto.{RESET}")
                     except Exception as e:
                         print(f"{RED}[create_answer] Erro ao verificar reunião existente: {e}{RESET}")
 
                     # Injeta horários livres dos próximos 3 dias úteis no contexto
                     try:
                         from datetime import date
-                        _produto_ctx = lead_info_atual.get("produto_indicado") if os.path.exists(lead_info_path) else None
+                        _produto_ctx = lead_info_atual.get("produto_indicado") if lead_info_atual else None
                         _calendar_ctx = get_organizer_for_product(_produto_ctx)
                         horarios_por_dia = {}
                         dia = datetime.now().date() + timedelta(days=1)
-                        while len(horarios_por_dia) < 3:
+                        max_busca_dias = 21
+                        dias_verificados = 0
+                        while len(horarios_por_dia) < 3 and dias_verificados < max_busca_dias:
                             if dia.weekday() < 5:  # seg–sex
                                 livres = buscar_horarios_livres(dia, calendar_id=_calendar_ctx)
                                 if livres:
                                     horarios_por_dia[dia.strftime("%d/%m/%Y (%A)")] = livres
                             dia += timedelta(days=1)
+                            dias_verificados += 1
                         if horarios_por_dia:
                             linhas_agenda = "\n".join(
                                 f"- {d}: {', '.join(slots[:3])}"
@@ -1747,10 +2387,7 @@ class Agent_AI:
                     _intent_atual = micro_context.get("intent", {}).get("intent", "")
                     _sinais_positivos = {"buy_signal", "interest", "scheduling_request"}
                     _li_path = os.path.join("chats", chatLid, "lead_info.json")
-                    _li_data = {}
-                    if os.path.exists(_li_path):
-                        with open(_li_path, "r", encoding="utf-8") as _f:
-                            _li_data = json.load(_f)
+                    _li_data = self._read_lead_info(chatLid)
 
                     if _intent_atual in _sinais_positivos:
                         if _li_data.get("tentativas_retomada", 0) > 0:
@@ -1761,8 +2398,8 @@ class Agent_AI:
                         print(f"{YELLOW}[retomada] Lead desinteressado. Tentativa {_li_data['tentativas_retomada']}/4.{RESET}")
 
                     os.makedirs(os.path.join("chats", chatLid), exist_ok=True)
-                    with open(_li_path, "w", encoding="utf-8") as _f:
-                        json.dump(_li_data, _f, indent=2, ensure_ascii=False)
+                    self._write_json_file(_li_path, _li_data)
+                    self._mirror_lead_info_supabase(chatLid, _li_data)
 
                     _tentativas_retomada = _li_data.get("tentativas_retomada", 0)
                     if _tentativas_retomada > 0:
@@ -1798,6 +2435,7 @@ class Agent_AI:
                         history=history_lc,
                         micro_agent_context=micro_context,
                         system_context=contexto,
+                        is_interrupted=lambda: chatLid in self.interrupted_chats,
                     )
 
                     # Monta resultado com histórico limpo (sem msgs AI pós-interrupção)

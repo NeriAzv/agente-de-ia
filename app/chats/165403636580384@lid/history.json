@@ -1,0 +1,104 @@
+[
+  {
+    "timestamp": 1779113264.977224,
+    "data": {
+      "fromMe": true,
+      "phone": "5511979537732",
+      "chatLid": "5511979537732@lid",
+      "text": {
+        "message": "Olá, Allan.\n\nSou a Ana, da Btime. Trabalho com empresas que lidam com a gestão de múltiplos contratos e buscam maior visibilidade nas operações. \n\nTem espaço pra conversar sobre como automatizar processos e aumentar a eficiência?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779113271.0820746,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "165403636580384@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB071154D3989A70019C7",
+      "phone": "5511979537732",
+      "fromMe": true,
+      "momment": 1779113309000,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588902710_2238147100339797_4969192810294648651_n.jpg?ccb=11-4&oh=01_Q5Aa4gF7SutsDsiNsGCwubpWmHGVlo84KuURlTY-wMfVnvPxZg&oe=6A1849F0&_nc_sid=5e03e0&_nc_cat=111",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Olá, Allan."
+      }
+    }
+  },
+  {
+    "timestamp": 1779113286.102656,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "165403636580384@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB070D3ACE28D5F2CBB85",
+      "phone": "5511979537732",
+      "fromMe": true,
+      "momment": 1779113324000,
+      "status": "SENT",
+      "chatName": "5511979537732",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588902710_2238147100339797_4969192810294648651_n.jpg?ccb=11-4&oh=01_Q5Aa4gF7SutsDsiNsGCwubpWmHGVlo84KuURlTY-wMfVnvPxZg&oe=6A1849F0&_nc_sid=5e03e0&_nc_cat=111",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Trabalho com empresas que lidam com a gestão de múltiplos contratos e buscam maior visibilidade nas operações."
+      }
+    }
+  },
+  {
+    "timestamp": 1779113298.0117254,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "165403636580384@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0B67495DBFB81615C59",
+      "phone": "5511979537732",
+      "fromMe": true,
+      "momment": 1779113339000,
+      "status": "SENT",
+      "chatName": "5511979537732",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/588902710_2238147100339797_4969192810294648651_n.jpg?ccb=11-4&oh=01_Q5Aa4gF7SutsDsiNsGCwubpWmHGVlo84KuURlTY-wMfVnvPxZg&oe=6A1849F0&_nc_sid=5e03e0&_nc_cat=111",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Tem espaço pra conversar sobre como automatizar processos e aumentar a eficiência?"
+      }
+    }
+  }
+]

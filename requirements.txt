@@ -40,6 +40,7 @@ openpyxl==3.1.5
 orjson==3.11.7
 ormsgpack==1.12.2
 packaging==26.0
+phonenumbers==9.0.30
 proto-plus==1.27.1
 protobuf==6.33.6
 pyasn1==0.6.3

@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": 1778784623.35549,
+    "data": {
+      "fromMe": true,
+      "phone": "551135769747",
+      "chatLid": "551135769747@lid",
+      "text": {
+        "message": "Bom dia, Marcelo.\n\nSou a Ana, da Btime. Vi seu contexto em Facilities na Braskem e gostaria de falar sobre como nossa tecnologia pode ajudar na automação dos processos e no controle de terceiros.\n\nTem espaço pra conversar sobre isso?"
+      },
+      "type": "abertura"
+    }
+  }
+]

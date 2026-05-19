@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": 1779113229.9240851,
+    "data": {
+      "fromMe": true,
+      "phone": "13122528943",
+      "chatLid": "13122528943@lid",
+      "text": {
+        "message": "Boa tarde, Henrique.\n\nSou a Ana, da Btime. Trabalhamos com operações que buscam automatizar processos e ganhar visibilidade em tempo real. Faz sentido a gente trocar uma ideia?"
+      },
+      "type": "abertura"
+    }
+  }
+]
