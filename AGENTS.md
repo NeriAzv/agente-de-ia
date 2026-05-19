@@ -1,7 +1,7 @@
 ﻿# Repository Guidelines
 
 ## Project Structure & Module Organization
-Core code lives in `app/`. The entrypoint is `app/db_app.py` (Flask webhooks and orchestration). Agent logic is under `app/agent/` (`core.py`, `micro_agents.py`, intent/objection/qualification/scheduling modules, calendar integration, and `storage/supabase_repo.py`). Supabase is the runtime source of truth for conversations, lead profiles, messages, follow-up jobs, and meetings. Local JSON under `chats/{chatLid}/` and `reunioes.json` may still exist as legacy log/mirror/fallback data, but it is not the source of truth and must not be deleted without explicit authorization. Root-level docs include `README.md`, `PRD.md`, and integration notes.
+Core code lives in `app/`. The entrypoint is `app/db_app.py` (Flask webhooks and orchestration). Agent logic is under `app/agent/` (`core.py`, `micro_agents.py`, intent/objection/qualification/closure/scheduling modules, calendar integration, and `storage/supabase_repo.py`). The closure detector (`closure_detector.py`) runs in the parallel Haiku phase and, when `should_respond=false` with `confidence=high`, short-circuits the turn in `core.py` before `run_ana_agent`. Supabase is the runtime source of truth for conversations, lead profiles, messages, follow-up jobs, and meetings. Local JSON under `chats/{chatLid}/` and `reunioes.json` may still exist as legacy log/mirror/fallback data, but it is not the source of truth and must not be deleted without explicit authorization. Root-level docs include `README.md`, `PRD.md`, and integration notes.
 
 ## Build, Test, and Development Commands
 - `python -m venv .venv` then `.venv\Scripts\activate` (Windows) or `source .venv/bin/activate` (Unix): create and activate virtualenv.

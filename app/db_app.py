@@ -273,33 +273,36 @@ def iniciar_conversa():
         return {"status": "skipped", "reason": "Lead já possui histórico ou chatLid não permitido"}, 200
 
 
-@app.route("/chamar-lead", methods=["POST"])
-def chamar_lead():
+def chamar_lead_interno(
+    nome: str,
+    numero: str,
+    descricao: str = "",
+    mensagem: str = "",
+    indicado_por_chatLid: str | None = None,
+    extras: dict | None = None,
+) -> tuple[dict, int]:
     """
-    Chama um lead manualmente.
+    Núcleo reutilizável da chamada de lead outbound.
 
-    Corpo esperado:
-        {
-            "nome": "Nome Completo",
-            "numero": "5511999999999",
-            "descricao": "Contexto opcional sobre o lead",
-            "mensagem": "Opcional: mensagem literal (pula geração via IA)"
-        }
+    Inputs:
+        nome: nome do lead (obrigatório).
+        numero: telefone bruto (qualquer formato aceito por normalizar_telefone).
+        descricao: contexto opcional gravado em lead_info["descricao_manual"].
+        mensagem: mensagem literal opcional; se vazia, a IA gera a abertura.
+        indicado_por_chatLid: chatLid do lead que originou um handoff; gravado
+            em lead_info["indicado_por_chatLid"] do novo lead para rastreabilidade.
+        extras: campos adicionais a serem mesclados no lead_info.json do novo lead
+            (ex.: empresa herdada). Não sobrescreve chaves reservadas (nome, phone).
 
-    Respostas:
-        200 {"status": "ok", ...}       -> Z-API aceitou todas as partes da abertura.
-        502 {"status": "failed",         -> Z-API rejeitou o envio; histórico NÃO foi
-             "reason": "zapi_rejected",     gravado, lead permanece elegível para retry.
-             "zapi_response": "..."}
-        200 {"status": "skipped", ...}  -> Lead já tinha histórico/abertura prévia.
-        400                              -> Faltam campos obrigatórios.
+    Returns:
+        Tupla (body, http_status) pronta para ser devolvida por um handler Flask
+        ou inspecionada por callers internos (ex.: guard de handoff em core.py).
+
+    Side effects:
+        - Cria diretório chats/{chatLid} e grava lead_info.json.
+        - Mirror em Supabase (conversations + lead_profiles).
+        - Dispara agent.iniciar_conversa (POST para Z-API).
     """
-    data      = request.json or {}
-    nome      = data.get("nome")
-    numero    = data.get("numero")
-    descricao = data.get("descricao", "")
-    mensagem  = data.get("mensagem", "")
-
     if not nome or not numero:
         return {"status": "error", "reason": "nome e numero são obrigatórios"}, 400
 
@@ -317,7 +320,6 @@ def chamar_lead():
     lead_dir = os.path.join("chats", chatLid)
     os.makedirs(lead_dir, exist_ok=True)
 
-    # Cria/atualiza lead_info.json com os dados passados
     lead_info_path = os.path.join(lead_dir, "lead_info.json")
     lead_info = {}
     if os.path.exists(lead_info_path):
@@ -327,21 +329,29 @@ def chamar_lead():
         except (json.JSONDecodeError, ValueError):
             lead_info = {}
 
+    if extras:
+        for k, v in extras.items():
+            if k in ("nome", "phone"):
+                continue
+            if v is not None:
+                lead_info[k] = v
+
     lead_info["nome"] = nome
     lead_info["phone"] = numero
     if descricao:
         lead_info["descricao_manual"] = descricao
+    if indicado_por_chatLid:
+        lead_info["indicado_por_chatLid"] = indicado_por_chatLid
 
     with open(lead_info_path, "w", encoding="utf-8") as f:
         json.dump(lead_info, f, indent=2, ensure_ascii=False)
 
-    # Mirror para Supabase (fonte de verdade)
     _supabase_safe(supabase_repo.upsert_conversation, chatLid, phone=numero)
     profile_data = {k: v for k, v in lead_info.items() if k not in ("phone", "ai_blocked", "followups_agendados")}
     if profile_data:
         _supabase_safe(supabase_repo.upsert_lead_profile, chatLid, profile_data)
 
-    print(f" > /chamar-lead chamado para {nome} ({numero})")
+    print(f" > chamar_lead_interno acionado para {nome} ({numero})")
 
     enviado = agent.iniciar_conversa(numero, chatLid, mensagem)
 
@@ -352,6 +362,34 @@ def chamar_lead():
     if err:
         return {"status": "failed", "reason": "zapi_rejected", "zapi_response": err}, 502
     return {"status": "skipped", "reason": "Lead já possui histórico de conversa"}, 200
+
+
+@app.route("/chamar-lead", methods=["POST"])
+def chamar_lead():
+    """
+    Endpoint HTTP fino que delega para chamar_lead_interno.
+
+    Corpo esperado:
+        {
+            "nome": "Nome Completo",
+            "numero": "5511999999999",
+            "descricao": "Contexto opcional sobre o lead",
+            "mensagem": "Opcional: mensagem literal (pula geração via IA)"
+        }
+
+    Respostas:
+        200 {"status": "ok", ...}       -> Z-API aceitou todas as partes da abertura.
+        502 {"status": "failed", ...}   -> Z-API rejeitou o envio.
+        200 {"status": "skipped", ...}  -> Lead já tinha histórico/abertura prévia.
+        400                              -> Faltam campos obrigatórios ou número inválido.
+    """
+    data = request.json or {}
+    return chamar_lead_interno(
+        nome=data.get("nome"),
+        numero=data.get("numero"),
+        descricao=data.get("descricao", ""),
+        mensagem=data.get("mensagem", ""),
+    )
 
 
 @app.route("/forcar-resposta", methods=["POST"])

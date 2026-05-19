@@ -20,10 +20,13 @@ Agent_AI.get_ai_response()
      ├── [paralelo, Claude Haiku]
      │     ├── ObjectionDetector    → tipo e gravidade da objeção
      │     ├── IntentClassifier     → intenção da mensagem
-     │     └── QualificationTracker → critérios preenchidos / faltando
+     │     ├── QualificationTracker → critérios preenchidos / faltando
+     │     └── ClosureDetector      → silencia turnos de encerramento / ack pós-agendamento
      │
      ├── [sequencial, Claude Haiku]
      │     └── SchedulingValidator  → ready_to_schedule + blocking_reason
+     │
+     ├── se ClosureDetector retorna should_respond=false (high) → encerra sem chamar Sonnet
      │
      ├── AnaAgent (Claude Sonnet) → gera a resposta final com contexto enriquecido
      │
@@ -37,7 +40,7 @@ Agent_AI.get_ai_response()
 
 - Dados conhecidos do lead (Supabase `lead_profiles` + `conversations`; `lead_info.json` é fallback/mirror): nome, email, segmento, etc.
 - Horários livres dos próximos 3 dias úteis (consultados ao vivo no Google Calendar)
-- Output consolidado dos 4 micro agentes
+- Output consolidado dos 5 micro agentes
 
 ## Modelos usados por função
 
@@ -107,10 +110,11 @@ agente-de-ia/
 │   ├── reunioes.json                  # Mirror/fallback legado de reuniões
 │   └── agent/
 │       ├── core.py                    # Agent_AI — orquestração principal
-│       ├── micro_agents.py            # Executa os 4 micro agentes em paralelo
+│       ├── micro_agents.py            # Executa os 5 micro agentes em paralelo
 │       ├── intent_classifier.py       # Haiku: classifica intenção da mensagem
 │       ├── objection_detector.py      # Haiku: detecta e tipifica objeções
 │       ├── qualification_tracker.py   # Haiku: avalia critérios de qualificação
+│       ├── closure_detector.py        # Haiku: silencia turnos de encerramento / ack pós-agendamento
 │       ├── scheduling_validator.py    # Haiku: valida prontidão para agendar
 │       ├── ana_agent.py               # Sonnet: gera a resposta final
 │       ├── calendar.py                # Google Calendar (criar/deletar/verificar eventos)

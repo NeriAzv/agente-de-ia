@@ -339,6 +339,21 @@ class Agent_AI:
                 return r
         return None
 
+    def _has_active_meeting(self, chatLid: str) -> bool:
+        try:
+            reuniao = self._read_active_meeting_for(chatLid)
+            if not reuniao:
+                return False
+            dt_reuniao = reuniao.get("datetime", "")
+            if not dt_reuniao:
+                return False
+            alvo = datetime.fromisoformat(dt_reuniao)
+            if alvo.tzinfo is not None:
+                alvo = alvo.astimezone().replace(tzinfo=None)
+            return alvo > datetime.now()
+        except Exception:
+            return False
+
     def _mirror_message_supabase(self, chatLid: str, event: dict) -> None:
         """Best-effort send of one history event to Supabase `messages`.
 
@@ -2380,8 +2395,79 @@ class Agent_AI:
                     history_for_agent = mensagens_formatadas[:last_user_idx] if last_user_idx > 0 else []
 
                     print(f"{BLUE}[micro_agents] Iniciando análise paralela para {chatLid}{RESET}")
-                    micro_context = run_micro_agents(lead_message_atual, history_for_agent)
+                    micro_context = run_micro_agents(
+                        lead_message_atual,
+                        history_for_agent,
+                        has_active_meeting=self._has_active_meeting(chatLid),
+                    )
                     print(f"{BLUE}[micro_agents] Concluído: {micro_context}{RESET}")
+
+                    _closure = micro_context.get("closure", {})
+                    if _closure.get("should_respond") is False and _closure.get("confidence") == "high":
+                        print(f"{YELLOW}[closure] Silenciando {chatLid} — {_closure.get('reason')}{RESET}")
+                        self.pending_texts.pop(chatLid, None)
+                        self.answer_list.pop(chatLid, None)
+                        return
+
+                    # --- Handoff: lead repassou contato de outra pessoa ---
+                    _handoff = micro_context.get("handoff", {})
+                    if (
+                        _handoff.get("is_handoff")
+                        and _handoff.get("confidence") == "high"
+                        and _handoff.get("new_phone")
+                    ):
+                        novo_numero = _handoff["new_phone"]
+                        novo_nome = _handoff.get("new_contact_name") or "Responsável"
+                        _li = self._read_lead_info(chatLid)
+                        phone_atual = _li.get("phone", "")
+
+                        if novo_numero and novo_numero != phone_atual:
+                            empresa_orig = _li.get("empresa", "")
+                            indicado_por = _li.get("nome", "")
+                            qual = micro_context.get("qualification", {}) or {}
+                            resumo_partes = []
+                            if empresa_orig:
+                                resumo_partes.append(f"empresa {empresa_orig}")
+                            if qual.get("revenue_value"):
+                                resumo_partes.append(f"faturamento ~{qual['revenue_value']}")
+                            if qual.get("pain_description"):
+                                resumo_partes.append(f"dor: {qual['pain_description']}")
+                            if qual.get("product_routed"):
+                                resumo_partes.append(f"produto: {qual['product_routed']}")
+                            resumo = "; ".join(resumo_partes) or "sem contexto adicional"
+                            descricao = f"Indicado por {indicado_por or 'contato anterior'}"
+                            if _handoff.get("new_contact_role"):
+                                descricao += f" como {_handoff['new_contact_role']}"
+                            descricao += f". {resumo}."
+
+                            ja_disparados = _li.get("handoffs_disparados", []) or []
+                            if novo_numero not in ja_disparados:
+                                disparo_ok = False
+                                try:
+                                    # Import lazy proposital: db_app importa agent.core no topo — não suba este import.
+                                    from db_app import chamar_lead_interno
+                                    _body, _status = chamar_lead_interno(
+                                        nome=novo_nome,
+                                        numero=novo_numero,
+                                        descricao=descricao,
+                                        indicado_por_chatLid=chatLid,
+                                    )
+                                    disparo_ok = _status == 200 and isinstance(_body, dict) and _body.get("status") == "ok"
+                                    if disparo_ok:
+                                        print(f"{GREEN}[handoff] Disparado para {novo_numero} ({novo_nome}){RESET}")
+                                    else:
+                                        print(f"{RED}[handoff] Disparo não confirmado para {novo_numero}: status={_status} body={_body}{RESET}")
+                                except Exception as e:
+                                    print(f"{RED}[handoff] Falhou disparo para {novo_numero}: {e}{RESET}")
+
+                                if disparo_ok:
+                                    _li.setdefault("handoffs_disparados", [])
+                                    _li["handoffs_disparados"].append(novo_numero)
+                                    self._write_json_file(
+                                        os.path.join("chats", chatLid, "lead_info.json"),
+                                        _li,
+                                    )
+                                    self._mirror_lead_info_supabase(chatLid, _li)
 
                     # --- Tentativas de retomada de lead desinteressado ---
                     _intent_atual = micro_context.get("intent", {}).get("intent", "")

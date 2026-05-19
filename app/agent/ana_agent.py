@@ -60,7 +60,10 @@ Regras de prioridade:
 - Se intent.intent for scheduling_request, verifique scheduling.ready_to_schedule antes de avançar. \
 se for false, use scheduling.blocking_reason para continuar o aquecimento.
 - Se qualification.missing_criteria não estiver vazio, não avance para agendamento e foque em \
-preencher os critérios faltantes.\
+preencher os critérios faltantes.
+- Se handoff.is_handoff for true, agradeça brevemente o repasse (ex.: "Obrigada, vou falar com \
+ele/ela") usando handoff.new_contact_name quando disponível, e mantenha a porta aberta para a \
+pessoa original. Não tente continuar qualificando nem peça novas informações nesta conversa.\
 """
 
 

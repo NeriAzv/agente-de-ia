@@ -428,5 +428,475 @@
       "waitingMessage": false,
       "messageExpirationSeconds": 0
     }
+  },
+  {
+    "timestamp": 1779222214.407978,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "106012728099067@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0299E95A65244A59CBA",
+      "phone": "5511979611556",
+      "fromMe": false,
+      "momment": 1779222254001,
+      "status": "RECEIVED",
+      "chatName": "Guilherme",
+      "senderPhoto": null,
+      "senderName": "Guilherme Neri",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491876207_643218138796381_2075770868103657505_n.jpg?ccb=11-4&oh=01_Q5Aa4gGoe_63YK2RITMXk1QeukU81_JZljsmKeUIgOdo6QgtpQ&oe=6A19CFB7&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "ola"
+      }
+    }
+  },
+  {
+    "timestamp": 1779222364.615513,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "106012728099067@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB07E49C905967DD38FF6",
+      "phone": "5511979611556",
+      "fromMe": false,
+      "momment": 1779222405000,
+      "status": "RECEIVED",
+      "chatName": "Guilherme",
+      "senderPhoto": null,
+      "senderName": "Guilherme Neri",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491876207_643218138796381_2075770868103657505_n.jpg?ccb=11-4&oh=01_Q5Aa4gGoe_63YK2RITMXk1QeukU81_JZljsmKeUIgOdo6QgtpQ&oe=6A19CFB7&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "ola"
+      }
+    }
+  },
+  {
+    "timestamp": 1779222397.3452451,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "106012728099067@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "7EE80092DD0BF5EAD747",
+      "phone": "5511979611556",
+      "fromMe": true,
+      "momment": 1779222437001,
+      "status": "SENT",
+      "chatName": "Guilherme",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491876207_643218138796381_2075770868103657505_n.jpg?ccb=11-4&oh=01_Q5Aa4gGoe_63YK2RITMXk1QeukU81_JZljsmKeUIgOdo6QgtpQ&oe=6A19CFB7&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Guilherme, parece que você está testando algo por aí."
+      }
+    }
+  },
+  {
+    "timestamp": 1779222399.4829845,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "106012728099067@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0B40292A611AE21C721",
+      "phone": "5511979611556",
+      "fromMe": true,
+      "momment": 1779222440000,
+      "status": "SENT",
+      "chatName": "Guilherme",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491876207_643218138796381_2075770868103657505_n.jpg?ccb=11-4&oh=01_Q5Aa4gGoe_63YK2RITMXk1QeukU81_JZljsmKeUIgOdo6QgtpQ&oe=6A19CFB7&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Quando quiser conversar sobre a operação da Clarios, é só me chamar."
+      }
+    }
+  },
+  {
+    "timestamp": 1779222409.8254986,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "106012728099067@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB05072E3A9617277B7F7",
+      "phone": "5511979611556",
+      "fromMe": false,
+      "momment": 1779222450000,
+      "status": "RECEIVED",
+      "chatName": "Guilherme",
+      "senderPhoto": null,
+      "senderName": "Guilherme Neri",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491876207_643218138796381_2075770868103657505_n.jpg?ccb=11-4&oh=01_Q5Aa4gGoe_63YK2RITMXk1QeukU81_JZljsmKeUIgOdo6QgtpQ&oe=6A19CFB7&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Certo obrigado"
+      }
+    }
+  },
+  {
+    "timestamp": 1779222453.957672,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "106012728099067@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0FB0D789DFEC9FAC07D",
+      "phone": "5511979611556",
+      "fromMe": false,
+      "momment": 1779222494000,
+      "status": "RECEIVED",
+      "chatName": "Guilherme",
+      "senderPhoto": null,
+      "senderName": "Guilherme Neri",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491876207_643218138796381_2075770868103657505_n.jpg?ccb=11-4&oh=01_Q5Aa4gGoe_63YK2RITMXk1QeukU81_JZljsmKeUIgOdo6QgtpQ&oe=6A19CFB7&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "contact": {
+        "displayName": "Gui Neri Lifestyle",
+        "vCard": "BEGIN:VCARD\nVERSION:3.0\nN:;Gui Neri Lifestyle;;;\nFN:Gui Neri Lifestyle\nTEL;type=CELL;type=VOICE;waid=5511979611556:+55 11 97961-1556\nEND:VCARD",
+        "phones": [
+          "5511979611556"
+        ]
+      }
+    }
+  },
+  {
+    "timestamp": 1779222458.1192825,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "106012728099067@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB03016DF1757880A708A",
+      "phone": "5511979611556",
+      "fromMe": false,
+      "momment": 1779222498000,
+      "status": "RECEIVED",
+      "chatName": "Guilherme",
+      "senderPhoto": null,
+      "senderName": "Guilherme Neri",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491876207_643218138796381_2075770868103657505_n.jpg?ccb=11-4&oh=01_Q5Aa4gGoe_63YK2RITMXk1QeukU81_JZljsmKeUIgOdo6QgtpQ&oe=6A19CFB7&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Ta escrito o que nesse contato?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779222461.3346062,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "106012728099067@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB00A70688D0C1B2B86F4",
+      "phone": "5511979611556",
+      "fromMe": false,
+      "momment": 1779222502000,
+      "status": "RECEIVED",
+      "chatName": "Guilherme",
+      "senderPhoto": null,
+      "senderName": "Guilherme Neri",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491876207_643218138796381_2075770868103657505_n.jpg?ccb=11-4&oh=01_Q5Aa4gGoe_63YK2RITMXk1QeukU81_JZljsmKeUIgOdo6QgtpQ&oe=6A19CFB7&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "qual o número/ nome?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779222491.6906693,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "106012728099067@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB06FDAC982A5376ADED7",
+      "phone": "5511979611556",
+      "fromMe": true,
+      "momment": 1779222532000,
+      "status": "SENT",
+      "chatName": "Guilherme",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491876207_643218138796381_2075770868103657505_n.jpg?ccb=11-4&oh=01_Q5Aa4gGoe_63YK2RITMXk1QeukU81_JZljsmKeUIgOdo6QgtpQ&oe=6A19CFB7&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Esse contato aparece como \"Ana, Btime\" para você."
+      }
+    }
+  },
+  {
+    "timestamp": 1779222496.5819237,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "106012728099067@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB01F48E7592C07A1FDFB",
+      "phone": "5511979611556",
+      "fromMe": true,
+      "momment": 1779222537001,
+      "status": "SENT",
+      "chatName": "Guilherme",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491876207_643218138796381_2075770868103657505_n.jpg?ccb=11-4&oh=01_Q5Aa4gGoe_63YK2RITMXk1QeukU81_JZljsmKeUIgOdo6QgtpQ&oe=6A19CFB7&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Mas vamos ao que importa: como está a operação de vocês hoje? Tem algum processo que consome muito tempo da equipe?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779222568.081561,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "106012728099067@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0550F0C436ACEBCA16F",
+      "phone": "5511979611556",
+      "fromMe": false,
+      "momment": 1779222608000,
+      "status": "RECEIVED",
+      "chatName": "Guilherme",
+      "senderPhoto": null,
+      "senderName": "Guilherme Neri",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491876207_643218138796381_2075770868103657505_n.jpg?ccb=11-4&oh=01_Q5Aa4gGoe_63YK2RITMXk1QeukU81_JZljsmKeUIgOdo6QgtpQ&oe=6A19CFB7&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Sim vamos sim"
+      }
+    }
+  },
+  {
+    "timestamp": 1779222575.0598004,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "106012728099067@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB003523A0859F33485BB",
+      "phone": "5511979611556",
+      "fromMe": false,
+      "momment": 1779222615000,
+      "status": "RECEIVED",
+      "chatName": "Guilherme",
+      "senderPhoto": null,
+      "senderName": "Guilherme Neri",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491876207_643218138796381_2075770868103657505_n.jpg?ccb=11-4&oh=01_Q5Aa4gGoe_63YK2RITMXk1QeukU81_JZljsmKeUIgOdo6QgtpQ&oe=6A19CFB7&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Chama a área comercial"
+      }
+    }
+  },
+  {
+    "timestamp": 1779222578.3833451,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "106012728099067@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0C4143479F2BF7FC4A2",
+      "phone": "5511979611556",
+      "fromMe": false,
+      "momment": 1779222619000,
+      "status": "RECEIVED",
+      "chatName": "Guilherme",
+      "senderPhoto": null,
+      "senderName": "Guilherme Neri",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491876207_643218138796381_2075770868103657505_n.jpg?ccb=11-4&oh=01_Q5Aa4gGoe_63YK2RITMXk1QeukU81_JZljsmKeUIgOdo6QgtpQ&oe=6A19CFB7&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Vou te passar o contato"
+      }
+    }
+  },
+  {
+    "timestamp": 1779222592.3246741,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "106012728099067@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0A55DF52EE05B19BA",
+      "phone": "5511979611556",
+      "fromMe": false,
+      "momment": 1779222633000,
+      "status": "RECEIVED",
+      "chatName": "Guilherme",
+      "senderPhoto": null,
+      "senderName": "Guilherme Neri",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491876207_643218138796381_2075770868103657505_n.jpg?ccb=11-4&oh=01_Q5Aa4gGoe_63YK2RITMXk1QeukU81_JZljsmKeUIgOdo6QgtpQ&oe=6A19CFB7&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "contact": {
+        "displayName": "Judihub Comercial",
+        "vCard": "BEGIN:VCARD\nVERSION:3.0\nN:Comercial;Judihub;;;\nFN:Judihub Comercial\nTEL;type=CELL;waid=556584010176:+55 65 8401-0176\nX-WA-BIZ-NAME:Judihub Comercial\nX-WA-BIZ-AUTOMATED-TYPE:unknown\nEND:VCARD",
+        "phones": [
+          "556584010176"
+        ]
+      }
+    }
+  },
+  {
+    "timestamp": 1779222622.163042,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "106012728099067@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB019EEE180B7AF8491DF",
+      "phone": "5511979611556",
+      "fromMe": true,
+      "momment": 1779222662000,
+      "status": "SENT",
+      "chatName": "Guilherme",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491876207_643218138796381_2075770868103657505_n.jpg?ccb=11-4&oh=01_Q5Aa4gGoe_63YK2RITMXk1QeukU81_JZljsmKeUIgOdo6QgtpQ&oe=6A19CFB7&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "referenceMessageId": "3EB0A55DF52EE05B19BA",
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Ótimo. Pode passar o contato."
+      }
+    }
   }
 ]
