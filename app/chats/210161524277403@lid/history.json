@@ -1,0 +1,104 @@
+[
+  {
+    "timestamp": 1779288725.1021523,
+    "data": {
+      "fromMe": true,
+      "phone": "5511983890976",
+      "chatLid": "5511983890976@lid",
+      "text": {
+        "message": "Bom dia, Renato.\n\nSou a Ana, da Btime. Trabalhamos com automação de processos para garantir eficiência operacional em operações de facilities, como as que você lidera na Unimed Fortaleza. Você tem interesse em discutir como podemos ajudar na gestão e rastreabilidade das atividades no ambiente hospitalar?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779288728.2432199,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "210161524277403@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0B5A6F202F943CED036",
+      "phone": "5511983890976",
+      "fromMe": true,
+      "momment": 1779288771000,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/550822158_1297041595295075_9044898932016382439_n.jpg?ccb=11-4&oh=01_Q5Aa4gE4JgJFwxXzWj6qidZ2BReIXWx1boW7dfFpY_bttFTICQ&oe=6A1AC317&_nc_sid=5e03e0&_nc_cat=108",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Bom dia, Renato."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288743.269319,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "210161524277403@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0516698D5BC9FC18290",
+      "phone": "5511983890976",
+      "fromMe": true,
+      "momment": 1779288786000,
+      "status": "SENT",
+      "chatName": "5511983890976",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/550822158_1297041595295075_9044898932016382439_n.jpg?ccb=11-4&oh=01_Q5Aa4gE4JgJFwxXzWj6qidZ2BReIXWx1boW7dfFpY_bttFTICQ&oe=6A1AC317&_nc_sid=5e03e0&_nc_cat=108",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Trabalhamos com automação de processos para garantir eficiência operacional em operações de facilities, como as que você lidera na Unimed Fortaleza. Você tem interesse em discutir como podemos ajudar na gestão e rastreabilidade das atividades no ambiente hospitalar?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779292814.213787,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "210161524277403@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0FBD21D7AE8DA523DD2",
+      "phone": "5511983890976",
+      "fromMe": true,
+      "momment": 1779292856003,
+      "status": "SENT",
+      "chatName": "5511983890976",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/550822158_1297041595295075_9044898932016382439_n.jpg?ccb=11-4&oh=01_Q5Aa4gF5Ej9YFzCCSt9GN7KDYvTbHo4d_7VSJnJSpnQIPMl-ng&oe=6A1AFB57&_nc_sid=5e03e0&_nc_cat=108",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Renato, estou por aqui caso você tenha alguma dúvida sobre como a Btime pode ajudar a Unimed Fortaleza. Posso te ajudar em algo específico?"
+      }
+    }
+  }
+]

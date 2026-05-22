@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": 1779288396.260604,
+    "data": {
+      "fromMe": true,
+      "phone": "5549999135541",
+      "chatLid": "5549999135541@lid",
+      "text": {
+        "message": "Bom dia, Geferson. \n\nSou a Ana, da Btime. Trabalhamos com automação de processos para operações que enfrentam rotina manual em gestão de facilities. O controle preventivo que oferecemos evita paradas não planejadas e melhora a eficiência operacional. \n\nTem espaço pra conversar sobre isso?"
+      },
+      "type": "abertura"
+    }
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "timestamp": 1779288808.5402553,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "273864932237385@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0DB88E15D8A73EF9177",
+      "phone": "557996272255",
+      "fromMe": true,
+      "momment": 1779288851000,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Bom dia, Clara."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288823.634778,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "273864932237385@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB046A717CDD158F8CEE3",
+      "phone": "557996272255",
+      "fromMe": true,
+      "momment": 1779288866000,
+      "status": "SENT",
+      "chatName": "557996272255",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Trabalhamos com empresas do setor químico para melhorar a eficiência operacional e reduzir o trabalho manual em manutenção e facilities. Tem espaço para a gente conversar sobre automação e controle preventivo na sua operação?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779292813.7521102,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "273864932237385@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB04FCB5F2C94B5F6BE71",
+      "phone": "557996272255",
+      "fromMe": true,
+      "momment": 1779292856000,
+      "status": "SENT",
+      "chatName": "557996272255",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Oi Clara, só passando para ver se você teve a chance de refletir sobre automação na sua operação. Posso ajudar a entender como otimizar seus processos. Vamos conversar?"
+      }
+    }
+  }
+]

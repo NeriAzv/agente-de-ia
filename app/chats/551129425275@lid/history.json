@@ -1,14 +1,15 @@
 [
   {
-    "timestamp": 1779113350.9386578,
+    "timestamp": 1779287673.835313,
     "data": {
       "fromMe": true,
       "phone": "551129425275",
       "chatLid": "551129425275@lid",
+      "type": "numero_sem_whatsapp",
+      "messageId": "sysmark:no-wa:551129425275@lid",
       "text": {
-        "message": "Boa tarde, Fabio.\n\nSou a Ana, da Btime. Trabalhamos com operações que precisam de automação em gestão de facilities e controle de fornecedores. Você tem espaço para conversar sobre como podemos ajudar a otimizar esses processos?"
-      },
-      "type": "abertura"
+        "message": "[sistema] Número sem conta de WhatsApp — abertura não enviada (Z-API phone-exists=false)."
+      }
     }
   }
 ]

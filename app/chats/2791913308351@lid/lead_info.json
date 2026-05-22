@@ -1,0 +1,22 @@
+{
+  "nome": "null",
+  "email": "null",
+  "empresa": "null",
+  "segmento_mercado": "null",
+  "porte_empresa": "null",
+  "faturamento_aproximado": "null",
+  "tamanho_time": "null",
+  "sistemas_atuais": [],
+  "desafios_identificados": [],
+  "produto_indicado": "null",
+  "motivo_segmentacao": "null",
+  "estagio_conversa": "inicial",
+  "reuniao_agendada": false,
+  "necessita_followup": true,
+  "motivo_followup": "Conversa não teve conclusão clara e o lead não respondeu diretamente ao SDR.",
+  "tentativas_retomada": 0,
+  "descricao_manual": "Sebrae/PR\nGestor de Facilities\nFacilities\nServiços / Apoio a Pequenas Empresas\nSebrae é o principal agente de fomento ao empreendedorismo e pequenas empresas no Brasil, com unidades em todos os estados.\nGestão de facilities em múltiplas unidades regionais | Controle de contratos de serviços padronizados | Manutenção de espaços de atendimento ao público\nCompras | RH | Operações\nCom unidades em todo o Paraná e um padrão de atendimento a manter, o Sebrae pode usar a btime para centralizar a gestão de Facilities e garantir a mesma qualidade em todas as unidades.",
+  "atualizado_em": "2026-05-20T15:04:56.081925+00:00",
+  "ai_blocked": false,
+  "phone": "558005700800"
+}

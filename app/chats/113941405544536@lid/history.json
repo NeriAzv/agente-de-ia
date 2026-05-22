@@ -1,0 +1,224 @@
+[
+  {
+    "timestamp": 1779288766.1022925,
+    "data": {
+      "fromMe": true,
+      "phone": "5511998985755",
+      "chatLid": "5511998985755@lid",
+      "text": {
+        "message": "Olá, Ubaldo Junior.\n\nSou a Ana, da Btime. Nós ajudamos empresas a otimizar processos operacionais e reduzir custos, especialmente em áreas como facilities e manutenção. Você tem espaço para conversarmos sobre automação e eficiência no seu dia a dia?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779288769.3343546,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "113941405544536@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB081BB1236C635F9EB90",
+      "phone": "5511998985755",
+      "fromMe": true,
+      "momment": 1779288812000,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Olá, Ubaldo Junior."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288784.3810098,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "113941405544536@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0F0276B19C46771605F",
+      "phone": "5511998985755",
+      "fromMe": true,
+      "momment": 1779288827000,
+      "status": "SENT",
+      "chatName": "5511998985755",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Nós ajudamos empresas a otimizar processos operacionais e reduzir custos, especialmente em áreas como facilities e manutenção. Você tem espaço para conversarmos sobre automação e eficiência no seu dia a dia?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288874.4251363,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "113941405544536@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3AFA65C2FD191DEBEFB7",
+      "phone": "5511998985755",
+      "fromMe": false,
+      "momment": 1779288917000,
+      "status": "RECEIVED",
+      "chatName": "Ubaldo junior",
+      "senderPhoto": null,
+      "senderName": "Ubaldo junior",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Boa tarde"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288885.375445,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "113941405544536@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3A4264F35B86D279A008",
+      "phone": "5511998985755",
+      "fromMe": false,
+      "momment": 1779288927000,
+      "status": "RECEIVED",
+      "chatName": "Ubaldo junior",
+      "senderPhoto": null,
+      "senderName": "Ubaldo junior",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Segue meu e-mail"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288894.8866546,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "113941405544536@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3A8BE72A3CB9BFF58884",
+      "phone": "5511998985755",
+      "fromMe": false,
+      "momment": 1779288937000,
+      "status": "RECEIVED",
+      "chatName": "Ubaldo junior",
+      "senderPhoto": null,
+      "senderName": "Ubaldo junior",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "ubaldo.junior@abril.com.br"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288919.005703,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "113941405544536@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3A43723B0A0FBCDE27F0",
+      "phone": "5511998985755",
+      "fromMe": false,
+      "momment": 1779288956000,
+      "status": "RECEIVED",
+      "chatName": "Ubaldo junior",
+      "senderPhoto": null,
+      "senderName": "Ubaldo junior",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Pode ser na quinta depois das 10:45h"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288925.9251258,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "113941405544536@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3AC34DC66E02C57A4B3F",
+      "phone": "5511998985755",
+      "fromMe": false,
+      "momment": 1779288968000,
+      "status": "RECEIVED",
+      "chatName": "Ubaldo junior",
+      "senderPhoto": null,
+      "senderName": "Ubaldo junior",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Ou após as 15:30h"
+      }
+    }
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "nome": "Geferson Delfino",
+  "phone": "5549999135541",
+  "descricao_manual": "CMPC Brasil\nCoordenador de Facilities e Serviços Gerais - Brasil\nFacilities\nPapel e Celulose\nCMPC é uma multinacional chilena de papel e celulose com plantas industriais no Brasil, especialmente no Sul do país.\nManutenção de plantas em operação contínua | Gestão de facilities em áreas industriais e florestais | Controle de terceiros e prestadores em planta\nManutenção | Compras | Ambiental\nNuma planta de celulose em operação contínua como a CMPC, a gestão de Facilities precisa ser proativa; e a btime oferece o controle preventivo que evita paradas não planejadas.",
+  "followups_agendados": [
+    {
+      "tipo": "24h",
+      "horario_iso": "2026-05-21T11:46:37.117629",
+      "phone": "5549999135541"
+    },
+    {
+      "tipo": "15d",
+      "horario_iso": "2026-06-04T11:46:37.117629",
+      "phone": "5549999135541"
+    }
+  ]
+}

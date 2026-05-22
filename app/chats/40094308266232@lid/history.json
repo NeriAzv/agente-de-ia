@@ -344,5 +344,69 @@
         "message": "Oi Mariana, você teve a chance de pensar sobre a gestão e controle dos fornecedores? Posso ajudar a entender como a Btime pode fazer isso de forma eficiente."
       }
     }
+  },
+  {
+    "timestamp": 1779292809.59584,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "40094308266232@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "E0E71BE486CC75987C1E",
+      "phone": "554499321606",
+      "fromMe": true,
+      "momment": 1779292851003,
+      "status": "SENT",
+      "chatName": "Má Vignoto",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/550358465_976901358006745_3297184305817944023_n.jpg?ccb=11-4&oh=01_Q5Aa4gHnsmISWX1xVeua6OlPX0pYe33wzddFKLwoQRdnTdstUg&oe=6A1AD41C&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Oi Mariana, estou à disposição caso queira continuar nossa conversa."
+      }
+    }
+  },
+  {
+    "timestamp": 1779297329.5171483,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "40094308266232@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "ACD229A882226AF5826EF2F11F04DA0B",
+      "phone": "554499321606",
+      "fromMe": false,
+      "momment": 1779297370000,
+      "status": "RECEIVED",
+      "chatName": "Má Vignoto",
+      "senderPhoto": null,
+      "senderName": "Má Vignoto",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/550358465_976901358006745_3297184305817944023_n.jpg?ccb=11-4&oh=01_Q5Aa4gEZPiR-a-4_chc2R14aAUXdJM90WYA8VJWnYmDKoa_R_g&oe=6A1B0C5C&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "audio": {
+        "ptt": true,
+        "seconds": 34,
+        "audioUrl": "https://f004.backblazeb2.com/file/temp-file-download/instances/3EFABF270A13919DE95AD6F4B026E35E/ACD229A882226AF5826EF2F11F04DA0B/5RFXzIj7MxKZiDTfp45HBA==.ogg",
+        "mimeType": "audio/ogg; codecs=opus",
+        "viewOnce": false
+      }
+    }
   }
 ]

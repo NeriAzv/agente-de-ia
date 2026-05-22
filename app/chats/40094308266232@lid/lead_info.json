@@ -18,16 +18,5 @@
   "necessita_followup": true,
   "motivo_followup": "A conversa não foi encerrada e a lead demonstrou interesse em entender melhor sobre como solucionar suas dores na gestão de fornecedores.",
   "atualizado_em": "2026-05-19T12:49:03.137952",
-  "followups_agendados": [
-    {
-      "tipo": "24h",
-      "horario_iso": "2026-05-20T12:49:09.849742",
-      "phone": "554499321606"
-    },
-    {
-      "tipo": "15d",
-      "horario_iso": "2026-06-03T12:49:09.849742",
-      "phone": "554499321606"
-    }
-  ]
+  "followups_agendados": []
 }

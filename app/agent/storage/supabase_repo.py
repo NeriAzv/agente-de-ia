@@ -1012,6 +1012,158 @@ def list_active_meetings(chat_lid: Optional[str] = None) -> List[Dict[str, Any]]
 
 
 # ---------------------------------------------------------------------------
+# Handoffs
+# ---------------------------------------------------------------------------
+
+
+def has_successful_handoff(chat_lid: str, new_phone: str) -> bool:
+    """Return True when there is already a successful handoff for (chat, phone).
+
+    Used as the dedup gate before dispatching a new handoff via Z-API: if a row
+    with `success=true` already exists for this conversation+phone, the system
+    should NOT redispatch. Rows with `success=false` are previous failed
+    attempts and do not block a retry.
+
+    Inputs:
+        chat_lid: WhatsApp chat identifier of the lead who indicated the handoff.
+        new_phone: Normalized E.164 phone (no '+') of the contact being handed off.
+
+    Returns:
+        True if at least one handoff row exists with success=true; False otherwise
+        (including when the conversation doesn't exist yet).
+
+    Side effects:
+        One GET against `handoffs`.
+    """
+    if not chat_lid or not new_phone:
+        return False
+    conv_id = _resolve_conversation_id(chat_lid)
+    if not conv_id:
+        return False
+    rows = _client().select(
+        "handoffs",
+        {
+            "conversation_id": f"eq.{conv_id}",
+            "new_phone": f"eq.{new_phone}",
+            "success": "eq.true",
+            "select": "id",
+            "limit": "1",
+        },
+    )
+    return bool(rows)
+
+
+def record_handoff_attempt(
+    chat_lid: str,
+    new_phone: str,
+    new_contact_name: Optional[str] = None,
+    new_contact_role: Optional[str] = None,
+    descricao: Optional[str] = None,
+) -> Optional[str]:
+    """Insert a new handoff row in state success=false (attempt in progress).
+
+    Called BEFORE the Z-API dispatch. The returned id is later passed to
+    `mark_handoff_success` or `mark_handoff_failure` once the dispatch resolves.
+
+    Inputs:
+        chat_lid: Conversation identifier.
+        new_phone: Normalized phone of the contact being handed off.
+        new_contact_name / new_contact_role / descricao: Optional metadata.
+
+    Returns:
+        UUID of the inserted row, or None on failure / missing conversation.
+
+    Side effects:
+        POST on `handoffs`; resolves/creates the conversation.
+    """
+    if not chat_lid or not new_phone:
+        return None
+    conv_id = _resolve_conversation_id(chat_lid, create_if_missing=True)
+    if not conv_id:
+        return None
+    row = _drop_none(
+        {
+            "conversation_id": conv_id,
+            "new_phone": new_phone,
+            "new_contact_name": new_contact_name,
+            "new_contact_role": new_contact_role,
+            "descricao": descricao,
+            "success": False,
+        }
+    )
+    # Plain INSERT (cada tentativa é uma linha nova; id é gerado server-side).
+    # Não usa upsert porque não há chave natural — re-disparo proposital cria
+    # nova linha pra preservar o histórico de tentativas.
+    cli = _client()
+    r = cli._request(
+        "POST",
+        "/handoffs",
+        headers={"Prefer": "return=representation"},
+        data=json.dumps([row]),
+    )
+    try:
+        inserted = r.json() or []
+    except ValueError:
+        inserted = []
+    if not inserted:
+        return None
+    return (inserted[0] or {}).get("id")
+
+
+def mark_handoff_success(handoff_id: str) -> Dict[str, Any]:
+    """Flip a handoff row to success=true with confirmed_at=now.
+
+    Called from the async dispatch thread once Z-API returns ok.
+
+    Inputs:
+        handoff_id: UUID returned by `record_handoff_attempt`.
+
+    Returns:
+        The updated row, or {} when no row matched.
+
+    Side effects:
+        PATCH on `handoffs`.
+    """
+    if not handoff_id:
+        return {}
+    result = _client().patch(
+        "handoffs",
+        {"id": f"eq.{handoff_id}"},
+        {"success": True, "confirmed_at": _now_iso()},
+    )
+    return result[0] if result else {}
+
+
+def mark_handoff_failure(handoff_id: str, error_detail: Optional[str] = None) -> Dict[str, Any]:
+    """Record the failure reason on a handoff row (leaves success=false).
+
+    The row stays with success=false so the dedup gate in `has_successful_handoff`
+    keeps allowing retries on the next turn.
+
+    Inputs:
+        handoff_id: UUID returned by `record_handoff_attempt`.
+        error_detail: Short message to persist for debugging.
+
+    Returns:
+        The updated row, or {} when no row matched.
+
+    Side effects:
+        PATCH on `handoffs`.
+    """
+    if not handoff_id:
+        return {}
+    patch: Dict[str, Any] = {"success": False}
+    if error_detail:
+        patch["error_detail"] = error_detail[:500]
+    result = _client().patch(
+        "handoffs",
+        {"id": f"eq.{handoff_id}"},
+        patch,
+    )
+    return result[0] if result else {}
+
+
+# ---------------------------------------------------------------------------
 # Risks / assumptions
 # ---------------------------------------------------------------------------
 #

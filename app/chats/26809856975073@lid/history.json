@@ -1,0 +1,92 @@
+[
+  {
+    "timestamp": 1779236989.6171691,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26809856975073@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB05225ADB065ADDEE21D",
+      "phone": "556584010176",
+      "fromMe": true,
+      "momment": 1779237032000,
+      "status": "SENT",
+      "chatName": "556584010176",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/656431210_977224311447954_7597480105349669289_n.jpg?ccb=11-4&oh=01_Q5Aa4gGsCGn0ao6FDyEFSIlRpgLy_hV_J7uSjs6-QeJJs4zHOg&oe=6A1A0BEB&_nc_sid=5e03e0&_nc_cat=100",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Bom dia, Juliano."
+      }
+    }
+  },
+  {
+    "timestamp": 1779237006.5703247,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26809856975073@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0124B27EE334358E1B8",
+      "phone": "556584010176",
+      "fromMe": true,
+      "momment": 1779237049001,
+      "status": "SENT",
+      "chatName": "556584010176",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/656431210_977224311447954_7597480105349669289_n.jpg?ccb=11-4&oh=01_Q5Aa4gGsCGn0ao6FDyEFSIlRpgLy_hV_J7uSjs6-QeJJs4zHOg&oe=6A1A0BEB&_nc_sid=5e03e0&_nc_cat=100",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Trabalhamos com automação de processos para operações que buscam aumentar a eficiência e reduzir trabalho manual. Você vê oportunidades para melhorar a eficiência na sua operação?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779278408.4928534,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "26809856975073@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB07C40A3FA77FA0FCB98",
+      "phone": "556584010176",
+      "fromMe": true,
+      "momment": 1779278450000,
+      "status": "SENT",
+      "chatName": "556584010176",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/656431210_977224311447954_7597480105349669289_n.jpg?ccb=11-4&oh=01_Q5Aa4gEa13syC5dDZOIOC9K4aHdCQtxeOduYvjamtxaRCcrn5Q&oe=6A1AB4AB&_nc_sid=5e03e0&_nc_cat=100",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Juliano, só para retomar, você enxerga algum desafio específico na sua operação que poderíamos ajudar a resolver? Ficaria feliz em entender melhor."
+      }
+    }
+  }
+]

@@ -41,7 +41,7 @@ def _to_langchain_messages(mensagens_formatadas: list) -> list:
     return result
 
 
-def run_micro_agents(lead_message: str, mensagens_formatadas: list, has_active_meeting: bool = False) -> dict:
+def run_micro_agents(lead_message: str, mensagens_formatadas: list, has_active_meeting: bool = False, lead_message_eh_vcard: bool = False) -> dict:
     """
     Executa os 6 micro agentes e retorna o micro_agent_context consolidado.
 
@@ -60,12 +60,38 @@ def run_micro_agents(lead_message: str, mensagens_formatadas: list, has_active_m
     today = datetime.now().strftime("%Y-%m-%d")
     history = _to_langchain_messages(mensagens_formatadas)
 
+    last_assistant = ""
+    for m in reversed(mensagens_formatadas):
+        if m.get("role") == "assistant":
+            content = m.get("content", "")
+            last_assistant = content if isinstance(content, str) else _assistant_content_text_only(content)
+            break
+
+    # Últimas 4 mensagens do lead (sem contar a atual) — captura bursts onde o
+    # número veio em msg anterior e a atual é só "chama lá" / "chama agora".
+    recent_lead_messages: list[str] = []
+    for m in reversed(mensagens_formatadas):
+        if m.get("role") == "user":
+            content = m.get("content", "")
+            text = content if isinstance(content, str) else _assistant_content_text_only(content)
+            if text:
+                recent_lead_messages.append(text)
+            if len(recent_lead_messages) >= 4:
+                break
+    recent_lead_messages.reverse()  # cronológico: mais antigas primeiro
+
     with ThreadPoolExecutor(max_workers=5) as executor:
         fut_objection = executor.submit(run_objection_detector, lead_message)
         fut_intent = executor.submit(run_intent_classifier, lead_message)
         fut_qualification = executor.submit(run_qualification_tracker, history)
         fut_closure = executor.submit(run_closure_detector, lead_message, has_active_meeting)
-        fut_handoff = executor.submit(run_handoff_detector, lead_message)
+        fut_handoff = executor.submit(
+            run_handoff_detector,
+            lead_message,
+            last_assistant,
+            lead_message_eh_vcard,
+            recent_lead_messages,
+        )
 
     objection = fut_objection.result()
     intent = fut_intent.result()

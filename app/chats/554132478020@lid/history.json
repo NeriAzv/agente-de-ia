@@ -1,0 +1,15 @@
+[
+  {
+    "timestamp": 1779288159.2220967,
+    "data": {
+      "fromMe": true,
+      "phone": "554132478020",
+      "chatLid": "554132478020@lid",
+      "type": "numero_sem_whatsapp",
+      "messageId": "sysmark:no-wa:554132478020@lid",
+      "text": {
+        "message": "[sistema] Número sem conta de WhatsApp — abertura não enviada (Z-API phone-exists=false)."
+      }
+    }
+  }
+]

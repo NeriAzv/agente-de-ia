@@ -1,0 +1,134 @@
+[
+  {
+    "timestamp": 1779288477.1901772,
+    "data": {
+      "fromMe": true,
+      "phone": "5521981695404",
+      "chatLid": "5521981695404@lid",
+      "text": {
+        "message": "Boa tarde, Shana.\n\nSou a Ana, da Btime. Ajudamos empresas a automatizar processos e aumentar a eficiência operacional, especialmente em áreas com alta demanda de conformidade e gestão de riscos. \n\nTem espaço pra conversar sobre isso?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779288479.5764022,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "106137382862861@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0770408F5475A6E2F8F",
+      "phone": "5521981695404",
+      "fromMe": true,
+      "momment": 1779288522000,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Boa tarde, Shana."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288495.306966,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "106137382862861@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB09F26C927AF39F9CF40",
+      "phone": "5521981695404",
+      "fromMe": true,
+      "momment": 1779288537001,
+      "status": "SENT",
+      "chatName": "5521981695404",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Ajudamos empresas a automatizar processos e aumentar a eficiência operacional, especialmente em áreas com alta demanda de conformidade e gestão de riscos."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288501.72555,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "106137382862861@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0467C11407A37027819",
+      "phone": "5521981695404",
+      "fromMe": true,
+      "momment": 1779288544002,
+      "status": "SENT",
+      "chatName": "5521981695404",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Tem espaço pra conversar sobre isso?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779292807.8907537,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "106137382862861@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB03545F886E8883FF00D",
+      "phone": "5521981695404",
+      "fromMe": true,
+      "momment": 1779292849001,
+      "status": "SENT",
+      "chatName": "5521981695404",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Oi Shana, só dando um toque. Você tem algum desafio específico na sua operação que acha que poderíamos ajudar? Estou aqui para ajudar no que precisar."
+      }
+    }
+  }
+]

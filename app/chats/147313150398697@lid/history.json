@@ -1,0 +1,104 @@
+[
+  {
+    "timestamp": 1779288317.3290632,
+    "data": {
+      "fromMe": true,
+      "phone": "5511981211644",
+      "chatLid": "5511981211644@lid",
+      "text": {
+        "message": "Boa tarde, Priscilla.\n\nSou a Ana, da Btime. Trabalhamos com operações que precisam manter padrões consistentes em suas redes de lojas e automatizar processos para garantir eficiência. Tem espaço pra conversar sobre como podemos ajudar a Sephora a manter a excelência no padrão visual das lojas?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779288322.1599674,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "147313150398697@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0722A39B4931D50FAF6",
+      "phone": "5511981211644",
+      "fromMe": true,
+      "momment": 1779288364001,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Boa tarde, Priscilla."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288337.1780717,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "147313150398697@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB068EAD6F1FB5358DD72",
+      "phone": "5511981211644",
+      "fromMe": true,
+      "momment": 1779288380000,
+      "status": "SENT",
+      "chatName": "5511981211644",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Trabalhamos com operações que precisam manter padrões consistentes em suas redes de lojas e automatizar processos para garantir eficiência. Tem espaço pra conversar sobre como podemos ajudar a Sephora a manter a excelência no padrão visual das lojas?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779292812.553888,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "147313150398697@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0BFD0F49AF7005D2191",
+      "phone": "5511981211644",
+      "fromMe": true,
+      "momment": 1779292855000,
+      "status": "SENT",
+      "chatName": "5511981211644",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Priscilla, vi que você não teve tempo para responder. Se houver algum desafio específico que esteja enfrentando na operação das lojas, quero entender melhor e ver como a Btime pode ajudar. Me avise quando puder."
+      }
+    }
+  }
+]

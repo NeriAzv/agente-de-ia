@@ -1,14 +1,15 @@
 [
   {
-    "timestamp": 1779110744.4043524,
+    "timestamp": 1779287454.0026617,
     "data": {
       "fromMe": true,
       "phone": "4934901999400",
       "chatLid": "4934901999400@lid",
+      "type": "numero_sem_whatsapp",
+      "messageId": "sysmark:no-wa:4934901999400@lid",
       "text": {
-        "message": "Olá, Thomas.\n\nSou a Ana, da Btime. Trabalho com empresas que lidam com a gestão de facilities em ambientes regulados, como laboratórios. Isso inclui automação de processos e controle de condições especiais, que podem garantir eficiência e qualidade nas operações. Tem espaço pra conversar sobre isso?"
-      },
-      "type": "abertura"
+        "message": "[sistema] Número sem conta de WhatsApp — abertura não enviada (Z-API phone-exists=false)."
+      }
     }
   }
 ]

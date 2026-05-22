@@ -1,14 +1,15 @@
 [
   {
-    "timestamp": 1779113385.7561004,
+    "timestamp": 1779287730.0133061,
     "data": {
       "fromMe": true,
       "phone": "554133751515",
       "chatLid": "554133751515@lid",
+      "type": "numero_sem_whatsapp",
+      "messageId": "sysmark:no-wa:554133751515@lid",
       "text": {
-        "message": "Boa tarde, Aline.\n\nSou a Ana, da Btime. Acredito que a padronização na gestão de facilities pode trazer significativa economia e eficiência para o Grupo Boticário, especialmente com a operação em rede de franquias. Tem espaço pra conversar sobre como podemos ajudar?"
-      },
-      "type": "abertura"
+        "message": "[sistema] Número sem conta de WhatsApp — abertura não enviada (Z-API phone-exists=false)."
+      }
     }
   }
 ]

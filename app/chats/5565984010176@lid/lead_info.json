@@ -1,0 +1,18 @@
+{
+  "nome": "Juliano",
+  "phone": "5565984010176",
+  "descricao_manual": "Indicado por Guilherme como comercial. empresa Clarios.",
+  "indicado_por_chatLid": "106012728099067@lid",
+  "followups_agendados": [
+    {
+      "tipo": "24h",
+      "horario_iso": "2026-05-20T21:29:47.811824",
+      "phone": "5565984010176"
+    },
+    {
+      "tipo": "15d",
+      "horario_iso": "2026-06-03T21:29:47.811824",
+      "phone": "5565984010176"
+    }
+  ]
+}

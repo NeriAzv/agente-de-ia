@@ -1,41 +1,29 @@
 {
   "nome": "Guilherme",
   "email": null,
-  "empresa": "Clarios",
-  "segmento_mercado": "Facilities",
+  "empresa": "Judihub",
+  "segmento_mercado": "Comercial",
   "porte_empresa": null,
   "faturamento_aproximado": null,
   "tamanho_time": null,
   "sistemas_atuais": [],
   "desafios_identificados": [
-    "processos que consomem muito tempo da equipe"
+    "Limitação na iniciação de conversas pelo SDR no WhatsApp"
   ],
-  "produto_indicado": "SaaS Btime",
-  "motivo_segmentacao": "Lead mencionou processos que consomem muito tempo da equipe, o que indica a necessidade de automação e melhoria na eficiência. Não foram citados sinais de backlog ou necessidades mais complexas que sugeririam o uso de Squad AI.",
+  "produto_indicado": "Squad AI",
+  "motivo_segmentacao": "Não há informações suficientes sobre processos ou porte da empresa.",
   "estagio_conversa": "qualificando",
   "reuniao_agendada": false,
   "necessita_followup": true,
-  "motivo_followup": "Lead demonstrou interesse em passar o contato da área comercial, mas a conversa ainda não foi concluída.",
-  "atualizado_em": "2026-05-19T17:30:16.146634",
+  "motivo_followup": "Lead ainda está em contato e pediu para chamar a área comercial, mas não foi concluído.",
+  "atualizado_em": "2026-05-19T21:59:12.650277",
   "tentativas_retomada": 0,
   "descricao_manual": "Guilherme Neri é Gerente de Engenharia de Manufatura e Facilities na Clarios, empresa global de baterias automotivas com plantas industriais no Brasil e forte presença no mercado de reposição. Atua em Facilities no setor de Manufatura Automotiva. Possíveis dores: gestão de múltiplas plantas, manutenção de equipamentos críticos, conformidade ambiental e segurança. Squads btime mais aderentes: Manutenção, Compras e Segurança do Trabalho. Gancho: com múltiplas plantas e equipamentos críticos, a Clarios provavelmente enfrenta desafios em centralizar as ordens de serviço de Facilities e Manutenção; a btime pode ser o hub operacional para isso.",
+  " Necessita_followup": true,
+  "handoffs_disparados": [
+    "5565984010176"
+  ],
   "ai_blocked": false,
   "phone": "5511979611556",
-  "followups_agendados": [
-    {
-      "tipo": "1h",
-      "horario_iso": "2026-05-19T18:30:19.003332",
-      "phone": "5511979611556"
-    },
-    {
-      "tipo": "24h",
-      "horario_iso": "2026-05-20T17:30:19.003332",
-      "phone": "5511979611556"
-    },
-    {
-      "tipo": "15d",
-      "horario_iso": "2026-06-03T17:30:19.003332",
-      "phone": "5511979611556"
-    }
-  ]
+  "followups_agendados": []
 }

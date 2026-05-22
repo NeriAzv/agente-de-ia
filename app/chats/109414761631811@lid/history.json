@@ -178,5 +178,95 @@
         "message": "Oi Flavio, estou à disposição caso queira continuar a conversa."
       }
     }
+  },
+  {
+    "timestamp": 1779224965.6084905,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "109414761631811@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "A517658427C1D60F1F4D0487AD03145C",
+      "phone": "553584354538",
+      "fromMe": false,
+      "momment": 1779225005000,
+      "status": "RECEIVED",
+      "chatName": "Josivan Sousa - Grupo Hagana",
+      "senderPhoto": null,
+      "senderName": "Josivan Sousa - Grupo Hagana",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534418241_715443278311613_2444236664436436792_n.jpg?ccb=11-4&oh=01_Q5Aa4gGBKckJq0wawEouDHAJPqKaXR9DtT3tNHwjI5F7Wnp2aw&oe=6A19EEA0&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Olá"
+      }
+    }
+  },
+  {
+    "timestamp": 1779224995.9207437,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "109414761631811@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "45F2DD856C0FDA721C45",
+      "phone": "553584354538",
+      "fromMe": true,
+      "momment": 1779225036000,
+      "status": "SENT",
+      "chatName": "Josivan Sousa - Grupo Hagana",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534418241_715443278311613_2444236664436436792_n.jpg?ccb=11-4&oh=01_Q5Aa4gGBKckJq0wawEouDHAJPqKaXR9DtT3tNHwjI5F7Wnp2aw&oe=6A19EEA0&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Olá, Flavio. Qual o seu ramo de atuação?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779278407.8527129,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "109414761631811@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0EC28F17F03F410C780",
+      "phone": "553584354538",
+      "fromMe": true,
+      "momment": 1779278449002,
+      "status": "SENT",
+      "chatName": "Josivan Sousa - Grupo Hagana",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534418241_715443278311613_2444236664436436792_n.jpg?ccb=11-4&oh=01_Q5Aa4gGx3bIT6l85j2SVvPlTFBZZRtblh6upVmcw18ey8qA0bg&oe=6A1ACFA0&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Flavio, só passando para ver se você está disponível para falar sobre como podemos ajudar a otimizar seus processos. Estou aqui para esclarecer qualquer dúvida."
+      }
+    }
   }
 ]

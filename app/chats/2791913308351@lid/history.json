@@ -1,0 +1,2812 @@
+[
+  {
+    "timestamp": 1779288437.7834537,
+    "data": {
+      "fromMe": true,
+      "phone": "558005700800",
+      "chatLid": "558005700800@lid",
+      "text": {
+        "message": "Boa tarde, Marcos.\n\nSou a Ana, da Btime. Trabalho com operações em facilities que necessitam de centralização na gestão, garantindo qualidade e eficiência em todas as unidades. Tem espaço pra conversar sobre isso?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779288442.6933556,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB079EB09B30A04078F73",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779288484000,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Boa tarde, Marcos."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288444.2123885,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "F22B8EB081E7610F14",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288487000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288445.616816,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "BF62A6D81CD29A271E",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288487001,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288458.733939,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "2ABA1A0C84B32DB543",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288501000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288459.0888097,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "A4A1150204690139CA",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288501001,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288464.1614082,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0249DEDB286D7805A6B",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779288499000,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Trabalho com operações em facilities que necessitam de centralização na gestão, garantindo qualidade e eficiência em todas as unidades. Tem espaço pra conversar sobre isso?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288502.8773644,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB076B9C62EFE83853491",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779288545000,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "referenceMessageId": "A4A1150204690139CA",
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Marcos, acho que veio mensagem errada aqui. Isso é do Sebrae."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288504.67095,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "564FED93102CD6FB9D",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288547000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288505.2069592,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "6E0088BA128BF1C7DC",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288548000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288507.7716787,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0B5F813B9C9909274A0",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779288549000,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Me conta um pouco sobre sua operação: qual o principal gargalo que você enfrenta hoje?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288508.648119,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "837BC9D9A45938AE7B",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288551000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288509.3895788,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "E86AB83BAC17FDF6FA",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288551001,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288547.1886299,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB042DCCFEA7368D33C32",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779288590000,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Marcos, parece que seu WhatsApp está enviando mensagens automáticas do Sebrae aqui."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288549.031212,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "637CBE7515420395EC",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288591000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288549.6224616,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "229EF2E5C9980755E0",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288592000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288550.8897576,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0D863AAE488CEEBDEF3",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779288593000,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Quando puder, me responde manualmente: qual é o seu segmento de atuação?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288552.5330837,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "19F0818B7315D3A98F",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288595000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288553.1370504,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "B1E53C083C2208ADFF",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288596000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288582.9282966,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0D799C284BFC0428761",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779288625001,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Marcos, quando tiver um momento, me manda uma mensagem direta. Fico por aqui."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288584.4685595,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "1B32F09A7F22AA79AA",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288627000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288585.0755517,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "525569FC4A73CC8349",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288627001,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288619.15191,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0F8E829CA67B1DBEC6B",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779288661003,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Tudo bem, Marcos. Deixo o contato aberto. Se quiser conversar sobre eficiência operacional no futuro, é só chamar."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288621.2081523,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "D60F8B91A4A4913DD1",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288664000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288635.3149211,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3DC16A831F0E5FA905",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288664001,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288664.3339329,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0DF29C0998B179B0E0D",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779288707000,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "referenceMessageId": "3DC16A831F0E5FA905",
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Já encerrei minha tentativa de contato por aqui. Quando quiser conversar, é só me chamar."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288666.605568,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "CB77D4BC4C16B21B28",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288709000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288668.0921528,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "B72AB131E166A3AD86",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288710000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288697.3568575,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB006EA5DC22D03594DAD",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779288740000,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "👍"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288700.9096127,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "71D4B641860A598D80",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288742001,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288701.5109603,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3DA3963EC17A4A0A6F",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288742000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288746.4748063,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0A0E730FAAAB0E90CA1",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779288789000,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "—"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288748.2678728,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "72E609546DA4B98536",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288791000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288749.4916677,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "C11C0BEFF54C1C1E28",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288791001,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288787.4387176,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB01AD0B05DD1FBDB42F4",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779288830000,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288789.3771112,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "A59ED549A80529A540",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288832000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288789.965233,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "DB87EC8E0AA343BBBC",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288832001,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288828.7020583,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB065A8F304612E43D43F",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779288871000,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "referenceMessageId": "A59ED549A80529A540",
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Parece que seu WhatsApp está com alguma automação ativa enviando essas mensagens. Fico por aqui quando quiser conversar de verdade."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288830.3586555,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "CE5D3EB44A9CBA1778",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288873000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288830.998513,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "8A38FCF03390DDC032",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288873001,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288861.6957016,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB06A98B56A0F9B8B0B88",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779288904000,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288863.6127424,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "ED22D10B60620EE994",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288906000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288864.1953256,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "88D46A679090E7263E",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288907000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288911.5199914,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "4B41EEE8034D95070D",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288954000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288913.2455914,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "59329DFA6A94E206AF",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288955000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288923.9921887,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB022FA357EC57453FC5F",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779288952000,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288952.1647637,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0EEBEFE281C4349807C",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779288995000,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Vou parar de responder essas mensagens automáticas. Quando puder me mandar uma mensagem direta, estou por aqui."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288953.851477,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "71E45700E81E5A7A43",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288996000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288955.5819879,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "FC13EBC75C21891C4A",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779288997000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288991.269151,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB01DDD8991F8FB6F15B3",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779289034000,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288993.4914403,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "35C0AC765FAFD6C4C3",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289036000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288993.85458,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "76B03BE650546B90B9",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289035000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289029.7562888,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB031265E88651EA09B7E",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779289072000,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "."
+      }
+    }
+  },
+  {
+    "timestamp": 1779289032.3975585,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "A7D0E27DA2CC3B6EE7",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289074000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289032.803065,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "244AD414B36B333E11",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289074001,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289070.9151268,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0A1365A3258B735E768",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779289113000,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "."
+      }
+    }
+  },
+  {
+    "timestamp": 1779289072.4473274,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "22051EECD1AE4E6D6D",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289115000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289097.0567188,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "160CAC5714D61A9D98",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289115001,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289125.0223775,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB09647832FFE495E8C40",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779289166001,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "referenceMessageId": "160CAC5714D61A9D98",
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "."
+      }
+    }
+  },
+  {
+    "timestamp": 1779289126.853346,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "4F758915EACE16D264",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289169000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289126.8906734,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "6B07E6CC7E1B6A8309",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289168000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289156.1727254,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB082E9EAA2DC7ACA6DCF",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779289198000,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "."
+      }
+    }
+  },
+  {
+    "timestamp": 1779289156.7578626,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "7F0FEBC6AE442079B9",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289199000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289158.0258367,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "D5087BC0BDE3E6D6A2",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289200000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289191.7184145,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0046F1FA2FA20A47FDC",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779289233001,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "."
+      }
+    }
+  },
+  {
+    "timestamp": 1779289192.345658,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "4B63A10042F09555EB",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289235000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289192.8761263,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "BE438C0B1E6B051539",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289235001,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289225.7746692,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB07AABD88AC4C90B024F",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779289267000,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "."
+      }
+    }
+  },
+  {
+    "timestamp": 1779289226.386374,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "1367B1A9E5276D00BC",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289269000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289227.9938533,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "176BD5466BD7219EC5",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289269001,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289262.2458942,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "F3BFFB4A9FF1EB15BB",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289305000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289263.5854132,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "EA7D8F931CFC547D09",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289305001,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289265.875095,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0CF3E1A6E22660A69F6",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779289302002,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "."
+      }
+    }
+  },
+  {
+    "timestamp": 1779289291.752504,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0D4C50D507717DA2976",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779289334000,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "."
+      }
+    }
+  },
+  {
+    "timestamp": 1779289293.3229299,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "ABDD037744B0F17A71",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289336000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289293.9359853,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "6596F857E0FB1CEBCE",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289336001,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289330.972609,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "20235D0C6FBB977C3504",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779289373000,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Marcos, parece que seu WhatsApp está com um bot ativo. Quando quiser conversar, é só mandar uma mensagem direta."
+      }
+    }
+  },
+  {
+    "timestamp": 1779289332.5116045,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "87024ED3A86B4851DD",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289375000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289333.1651788,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "E43E4B38ED4DE9C5C4",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289376000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289365.6047792,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0C190B3F8A267450189",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779289407000,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "."
+      }
+    }
+  },
+  {
+    "timestamp": 1779289366.1070795,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "86958BCB642623165F",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289408000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289366.7537377,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "49D972620551BB100C",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289409000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289398.753491,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB062E21DFE73CE2CB480",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779289440000,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "."
+      }
+    }
+  },
+  {
+    "timestamp": 1779289402.7334843,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "1B86E4994BA1B2F6D1",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289444000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289403.1101098,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "D69E6844795444B4C6",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289445000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289432.8885014,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB01FA1C8525386214D42",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779289475002,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "."
+      }
+    }
+  },
+  {
+    "timestamp": 1779289434.7298417,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "01C3A536CB3D312ED4",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289477000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289436.3462298,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "0689FCFBFF8E1A134C",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289478000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289467.8392394,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "CB803152C2363225CD",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289510000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289468.5789485,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "896D7B1549DC8CFDA6",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289511000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289471.086067,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0B103CD93C3E478523F",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779289508002,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "."
+      }
+    }
+  },
+  {
+    "timestamp": 1779289499.250868,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0D36386061257784005",
+      "phone": "558005700800",
+      "fromMe": true,
+      "momment": 1779289542000,
+      "status": "SENT",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "."
+      }
+    }
+  },
+  {
+    "timestamp": 1779289502.560937,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "2779150DFA32C102BE",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289544000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Como vai? É muito bom receber você no Whatsapp do Sebrae! 😃\nNesse espaço, você poderá fazer vários cursos, tirar dúvidas sobre o MEI e receber atendimento do Sebrae\nO primeiro passo é clicar no botäo abaixo e efetuar o login com a sua conta Sebrae. Vamos juntos? 🤝"
+      }
+    }
+  },
+  {
+    "timestamp": 1779289502.8220754,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2791913308351@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "BE12B636EC1E878705",
+      "phone": "558005700800",
+      "fromMe": false,
+      "momment": 1779289545000,
+      "status": "RECEIVED",
+      "chatName": "Sebrae",
+      "senderPhoto": null,
+      "senderName": "",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/311554337_526975212316176_5812896215056503640_n.jpg?ccb=11-4&oh=01_Q5Aa4gGe_0imdrQVMLO4Id_4K_sgxK1ADvC7ho81Aq2XeD2YqQ&oe=6A1AE0DB&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "https://api-chatbot.sebrae.com.br/v1/public/link/6a0dc9a6f75a3c36fb1cc5bd"
+      }
+    }
+  }
+]

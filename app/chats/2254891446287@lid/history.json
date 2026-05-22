@@ -1,0 +1,449 @@
+[
+  {
+    "timestamp": 1779288277.0540626,
+    "data": {
+      "fromMe": true,
+      "phone": "5519996198462",
+      "chatLid": "5519996198462@lid",
+      "text": {
+        "message": "Boa tarde, Guilherme.\n\nSou a Ana, da Btime. \n\nTrabalho com empresas que buscam integrar operações de manutenção e facilities para otimizar custos e eficiência. No setor industrial, automação pode reduzir o trabalho manual e centralizar processos. \n\nTem espaço pra conversar sobre isso?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779288281.659114,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2254891446287@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0F01924B94019DCA244",
+      "phone": "5519996198462",
+      "fromMe": true,
+      "momment": 1779288323001,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 604800,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Boa tarde, Guilherme."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288284.2247949,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2254891446287@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB07898AABD6631858AAF",
+      "phone": "5519996198462",
+      "fromMe": true,
+      "momment": 1779288326000,
+      "status": "SENT",
+      "chatName": "5519996198462",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 604800,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288300.3437526,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2254891446287@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0D5118E20CAE8278272",
+      "phone": "5519996198462",
+      "fromMe": true,
+      "momment": 1779288341003,
+      "status": "SENT",
+      "chatName": "5519996198462",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 604800,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Trabalho com empresas que buscam integrar operações de manutenção e facilities para otimizar custos e eficiência. No setor industrial, automação pode reduzir o trabalho manual e centralizar processos."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288306.4621954,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2254891446287@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB043671EDF3C9FC94AD3",
+      "phone": "5519996198462",
+      "fromMe": true,
+      "momment": 1779288349000,
+      "status": "SENT",
+      "chatName": "5519996198462",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 604800,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Tem espaço pra conversar sobre isso?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288726.4650462,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2254891446287@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0EDAD201C5172000AC7",
+      "phone": "5519996198462",
+      "fromMe": false,
+      "momment": 1779288769000,
+      "status": "RECEIVED",
+      "chatName": "GUILHERME CARNAUBA",
+      "senderPhoto": null,
+      "senderName": "GUILHERME CARNAUBA",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 604800,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Bom dia Ana."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288758.4051735,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2254891446287@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB04D998420ED81AE3133",
+      "phone": "5519996198462",
+      "fromMe": false,
+      "momment": 1779288800000,
+      "status": "RECEIVED",
+      "chatName": "GUILHERME CARNAUBA",
+      "senderPhoto": null,
+      "senderName": "GUILHERME CARNAUBA",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 604800,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Sim, claro podemos conversar."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288798.7770371,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2254891446287@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB08120F406E5FC4F69F9",
+      "phone": "5519996198462",
+      "fromMe": true,
+      "momment": 1779288840001,
+      "status": "SENT",
+      "chatName": "GUILHERME CARNAUBA",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "referenceMessageId": "3EB04D998420ED81AE3133",
+      "messageExpirationSeconds": 604800,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Ótimo. Me conta: qual é o maior gargalo operacional que você enfrenta hoje? Processos manuais, falta de integração entre sistemas, controle de campo?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779288823.6356435,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2254891446287@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0ED4406E22A55BFB59B",
+      "phone": "5519996198462",
+      "fromMe": false,
+      "momment": 1779288866000,
+      "status": "RECEIVED",
+      "chatName": "GUILHERME CARNAUBA",
+      "senderPhoto": null,
+      "senderName": "GUILHERME CARNAUBA",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 604800,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Ana."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288851.1019313,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2254891446287@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB011AABBD0DF2922E53C",
+      "phone": "5519996198462",
+      "fromMe": true,
+      "momment": 1779288893000,
+      "status": "SENT",
+      "chatName": "GUILHERME CARNAUBA",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 604800,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Oi, Guilherme. Pode falar."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288881.6535892,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2254891446287@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0C5ECBC5BF202D09715",
+      "phone": "5519996198462",
+      "fromMe": false,
+      "momment": 1779288924000,
+      "status": "RECEIVED",
+      "chatName": "GUILHERME CARNAUBA",
+      "senderPhoto": null,
+      "senderName": "GUILHERME CARNAUBA",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 604800,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Hoje não estou trabalhando. Se tiver uma oprotunidade na area de Segurança do Trabalho me ajudaria."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288913.9379601,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2254891446287@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0AC158684B9F69F47A4",
+      "phone": "5519996198462",
+      "fromMe": true,
+      "momment": 1779288956000,
+      "status": "SENT",
+      "chatName": "GUILHERME CARNAUBA",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 604800,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Entendi. Você está buscando uma oportunidade de emprego na área de Segurança do Trabalho."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288920.0741916,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2254891446287@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0828A5F9C0802CE547A",
+      "phone": "5519996198462",
+      "fromMe": true,
+      "momment": 1779288962000,
+      "status": "SENT",
+      "chatName": "GUILHERME CARNAUBA",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 604800,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Isso não é o que a Btime oferece. Somos uma empresa de tecnologia e não temos processo seletivo aberto nessa área no momento."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288927.229272,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2254891446287@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB060D30E4A1C1828249C",
+      "phone": "5519996198462",
+      "fromMe": true,
+      "momment": 1779288970000,
+      "status": "SENT",
+      "chatName": "GUILHERME CARNAUBA",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 604800,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Se no futuro você atuar em alguma empresa com desafios operacionais que a gente possa resolver, pode me chamar."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288949.9725015,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "2254891446287@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB07A71C845A94224082E",
+      "phone": "5519996198462",
+      "fromMe": false,
+      "momment": 1779288992000,
+      "status": "RECEIVED",
+      "chatName": "GUILHERME CARNAUBA",
+      "senderPhoto": null,
+      "senderName": "GUILHERME CARNAUBA",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 604800,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Obrigado."
+      }
+    }
+  }
+]

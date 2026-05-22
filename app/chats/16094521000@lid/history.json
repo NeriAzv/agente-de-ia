@@ -1,14 +1,15 @@
 [
   {
-    "timestamp": 1779113302.0802212,
+    "timestamp": 1779287629.8060946,
     "data": {
       "fromMe": true,
       "phone": "16094521000",
       "chatLid": "16094521000@lid",
+      "type": "numero_sem_whatsapp",
+      "messageId": "sysmark:no-wa:16094521000@lid",
       "text": {
-        "message": "Olá, Mikael.\n\nSou a Ana, da Btime. Acredito que a gestão de facilities em ambientes laboratoriais, especialmente na área de qualidade e compliance, pode se beneficiar bastante da automação de processos. Você estaria aberto a conversar sobre como podemos ajudar nesse aspecto?"
-      },
-      "type": "abertura"
+        "message": "[sistema] Número sem conta de WhatsApp — abertura não enviada (Z-API phone-exists=false)."
+      }
     }
   }
 ]

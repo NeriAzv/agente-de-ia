@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": 1779288965.539991,
+    "data": {
+      "fromMe": true,
+      "phone": "5531999612953",
+      "chatLid": "5531999612953@lid",
+      "text": {
+        "message": "Olá, Felipe.\n\nSou a Ana, da Btime. Trabalho com soluções que melhoram a eficiência operacional em manutenção e facilities. Acredito que podemos ajudar a unificar e otimizar processos nas plantas da Vallourec. \n\nTem espaço pra conversar sobre isso?"
+      },
+      "type": "abertura"
+    }
+  }
+]

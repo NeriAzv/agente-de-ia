@@ -1,0 +1,122 @@
+[
+  {
+    "timestamp": 1779288359.8633683,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "122917836873927@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0689E86363D184FAA24",
+      "phone": "556481372530",
+      "fromMe": true,
+      "momment": 1779288402000,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/589225001_1513215566930882_7886194531675170584_n.jpg?ccb=11-4&oh=01_Q5Aa4gF3HhbRw0HMchHv_LJY1JxS4zLv8YmEpP4JqSbRfoWurA&oe=6A1ACDC0&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Bom dia, Kamila."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288365.8890595,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "122917836873927@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB09583D5E96108A81D7A",
+      "phone": "556481372530",
+      "fromMe": true,
+      "momment": 1779288407001,
+      "status": "SENT",
+      "chatName": "556481372530",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/589225001_1513215566930882_7886194531675170584_n.jpg?ccb=11-4&oh=01_Q5Aa4gF3HhbRw0HMchHv_LJY1JxS4zLv8YmEpP4JqSbRfoWurA&oe=6A1ACDC0&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288381.0972383,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "122917836873927@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB083D5B402272D94C058",
+      "phone": "556481372530",
+      "fromMe": true,
+      "momment": 1779288422002,
+      "status": "SENT",
+      "chatName": "556481372530",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/589225001_1513215566930882_7886194531675170584_n.jpg?ccb=11-4&oh=01_Q5Aa4gF3HhbRw0HMchHv_LJY1JxS4zLv8YmEpP4JqSbRfoWurA&oe=6A1ACDC0&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Trabalhamos com a automação de processos operacionais, ajudando empresas como a Alcoa a otimizar a gestão de facilities e manutenção em áreas remotas. Faz sentido a gente trocar uma ideia?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779292811.1706293,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "122917836873927@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0B1A0166A3E427BB35B",
+      "phone": "556481372530",
+      "fromMe": true,
+      "momment": 1779292853004,
+      "status": "SENT",
+      "chatName": "556481372530",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/589225001_1513215566930882_7886194531675170584_n.jpg?ccb=11-4&oh=01_Q5Aa4gEAIt4BYP2cjPGOEwUI6KYz2oz0UyDz8yCt9X2lICSxcg&oe=6A1B0600&_nc_sid=5e03e0&_nc_cat=101",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Oi, Kamila. \n\nQueria saber se você teve a chance de olhar minha mensagem. Posso te ajudar a entender como a Btime pode otimizar processos na sua empresa. Algum horário essa semana para conversarmos?"
+      }
+    }
+  }
+]

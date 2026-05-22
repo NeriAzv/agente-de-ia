@@ -1,0 +1,378 @@
+[
+  {
+    "timestamp": 1779238748.9885361,
+    "data": {
+      "fromMe": true,
+      "phone": "5511917168451",
+      "chatLid": "5511917168451@lid",
+      "text": {
+        "message": "Oi Lucas.\n\nSou a Ana, da Btime. O Guilherme, da Judihub, me falou que vocês estão enfrentando uma limitação na iniciação de conversas pelo WhatsApp. \n\nFaz sentido a gente trocar uma ideia rápida?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779238751.84055,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "267950577701081@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB03EFE6241CB07B288FA",
+      "phone": "5511917168451",
+      "fromMe": true,
+      "momment": 1779238793000,
+      "status": "SENT",
+      "chatName": "Lucas",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Oi Lucas."
+      }
+    }
+  },
+  {
+    "timestamp": 1779238758.452234,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "267950577701081@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "AC6903428D4E6837662E3C5866722868",
+      "phone": "5511917168451",
+      "fromMe": false,
+      "momment": 1779238800000,
+      "status": "RECEIVED",
+      "chatName": "Lucas",
+      "senderPhoto": null,
+      "senderName": "Lucas",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Fala"
+      }
+    }
+  },
+  {
+    "timestamp": 1779238766.1612418,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "267950577701081@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB04BC4001DDFAFBF827B",
+      "phone": "5511917168451",
+      "fromMe": true,
+      "momment": 1779238808000,
+      "status": "SENT",
+      "chatName": "Lucas",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. O Guilherme, da Judihub, me falou que vocês estão enfrentando uma limitação na iniciação de conversas pelo WhatsApp."
+      }
+    }
+  },
+  {
+    "timestamp": 1779238772.9844434,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "267950577701081@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB09DFB68B2A37437EA29",
+      "phone": "5511917168451",
+      "fromMe": true,
+      "momment": 1779238814000,
+      "status": "SENT",
+      "chatName": "Lucas",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Faz sentido a gente trocar uma ideia rápida?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779238783.4756396,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "267950577701081@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "AC9BB47DB301706A7FAF4E280F464800",
+      "phone": "5511917168451",
+      "fromMe": false,
+      "momment": 1779238826000,
+      "status": "RECEIVED",
+      "chatName": "Lucas",
+      "senderPhoto": null,
+      "senderName": "Lucas",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Pode falar"
+      }
+    }
+  },
+  {
+    "timestamp": 1779238786.3426452,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "267950577701081@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB02854DB48FD917CCC7E",
+      "phone": "5511917168451",
+      "fromMe": true,
+      "momment": 1779238829000,
+      "status": "SENT",
+      "chatName": "Lucas",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Conta um pouco mais sobre essa limitação. É bloqueio de número, volume de disparos, ou algo diferente?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779238803.2459705,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "267950577701081@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "ACE8C2FE3EE22C6F927A14CA6310A01C",
+      "phone": "5511917168451",
+      "fromMe": false,
+      "momment": 1779238845000,
+      "status": "RECEIVED",
+      "chatName": "Lucas",
+      "senderPhoto": null,
+      "senderName": "Lucas",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Porque você está falando comigo?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779238815.2075129,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "267950577701081@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "ACF53524C22359629D3B4FE372BA0370",
+      "phone": "5511917168451",
+      "fromMe": false,
+      "momment": 1779238857000,
+      "status": "RECEIVED",
+      "chatName": "Lucas",
+      "senderPhoto": null,
+      "senderName": "Lucas",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Me conte melhor quem é você"
+      }
+    }
+  },
+  {
+    "timestamp": 1779238847.823553,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "267950577701081@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0CF5637B211399F60EA",
+      "phone": "5511917168451",
+      "fromMe": true,
+      "momment": 1779238890000,
+      "status": "SENT",
+      "chatName": "Lucas",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "referenceMessageId": "ACE8C2FE3EE22C6F927A14CA6310A01C",
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, SDR da Btime. Empresa de tecnologia focada em automação de processos e eficiência operacional."
+      }
+    }
+  },
+  {
+    "timestamp": 1779238854.7976942,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "267950577701081@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0B2B77E16CDF87931F8",
+      "phone": "5511917168451",
+      "fromMe": true,
+      "momment": 1779238896000,
+      "status": "SENT",
+      "chatName": "Lucas",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "referenceMessageId": "ACE8C2FE3EE22C6F927A14CA6310A01C",
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "O Guilherme da Judihub mencionou que vocês têm uma dor com WhatsApp e achei que valia uma conversa."
+      }
+    }
+  },
+  {
+    "timestamp": 1779238856.1098049,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "267950577701081@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB089BEB209FBDC294004",
+      "phone": "5511917168451",
+      "fromMe": true,
+      "momment": 1779238898001,
+      "status": "SENT",
+      "chatName": "Lucas",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Qual é exatamente o problema que vocês estão enfrentando?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779278407.5320969,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "267950577701081@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "F65715A7FFA922468989",
+      "phone": "5511917168451",
+      "fromMe": true,
+      "momment": 1779278449001,
+      "status": "SENT",
+      "chatName": "Lucas",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Lucas, você ainda está pensando na questão do WhatsApp? Estou aqui para ajudar com o que precisar."
+      }
+    }
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": 1779288805.600628,
+    "data": {
+      "fromMe": true,
+      "phone": "5579996272255",
+      "chatLid": "5579996272255@lid",
+      "text": {
+        "message": "Bom dia, Clara.\n\nSou a Ana, da Btime. Trabalhamos com empresas do setor químico para melhorar a eficiência operacional e reduzir o trabalho manual em manutenção e facilities. Tem espaço para a gente conversar sobre automação e controle preventivo na sua operação?"
+      },
+      "type": "abertura"
+    }
+  }
+]

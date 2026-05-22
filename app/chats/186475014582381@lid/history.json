@@ -1,0 +1,74 @@
+[
+  {
+    "timestamp": 1779284053.9652772,
+    "data": {
+      "fromMe": true,
+      "phone": "5511972802788",
+      "chatLid": "5511972802788@lid",
+      "text": {
+        "message": "Bom dia, Alessandra.\n\nSou a Ana, da Btime. Trabalhamos com operações que lidam com manutenção em plantas e gestão de facilities em áreas remotas. Acredito que podemos ajudar na centralização dessas demandas e na melhora da eficiência operacional. Tem espaço pra conversar sobre isso?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779284059.6357076,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "186475014582381@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "6A09BFB6268EEC1F3DB2",
+      "phone": "5511972802788",
+      "fromMe": true,
+      "momment": 1779284101000,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/546462963_1589986532039561_1413806396101543652_n.jpg?ccb=11-4&oh=01_Q5Aa4gFjj9EyaTfAiISijs1MgAwQqsBhNUWS8jtlsPZBzH2s3g&oe=6A1AC835&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Bom dia, Alessandra."
+      }
+    }
+  },
+  {
+    "timestamp": 1779284073.788358,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "186475014582381@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0D9FFF08B551EFFF0D0",
+      "phone": "5511972802788",
+      "fromMe": true,
+      "momment": 1779284116001,
+      "status": "SENT",
+      "chatName": "5511972802788",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/546462963_1589986532039561_1413806396101543652_n.jpg?ccb=11-4&oh=01_Q5Aa4gFjj9EyaTfAiISijs1MgAwQqsBhNUWS8jtlsPZBzH2s3g&oe=6A1AC835&_nc_sid=5e03e0&_nc_cat=103",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Trabalhamos com operações que lidam com manutenção em plantas e gestão de facilities em áreas remotas. Acredito que podemos ajudar na centralização dessas demandas e na melhora da eficiência operacional. Tem espaço pra conversar sobre isso?"
+      }
+    }
+  }
+]

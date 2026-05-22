@@ -1,0 +1,134 @@
+[
+  {
+    "timestamp": 1779288619.7818325,
+    "data": {
+      "fromMe": true,
+      "phone": "5511943655319",
+      "chatLid": "5511943655319@lid",
+      "text": {
+        "message": "Boa tarde, Felipe.\n\nSou a Ana, da Btime. Trabalho com operações que buscam aumentar a eficiência, especialmente em gestão de facilities. Centralizar demandas pode ser um passo importante para melhorar sua operação. \n\nTem espaço pra conversar sobre isso?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779288624.9658082,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "209912281972771@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB09BFE2E15DA2CFA3938",
+      "phone": "5511943655319",
+      "fromMe": true,
+      "momment": 1779288666000,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/582343687_1388095342692056_2041656592859680168_n.jpg?ccb=11-4&oh=01_Q5Aa4gETCArepUHQb4aotjq-6pT49VKJWJXgYRWTQAO85Gz69g&oe=6A1AEE29&_nc_sid=5e03e0&_nc_cat=106",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Boa tarde, Felipe."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288639.0335777,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "209912281972771@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB05AF067DE2B2EAFBB1E",
+      "phone": "5511943655319",
+      "fromMe": true,
+      "momment": 1779288681002,
+      "status": "SENT",
+      "chatName": "5511943655319",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/582343687_1388095342692056_2041656592859680168_n.jpg?ccb=11-4&oh=01_Q5Aa4gETCArepUHQb4aotjq-6pT49VKJWJXgYRWTQAO85Gz69g&oe=6A1AEE29&_nc_sid=5e03e0&_nc_cat=106",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Trabalho com operações que buscam aumentar a eficiência, especialmente em gestão de facilities. Centralizar demandas pode ser um passo importante para melhorar sua operação."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288644.1085453,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "209912281972771@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0405BB6ECDF465DCB4E",
+      "phone": "5511943655319",
+      "fromMe": true,
+      "momment": 1779288687000,
+      "status": "SENT",
+      "chatName": "5511943655319",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/582343687_1388095342692056_2041656592859680168_n.jpg?ccb=11-4&oh=01_Q5Aa4gETCArepUHQb4aotjq-6pT49VKJWJXgYRWTQAO85Gz69g&oe=6A1AEE29&_nc_sid=5e03e0&_nc_cat=106",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Tem espaço pra conversar sobre isso?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779292812.142194,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "209912281972771@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB067BCB02DE4F05CD473",
+      "phone": "5511943655319",
+      "fromMe": true,
+      "momment": 1779292854001,
+      "status": "SENT",
+      "chatName": "5511943655319",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/582343687_1388095342692056_2041656592859680168_n.jpg?ccb=11-4&oh=01_Q5Aa4gETCArepUHQb4aotjq-6pT49VKJWJXgYRWTQAO85Gz69g&oe=6A1AEE29&_nc_sid=5e03e0&_nc_cat=106",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Oi Felipe. Queria saber se você teve um tempinho para pensar sobre como podemos ajudar a melhorar sua operação. Estou à disposição para qualquer dúvida."
+      }
+    }
+  }
+]

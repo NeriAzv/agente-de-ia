@@ -1,0 +1,188 @@
+[
+  {
+    "timestamp": 1779288965.9686537,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "207618870132825@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0A791864F388D186253",
+      "phone": "553199612953",
+      "fromMe": true,
+      "momment": 1779289008001,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 7776000,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Olá, Felipe."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288982.9881978,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "207618870132825@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0D1F88DC5692E8D4F5F",
+      "phone": "553199612953",
+      "fromMe": true,
+      "momment": 1779289025001,
+      "status": "SENT",
+      "chatName": "553199612953",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 7776000,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Trabalho com soluções que melhoram a eficiência operacional em manutenção e facilities. Acredito que podemos ajudar a unificar e otimizar processos nas plantas da Vallourec."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288988.123217,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "207618870132825@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB01FD607259624B8E7B4",
+      "phone": "553199612953",
+      "fromMe": true,
+      "momment": 1779289031000,
+      "status": "SENT",
+      "chatName": "553199612953",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 7776000,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Tem espaço pra conversar sobre isso?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779292808.135623,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "207618870132825@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "1DF5985F1BE913296D8F",
+      "phone": "553199612953",
+      "fromMe": true,
+      "momment": 1779292850000,
+      "status": "SENT",
+      "chatName": "553199612953",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 7776000,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Felipe, só queria saber se você teve a oportunidade de pensar sobre nossa conversa. Estou aqui para ajudar com qualquer dúvida que você tenha."
+      }
+    }
+  },
+  {
+    "timestamp": 1779292818.344448,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "207618870132825@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3A314EF6E23D96930F2A",
+      "phone": "553199612953",
+      "fromMe": false,
+      "momment": 1779292860000,
+      "status": "RECEIVED",
+      "chatName": "Felipe Castilho",
+      "senderPhoto": null,
+      "senderName": "Felipe Castilho",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 7776000,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Boa tarde, Ana!"
+      }
+    }
+  },
+  {
+    "timestamp": 1779292846.2050138,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "207618870132825@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3A8DD6822B98487385E7",
+      "phone": "553199612953",
+      "fromMe": false,
+      "momment": 1779292888000,
+      "status": "RECEIVED",
+      "chatName": "Felipe Castilho",
+      "senderPhoto": null,
+      "senderName": "Felipe Castilho",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 7776000,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Mudei de posição na Vallourec e não estou com a gestão de facilities mais"
+      }
+    }
+  }
+]

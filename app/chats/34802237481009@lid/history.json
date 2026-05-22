@@ -1,0 +1,104 @@
+[
+  {
+    "timestamp": 1779288122.7723203,
+    "data": {
+      "fromMe": true,
+      "phone": "5511963220973",
+      "chatLid": "5511963220973@lid",
+      "text": {
+        "message": "Bom dia, Daniel.\n\nSou a Ana, da Btime. Nos últimos tempos, temos ajudado empresas de varejo esportivo a padronizar a gestão de Facilities e a ganhar visibilidade operacional em suas redes de lojas. Tem espaço para conversar sobre automação e como isso pode beneficiar sua operação?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779288126.7271028,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "34802237481009@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "669D4B79B9BBA9E38658",
+      "phone": "5511963220973",
+      "fromMe": true,
+      "momment": 1779288168000,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/560558615_894893556402166_4229547534167955930_n.jpg?ccb=11-4&oh=01_Q5Aa4gGzwLqQ0opMfGrLP4g_yWrM-hleg_PEZq_nDt5abgXP6Q&oe=6A1ADABC&_nc_sid=5e03e0&_nc_cat=106",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Bom dia, Daniel."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288141.6864297,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "34802237481009@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB014E5C3A8C097FC2534",
+      "phone": "5511963220973",
+      "fromMe": true,
+      "momment": 1779288183000,
+      "status": "SENT",
+      "chatName": "5511963220973",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/560558615_894893556402166_4229547534167955930_n.jpg?ccb=11-4&oh=01_Q5Aa4gGzwLqQ0opMfGrLP4g_yWrM-hleg_PEZq_nDt5abgXP6Q&oe=6A1ADABC&_nc_sid=5e03e0&_nc_cat=106",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Nos últimos tempos, temos ajudado empresas de varejo esportivo a padronizar a gestão de Facilities e a ganhar visibilidade operacional em suas redes de lojas. Tem espaço para conversar sobre automação e como isso pode beneficiar sua operação?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779292808.8025482,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "34802237481009@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB03253A5518CEAED7347",
+      "phone": "5511963220973",
+      "fromMe": true,
+      "momment": 1779292851000,
+      "status": "SENT",
+      "chatName": "5511963220973",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/560558615_894893556402166_4229547534167955930_n.jpg?ccb=11-4&oh=01_Q5Aa4gGzwLqQ0opMfGrLP4g_yWrM-hleg_PEZq_nDt5abgXP6Q&oe=6A1ADABC&_nc_sid=5e03e0&_nc_cat=106",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Daniel, você teve a chance de pensar sobre a automação e como podemos ajudar sua operação? Estou aqui para esclarecer qualquer dúvida."
+      }
+    }
+  }
+]

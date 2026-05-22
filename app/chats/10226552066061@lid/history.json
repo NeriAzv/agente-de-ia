@@ -1,0 +1,104 @@
+[
+  {
+    "timestamp": 1779288236.1177661,
+    "data": {
+      "fromMe": true,
+      "phone": "16158794607",
+      "chatLid": "16158794607@lid",
+      "text": {
+        "message": "Boa tarde, Jay.\n\nSou a Ana, da Btime. Trabalhamos com automação de processos para operações que exigem alta precisão, como na gestão de facilities da Embraer. Tem espaço pra conversar sobre eficiência operacional e redução de trabalho manual?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779288239.6612108,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "10226552066061@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0F911819003D59AA4F0",
+      "phone": "16158794607",
+      "fromMe": true,
+      "momment": 1779288282000,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/308056203_154868783896548_4681449558842141428_n.jpg?ccb=11-4&oh=01_Q5Aa4gHL30INXT0ASf2-8cy4bpyPHDruV1JDVIsZayoWtxad1g&oe=6A1ABFF1&_nc_sid=5e03e0&_nc_cat=100",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Boa tarde, Jay."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288255.743621,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "10226552066061@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB05ADCCA6CD007547AE7",
+      "phone": "16158794607",
+      "fromMe": true,
+      "momment": 1779288297001,
+      "status": "SENT",
+      "chatName": "16158794607",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/308056203_154868783896548_4681449558842141428_n.jpg?ccb=11-4&oh=01_Q5Aa4gHL30INXT0ASf2-8cy4bpyPHDruV1JDVIsZayoWtxad1g&oe=6A1ABFF1&_nc_sid=5e03e0&_nc_cat=100",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Trabalhamos com automação de processos para operações que exigem alta precisão, como na gestão de facilities da Embraer. Tem espaço pra conversar sobre eficiência operacional e redução de trabalho manual?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779292811.170641,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "10226552066061@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0221B69F84DAD8CD3A6",
+      "phone": "16158794607",
+      "fromMe": true,
+      "momment": 1779292853001,
+      "status": "SENT",
+      "chatName": "16158794607",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/308056203_154868783896548_4681449558842141428_n.jpg?ccb=11-4&oh=01_Q5Aa4gGnHvR1uoPGFbT-pl3bak4TkBdOfNPMaGbIE1_9Qb8fHw&oe=6A1AF831&_nc_sid=5e03e0&_nc_cat=100",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Oi, Jay. Vi que você não teve tempo de responder. Quero entender melhor suas necessidades e ver como podemos ajudar. Está disponível para discutir isso?"
+      }
+    }
+  }
+]

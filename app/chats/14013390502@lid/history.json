@@ -1,14 +1,15 @@
 [
   {
-    "timestamp": 1779113487.3960962,
+    "timestamp": 1779287831.8068974,
     "data": {
       "fromMe": true,
       "phone": "14013390502",
       "chatLid": "14013390502@lid",
+      "type": "numero_sem_whatsapp",
+      "messageId": "sysmark:no-wa:14013390502@lid",
       "text": {
-        "message": "Bom dia, Marianna.\n\nSou a Ana, da Btime. Acredito que possamos ajudar a JLL com a gestão eficiente de múltiplos contratos e a padronização de processos. Tem espaço pra conversar sobre como podemos trazer visibilidade em tempo real para suas operações?"
-      },
-      "type": "abertura"
+        "message": "[sistema] Número sem conta de WhatsApp — abertura não enviada (Z-API phone-exists=false)."
+      }
     }
   }
 ]

@@ -353,12 +353,30 @@ def chamar_lead_interno(
 
     print(f" > chamar_lead_interno acionado para {nome} ({numero})")
 
-    enviado = agent.iniciar_conversa(numero, chatLid, mensagem)
+    # Resolve a instância do Agent_AI mesmo quando este módulo é importado por
+    # outro módulo (ex.: core.py via `from db_app import chamar_lead_interno`),
+    # caso em que o bloco `if __name__ == "__main__"` deste arquivo NUNCA roda
+    # e o `agent` global desta cópia fica indefinido. Pegamos a instância do
+    # módulo `__main__` (onde o app realmente roda) e fazemos fallback pra global
+    # local pra suportar o caso de execução direta.
+    import sys as _sys
+    _main_mod = _sys.modules.get("__main__")
+    _agent = getattr(_main_mod, "agent", None) or globals().get("agent")
+    if _agent is None:
+        return {"status": "error", "reason": "agent_not_initialized"}, 500
+
+    enviado = _agent.iniciar_conversa(numero, chatLid, mensagem)
 
     if enviado:
         return {"status": "ok", "message": f"Lead {nome} chamado com sucesso"}, 200
 
-    err = getattr(agent, "_last_send_error", None)
+    err = getattr(_agent, "_last_send_error", None)
+    if err == "numero_sem_whatsapp":
+        return {
+            "status": "failed",
+            "reason": "numero_sem_whatsapp",
+            "message": f"{nome}: número não tem conta de WhatsApp. Abertura não enviada.",
+        }, 422
     if err:
         return {"status": "failed", "reason": "zapi_rejected", "zapi_response": err}, 502
     return {"status": "skipped", "reason": "Lead já possui histórico de conversa"}, 200
@@ -379,6 +397,7 @@ def chamar_lead():
 
     Respostas:
         200 {"status": "ok", ...}       -> Z-API aceitou todas as partes da abertura.
+        422 {"status": "failed", ...}   -> Número não tem WhatsApp; abertura não enviada.
         502 {"status": "failed", ...}   -> Z-API rejeitou o envio.
         200 {"status": "skipped", ...}  -> Lead já tinha histórico/abertura prévia.
         400                              -> Faltam campos obrigatórios ou número inválido.

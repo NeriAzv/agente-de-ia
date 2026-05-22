@@ -1,0 +1,25 @@
+{
+  "nome": "Guilherme",
+  "email": null,
+  "empresa": null,
+  "segmento_mercado": "setor industrial",
+  "porte_empresa": null,
+  "faturamento_aproximado": null,
+  "tamanho_time": null,
+  "sistemas_atuais": [],
+  "desafios_identificados": [
+    "procura de oportunidade de emprego na área de Segurança do Trabalho"
+  ],
+  "produto_indicado": null,
+  "motivo_segmentacao": "Lead está em busca de oportunidade de emprego na área de Segurança do Trabalho e não apresenta desafios operacionais atuais que a Btime possa resolver.",
+  "estagio_conversa": "inicial",
+  "reuniao_agendada": false,
+  "necessita_followup": true,
+  "motivo_followup": "Lead demonstrou interesse ao responder, mas não há uma continuidade na conversa sobre os serviços da Btime, apenas uma busca de emprego.",
+  "atualizado_em": "2026-05-20T11:55:09.928741",
+  "tentativas_retomada": 0,
+  "descricao_manual": "John Deere\nFacilities\nFacilities\nManufatura de Máquinas Agrícolas\nJohn Deere é líder global em equipamentos agrícolas, com fábrica em Horizontina (RS) e escritórios no Brasil.\nManutenção de plantas industriais | Gestão de facilities em ambiente fabril | Controle de utilidades e energia\nManutenção | Engenharia | Compras\nNuma planta industrial do porte da John Deere, alinhar Facilities com Manutenção preventiva e Compras numa plataforma única é uma alavanca de eficiência que impacta diretamente o custo de produção.",
+  "ai_blocked": false,
+  "phone": "5519996198462",
+  "followups_agendados": []
+}

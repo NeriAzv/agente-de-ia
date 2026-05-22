@@ -1,0 +1,126 @@
+[
+  {
+    "timestamp": 1779288400.8617039,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "184830276935841@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0954485865977A49B79",
+      "phone": "554999135541",
+      "fromMe": true,
+      "momment": 1779288441001,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 86400,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Bom dia, Geferson."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288414.8095715,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "184830276935841@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB06667F8358CB5B316F1",
+      "phone": "554999135541",
+      "fromMe": true,
+      "momment": 1779288456001,
+      "status": "SENT",
+      "chatName": "554999135541",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 86400,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Trabalhamos com automação de processos para operações que enfrentam rotina manual em gestão de facilities. O controle preventivo que oferecemos evita paradas não planejadas e melhora a eficiência operacional."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288421.9515932,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "184830276935841@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB01F6CE60E4F890DF4F9",
+      "phone": "554999135541",
+      "fromMe": true,
+      "momment": 1779288463002,
+      "status": "SENT",
+      "chatName": "554999135541",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 86400,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Tem espaço pra conversar sobre isso?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779292811.6318383,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "184830276935841@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0C00B2A93B10CF8FEAB",
+      "phone": "554999135541",
+      "fromMe": true,
+      "momment": 1779292854000,
+      "status": "SENT",
+      "chatName": "554999135541",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 86400,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Oi Geferson, só passando para ver se você teve a chance de pensar sobre como a automação pode ajudar na sua operação. Estou aqui para te ajudar com isso. Pode me dizer se tem algum desafio específico que gostaria de resolver?"
+      }
+    }
+  }
+]

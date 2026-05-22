@@ -1,0 +1,104 @@
+[
+  {
+    "timestamp": 1779288923.8231637,
+    "data": {
+      "fromMe": true,
+      "phone": "5511983905847",
+      "chatLid": "5511983905847@lid",
+      "text": {
+        "message": "Bom dia, Diogo.\n\nSou a Ana, da Btime. Trabalho com automação de processos para operações que precisam integrar TI e Facilities, garantindo eficiência e redução de trabalho manual. Tem espaço pra conversar sobre isso?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779288932.0268154,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "236747220885626@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0726276FAEAB9E6E810",
+      "phone": "5511983905847",
+      "fromMe": true,
+      "momment": 1779288974000,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Bom dia, Diogo."
+      }
+    }
+  },
+  {
+    "timestamp": 1779288947.0292552,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "236747220885626@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0CBB049AF3F0BCCC8E5",
+      "phone": "5511983905847",
+      "fromMe": true,
+      "momment": 1779288989000,
+      "status": "SENT",
+      "chatName": "5511983905847",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Trabalho com automação de processos para operações que precisam integrar TI e Facilities, garantindo eficiência e redução de trabalho manual. Tem espaço pra conversar sobre isso?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779292809.9323344,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "236747220885626@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0286DA7BD9C38FEE85F",
+      "phone": "5511983905847",
+      "fromMe": true,
+      "momment": 1779292852000,
+      "status": "SENT",
+      "chatName": "5511983905847",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Diogo, estou por aqui. Se precisar de mais informações sobre como podemos ajudar sua operação, é só avisar."
+      }
+    }
+  }
+]

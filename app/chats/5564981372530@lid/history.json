@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": 1779288358.0835683,
+    "data": {
+      "fromMe": true,
+      "phone": "5564981372530",
+      "chatLid": "5564981372530@lid",
+      "text": {
+        "message": "Bom dia, Kamila. \n\nSou a Ana, da Btime. \n\nTrabalhamos com a automação de processos operacionais, ajudando empresas como a Alcoa a otimizar a gestão de facilities e manutenção em áreas remotas. Faz sentido a gente trocar uma ideia?"
+      },
+      "type": "abertura"
+    }
+  }
+]

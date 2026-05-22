@@ -30,6 +30,7 @@ from agent.context import (
 from agent.ana_agent import run_ana_agent
 from agent.micro_agents import run_micro_agents, _to_langchain_messages
 from agent.storage import supabase_repo
+from agent.handoff_opener import gerar_abertura_handoff
 
 
 FOLLOWUP_OVERDUE_GRACE_SECONDS = 24 * 60 * 60
@@ -153,6 +154,11 @@ class Agent_AI:
         self.composing_set: set = set()
         self.processing_chats: set[str] = set()
         self.interrupted_chats: set[str] = set()
+        # Numeros com disparo de handoff em voo (chat-scoped). Evita corrida entre
+        # turnos enquanto a thread async ainda nao confirmou sucesso. Persistencia
+        # final fica na tabela `handoffs` do Supabase (success=true) depois do ok do Z-API.
+        self._handoff_in_flight: dict[str, set[str]] = {}
+        self._handoff_in_flight_lock = threading.Lock()
         self._interrupt_cite_ids: dict[str, str] = {}
         self._timer_lock = threading.Lock()
         self._file_lock = threading.Lock()
@@ -807,16 +813,31 @@ class Agent_AI:
                 item.get("data", {}).get("type") == "abertura"
                 for item in historico
             )
+            ja_marcado_sem_whatsapp = any(
+                item.get("data", {}).get("type") == "numero_sem_whatsapp"
+                for item in historico
+            )
             tem_mensagem_do_lead = any(
                 not item.get("data", {}).get("fromMe", True)
                 for item in historico
             )
-            if ja_abordado or tem_mensagem_do_lead:
-                print(f"{YELLOW}[iniciar_conversa] {chatLid} já foi abordado ou já tem mensagem do lead, abortando{RESET}")
+            if ja_abordado or tem_mensagem_do_lead or ja_marcado_sem_whatsapp:
+                print(f"{YELLOW}[iniciar_conversa] {chatLid} já abordado, já tem mensagem do lead, ou já marcado sem WhatsApp — abortando{RESET}")
                 return False
 
         try:
             headers = {"client-token": self.zapi_sec_token}
+
+            # Guard de entregabilidade: número sem conta de WhatsApp nunca
+            # recebe a mensagem. A Z-API responde 200/ok otimista mesmo nesse
+            # caso, então a checagem é feita ANTES de gerar a abertura via LLM,
+            # enviar e gravar histórico — caso contrário o lead seria marcado
+            # como chamado sem nunca ter recebido nada (aberturas fantasma).
+            if self._numero_tem_whatsapp(phone) is False:
+                self._registrar_numero_sem_whatsapp(phone, chatLid)
+                self._last_send_error = "numero_sem_whatsapp"
+                print(f"{YELLOW}[iniciar_conversa] {chatLid}: número sem WhatsApp — abertura não enviada{RESET}")
+                return False
 
             if mensagem_personalizada:
                 mensagem = mensagem_personalizada.strip()
@@ -908,6 +929,66 @@ class Agent_AI:
             self._last_send_error = f"exception: {e}"
             print(f"{RED}[iniciar_conversa] Erro ao enviar mensagem de abertura para {chatLid}: {e}{RESET}")
             return False
+
+    def _numero_tem_whatsapp(self, phone: str) -> bool | None:
+        """Checa via Z-API `phone-exists` se o número tem conta de WhatsApp.
+
+        Inputs:
+            phone: número em dígitos E.164 sem '+'.
+
+        Returns:
+            True  -> número tem WhatsApp.
+            False -> número confirmadamente NÃO tem WhatsApp.
+            None  -> a verificação falhou (rede/HTTP/resposta inesperada).
+                     Nesse caso o caller deve seguir com o envio (fail-open),
+                     para não bloquear disparos por uma instabilidade da Z-API.
+        """
+        try:
+            resp = requests.get(
+                f"{self.base_url}/phone-exists/{phone}",
+                headers={"client-token": self.zapi_sec_token},
+                timeout=15,
+            )
+            if resp.status_code != 200:
+                return None
+            body = resp.json()
+        except Exception as e:
+            print(f"{YELLOW}[phone-exists] falha ao checar {phone}: {e}{RESET}")
+            return None
+        if not isinstance(body, dict) or "exists" not in body:
+            return None
+        return bool(body.get("exists"))
+
+    def _registrar_numero_sem_whatsapp(self, phone: str, chatLid: str) -> None:
+        """Grava no histórico (local + Supabase) um marcador de que o número
+        não tem WhatsApp.
+
+        É o substituto do evento `abertura` para números sem WhatsApp: deixa
+        rastro auditável (`payload.type = 'numero_sem_whatsapp'`) sem marcar o
+        lead como abordado. O `messageId` é determinístico, então re-registros
+        do mesmo lead fazem upsert na mesma linha em vez de duplicar.
+        """
+        lead_dir = os.path.join("chats", chatLid)
+        os.makedirs(lead_dir, exist_ok=True)
+        history_path = os.path.join(lead_dir, "history.json")
+        historico = self._read_json_file(history_path, []) if os.path.exists(history_path) else []
+        evento = {
+            "timestamp": time.time(),
+            "data": {
+                "fromMe": True,
+                "phone": phone,
+                "chatLid": chatLid,
+                "type": "numero_sem_whatsapp",
+                "messageId": f"sysmark:no-wa:{chatLid}",
+                "text": {
+                    "message": "[sistema] Número sem conta de WhatsApp — "
+                               "abertura não enviada (Z-API phone-exists=false)."
+                },
+            },
+        }
+        historico.append(evento)
+        self._write_json_file(history_path, historico)
+        self._mirror_message_supabase(chatLid, evento)
 
     def migrar_lead_se_necessario(self, phone: str, chatLid: str):
         """
@@ -2425,11 +2506,23 @@ class Agent_AI:
                     # (exclui msgs AI pós-interrupção que não devem influenciar a nova resposta)
                     history_for_agent = mensagens_formatadas[:last_user_idx] if last_user_idx > 0 else []
 
+                    # Detecção estrutural de vCard: última mensagem do lead é só contato (sem texto/áudio/imagem)?
+                    lead_message_eh_vcard = False
+                    for _item in reversed(historico_filtrado):
+                        _md = _item.get("data", {}) or {}
+                        if _md.get("fromMe", False):
+                            continue
+                        _text = (_md.get("text") or {}).get("message") or ""
+                        _audio_transc = (_md.get("audio") or {}).get("transcricao") or ""
+                        lead_message_eh_vcard = bool(_md.get("contact")) and not _text and not _audio_transc and not _md.get("image")
+                        break
+
                     print(f"{BLUE}[micro_agents] Iniciando análise paralela para {chatLid}{RESET}")
                     micro_context = run_micro_agents(
                         lead_message_atual,
                         history_for_agent,
                         has_active_meeting=self._has_active_meeting(chatLid),
+                        lead_message_eh_vcard=lead_message_eh_vcard,
                     )
                     print(f"{BLUE}[micro_agents] Concluído: {micro_context}{RESET}")
 
@@ -2441,6 +2534,7 @@ class Agent_AI:
                         return
 
                     # --- Handoff: lead repassou contato de outra pessoa ---
+                    _handoff_instrucao_pos_disparo = ""
                     _handoff = micro_context.get("handoff", {})
                     if (
                         _handoff.get("is_handoff")
@@ -2452,53 +2546,175 @@ class Agent_AI:
                         _li = self._read_lead_info(chatLid)
                         phone_atual = _li.get("phone", "")
 
-                        if novo_numero and novo_numero != phone_atual:
+                        if novo_numero and novo_numero == phone_atual:
+                            # Lead passou o próprio número como se fosse de outra pessoa.
+                            # Não dispara handoff, mas avisa a Ana pra pedir esclarecimento
+                            # em vez de alucinar que vai chamar.
+                            _handoff_instrucao_pos_disparo = (
+                                f"\n\nATENÇÃO: o lead indicou o número {novo_numero} como contato "
+                                f"de {_handoff.get('new_contact_name') or 'outra pessoa'}, mas esse "
+                                f"é o MESMO número com o qual você está conversando agora. "
+                                f"NÃO confirme que vai chamar ninguém. Aponte essa coincidência de "
+                                f"forma natural e peça o número correto do outro contato. "
+                                f"NÃO emita JSON ou qualquer formato estruturado — apenas texto curto."
+                            )
+                        elif novo_numero and novo_numero != phone_atual:
                             empresa_orig = _li.get("empresa", "")
+                            segmento_orig = _li.get("segmento_mercado", "")
+                            produto_orig = _li.get("produto_indicado", "")
+                            desafios_orig = _li.get("desafios_identificados") or []
                             indicado_por = _li.get("nome", "")
                             qual = micro_context.get("qualification", {}) or {}
+
                             resumo_partes = []
                             if empresa_orig:
                                 resumo_partes.append(f"empresa {empresa_orig}")
+                            if segmento_orig:
+                                resumo_partes.append(f"segmento {segmento_orig}")
                             if qual.get("revenue_value"):
                                 resumo_partes.append(f"faturamento ~{qual['revenue_value']}")
-                            if qual.get("pain_description"):
-                                resumo_partes.append(f"dor: {qual['pain_description']}")
-                            if qual.get("product_routed"):
-                                resumo_partes.append(f"produto: {qual['product_routed']}")
+                            pain = qual.get("pain_description") or (
+                                "; ".join(desafios_orig) if desafios_orig else ""
+                            )
+                            if pain:
+                                resumo_partes.append(f"dor: {pain}")
+                            produto = qual.get("product_routed") or produto_orig
+                            if produto:
+                                resumo_partes.append(f"produto: {produto}")
                             resumo = "; ".join(resumo_partes) or "sem contexto adicional"
+
                             descricao = f"Indicado por {indicado_por or 'contato anterior'}"
+                            if empresa_orig and indicado_por:
+                                descricao = f"Indicado por {indicado_por} (da {empresa_orig})"
                             if _handoff.get("new_contact_role"):
                                 descricao += f" como {_handoff['new_contact_role']}"
                             descricao += f". {resumo}."
 
-                            ja_disparados = _li.get("handoffs_disparados", []) or []
-                            if novo_numero not in ja_disparados:
-                                disparo_ok = False
-                                try:
-                                    # Import lazy proposital: db_app importa agent.core no topo — não suba este import.
-                                    from db_app import chamar_lead_interno
-                                    _body, _status = chamar_lead_interno(
-                                        nome=novo_nome,
-                                        numero=novo_numero,
-                                        descricao=descricao,
-                                        indicado_por_chatLid=chatLid,
-                                    )
-                                    disparo_ok = _status == 200 and isinstance(_body, dict) and _body.get("status") == "ok"
-                                    if disparo_ok:
-                                        print(f"{GREEN}[handoff] Disparado para {novo_numero} ({novo_nome}){RESET}")
-                                    else:
-                                        print(f"{RED}[handoff] Disparo não confirmado para {novo_numero}: status={_status} body={_body}{RESET}")
-                                except Exception as e:
-                                    print(f"{RED}[handoff] Falhou disparo para {novo_numero}: {e}{RESET}")
+                            # Fonte da verdade: tabela `handoffs` no Supabase (success=true).
+                            ja_confirmado = bool(self._supabase_safe(
+                                supabase_repo.has_successful_handoff,
+                                chatLid,
+                                novo_numero,
+                            ))
+                            with self._handoff_in_flight_lock:
+                                in_flight_chat = self._handoff_in_flight.setdefault(chatLid, set())
+                                em_voo = novo_numero in in_flight_chat
 
-                                if disparo_ok:
-                                    _li.setdefault("handoffs_disparados", [])
-                                    _li["handoffs_disparados"].append(novo_numero)
-                                    self._write_json_file(
-                                        os.path.join("chats", chatLid, "lead_info.json"),
-                                        _li,
-                                    )
-                                    self._mirror_lead_info_supabase(chatLid, _li)
+                            if ja_confirmado:
+                                print(f"{YELLOW}[handoff] {novo_numero} já confirmado anteriormente — não redispara{RESET}")
+                                _handoff_instrucao_pos_disparo = (
+                                    f"\n\nO contato de {novo_nome} ({novo_numero}) JÁ FOI acionado "
+                                    f"com sucesso anteriormente — não dispare de novo nem prometa "
+                                    f"chamar agora. Nesta resposta: explique de forma natural e curta "
+                                    f"que o time já foi avisado e está aguardando o {novo_nome} "
+                                    f"responder, e mantenha a porta aberta. NÃO emita JSON ou "
+                                    f"qualquer formato estruturado — apenas texto natural curto."
+                                )
+                            elif em_voo:
+                                print(f"{YELLOW}[handoff] {novo_numero} já está em voo neste chat — aguardando confirmação{RESET}")
+                                _handoff_instrucao_pos_disparo = (
+                                    f"\n\nO contato de {novo_nome} ({novo_numero}) está sendo acionado "
+                                    f"neste momento (disparo em andamento). Nesta resposta: peça um instante "
+                                    f"de forma natural e curta. NÃO emita JSON ou qualquer formato "
+                                    f"estruturado — apenas texto natural curto."
+                                )
+                            else:
+                                # Reserva slot in-flight + grava attempt na DB (success=false).
+                                # Source of truth = tabela handoffs. Lista local fica como fallback.
+                                with self._handoff_in_flight_lock:
+                                    self._handoff_in_flight[chatLid].add(novo_numero)
+
+                                _handoff_id = self._supabase_safe(
+                                    supabase_repo.record_handoff_attempt,
+                                    chatLid,
+                                    novo_numero,
+                                    novo_nome,
+                                    _handoff.get("new_contact_role"),
+                                    descricao,
+                                )
+
+                                # Slots estruturados pra abertura — sem reparsear free-text.
+                                # Pain prioriza qualification.pain_description; fallback pra
+                                # desafios_identificados; produto idem.
+                                _pain_summary = qual.get("pain_description") or (
+                                    "; ".join(desafios_orig) if desafios_orig else None
+                                )
+                                _produto = qual.get("product_routed") or produto_orig or None
+                                _abertura_slots = {
+                                    "new_contact_name": novo_nome,
+                                    "new_contact_role": _handoff.get("new_contact_role"),
+                                    "referrer_name": indicado_por or None,
+                                    "referrer_company": empresa_orig or None,
+                                    "pain_summary": _pain_summary,
+                                    "product": _produto,
+                                }
+                                _abertura = gerar_abertura_handoff(_abertura_slots)
+
+                                def _disparar_handoff_async(
+                                    _novo_nome=novo_nome,
+                                    _novo_numero=novo_numero,
+                                    _descricao=descricao,
+                                    _chatLid=chatLid,
+                                    _handoff_id=_handoff_id,
+                                    _abertura=_abertura,
+                                ):
+                                    """Dispara chamar_lead_interno em thread separada para não bloquear a Ana.
+
+                                    Inputs: closures sobre dados do handoff + id da linha em handoffs.
+                                    Side effects:
+                                      - Chama db_app.chamar_lead_interno (Z-API).
+                                      - SUCESSO: marca handoffs.success=true (DB).
+                                      - FALHA: marca handoffs.error_detail mantendo success=false
+                                        e libera _handoff_in_flight pra próximo turno retry.
+                                    """
+                                    sucesso = False
+                                    erro_detalhe = None
+                                    try:
+                                        from db_app import chamar_lead_interno
+                                        _body, _status = chamar_lead_interno(
+                                            nome=_novo_nome,
+                                            numero=_novo_numero,
+                                            descricao=_descricao,
+                                            mensagem=_abertura,
+                                            indicado_por_chatLid=_chatLid,
+                                        )
+                                        if _status == 200 and isinstance(_body, dict) and _body.get("status") == "ok":
+                                            sucesso = True
+                                            print(f"{GREEN}[handoff] Disparado para {_novo_numero} ({_novo_nome}){RESET}")
+                                        else:
+                                            erro_detalhe = f"status={_status} body={_body}"
+                                            print(f"{RED}[handoff] Disparo não confirmado para {_novo_numero}: {erro_detalhe}{RESET}")
+                                    except Exception as e:
+                                        erro_detalhe = str(e)
+                                        print(f"{RED}[handoff] Falhou disparo para {_novo_numero}: {e}{RESET}")
+
+                                    try:
+                                        if sucesso:
+                                            if _handoff_id:
+                                                self._supabase_safe(supabase_repo.mark_handoff_success, _handoff_id)
+                                        else:
+                                            if _handoff_id:
+                                                self._supabase_safe(
+                                                    supabase_repo.mark_handoff_failure,
+                                                    _handoff_id,
+                                                    erro_detalhe,
+                                                )
+                                    finally:
+                                        with self._handoff_in_flight_lock:
+                                            self._handoff_in_flight.get(_chatLid, set()).discard(_novo_numero)
+                                        if not sucesso:
+                                            print(f"{YELLOW}[handoff] {_novo_numero} liberado para retry no próximo turno{RESET}")
+
+                                threading.Thread(target=_disparar_handoff_async, daemon=True).start()
+
+                                _handoff_instrucao_pos_disparo = (
+                                    f"\n\nO contato de {novo_nome} foi recebido e já está sendo "
+                                    f"acionado pelo sistema em paralelo. Nesta resposta para a pessoa "
+                                    f"atual: apenas agradeça brevemente o repasse de forma natural e "
+                                    f"mantenha a porta aberta. NÃO continue qualificando, NÃO peça novas "
+                                    f"informações sobre {novo_nome}, e NÃO emita JSON ou qualquer formato "
+                                    f"estruturado nesta resposta — apenas texto natural curto."
+                                )
 
                     # --- Tentativas de retomada de lead desinteressado ---
                     _intent_atual = micro_context.get("intent", {}).get("intent", "")
@@ -2551,7 +2767,7 @@ class Agent_AI:
                         lead_message=lead_message_atual,
                         history=history_lc,
                         micro_agent_context=micro_context,
-                        system_context=contexto,
+                        system_context=contexto + _handoff_instrucao_pos_disparo,
                         is_interrupted=lambda: chatLid in self.interrupted_chats,
                     )
 
