@@ -11,5 +11,18 @@
         "message": "[sistema] Número sem conta de WhatsApp — abertura não enviada (Z-API phone-exists=false)."
       }
     }
+  },
+  {
+    "timestamp": 1779474283.3449438,
+    "data": {
+      "fromMe": true,
+      "phone": "18777688399",
+      "chatLid": "18777688399@lid",
+      "type": "numero_sem_whatsapp",
+      "messageId": "sysmark:no-wa:18777688399@lid",
+      "text": {
+        "message": "[sistema] Número sem conta de WhatsApp — abertura não enviada (Z-API phone-exists=false)."
+      }
+    }
   }
 ]

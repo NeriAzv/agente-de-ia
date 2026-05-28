@@ -1,0 +1,26 @@
+[
+  {
+    "timestamp": 1779474648.0741503,
+    "data": {
+      "fromMe": true,
+      "phone": "34981185400",
+      "chatLid": "34981185400@lid",
+      "text": {
+        "message": "Olá Graziela.\n\nSou a Ana, da Btime. Trabalho com operações no varejo que precisam padronizar e monitorar serviços de forma eficiente, especialmente em uma estrutura como a da Inditex. Tem espaço pra conversar sobre como a automação pode ajudar?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779475120.6804345,
+    "data": {
+      "fromMe": true,
+      "phone": "34981185400",
+      "chatLid": "34981185400@lid",
+      "text": {
+        "message": "Boa tarde, Graziela.\n\nSou a Ana, da Btime. Trabalho com operações de facilities que buscam padronizar serviços e reduzir custos com fornecedores. Tem espaço pra conversar sobre como a automação pode ajudar a Inditex?"
+      },
+      "type": "abertura"
+    }
+  }
+]

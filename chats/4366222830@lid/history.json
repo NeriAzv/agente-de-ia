@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": 1779475490.1661286,
+    "data": {
+      "fromMe": true,
+      "phone": "4366222830",
+      "chatLid": "4366222830@lid",
+      "text": {
+        "message": "Olá Lais, \n\nSou a Ana, da Btime. Trabalho com indústrias automotivas que buscam alinhar a gestão de facilities com a manutenção para evitar paradas na produção. \n\nFaz sentido a gente trocar uma ideia?"
+      },
+      "type": "abertura"
+    }
+  }
+]

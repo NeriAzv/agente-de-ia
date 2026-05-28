@@ -1,0 +1,74 @@
+[
+  {
+    "timestamp": 1779473503.7362156,
+    "data": {
+      "fromMe": true,
+      "phone": "966560029713",
+      "chatLid": "966560029713@lid",
+      "text": {
+        "message": "Olá, Zubair Nazir.\n\nSou a Ana, da Btime. Estamos ajudando operações em ambientes laboratoriais a melhorarem a gestão de Facilities, especialmente em controle de condições críticas. Você tem interesse em conversar sobre como automação pode trazer visibilidade em tempo real para a IDEXX?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779473516.77017,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "277854956847293@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB055FAEFF82A10471B06",
+      "phone": "966560029713",
+      "fromMe": true,
+      "momment": 1779473553002,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870631_1064822318424157_476841141530046162_n.jpg?ccb=11-4&oh=01_Q5Aa4gEw74yqhSalaofKR4_Wq2pBX196Sx4rdif5Z_2pTWqlEQ&oe=6A1DAD00&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Olá, Zubair Nazir."
+      }
+    }
+  },
+  {
+    "timestamp": 1779473525.0570676,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "277854956847293@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB00A4B6777DC377BC0BE",
+      "phone": "966560029713",
+      "fromMe": true,
+      "momment": 1779473569000,
+      "status": "SENT",
+      "chatName": "966560029713",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870631_1064822318424157_476841141530046162_n.jpg?ccb=11-4&oh=01_Q5Aa4gEw74yqhSalaofKR4_Wq2pBX196Sx4rdif5Z_2pTWqlEQ&oe=6A1DAD00&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Estamos ajudando operações em ambientes laboratoriais a melhorarem a gestão de Facilities, especialmente em controle de condições críticas. Você tem interesse em conversar sobre como automação pode trazer visibilidade em tempo real para a IDEXX?"
+      }
+    }
+  }
+]

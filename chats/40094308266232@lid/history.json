@@ -1,0 +1,17 @@
+[
+  {
+    "timestamp": 1779470881.4796586,
+    "data": {
+      "chatLid": "40094308266232@lid",
+      "phone": "554499321606",
+      "fromMe": false,
+      "momment": 1779470881479,
+      "status": "RECEIVED",
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Oi Ana, muito boa tarde. Eu conversei com a minha gestora, por hora nós não iremos fazer adesão de nenhum sistema para a centralização ou gestão de facílios. Nós utilizamos já um sistema interno da CHES e com base em outras mudanças que ocorrerão, irá verificar essa necessidade de adotarmos outras plataformas também para nos apoiarem, tá bem? Eu vou manter seu contato aqui entre os meus registros.\n\nMuito obrigada."
+      }
+    }
+  }
+]

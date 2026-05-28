@@ -1,0 +1,17 @@
+{
+  "nome": "Thomas Lindner",
+  "phone": "4934901999400",
+  "descricao_manual": "Empresa: Ceva\nCargo: Head of Animal Facilities\nArea: Facilities\nSetor: Saude Animal / Farmaceutica\nResumo da empresa: Ceva e uma multinacional francesa de saude animal com laboratorios, fabricas e escritorios no Brasil.\nContexto operacional: Gestao de facilities em laboratorios de pesquisa | Controle de condicoes ambientais especiais | Manutencao de equipamentos de alta precisao\nAreas relacionadas: Qualidade | P&D | Compras\nObservacao comercial: Em instalacoes laboratoriais como as da Ceva, a gestao de Facilities e parte critica do controle de qualidade; e a btime pode ser o elo entre o operacional e os requisitos regulatorios.",
+  "followups_agendados": [
+    {
+      "tipo": "24h",
+      "horario_iso": "2026-05-23T15:41:26.876214",
+      "phone": "4934901999400"
+    },
+    {
+      "tipo": "15d",
+      "horario_iso": "2026-06-06T15:41:26.876214",
+      "phone": "4934901999400"
+    }
+  ]
+}

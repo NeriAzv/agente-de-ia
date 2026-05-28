@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": 1779475286.018968,
+    "data": {
+      "fromMe": true,
+      "phone": "4934901999400",
+      "chatLid": "4934901999400@lid",
+      "text": {
+        "message": "Boa tarde, Thomas.\n\nSou a Ana, da Btime. Trabalho com operações que buscam melhorar a gestão de facilities, especialmente em ambientes críticos como laboratórios de pesquisa. Tem espaço para a gente conversar sobre automação e como isso pode auxiliar na eficiência operacional da Ceva?"
+      },
+      "type": "abertura"
+    }
+  }
+]

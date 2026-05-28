@@ -1,0 +1,27 @@
+{
+  "nome": "Zubair Nazir",
+  "email": null,
+  "empresa": "IDEXX",
+  "segmento_mercado": "laboratórios",
+  "porte_empresa": null,
+  "faturamento_aproximado": null,
+  "tamanho_time": null,
+  "sistemas_atuais": [],
+  "desafios_identificados": [
+    "gestão de Facilities",
+    "controle de condições críticas",
+    "carga de trabalho manual"
+  ],
+  "produto_indicado": "SaaS Btime",
+  "motivo_segmentacao": "Lead está em um ambiente laboratorial, mencionou a gestão de Facilities e controle crítico, indicando a necessidade de automação e visibilidade, que são sinais para o SaaS Btime.",
+  "estagio_conversa": "inicial",
+  "reuniao_agendada": false,
+  "necessita_followup": true,
+  "motivo_followup": "A conversa não teve uma conclusão clara e o lead mudou de assunto, indicando que ele pode precisar de mais informações.",
+  "atualizado_em": "2026-05-22T15:56:33.887083",
+  "tentativas_retomada": 0,
+  "descricao_manual": "Empresa: IDEXX\nCargo: Global Facilities Operations Center Manager, Europe\nArea: Facilities\nSetor: Saude Animal / Diagnosticos\nResumo da empresa: IDEXX e lider global em diagnosticos veterinarios, com laboratorios e operacoes em mais de 175 paises, incluindo Brasil.\nContexto operacional: Gestao de ambiente em laboratorios | Controle de temperatura e condicoes especiais | Manutencao de equipamentos criticos de diagnostico\nAreas relacionadas: Qualidade | Laboratorio | Compras\nObservacao comercial: Em um ambiente laboratorial como o da IDEXX, onde condicoes controladas sao criticas, a gestao de Facilities vai alem do operacional; e a btime pode dar essa visibilidade em tempo real.",
+  "ai_blocked": false,
+  "phone": "966560029713",
+  "followups_agendados": []
+}

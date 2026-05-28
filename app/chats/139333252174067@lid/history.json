@@ -1,0 +1,62 @@
+[
+  {
+    "timestamp": 1779473426.8933032,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "139333252174067@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0303CA02DE49754B700",
+      "phone": "553588429109",
+      "fromMe": true,
+      "momment": 1779473471001,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Boa tarde, Matheus."
+      }
+    }
+  },
+  {
+    "timestamp": 1779473445.0642982,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "139333252174067@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0B0B00C3DAEC37475AC",
+      "phone": "553588429109",
+      "fromMe": true,
+      "momment": 1779473489000,
+      "status": "SENT",
+      "chatName": "553588429109",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Trabalho com empresas que gerenciam fornecedores e custos de utilities, ajudando a conectar a gestão de Facilities às Compras para maior controle e eficiência. Tem espaço pra conversar sobre isso?"
+      }
+    }
+  }
+]

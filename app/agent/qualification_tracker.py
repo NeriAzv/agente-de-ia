@@ -1,12 +1,10 @@
 import json
-from langchain_anthropic import ChatAnthropic
 from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 
+from agent.llm_config import make_micro_llm
 
-_LLM = ChatAnthropic(
-    model="claude-haiku-4-5-20251001",
-    temperature=0,
-)
+
+_LLM = make_micro_llm()
 
 _SYSTEM_PROMPT = """\
 Você é um analisador de qualificação de leads B2B. Leia o histórico completo da conversa e avalie \

@@ -1,0 +1,164 @@
+[
+  {
+    "timestamp": 1779474777.750968,
+    "data": {
+      "fromMe": true,
+      "phone": "5519992594015",
+      "chatLid": "5519992594015@lid",
+      "text": {
+        "message": "Olá Fabio,  \n\nSou a Ana, da Btime.  \n\nTrabalho com operações industriais na integração de Facilities com Manutenção e HSE, ajudando a otimizar processos e aumentar a eficiência. Acredito que a automação pode reduzir o tempo de parada na sua planta e melhorar o compliance com normas de segurança.  \n\nTem espaço pra conversar sobre isso?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779474777.6662838,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "176978623778826@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB049BCDADD6ACE35E5E9",
+      "phone": "5519992594015",
+      "fromMe": true,
+      "momment": 1779474822002,
+      "status": "SENT",
+      "chatName": "5519992594015",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534426905_1678572236849560_5740535902680770660_n.jpg?ccb=11-4&oh=01_Q5Aa4gELDEzbTBSAGh2yFa2Ix3zCdz3vqB4nJr1TaI2jXBR3dQ&oe=6A1DB3BD&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Olá Fabio,"
+      }
+    }
+  },
+  {
+    "timestamp": 1779474780.9597666,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "176978623778826@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0F74E5596F220DD7AC2",
+      "phone": "5519992594015",
+      "fromMe": true,
+      "momment": 1779474826000,
+      "status": "SENT",
+      "chatName": "5519992594015",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534426905_1678572236849560_5740535902680770660_n.jpg?ccb=11-4&oh=01_Q5Aa4gELDEzbTBSAGh2yFa2Ix3zCdz3vqB4nJr1TaI2jXBR3dQ&oe=6A1DB3BD&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime."
+      }
+    }
+  },
+  {
+    "timestamp": 1779474798.9661996,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "176978623778826@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0271F16B40E15341870",
+      "phone": "5519992594015",
+      "fromMe": true,
+      "momment": 1779474843000,
+      "status": "SENT",
+      "chatName": "5519992594015",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534426905_1678572236849560_5740535902680770660_n.jpg?ccb=11-4&oh=01_Q5Aa4gELDEzbTBSAGh2yFa2Ix3zCdz3vqB4nJr1TaI2jXBR3dQ&oe=6A1DB3BD&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Trabalho com operações industriais na integração de Facilities com Manutenção e HSE, ajudando a otimizar processos e aumentar a eficiência. Acredito que a automação pode reduzir o tempo de parada na sua planta e melhorar o compliance com normas de segurança."
+      }
+    }
+  },
+  {
+    "timestamp": 1779474803.5681741,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "176978623778826@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0F47096608D91E681FC",
+      "phone": "5519992594015",
+      "fromMe": true,
+      "momment": 1779474848000,
+      "status": "SENT",
+      "chatName": "5519992594015",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534426905_1678572236849560_5740535902680770660_n.jpg?ccb=11-4&oh=01_Q5Aa4gELDEzbTBSAGh2yFa2Ix3zCdz3vqB4nJr1TaI2jXBR3dQ&oe=6A1DB3BD&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Tem espaço pra conversar sobre isso?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779478384.202545,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "176978623778826@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB059226DCE54D31ACF20",
+      "phone": "5519992594015",
+      "fromMe": true,
+      "momment": 1779478428000,
+      "status": "SENT",
+      "chatName": "5519992594015",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534426905_1678572236849560_5740535902680770660_n.jpg?ccb=11-4&oh=01_Q5Aa4gELDEzbTBSAGh2yFa2Ix3zCdz3vqB4nJr1TaI2jXBR3dQ&oe=6A1DB3BD&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Oi Fabio, só dando um toque para ver se você teve um tempinho para pensar na automação da sua operação. Pode ser uma boa solução para aumentar a eficiência e reduzir custos. Estou à disposição para conversar quando você puder."
+      }
+    }
+  }
+]

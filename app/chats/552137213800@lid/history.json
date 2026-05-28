@@ -1,0 +1,28 @@
+[
+  {
+    "timestamp": 1779474032.3327482,
+    "data": {
+      "fromMe": true,
+      "phone": "552137213800",
+      "chatLid": "552137213800@lid",
+      "type": "numero_sem_whatsapp",
+      "messageId": "sysmark:no-wa:552137213800@lid",
+      "text": {
+        "message": "[sistema] Número sem conta de WhatsApp — abertura não enviada (Z-API phone-exists=false)."
+      }
+    }
+  },
+  {
+    "timestamp": 1779474315.3299453,
+    "data": {
+      "fromMe": true,
+      "phone": "552137213800",
+      "chatLid": "552137213800@lid",
+      "type": "numero_sem_whatsapp",
+      "messageId": "sysmark:no-wa:552137213800@lid",
+      "text": {
+        "message": "[sistema] Número sem conta de WhatsApp — abertura não enviada (Z-API phone-exists=false)."
+      }
+    }
+  }
+]

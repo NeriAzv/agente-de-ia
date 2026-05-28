@@ -11,6 +11,7 @@ from colors import GREEN, RED, YELLOW, BLUE, RESET
 import json
 import time
 import threading
+from datetime import datetime
 
 _file_lock = threading.Lock()
 
@@ -63,6 +64,41 @@ def _is_ai_blocked(chatLid: str) -> bool:
         return False
 
 
+def _injetar_evento(chatLid: str, fake_data: dict, event_ts: float) -> None:
+    """Anexa um evento {timestamp, data} ao history.json e ao Supabase.
+
+    Inputs:
+        chatLid: identificador do chat WhatsApp; define chats/{chatLid}/history.json.
+        fake_data: payload do evento no formato dos webhooks da Z-API.
+        event_ts: timestamp epoch (segundos) gravado no campo `timestamp`.
+
+    Side effects:
+        - Cria chats/{chatLid} e faz append em history.json sob _file_lock.
+        - Espelha o mesmo evento no Supabase via supabase_repo.append_message.
+    """
+    lead_dir = os.path.join("chats", chatLid)
+    os.makedirs(lead_dir, exist_ok=True)
+    file = os.path.join(lead_dir, "history.json")
+    novo_evento = {"timestamp": event_ts, "data": fake_data}
+
+    with _file_lock:
+        if os.path.exists(file):
+            try:
+                with open(file, "r", encoding="utf-8") as f:
+                    existing_data = json.load(f)
+            except (json.JSONDecodeError, ValueError):
+                existing_data = []
+        else:
+            existing_data = []
+
+        existing_data.append(novo_evento)
+
+        with open(file, "w", encoding="utf-8") as f:
+            json.dump(existing_data, f, indent=2, ensure_ascii=False)
+
+    _supabase_safe(supabase_repo.append_message, chatLid, novo_evento)
+
+
 app = Flask(__name__)
 answer_list = None
 
@@ -112,28 +148,8 @@ def webhook_receive():
     if not chatLid:
         return {"status": "ignored", "reason": "chatLid ausente"}, 200
 
-# Salva mensagem no histórico (mirror local) e em Supabase (fonte de verdade)
-    lead_dir = os.path.join("chats", chatLid)
-    os.makedirs(lead_dir, exist_ok=True)
-    file = os.path.join(lead_dir, "history.json")
-    novo_evento = {"timestamp": time.time(), "data": data}
-
-    with _file_lock:
-        if os.path.exists(file):
-            try:
-                with open(file, "r", encoding="utf-8") as f:
-                    existing_data = json.load(f)
-            except (json.JSONDecodeError, ValueError):
-                existing_data = []
-        else:
-            existing_data = []
-
-        existing_data.append(novo_evento)
-
-        with open(file, "w", encoding="utf-8") as f:
-            json.dump(existing_data, f, indent=2, ensure_ascii=False)
-
-    _supabase_safe(supabase_repo.append_message, chatLid, novo_evento)
+    # Salva mensagem no histórico (mirror local) e em Supabase (fonte de verdade)
+    _injetar_evento(chatLid, data, time.time())
     if phone:
         _supabase_safe(supabase_repo.upsert_conversation, chatLid, phone=phone)
 
@@ -432,10 +448,6 @@ def forcar_resposta():
     if not phone or not chatLid:
         return {"status": "error", "reason": "phone e chatLid são obrigatórios"}, 400
 
-    lead_dir = os.path.join("chats", chatLid)
-    os.makedirs(lead_dir, exist_ok=True)
-    file = os.path.join(lead_dir, "history.json")
-
     # Injeta a mensagem perdida no histórico se informada
     if mensagem:
         fake_data = {
@@ -448,19 +460,7 @@ def forcar_resposta():
             "fromApi": False,
             "text": {"message": mensagem},
         }
-        novo_evento = {"timestamp": time.time(), "data": fake_data}
-        with _file_lock:
-            existing = []
-            if os.path.exists(file):
-                try:
-                    with open(file, "r", encoding="utf-8") as f:
-                        existing = json.load(f)
-                except (json.JSONDecodeError, ValueError):
-                    existing = []
-            existing.append(novo_evento)
-            with open(file, "w", encoding="utf-8") as f:
-                json.dump(existing, f, indent=2, ensure_ascii=False)
-        _supabase_safe(supabase_repo.append_message, chatLid, novo_evento)
+        _injetar_evento(chatLid, fake_data, time.time())
         print(f" > /forcar-resposta: mensagem '{mensagem}' injetada no histórico de {chatLid}")
         trigger_data = fake_data
     else:
@@ -483,6 +483,124 @@ def forcar_resposta():
     ).start()
 
     return {"status": "ok", "message": f"Resposta forçada para {chatLid}"}, 200
+
+
+def _epoch_de_momento(momento) -> float | None:
+    """Converte um ISO-8601 (possivelmente naive) em epoch (segundos).
+
+    Inputs:
+        momento: string ISO-8601, ex. "2026-05-22T14:30:00". Datetimes sem
+            timezone são interpretados no fuso do host.
+
+    Returns:
+        Epoch em segundos (float), ou None quando `momento` é vazio ou não
+        parseável — nesse caso o caller decide o fallback.
+    """
+    if not momento or not isinstance(momento, str):
+        return None
+    try:
+        return datetime.fromisoformat(momento).timestamp()
+    except (ValueError, TypeError):
+        return None
+
+
+@app.route("/recuperar-mensagens", methods=["POST"])
+def recuperar_mensagens():
+    """
+    Recupera mensagens de um lead perdidas enquanto o servidor estava fora do ar.
+
+    Os webhooks da Z-API falham quando o Flask está fora do ar e as mensagens
+    do lead nunca entram no histórico. Aqui o operador informa manualmente a
+    lista de mensagens perdidas (copiadas do WhatsApp Web); todas são injetadas
+    no histórico (history.json + Supabase) e o agente dispara UMA resposta de
+    catch-up considerando todas elas.
+
+    Corpo esperado:
+        {
+            "phone": "5511999999999",
+            "chatLid": "5511999999999@lid",
+            "mensagens": [
+                {"texto": "Oi, ainda tá disponível?", "momento": "2026-05-22T14:30:00"},
+                "quero saber o preço"
+            ]
+        }
+
+    Cada item de `mensagens` é uma string pura ou um objeto {texto, momento}.
+    `momento` é ISO-8601 e opcional: quando informado, garante a ordem
+    cronológica e torna a operação idempotente no Supabase (o message_id
+    sintético fica estável, então rodar de novo não duplica). Sem `momento`,
+    usa o horário atual preservando a ordem da lista. Escopo: apenas texto de
+    leads (fromMe=false); mídia fica de fora.
+
+    Respostas:
+        200 {"status": "ok", "inseridas": N, "chatLid": ...}
+        400 {"status": "error", ...}  -> campos obrigatórios ausentes/ inválidos.
+    """
+    data     = request.json or {}
+    phone    = data.get("phone")
+    chatLid  = data.get("chatLid")
+    mensagens = data.get("mensagens")
+
+    if not phone or not chatLid:
+        return {"status": "error", "reason": "phone e chatLid são obrigatórios"}, 400
+    if not isinstance(mensagens, list) or not mensagens:
+        return {"status": "error", "reason": "mensagens deve ser uma lista não-vazia"}, 400
+
+    phone_norm = normalizar_telefone(phone)
+    if phone_norm:
+        phone = phone_norm
+
+    base_ts = time.time()
+    ultima_fake_data = None
+    inseridas = 0
+
+    for i, item in enumerate(mensagens):
+        if isinstance(item, str):
+            texto, momento = item.strip(), None
+        elif isinstance(item, dict):
+            texto = (item.get("texto") or "").strip()
+            momento = item.get("momento")
+        else:
+            continue
+        if not texto:
+            continue
+
+        # momento informado garante ordem + idempotência; senão preserva a
+        # ordem da lista com incrementos de 1ms a partir do horário atual.
+        event_ts = _epoch_de_momento(momento)
+        if event_ts is None:
+            event_ts = base_ts + i * 0.001
+
+        fake_data = {
+            "chatLid": chatLid,
+            "phone": phone,
+            "fromMe": False,
+            "momment": int(event_ts * 1000),
+            "status": "RECEIVED",
+            "type": "ReceivedCallback",
+            "fromApi": False,
+            "text": {"message": texto},
+        }
+        _injetar_evento(chatLid, fake_data, event_ts)
+        ultima_fake_data = fake_data
+        inseridas += 1
+
+    if inseridas == 0:
+        return {"status": "error", "reason": "nenhuma mensagem válida na lista"}, 400
+
+    _supabase_safe(supabase_repo.upsert_conversation, chatLid, phone=phone)
+
+    print(f" > /recuperar-mensagens: {inseridas} mensagem(ns) injetada(s) para {chatLid}")
+
+    # Uma única resposta de catch-up: o agente lê o histórico completo (já com
+    # as N mensagens) e responde considerando todas.
+    threading.Thread(
+        target=agent.get_ai_response,
+        args=(phone, chatLid, ultima_fake_data),
+        daemon=True,
+    ).start()
+
+    return {"status": "ok", "inseridas": inseridas, "chatLid": chatLid}, 200
 
 
 if __name__ == "__main__":

@@ -791,10 +791,12 @@ class Agent_AI:
             True  -> todas as partes da mensagem foram aceitas pela Z-API e o evento
                      'abertura' foi gravado em history.json + Supabase + follow-ups
                      agendados.
-            False -> lead já abordado (guard ja_abordado), OU a Z-API rejeitou pelo
+            False -> o número não tem conta de WhatsApp, OU a Z-API rejeitou pelo
                      menos uma parte da mensagem, OU exceção durante o processo.
                      Em caso de rejeição da Z-API NADA é gravado em histórico
                      (lead permanece elegível para retry).
+                     OBS: o guard de "já abordado" foi desativado — leads já
+                     contatados antes recebem a abertura novamente.
 
         Side effects:
             - Em sucesso: append em chats/<chatLid>/history.json, mirror em Supabase
@@ -806,37 +808,20 @@ class Agent_AI:
 
         lead_dir = os.path.join("chats", chatLid)
 
-        # Histórico: Supabase = verdade, fallback local.
-        historico = self._read_history(chatLid)
-        if historico:
-            ja_abordado = any(
-                item.get("data", {}).get("type") == "abertura"
-                for item in historico
-            )
-            ja_marcado_sem_whatsapp = any(
-                item.get("data", {}).get("type") == "numero_sem_whatsapp"
-                for item in historico
-            )
-            tem_mensagem_do_lead = any(
-                not item.get("data", {}).get("fromMe", True)
-                for item in historico
-            )
-            if ja_abordado or tem_mensagem_do_lead or ja_marcado_sem_whatsapp:
-                print(f"{YELLOW}[iniciar_conversa] {chatLid} já abordado, já tem mensagem do lead, ou já marcado sem WhatsApp — abortando{RESET}")
-                return False
+        # NOTA: os guards de "já abordado" e "número sem WhatsApp" foram
+        # DESATIVADOS a pedido — a abertura é SEMPRE enviada.
 
         try:
             headers = {"client-token": self.zapi_sec_token}
 
             # Guard de entregabilidade: número sem conta de WhatsApp nunca
-            # recebe a mensagem. A Z-API responde 200/ok otimista mesmo nesse
-            # caso, então a checagem é feita ANTES de gerar a abertura via LLM,
-            # enviar e gravar histórico — caso contrário o lead seria marcado
-            # como chamado sem nunca ter recebido nada (aberturas fantasma).
+            # recebe a mensagem. A Z-API responde 200/ok otimista (com um
+            # messageId falso) mesmo nesse caso — sem esta checagem o lead
+            # seria logado como "CHAMADO" sem nunca ter recebido nada.
             if self._numero_tem_whatsapp(phone) is False:
                 self._registrar_numero_sem_whatsapp(phone, chatLid)
                 self._last_send_error = "numero_sem_whatsapp"
-                print(f"{YELLOW}[iniciar_conversa] {chatLid}: número sem WhatsApp — abertura não enviada{RESET}")
+                print(f"{RED}[iniciar_conversa] ✗ {chatLid} NÃO chamado — número não tem WhatsApp{RESET}")
                 return False
 
             if mensagem_personalizada:
@@ -899,9 +884,8 @@ class Agent_AI:
                         ok = False
                 if not ok:
                     self._last_send_error = f"HTTP {resp.status_code}: {body_text}"
-                    print(f"{RED}[iniciar_conversa] Z-API rejeitou parte {i+1}/{len(partes)} para {chatLid}: {self._last_send_error}{RESET}")
+                    print(f"{RED}[iniciar_conversa] ✗ {chatLid} NÃO chamado — Z-API rejeitou: {self._last_send_error}{RESET}")
                     return False
-                print(f"{GREEN}[iniciar_conversa] Parte {i+1}/{len(partes)} enviada para {chatLid}{RESET}")
 
             # Grava histórico SOMENTE após todas as partes serem aceitas pela Z-API.
             history_path = os.path.join(lead_dir, "history.json")
@@ -923,11 +907,12 @@ class Agent_AI:
             # Agenda follow-ups de inatividade
             self.agendar_followups(phone, chatLid)
 
+            print(f"{GREEN}[iniciar_conversa] ✓ {chatLid} CHAMADO{RESET}")
             return True
 
         except Exception as e:
             self._last_send_error = f"exception: {e}"
-            print(f"{RED}[iniciar_conversa] Erro ao enviar mensagem de abertura para {chatLid}: {e}{RESET}")
+            print(f"{RED}[iniciar_conversa] ✗ {chatLid} NÃO chamado — erro: {e}{RESET}")
             return False
 
     def _numero_tem_whatsapp(self, phone: str) -> bool | None:

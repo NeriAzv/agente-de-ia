@@ -1,0 +1,122 @@
+[
+  {
+    "timestamp": 1779474691.1189797,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "139333252174067@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0507FA695B47B426D3D",
+      "phone": "553588429109",
+      "fromMe": true,
+      "momment": 1779474735000,
+      "status": "SENT",
+      "chatName": "553588429109",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Olá Matheus,"
+      }
+    }
+  },
+  {
+    "timestamp": 1779474708.1819484,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "139333252174067@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB015276B2535C25F218D",
+      "phone": "553588429109",
+      "fromMe": true,
+      "momment": 1779474752000,
+      "status": "SENT",
+      "chatName": "553588429109",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Trabalho com operações no segmento de alimentos e bebidas que buscam melhorar a gestão de facilities e controlar melhor os fornecedores de energia."
+      }
+    }
+  },
+  {
+    "timestamp": 1779474713.2893558,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "139333252174067@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0B1A0524F6DDBD04421",
+      "phone": "553588429109",
+      "fromMe": true,
+      "momment": 1779474757000,
+      "status": "SENT",
+      "chatName": "553588429109",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Tem espaço pra conversar sobre isso?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779478297.6170917,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "139333252174067@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB01DD54167A99D413A8A",
+      "phone": "553588429109",
+      "fromMe": true,
+      "momment": 1779478341003,
+      "status": "SENT",
+      "chatName": "553588429109",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Oi Matheus, tudo bem? \n\nQueria saber se você teve a chance de pensar na nossa conversa. Estou aqui para ajudar a melhorar a gestão de costs e fornecedores na sua empresa. Me avise se quiser discutir mais."
+      }
+    }
+  }
+]

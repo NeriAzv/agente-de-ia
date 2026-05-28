@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": 1779475560.178704,
+    "data": {
+      "fromMe": true,
+      "phone": "12149796100",
+      "chatLid": "12149796100@lid",
+      "text": {
+        "message": "Olá Danilo.\n\nSou a Ana, da Btime. Trabalho com operações que gerenciam múltiplos contratos e que buscam padronizar processos para otimizar a entrega. Faz sentido a gente trocar uma ideia?"
+      },
+      "type": "abertura"
+    }
+  }
+]

@@ -1,14 +1,11 @@
 import json
-from langchain_anthropic import ChatAnthropic
 from langchain_core.messages import HumanMessage, SystemMessage
 
 from agent.normalizers import normalizar_telefone
+from agent.llm_config import make_micro_llm
 
 
-_LLM = ChatAnthropic(
-    model="claude-haiku-4-5-20251001",
-    temperature=0,
-)
+_LLM = make_micro_llm()
 
 _SYSTEM_PROMPT = """\
 Você é um analisador de repasse de contato em vendas B2B por WhatsApp. Analise a mensagem do \

@@ -1,0 +1,26 @@
+[
+  {
+    "timestamp": 1779474839.508285,
+    "data": {
+      "fromMe": true,
+      "phone": "17868711617",
+      "chatLid": "17868711617@lid",
+      "text": {
+        "message": "Olá, Eliane. \n\nSou a Ana, da Btime. \n\nTrabalho com operações que precisam integrar Facilities e Manutenção em uma plataforma única para melhorar a eficiência. Você tem interesse em discutir como a automação pode ajudar a Klabin a otimizar seus processos?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779475244.621521,
+    "data": {
+      "fromMe": true,
+      "phone": "17868711617",
+      "chatLid": "17868711617@lid",
+      "text": {
+        "message": "Boa tarde, Eliane.\n\nSou a Ana, da Btime. Trabalho com operações que precisam integrar manutenção e gerenciamento de facilities em uma plataforma única para aumentar a eficiência e reduzir trabalho manual. Tem espaço pra conversar sobre isso?"
+      },
+      "type": "abertura"
+    }
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": 1779475426.214791,
+    "data": {
+      "fromMe": true,
+      "phone": "16094521000",
+      "chatLid": "16094521000@lid",
+      "text": {
+        "message": "Olá, Mikael.\n\nSou a Ana, da Btime. Trabalho com operações de facilities em laboratórios, particularmente onde a gestão do ambiente é crítica para a qualidade. Você tem enfrentado desafios em automação ou controle operacional?"
+      },
+      "type": "abertura"
+    }
+  }
+]

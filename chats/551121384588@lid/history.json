@@ -1,0 +1,26 @@
+[
+  {
+    "timestamp": 1779474710.659734,
+    "data": {
+      "fromMe": true,
+      "phone": "551121384588",
+      "chatLid": "551121384588@lid",
+      "text": {
+        "message": "Boa tarde, Valdireni.\n\nSou a Ana, da Btime. Trabalho com operações que demandam muita rotina manual em facilities, especialmente em empresas com grande dispersão geográfica como a Suzano. Existe interesse em discutir como a automação pode melhorar a gestão das suas demandas operacionais?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779475159.0635562,
+    "data": {
+      "fromMe": true,
+      "phone": "551121384588",
+      "chatLid": "551121384588@lid",
+      "text": {
+        "message": "Olá, Valdireni.\n\nSou a Ana, da Btime. Trabalho com operações que lidam com a centralização de demandas em facilities, especialmente em ambientes industriais e remotos. Tem espaço pra conversar sobre como a automação pode reduzir o trabalho manual na sua operação?"
+      },
+      "type": "abertura"
+    }
+  }
+]

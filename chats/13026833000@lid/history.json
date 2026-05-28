@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": 1779475376.9481597,
+    "data": {
+      "fromMe": true,
+      "phone": "13026833000",
+      "chatLid": "13026833000@lid",
+      "text": {
+        "message": "Olá, Michael. \n\nSou a Ana, da Btime. Trabalho com operações que precisam integrar manutenção, facilities e HSE, evitando paradas não programadas em plantas contínuas. Tem espaço pra conversar sobre isso?"
+      },
+      "type": "abertura"
+    }
+  }
+]

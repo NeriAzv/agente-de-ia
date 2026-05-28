@@ -1,0 +1,17 @@
+{
+  "nome": "Lais Boas",
+  "phone": "4366222830",
+  "descricao_manual": "Empresa: BENTELER Group\nCargo: Plant Process Engineering / Maintenance & Facilities Manager\nArea: Facilities\nSetor: Manufatura Automotiva\nResumo da empresa: BENTELER e um grupo industrial alemao com plantas de componentes automotivos no Brasil, fornecedor Tier 1 de montadoras.\nContexto operacional: Manutencao de linhas de producao continua | Gestao de facilities em ambiente fabril | Controle de engenharia e obras simultaneas\nAreas relacionadas: Manutencao | Engenharia | Compras\nObservacao comercial: Numa planta automotiva como a da BENTELER, onde uptime de producao e critico, alinhar Facilities com Manutencao preventiva pode evitar paradas que impactam diretamente a montadora cliente.",
+  "followups_agendados": [
+    {
+      "tipo": "24h",
+      "horario_iso": "2026-05-23T15:44:51.013932",
+      "phone": "4366222830"
+    },
+    {
+      "tipo": "15d",
+      "horario_iso": "2026-06-06T15:44:51.013932",
+      "phone": "4366222830"
+    }
+  ]
+}

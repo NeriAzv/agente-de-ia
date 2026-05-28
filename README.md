@@ -17,18 +17,18 @@ Flask (db_app.py — porta 5001)
      ▼
 Agent_AI.get_ai_response()
      │
-     ├── [paralelo, Claude Haiku]
+     ├── [paralelo, gpt-4o-mini]
      │     ├── ObjectionDetector    → tipo e gravidade da objeção
      │     ├── IntentClassifier     → intenção da mensagem
      │     ├── QualificationTracker → critérios preenchidos / faltando
      │     └── ClosureDetector      → silencia turnos de encerramento / ack pós-agendamento
      │
-     ├── [sequencial, Claude Haiku]
+     ├── [sequencial, gpt-4o-mini]
      │     └── SchedulingValidator  → ready_to_schedule + blocking_reason
      │
-     ├── se ClosureDetector retorna should_respond=false (high) → encerra sem chamar Sonnet
+     ├── se ClosureDetector retorna should_respond=false (high) → encerra sem chamar o AnaAgent
      │
-     ├── AnaAgent (Claude Sonnet) → gera a resposta final com contexto enriquecido
+     ├── AnaAgent (gpt-4o) → gera a resposta final com contexto enriquecido
      │
      ├── verificar_reuniao()      → se resposta contém JSON de agendamento:
      │     └── cria evento Google Calendar + Google Meet
@@ -46,8 +46,8 @@ Agent_AI.get_ai_response()
 
 | Função | Modelo |
 |--------|--------|
-| Resposta principal | Claude Sonnet 4.6 (AnaAgent) |
-| Micro agentes (análise paralela) | Claude Haiku 4.5 |
+| Resposta principal | OpenAI gpt-4o (AnaAgent) |
+| Micro agentes (análise paralela) | OpenAI gpt-4o-mini |
 | Follow-up de inatividade (1h / 24h / 15d) | GPT-4o-mini |
 | Abertura outbound / recontato | GPT-4o-mini |
 | Transcrição de áudio | OpenAI Whisper |
@@ -91,8 +91,8 @@ Os timers são persistidos em Supabase `followup_jobs` e restaurados no startup 
 | API HTTP | Flask |
 | WhatsApp | Z-API (webhooks) |
 | Exposição local | ngrok |
-| Resposta principal | LangChain + Anthropic Claude Sonnet 4.6 |
-| Micro agentes | Anthropic Claude Haiku 4.5 |
+| Resposta principal | LangChain + OpenAI gpt-4o |
+| Micro agentes | OpenAI gpt-4o-mini |
 | Follow-up / mídia | OpenAI GPT-4o-mini / GPT-4o / Whisper |
 | Calendário | Google Calendar API (OAuth2) |
 | Extração de vídeo | ffmpeg / ffprobe |
@@ -111,12 +111,12 @@ agente-de-ia/
 │   └── agent/
 │       ├── core.py                    # Agent_AI — orquestração principal
 │       ├── micro_agents.py            # Executa os 5 micro agentes em paralelo
-│       ├── intent_classifier.py       # Haiku: classifica intenção da mensagem
-│       ├── objection_detector.py      # Haiku: detecta e tipifica objeções
-│       ├── qualification_tracker.py   # Haiku: avalia critérios de qualificação
-│       ├── closure_detector.py        # Haiku: silencia turnos de encerramento / ack pós-agendamento
-│       ├── scheduling_validator.py    # Haiku: valida prontidão para agendar
-│       ├── ana_agent.py               # Sonnet: gera a resposta final
+│       ├── intent_classifier.py       # gpt-4o-mini: classifica intenção da mensagem
+│       ├── objection_detector.py      # gpt-4o-mini: detecta e tipifica objeções
+│       ├── qualification_tracker.py   # gpt-4o-mini: avalia critérios de qualificação
+│       ├── closure_detector.py        # gpt-4o-mini: silencia turnos de encerramento / ack pós-agendamento
+│       ├── scheduling_validator.py    # gpt-4o-mini: valida prontidão para agendar
+│       ├── ana_agent.py               # gpt-4o: gera a resposta final
 │       ├── calendar.py                # Google Calendar (criar/deletar/verificar eventos)
 │       ├── context.py                 # System prompt, instruções e estado
 │       └── normalizers.py             # Normalização de datas e horários
@@ -129,8 +129,7 @@ agente-de-ia/
 ## Variáveis de ambiente
 
 ```env
-OPENAI_API_KEY=sk-...
-ANTHROPIC_API_KEY=sk-ant-...
+OPENAI_API_KEY=sk-proj-...
 ZAPI_SEC_TOKEN=...
 SUPABASE_URL=<project-url>
 SUPABASE_SERVICE_ROLE_KEY=<service-role-key>

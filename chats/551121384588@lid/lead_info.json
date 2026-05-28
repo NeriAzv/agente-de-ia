@@ -1,0 +1,17 @@
+{
+  "nome": "Valdireni Crippa",
+  "phone": "551121384588",
+  "descricao_manual": "Empresa: Suzano\nCargo: Gerente de Facilities\nArea: Facilities\nSetor: Papel e Celulose\nResumo da empresa: Suzano e a maior produtora de celulose do mundo, com fabricas, escritorios e operacoes florestais em todo o Brasil.\nContexto operacional: Manutencao em plantas industriais de grande porte | Gestao de facilities em areas remotas | Controle de terceiros em zonas florestais\nAreas relacionadas: Manutencao | Compras | Ambiental\nObservacao comercial: Com o tamanho e a dispersao geografica da Suzano, centralizar as demandas de Facilities pode ser o primeiro passo para uma gestao operacional mais eficiente em toda a cadeia.",
+  "followups_agendados": [
+    {
+      "tipo": "24h",
+      "horario_iso": "2026-05-23T15:39:19.925118",
+      "phone": "551121384588"
+    },
+    {
+      "tipo": "15d",
+      "horario_iso": "2026-06-06T15:39:19.925118",
+      "phone": "551121384588"
+    }
+  ]
+}

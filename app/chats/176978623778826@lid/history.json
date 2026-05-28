@@ -1,0 +1,74 @@
+[
+  {
+    "timestamp": 1779473484.090119,
+    "data": {
+      "fromMe": true,
+      "phone": "5519992594015",
+      "chatLid": "5519992594015@lid",
+      "text": {
+        "message": "Boa tarde, Fabio.\n\nSou a Ana, da Btime. Trabalho com operações em plantas industriais que buscam aumentar a eficiência em facilities, integrando sistemas de manutenção e compliance. Tem espaço pra conversar sobre isso?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779473487.9440238,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "176978623778826@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB03E515C93F3FA161935",
+      "phone": "5519992594015",
+      "fromMe": true,
+      "momment": 1779473532000,
+      "status": "SENT",
+      "chatName": "",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534426905_1678572236849560_5740535902680770660_n.jpg?ccb=11-4&oh=01_Q5Aa4gELDEzbTBSAGh2yFa2Ix3zCdz3vqB4nJr1TaI2jXBR3dQ&oe=6A1DB3BD&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Boa tarde, Fabio."
+      }
+    }
+  },
+  {
+    "timestamp": 1779473504.0934665,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "176978623778826@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0741DB873985F0316BE",
+      "phone": "5519992594015",
+      "fromMe": true,
+      "momment": 1779473549000,
+      "status": "SENT",
+      "chatName": "5519992594015",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/534426905_1678572236849560_5740535902680770660_n.jpg?ccb=11-4&oh=01_Q5Aa4gELDEzbTBSAGh2yFa2Ix3zCdz3vqB4nJr1TaI2jXBR3dQ&oe=6A1DB3BD&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Trabalho com operações em plantas industriais que buscam aumentar a eficiência em facilities, integrando sistemas de manutenção e compliance. Tem espaço pra conversar sobre isso?"
+      }
+    }
+  }
+]

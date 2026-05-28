@@ -1,0 +1,26 @@
+[
+  {
+    "timestamp": 1779474731.4359198,
+    "data": {
+      "fromMe": true,
+      "phone": "5511947437079",
+      "chatLid": "5511947437079@lid",
+      "text": {
+        "message": "Olá, Rafael. \n\nSou a Ana, da Btime. Trabalho com operações que lidam com a gestão de facilities e EHS, ajudando a unificar processos e reduzir o trabalho manual com automação. \n\nTem espaço pra conversar sobre isso?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779475178.730518,
+    "data": {
+      "fromMe": true,
+      "phone": "5511947437079",
+      "chatLid": "5511947437079@lid",
+      "text": {
+        "message": "Olá, Rafael.\n\nSou a Ana, da Btime. Trabalhamos com a automação de processos e eficiência operacional, focando em operações como a gestão de facilities e controle de EHS. \n\nFaz sentido a gente trocar uma ideia?"
+      },
+      "type": "abertura"
+    }
+  }
+]

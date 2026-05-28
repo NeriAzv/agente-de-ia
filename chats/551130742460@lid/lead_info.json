@@ -1,0 +1,17 @@
+{
+  "nome": "Leticia Zanobi",
+  "phone": "551130742460",
+  "descricao_manual": "Empresa: Arteris S.A.\nCargo: Facilites\nArea: Facilities\nSetor: Infraestrutura / Concessoes Rodoviarias\nResumo da empresa: Arteris e uma das maiores concessionarias de rodovias do Brasil, gerenciando milhares de quilometros de estradas.\nContexto operacional: Manutencao de infraestrutura em pracas e bases | Gestao de facilities em postos distribuidos | Controle de equipes e contratos ao longo das rodovias\nAreas relacionadas: Manutencao | Engenharia | Operacoes\nObservacao comercial: Com bases e pracas distribuidas ao longo de rodovias, a Arteris tem um desafio classico de gestao distribuida de Facilities; exatamente o que a btime resolve.",
+  "followups_agendados": [
+    {
+      "tipo": "24h",
+      "horario_iso": "2026-05-23T15:42:11.027194",
+      "phone": "551130742460"
+    },
+    {
+      "tipo": "15d",
+      "horario_iso": "2026-06-06T15:42:11.027194",
+      "phone": "551130742460"
+    }
+  ]
+}

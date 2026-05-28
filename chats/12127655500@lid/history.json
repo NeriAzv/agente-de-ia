@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": 1779475308.010828,
+    "data": {
+      "fromMe": true,
+      "phone": "12127655500",
+      "chatLid": "12127655500@lid",
+      "text": {
+        "message": "Olá, Caio.\n\nSou a Ana, da Btime. Trabalho com operações que precisam otimizar a gestão de facilities e garantir a precisão em ambientes de produção. Tem espaço pra conversar sobre como podemos ajudar a IFF a reduzir o trabalho manual e melhorar a eficiência operacional?"
+      },
+      "type": "abertura"
+    }
+  }
+]

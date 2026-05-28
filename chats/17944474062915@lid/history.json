@@ -1,0 +1,154 @@
+[
+  {
+    "timestamp": 1779474672.4831378,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "17944474062915@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB039B30057C462A255B8",
+      "phone": "553197998500",
+      "fromMe": true,
+      "momment": 1779474716000,
+      "status": "SENT",
+      "chatName": "553197998500",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Bom dia, Daniel."
+      }
+    }
+  },
+  {
+    "timestamp": 1779474686.7848513,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "17944474062915@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB09FDCE0B37015B475C1",
+      "phone": "553197998500",
+      "fromMe": true,
+      "momment": 1779474732000,
+      "status": "SENT",
+      "chatName": "553197998500",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime. Trabalho com operações logísticas que lidam com a manutenção de infraestrutura e gestão de frotas. Integração e automação de processos podem ajudar a eliminar gargalos operacionais que custam caro. Tem espaço pra conversar sobre isso?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779476001.1283574,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "17944474062915@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3A9EA680A0D7B8AF2F49",
+      "phone": "553197998500",
+      "fromMe": false,
+      "momment": 1779476043000,
+      "status": "RECEIVED",
+      "chatName": "Magrelo",
+      "senderPhoto": null,
+      "senderName": "Magrelo",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "referenceMessageId": "3EB08D6446B2754705E999",
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "Não pq acho que errou de número"
+      }
+    }
+  },
+  {
+    "timestamp": 1779476028.618101,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "17944474062915@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "41C850B3FBED6EF36C18",
+      "phone": "553197998500",
+      "fromMe": true,
+      "momment": 1779476073000,
+      "status": "SENT",
+      "chatName": "Magrelo",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Entendi, Daniel. Se precisar de algo relacionado à eficiência operacional no futuro, estou por aqui. Até mais."
+      }
+    }
+  },
+  {
+    "timestamp": 1779478277.0953028,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "17944474062915@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "8931408089BD6762E445",
+      "phone": "553197998500",
+      "fromMe": true,
+      "momment": 1779478321001,
+      "status": "SENT",
+      "chatName": "Magrelo",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": null,
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Oi, Daniel. Ainda estou por aqui. Posso ajudar com alguma dúvida sobre como a Btime pode melhorar suas operações logísticas?"
+      }
+    }
+  }
+]

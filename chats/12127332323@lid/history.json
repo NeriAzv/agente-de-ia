@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": 1779475646.0772562,
+    "data": {
+      "fromMe": true,
+      "phone": "12127332323",
+      "chatLid": "12127332323@lid",
+      "text": {
+        "message": "Olá Machado Cilas,\n\nSou a Ana, da Btime. Trabalhamos com automação de processos para garantir a eficiência operacional, especialmente em áreas que exigem compliance rigoroso, como a sua. \n\nTem espaço pra conversar sobre como podemos ajudar na gestão das operações de facilities na Pfizer?"
+      },
+      "type": "abertura"
+    }
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "timestamp": 1779474606.4178739,
+    "data": {
+      "fromMe": true,
+      "phone": "552125145151",
+      "chatLid": "552125145151@lid",
+      "text": {
+        "message": "Boa tarde, Gabriel.\n\nSou a Ana, da Btime. Trabalho com operações no setor de energia que buscam melhorar a gestão de ativos e a eficiência em manutenção. Centralizar a gestão de ordens de serviço pode reduzir o tempo de resposta e os custos operacionais. \n\nTem espaço pra conversar sobre isso?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779475073.4654086,
+    "data": {
+      "fromMe": true,
+      "phone": "552125145151",
+      "chatLid": "552125145151@lid",
+      "text": {
+        "message": "Boa tarde, Gabriel.\n\nSou a Ana, da Btime. \n\nTrabalhamos com automação de processos e sabemos que a centralização da gestão de ordens de serviço em operações de facilities pode otimizar tempo e reduzir custos operacionais, especialmente em uma empresa do porte da Eletrobras. \n\nTem espaço pra conversar sobre isso?"
+      },
+      "type": "abertura"
+    }
+  }
+]

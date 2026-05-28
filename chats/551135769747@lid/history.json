@@ -1,0 +1,26 @@
+[
+  {
+    "timestamp": 1779474627.7938478,
+    "data": {
+      "fromMe": true,
+      "phone": "551135769747",
+      "chatLid": "551135769747@lid",
+      "text": {
+        "message": "Olá Marcelo, \n\nSou a Ana, da Btime. Trabalho com operações que precisam de eficiência em compliance de segurança e gestão de facilities em múltiplos sites. \n\nFaz sentido a gente trocar uma ideia?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779475099.7234325,
+    "data": {
+      "fromMe": true,
+      "phone": "551135769747",
+      "chatLid": "551135769747@lid",
+      "text": {
+        "message": "Bom dia, Marcelo. \n\nSou a Ana, da Btime. Trabalho com empresas do setor petroquímico que buscam agilidade na gestão de facilities e compliance em segurança. A automação pode ajudar a integrar processos e garantir rastreabilidade nas operações. Tem espaço pra conversar sobre isso?"
+      },
+      "type": "abertura"
+    }
+  }
+]

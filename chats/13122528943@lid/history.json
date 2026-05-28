@@ -1,0 +1,26 @@
+[
+  {
+    "timestamp": 1779475355.110424,
+    "data": {
+      "fromMe": true,
+      "phone": "13122528943",
+      "chatLid": "13122528943@lid",
+      "text": {
+        "message": "Olá Henrique,\n\nSou a Ana, da Btime. \n\nTrabalho com operações que gerenciam múltiplos contratos e buscam aumentar a visibilidade em tempo real das operações. A Btime pode automatizar processos e oferecer uma camada de gestão que diferencia o serviço entregue aos seus clientes. \n\nTem espaço pra conversar sobre isso?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779475446.6108184,
+    "data": {
+      "fromMe": true,
+      "phone": "13122528943",
+      "chatLid": "13122528943@lid",
+      "text": {
+        "message": "Olá Livia, \n\nSou a Ana, da Btime. Trabalho com operações em facilities que buscam aumentar a visibilidade e padronização dos processos. \n\nTem espaço pra conversar sobre isso?"
+      },
+      "type": "abertura"
+    }
+  }
+]

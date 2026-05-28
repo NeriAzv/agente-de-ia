@@ -1,0 +1,17 @@
+{
+  "nome": "Rafael Pinheiro",
+  "phone": "5511947437079",
+  "descricao_manual": "Empresa: Valid\nCargo: Gerente de facilities e EHS\nArea: Facilities\nSetor: Tecnologia / Identidade Digital\nResumo da empresa: Valid fornece solucoes de identidade, meios de pagamento e telecomunicacoes, com operacoes industriais e escritorios no Brasil.\nContexto operacional: Gestao de facilities em plantas e escritorios | Controle de EHS e seguranca patrimonial | SLA de fornecedores de servicos gerais\nAreas relacionadas: EHS | Compras | TI\nObservacao comercial: Com a combinacao de plantas industriais e escritorios distribuidos, a Valid tem um cenario ideal para unificar Facilities e EHS numa unica plataforma de gestao.",
+  "followups_agendados": [
+    {
+      "tipo": "24h",
+      "horario_iso": "2026-05-23T15:39:39.613013",
+      "phone": "5511947437079"
+    },
+    {
+      "tipo": "15d",
+      "horario_iso": "2026-06-06T15:39:39.613013",
+      "phone": "5511947437079"
+    }
+  ]
+}

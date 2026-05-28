@@ -1,0 +1,256 @@
+[
+  {
+    "timestamp": 1779474798.9325614,
+    "data": {
+      "fromMe": true,
+      "phone": "966560029713",
+      "chatLid": "966560029713@lid",
+      "text": {
+        "message": "Olá Zubair Nazir,\n\nSou a Ana, da Btime. \n\nTrabalhamos com operações na área de Facilities, especialmente em ambientes laboratoriais onde o controle de condições é crucial. Nossa tecnologia ajuda a automatizar processos, oferecendo visibilidade em tempo real e reduzindo a carga de trabalho manual. \n\nFaz sentido a gente trocar uma ideia?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779474807.853155,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "277854956847293@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB09237AEED48D07E7A45",
+      "phone": "966560029713",
+      "fromMe": true,
+      "momment": 1779474853000,
+      "status": "SENT",
+      "chatName": "966560029713",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870631_1064822318424157_476841141530046162_n.jpg?ccb=11-4&oh=01_Q5Aa4gEw74yqhSalaofKR4_Wq2pBX196Sx4rdif5Z_2pTWqlEQ&oe=6A1DAD00&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Olá Zubair Nazir,"
+      }
+    }
+  },
+  {
+    "timestamp": 1779474811.7181947,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "277854956847293@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0A67A1E726AD3FC0ECF",
+      "phone": "966560029713",
+      "fromMe": true,
+      "momment": 1779474856001,
+      "status": "SENT",
+      "chatName": "966560029713",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870631_1064822318424157_476841141530046162_n.jpg?ccb=11-4&oh=01_Q5Aa4gEw74yqhSalaofKR4_Wq2pBX196Sx4rdif5Z_2pTWqlEQ&oe=6A1DAD00&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Sou a Ana, da Btime."
+      }
+    }
+  },
+  {
+    "timestamp": 1779474826.5242136,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "277854956847293@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0D64D1D3CD5DB5C503B",
+      "phone": "966560029713",
+      "fromMe": true,
+      "momment": 1779474871000,
+      "status": "SENT",
+      "chatName": "966560029713",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870631_1064822318424157_476841141530046162_n.jpg?ccb=11-4&oh=01_Q5Aa4gEw74yqhSalaofKR4_Wq2pBX196Sx4rdif5Z_2pTWqlEQ&oe=6A1DAD00&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Trabalhamos com operações na área de Facilities, especialmente em ambientes laboratoriais onde o controle de condições é crucial. Nossa tecnologia ajuda a automatizar processos, oferecendo visibilidade em tempo real e reduzindo a carga de trabalho manual."
+      }
+    }
+  },
+  {
+    "timestamp": 1779474840.4227421,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "277854956847293@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0825197C3DD239EAAB6",
+      "phone": "966560029713",
+      "fromMe": true,
+      "momment": 1779474877000,
+      "status": "SENT",
+      "chatName": "966560029713",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870631_1064822318424157_476841141530046162_n.jpg?ccb=11-4&oh=01_Q5Aa4gEw74yqhSalaofKR4_Wq2pBX196Sx4rdif5Z_2pTWqlEQ&oe=6A1DAD00&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Faz sentido a gente trocar uma ideia?"
+      }
+    }
+  },
+  {
+    "timestamp": 1779476126.6652668,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "277854956847293@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "ACD42C1A37F255BD7A1FF5A23B1E29AA",
+      "phone": "966560029713",
+      "fromMe": false,
+      "momment": 1779476170000,
+      "status": "RECEIVED",
+      "chatName": "iutfurhasan58",
+      "senderPhoto": null,
+      "senderName": "iutfurhasan58",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870631_1064822318424157_476841141530046162_n.jpg?ccb=11-4&oh=01_Q5Aa4gEw74yqhSalaofKR4_Wq2pBX196Sx4rdif5Z_2pTWqlEQ&oe=6A1DAD00&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "cable well"
+      }
+    }
+  },
+  {
+    "timestamp": 1779476171.4522154,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "277854956847293@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "AC83A7A92EA38FEDC41650DF69EC9E69",
+      "phone": "966560029713",
+      "fromMe": false,
+      "momment": 1779476215000,
+      "status": "RECEIVED",
+      "chatName": "iutfurhasan58",
+      "senderPhoto": null,
+      "senderName": "iutfurhasan58",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870631_1064822318424157_476841141530046162_n.jpg?ccb=11-4&oh=01_Q5Aa4gEw74yqhSalaofKR4_Wq2pBX196Sx4rdif5Z_2pTWqlEQ&oe=6A1DAD00&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "sister Kemon achen"
+      }
+    }
+  },
+  {
+    "timestamp": 1779476200.9837086,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "277854956847293@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "3EB0C2413330B82059EA06",
+      "phone": "966560029713",
+      "fromMe": true,
+      "momment": 1779476245000,
+      "status": "SENT",
+      "chatName": "iutfurhasan58",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870631_1064822318424157_476841141530046162_n.jpg?ccb=11-4&oh=01_Q5Aa4gEw74yqhSalaofKR4_Wq2pBX196Sx4rdif5Z_2pTWqlEQ&oe=6A1DAD00&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "referenceMessageId": "AC83A7A92EA38FEDC41650DF69EC9E69",
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": true,
+      "text": {
+        "message": "Parece que você mudou de assunto. Se precisar de informações sobre a Btime ou como podemos ajudar, estou à disposição."
+      }
+    }
+  },
+  {
+    "timestamp": 1779476273.3067405,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "277854956847293@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "AC92C276E13AB8B19C87262D98DE38B4",
+      "phone": "966560029713",
+      "fromMe": false,
+      "momment": 1779476317000,
+      "status": "RECEIVED",
+      "chatName": "iutfurhasan58",
+      "senderPhoto": null,
+      "senderName": "iutfurhasan58",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491870631_1064822318424157_476841141530046162_n.jpg?ccb=11-4&oh=01_Q5Aa4gEw74yqhSalaofKR4_Wq2pBX196Sx4rdif5Z_2pTWqlEQ&oe=6A1DAD00&_nc_sid=5e03e0&_nc_cat=107",
+      "broadcast": false,
+      "participantLid": null,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "text": {
+        "message": "okay sister"
+      }
+    }
+  }
+]

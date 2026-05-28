@@ -1,0 +1,28 @@
+[
+  {
+    "timestamp": 1779474047.6014166,
+    "data": {
+      "fromMe": true,
+      "phone": "16513556000",
+      "chatLid": "16513556000@lid",
+      "type": "numero_sem_whatsapp",
+      "messageId": "sysmark:no-wa:16513556000@lid",
+      "text": {
+        "message": "[sistema] Número sem conta de WhatsApp — abertura não enviada (Z-API phone-exists=false)."
+      }
+    }
+  },
+  {
+    "timestamp": 1779474298.500842,
+    "data": {
+      "fromMe": true,
+      "phone": "16513556000",
+      "chatLid": "16513556000@lid",
+      "type": "numero_sem_whatsapp",
+      "messageId": "sysmark:no-wa:16513556000@lid",
+      "text": {
+        "message": "[sistema] Número sem conta de WhatsApp — abertura não enviada (Z-API phone-exists=false)."
+      }
+    }
+  }
+]

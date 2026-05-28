@@ -1,0 +1,28 @@
+[
+  {
+    "timestamp": 1779473985.7839322,
+    "data": {
+      "fromMe": true,
+      "phone": "12483401800",
+      "chatLid": "12483401800@lid",
+      "type": "numero_sem_whatsapp",
+      "messageId": "sysmark:no-wa:12483401800@lid",
+      "text": {
+        "message": "[sistema] Número sem conta de WhatsApp — abertura não enviada (Z-API phone-exists=false)."
+      }
+    }
+  },
+  {
+    "timestamp": 1779474361.0559335,
+    "data": {
+      "fromMe": true,
+      "phone": "12483401800",
+      "chatLid": "12483401800@lid",
+      "type": "numero_sem_whatsapp",
+      "messageId": "sysmark:no-wa:12483401800@lid",
+      "text": {
+        "message": "[sistema] Número sem conta de WhatsApp — abertura não enviada (Z-API phone-exists=false)."
+      }
+    }
+  }
+]

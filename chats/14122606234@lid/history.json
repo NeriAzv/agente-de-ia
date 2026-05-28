@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": 1779475603.1203966,
+    "data": {
+      "fromMe": true,
+      "phone": "14122606234",
+      "chatLid": "14122606234@lid",
+      "text": {
+        "message": "Boa tarde, Chris. \n\nSou a Ana, da Btime. Estou em contato com operações que precisam de rastreabilidade em compliance e gestão de facilities, especialmente em setores como o petroquímico. A automação pode ajudar a integrar processos entre HSE, manutenção e compras. \n\nTem espaço pra conversar sobre isso?"
+      },
+      "type": "abertura"
+    }
+  }
+]

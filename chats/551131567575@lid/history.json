@@ -1,0 +1,26 @@
+[
+  {
+    "timestamp": 1779474819.4748576,
+    "data": {
+      "fromMe": true,
+      "phone": "551131567575",
+      "chatLid": "551131567575@lid",
+      "text": {
+        "message": "Olá Fellipe Fernandes, \n\nSou a Ana, da Btime. Trabalho com empresas de facilities que gerenciam múltiplas unidades e buscam aumentar a eficiência operacional através da automação de processos e controle de custos. \n\nTem espaço pra conversar sobre como podemos ajudar sua operação?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779475221.912374,
+    "data": {
+      "fromMe": true,
+      "phone": "551131567575",
+      "chatLid": "551131567575@lid",
+      "text": {
+        "message": "Bom dia, Fellipe. \n\nSou a Ana, da Btime. Trabalho com operações de facilities que podem se beneficiar muito da automação e eficiência operacional. Seu grupo, com múltiplas unidades, pode ganhar escala e transformar dados em vantagem competitiva. Tem espaço pra conversar sobre isso?"
+      },
+      "type": "abertura"
+    }
+  }
+]

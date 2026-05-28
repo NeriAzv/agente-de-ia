@@ -1,0 +1,17 @@
+{
+  "nome": "Gabriel Pitanguy",
+  "phone": "552125145151",
+  "descricao_manual": "Empresa: Eletrobras\nCargo: Coordenador | Supervisor de Facilities e Manutencao\nArea: Facilities\nSetor: Energia Eletrica\nResumo da empresa: Eletrobras e a maior empresa de energia eletrica da America Latina, com usinas, subestacoes e escritorios em todo o Brasil.\nContexto operacional: Gestao de ativos em locais remotos | Manutencao preventiva de infraestrutura | Controle de equipes terceirizadas\nAreas relacionadas: Manutencao | Engenharia | Seguranca Patrimonial\nObservacao comercial: Com a capilaridade de infraestrutura da Eletrobras, centralizar a gestao de ordens de servico de Facilities e Manutencao pode reduzir drasticamente o tempo de resposta e o custo operacional.",
+  "followups_agendados": [
+    {
+      "tipo": "24h",
+      "horario_iso": "2026-05-23T15:37:54.360435",
+      "phone": "552125145151"
+    },
+    {
+      "tipo": "15d",
+      "horario_iso": "2026-06-06T15:37:54.360435",
+      "phone": "552125145151"
+    }
+  ]
+}

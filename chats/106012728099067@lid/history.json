@@ -1,0 +1,40 @@
+[
+  {
+    "timestamp": 1779474972.3710816,
+    "data": {
+      "isStatusReply": false,
+      "chatLid": "106012728099067@lid",
+      "connectedPhone": "5511973723845",
+      "waitingMessage": false,
+      "isEdit": false,
+      "isGroup": false,
+      "isNewsletter": false,
+      "instanceId": "3EFABF270A13919DE95AD6F4B026E35E",
+      "messageId": "AC5186EDB0A7DC3B41F3CDDF0E388210",
+      "phone": "106012728099067@lid",
+      "fromMe": true,
+      "momment": 1779475016000,
+      "status": "RECEIVED",
+      "chatName": "Guilherme",
+      "senderPhoto": null,
+      "senderName": "Briana - Btime",
+      "photo": "https://pps.whatsapp.net/v/t61.24694-24/491876207_643218138796381_2075770868103657505_n.jpg?ccb=11-4&oh=01_Q5Aa4gEhSODNy5Hg4q0mztrx8N1KcjSkP_VLTX1OgrkixMXxgg&oe=6A1DC437&_nc_sid=5e03e0&_nc_cat=110",
+      "broadcast": false,
+      "participantLid": null,
+      "messageExpirationSeconds": 0,
+      "forwarded": false,
+      "type": "ReceivedCallback",
+      "fromApi": false,
+      "image": {
+        "imageUrl": "https://f004.backblazeb2.com/file/temp-file-download/instances/3EFABF270A13919DE95AD6F4B026E35E/AC5186EDB0A7DC3B41F3CDDF0E388210/4GxdmjSlmz6bxumz17LwMA==.jpg",
+        "thumbnailUrl": "https://f004.backblazeb2.com/file/temp-file-download/instances/3EFABF270A13919DE95AD6F4B026E35E/AC5186EDB0A7DC3B41F3CDDF0E388210/4GxdmjSlmz6bxumz17LwMA==.jpg",
+        "downloadError": null,
+        "caption": "",
+        "mimeType": "image/jpeg",
+        "viewOnce": false,
+        "width": 717,
+        "height": 1600
+      }
+    }
+  }
+]

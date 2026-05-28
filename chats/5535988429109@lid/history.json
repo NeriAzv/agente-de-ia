@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": 1779474690.1245363,
+    "data": {
+      "fromMe": true,
+      "phone": "5535988429109",
+      "chatLid": "5535988429109@lid",
+      "text": {
+        "message": "Olá Matheus,\n\nSou a Ana, da Btime. Trabalho com operações no segmento de alimentos e bebidas que buscam melhorar a gestão de facilities e controlar melhor os fornecedores de energia. \n\nTem espaço pra conversar sobre isso?"
+      },
+      "type": "abertura"
+    }
+  }
+]

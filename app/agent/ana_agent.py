@@ -1,31 +1,31 @@
 import json
 import time
-from langchain_anthropic import ChatAnthropic
 from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 
 from agent.context import get_contexto
+from agent.llm_config import make_main_llm
 
 
-_LLM = ChatAnthropic(
-    model="claude-sonnet-4-6",
-    temperature=0.7,
-    streaming=True,
-)
+_LLM = make_main_llm()
 
 _RETRY_DELAYS = [2, 5, 10, 20, 30]
 
 
 def _is_overloaded(exc: Exception) -> bool:
-    if getattr(exc, "status_code", None) == 529:
-        return True
-    if getattr(exc, "code", None) == "overloaded_error":
+    status = getattr(exc, "status_code", None) or getattr(exc, "status", None)
+    if status in (429, 500, 503):
         return True
     msg = str(exc)
-    if "overloaded_error" in msg:
-        return True
-    if "Error code: 529" in msg:
-        return True
-    return False
+    return any(
+        s in msg
+        for s in (
+            "rate limit",
+            "Error code: 429",
+            "Error code: 500",
+            "Error code: 503",
+            "overloaded",
+        )
+    )
 
 
 def _stream_with_retry(messages, is_interrupted=None) -> str:
@@ -46,7 +46,7 @@ def _stream_with_retry(messages, is_interrupted=None) -> str:
             if attempt >= len(_RETRY_DELAYS):
                 break
             delay = _RETRY_DELAYS[attempt]
-            print(f"[ana_agent] 529 overloaded, retry em {delay}s (tentativa {attempt + 1}/{len(_RETRY_DELAYS)})")
+            print(f"[ana_agent] OpenAI sobrecarregada/rate-limited, retry em {delay}s (tentativa {attempt + 1}/{len(_RETRY_DELAYS)})")
             time.sleep(delay)
     raise last_exc
 

@@ -1,0 +1,17 @@
+{
+  "nome": "Michael Oliveira",
+  "phone": "13026833000",
+  "descricao_manual": "Empresa: The LYCRA Company\nCargo: Gerente de Manutencao, Engenharia, e Facilities\nArea: Facilities\nSetor: Industria Textil / Quimica\nResumo da empresa: The LYCRA Company e lider global em fibras elasticas (Lycra/Spandex), com plantas industriais e operacoes no Brasil.\nContexto operacional: Manutencao de equipamentos em plantas continuas | Gestao de utilities e energia | Controle de facilities em ambiente quimico\nAreas relacionadas: Manutencao | Engenharia | HSE\nObservacao comercial: Em plantas de producao continua como a da LYCRA Company, integrar Facilities com Manutencao e HSE e essencial para evitar paradas nao programadas.",
+  "followups_agendados": [
+    {
+      "tipo": "24h",
+      "horario_iso": "2026-05-23T15:42:57.803303",
+      "phone": "13026833000"
+    },
+    {
+      "tipo": "15d",
+      "horario_iso": "2026-06-06T15:42:57.803303",
+      "phone": "13026833000"
+    }
+  ]
+}

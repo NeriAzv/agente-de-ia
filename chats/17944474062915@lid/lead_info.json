@@ -1,0 +1,19 @@
+{
+  "nome": "Daniel",
+  "email": null,
+  "empresa": null,
+  "segmento_mercado": null,
+  "porte_empresa": null,
+  "faturamento_aproximado": null,
+  "tamanho_time": null,
+  "sistemas_atuais": [],
+  "desafios_identificados": [],
+  "produto_indicado": null,
+  "motivo_segmentacao": null,
+  "estagio_conversa": "inicial",
+  "reuniao_agendada": false,
+  "necessita_followup": false,
+  "motivo_followup": "A conversa terminou com uma despedida clara de ambos os lados.",
+  "atualizado_em": "2026-05-22T15:53:43.378644",
+  "followups_agendados": []
+}

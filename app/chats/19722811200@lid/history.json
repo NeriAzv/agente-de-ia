@@ -11,5 +11,31 @@
         "message": "[sistema] Número sem conta de WhatsApp — abertura não enviada (Z-API phone-exists=false)."
       }
     }
+  },
+  {
+    "timestamp": 1779474250.3093426,
+    "data": {
+      "fromMe": true,
+      "phone": "19722811200",
+      "chatLid": "19722811200@lid",
+      "type": "numero_sem_whatsapp",
+      "messageId": "sysmark:no-wa:19722811200@lid",
+      "text": {
+        "message": "[sistema] Número sem conta de WhatsApp — abertura não enviada (Z-API phone-exists=false)."
+      }
+    }
+  },
+  {
+    "timestamp": 1779474267.4477196,
+    "data": {
+      "fromMe": true,
+      "phone": "19722811200",
+      "chatLid": "19722811200@lid",
+      "type": "numero_sem_whatsapp",
+      "messageId": "sysmark:no-wa:19722811200@lid",
+      "text": {
+        "message": "[sistema] Número sem conta de WhatsApp — abertura não enviada (Z-API phone-exists=false)."
+      }
+    }
   }
 ]

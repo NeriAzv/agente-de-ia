@@ -1,0 +1,26 @@
+[
+  {
+    "timestamp": 1779474755.3524861,
+    "data": {
+      "fromMe": true,
+      "phone": "14256387777",
+      "chatLid": "14256387777@lid",
+      "text": {
+        "message": "Olá, Jullia Carvalho.\n\nSou a Ana, da Btime. Acredito que a Btime pode ajudar a Microsoft a elevar a gestão de Facilities, integrando processos e melhorando a experiência do colaborador em um ambiente que exige excelência. \n\nTem espaço pra conversar sobre isso?"
+      },
+      "type": "abertura"
+    }
+  },
+  {
+    "timestamp": 1779475200.2320807,
+    "data": {
+      "fromMe": true,
+      "phone": "14256387777",
+      "chatLid": "14256387777@lid",
+      "text": {
+        "message": "Olá, Jullia Carvalho.\n\nSou a Ana, da Btime. Trabalho com companhias que buscam otimizar a gestão de facilities e integrar operações com soluções digitais. Tem interesse em discutir como podemos ajudar a Microsoft a elevar a experiência do colaborador e a eficiência operacional?"
+      },
+      "type": "abertura"
+    }
+  }
+]

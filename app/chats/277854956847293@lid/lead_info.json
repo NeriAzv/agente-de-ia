@@ -1,0 +1,22 @@
+{
+  "nome": "Zubair Nazir",
+  "phone": "966560029713",
+  "descricao_manual": "Empresa: IDEXX\nCargo: Global Facilities Operations Center Manager, Europe\nArea: Facilities\nSetor: Saude Animal / Diagnosticos\nResumo da empresa: IDEXX e lider global em diagnosticos veterinarios, com laboratorios e operacoes em mais de 175 paises, incluindo Brasil.\nContexto operacional: Gestao de ambiente em laboratorios | Controle de temperatura e condicoes especiais | Manutencao de equipamentos criticos de diagnostico\nAreas relacionadas: Qualidade | Laboratorio | Compras\nObservacao comercial: Em um ambiente laboratorial como o da IDEXX, onde condicoes controladas sao criticas, a gestao de Facilities vai alem do operacional; e a btime pode dar essa visibilidade em tempo real.",
+  "followups_agendados": [
+    {
+      "tipo": "1h",
+      "horario_iso": "2026-05-22T16:11:44.604554",
+      "phone": "966560029713"
+    },
+    {
+      "tipo": "24h",
+      "horario_iso": "2026-05-23T15:11:44.604554",
+      "phone": "966560029713"
+    },
+    {
+      "tipo": "15d",
+      "horario_iso": "2026-06-06T15:11:44.604554",
+      "phone": "966560029713"
+    }
+  ]
+}

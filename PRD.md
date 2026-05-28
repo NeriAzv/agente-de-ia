@@ -75,7 +75,7 @@ Flask HTTP Server (db_app.py :5001)
       ▼
 Agent_AI.get_ai_response() (core.py)
       │
-      ├─ [PARALELO] 4 Micro-Agentes (Claude Haiku)
+      ├─ [PARALELO] 4 Micro-Agentes (gpt-4o-mini)
       │     ├─ ObjectionDetector
       │     ├─ IntentClassifier
       │     ├─ QualificationTracker
@@ -89,7 +89,7 @@ Agent_AI.get_ai_response() (core.py)
       │
       ├─ Enriquecimento de contexto (lead_info.json + horários livres)
       │
-      ├─ [GERAÇÃO] AnaAgent (Claude Sonnet 4.6)
+      ├─ [GERAÇÃO] AnaAgent (gpt-4o)
       │
       ├─ [SE AGENDAMENTO] Criar evento Google Calendar + Meet link
       │
@@ -107,7 +107,7 @@ Agent_AI.get_ai_response() (core.py)
 | Servidor HTTP | `app/db_app.py` | Recebe webhooks Z-API, rota mensagens, gerencia presença |
 | Orquestrador | `app/agent/core.py` | Coordena todo o fluxo de processamento e envio |
 | Contexto/Persona | `app/agent/context.py` | System prompts, regras de conversa, metodologia de vendas |
-| Agente Principal | `app/agent/ana_agent.py` | Geração de resposta via Claude Sonnet 4.6 (streaming) |
+| Agente Principal | `app/agent/ana_agent.py` | Geração de resposta via OpenAI gpt-4o (streaming) |
 | Micro-Agentes | `app/agent/micro_agents.py` | Execução paralela dos 4 classificadores |
 | Detector de Objeções | `app/agent/objection_detector.py` | Classifica objeções de vendas |
 | Classificador de Intenção | `app/agent/intent_classifier.py` | Detecta intenção da mensagem |
@@ -123,8 +123,8 @@ Agent_AI.get_ai_response() (core.py)
 | Serviço | Função | Protocolo |
 |---------|--------|-----------|
 | Z-API | Envio/recebimento de mensagens WhatsApp | REST webhooks + HTTP POST |
-| Claude Sonnet 4.6 (Anthropic) | Geração de resposta principal | LangChain |
-| Claude Haiku 4.5 (Anthropic) | 4 micro-agentes classificadores | LangChain (paralelo) |
+| OpenAI gpt-4o | Geração de resposta principal | LangChain |
+| OpenAI gpt-4o-mini | 4 micro-agentes classificadores | LangChain (paralelo) |
 | GPT-4o-mini (OpenAI) | Follow-ups, outreach, recontatos | LangChain ChatOpenAI |
 | GPT-4o Vision (OpenAI) | Análise de imagens e vídeos | OpenAI Vision API |
 | Whisper (OpenAI) | Transcrição de áudios | OpenAI Audio API |
@@ -324,8 +324,7 @@ Agent_AI.get_ai_response() (core.py)
 
 ### 11.1 Variáveis de Ambiente (.env)
 ```
-OPENAI_API_KEY=sk-...
-ANTHROPIC_API_KEY=sk-ant-...
+OPENAI_API_KEY=sk-proj-...
 ZAPI_SEC_TOKEN=...
 ```
 
@@ -338,8 +337,8 @@ ZAPI_SEC_TOKEN=...
 |--------|-----------|
 | HTTP Server | Flask 3.1.3 |
 | WhatsApp | Z-API |
-| LLM Principal | Claude Sonnet 4.6 (Anthropic) |
-| LLM Micro-Agentes | Claude Haiku 4.5 (Anthropic) |
+| LLM Principal | gpt-4o (OpenAI) |
+| LLM Micro-Agentes | gpt-4o-mini (OpenAI) |
 | LLM Follow-up | GPT-4o-mini (OpenAI) |
 | Transcrição | Whisper (OpenAI) |
 | Visão | GPT-4o Vision (OpenAI) |

@@ -13,7 +13,7 @@ from agent.handoff_detector import run_handoff_detector
 
 def _assistant_content_text_only(content):
     """
-    Anthropic rejeita blocos não-texto (image/image_url) em turnos de assistente.
+    Turnos de assistente devem conter apenas texto para os micro-agentes.
     Reduz qualquer conteúdo estruturado a string com só os trechos de texto.
     """
     if isinstance(content, str):

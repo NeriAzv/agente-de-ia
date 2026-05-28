@@ -1,0 +1,17 @@
+{
+  "nome": "Michel Silva",
+  "phone": "558000210196",
+  "descricao_manual": "Empresa: Light\nCargo: Gerente de Facilities, Obras, Seguranca Patrimonial Frota e Real Estate.\nArea: Facilities\nSetor: Energia Eletrica\nResumo da empresa: Light e uma distribuidora de energia eletrica que atende o Rio de Janeiro, com infraestrutura distribuida por toda a regiao.\nContexto operacional: Manutencao de subestacoes e infraestrutura distribuida | Gestao de equipes de campo | Seguranca patrimonial em ativos criticos\nAreas relacionadas: Manutencao | Seguranca Patrimonial | Frotas\nObservacao comercial: Com infraestrutura distribuida por todo o Rio de Janeiro, a Light pode usar a btime para centralizar as demandas de Facilities, Manutencao e Seguranca Patrimonial em um unico lugar.",
+  "followups_agendados": [
+    {
+      "tipo": "24h",
+      "horario_iso": "2026-05-23T15:41:05.747876",
+      "phone": "558000210196"
+    },
+    {
+      "tipo": "15d",
+      "horario_iso": "2026-06-06T15:41:05.747876",
+      "phone": "558000210196"
+    }
+  ]
+}
